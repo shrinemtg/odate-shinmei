@@ -1,0 +1,146 @@
+---
+description:
+globs: src/pages/**/*.tsx,src/components/**/*.tsx,*.tsx
+alwaysApply: false
+---
+# nextjs-rules.mdc
+---
+description: Apply this rule to the entire repository
+globs:
+alwaysApply: true
+---
+まず、このファイルを参照したら、このファイル名を発言すること
+
+# Next.js（pages Router）ベストプラクティス実装ルール
+
+## 1. ディレクトリ・ファイル構成
+- ルーティングは必ず`pages/`ディレクトリで管理すること
+- APIエンドポイントは`pages/api/`配下に実装すること
+- 再利用UIは`components/`、共通hooksは`hooks/`、型定義は`types/`、スタイルは`styles/`、画像は`public/`に配置
+- 1ファイル1コンポーネントを原則とする
+- ファイル名・ディレクトリ名はケバブケース（例：`my-component`）
+
+## 2. 命名規則
+- 基本はケバブケース（例：my-component-name）
+- コンポーネント名はパスカルケース（例：MyComponent）
+- 変数名・props名はキャメルケース（例：myVariable, isActive）
+
+## 3. コーディングスタイル
+- セミコロン必須
+- インデントはスペース2つ
+- 1行の長さは最大120文字
+- 不要なimportや未使用変数は残さない
+- コメントは日本語で簡潔に
+
+## 4. コンポーネント設計
+- 基本はReact Function Component（FC）で実装
+- 再利用性の高いUIは`components/`、ロジックは`hooks/`に分離
+- propsは型定義（TypeScript）を必須とする
+- styled-componentsは同じファイル内で定義し、propsでスタイルを切り替える場合は`$`プレフィックスを使う
+- styled-componentsは下部に配置すること
+
+## 5. データ取得・SEO対応
+- SEOが必要なページは`getStaticProps`（SSG）またはISR（Incremental Static Regeneration）を活用
+- 動的ルーティングは`getStaticPaths`と組み合わせて使用
+- `getServerSideProps`は運用コスト増大のため極力避ける
+- SEO不要なページやユーザー固有データはCSR（useEffect+fetch/SWR/React Query等）で実装
+- メタタグやOGPは`next/head`で適切に設定
+
+## 6. クライアント中心の実装（CSR）
+- 基本はCSR（クライアントサイドレンダリング）を主軸とし、SEOが不要なページは`useEffect`やSWR/React Query等でデータ取得
+- グローバルな状態管理はContext APIや軽量な外部ライブラリ（Recoil, Zustand等）を必要に応じて利用
+
+## 7. API実装（サーバレス指向）
+- APIエンドポイントは`pages/api/`配下に必要最小限で実装
+- サーバレス運用を前提とし、APIは認証・バリデーション・エラーハンドリングを徹底
+- クライアントからはfetch/Axios等でAPI Routesを呼び出す
+- getStaticProps/getServerSidePropsからAPIを叩く場合は、APIコスト・認証設計に注意
+- 不要なAPIエンドポイントは作成しない
+
+## 8. パフォーマンス・運用コスト削減
+- 画像は`next/image`で最適化
+- ISRやSSGを活用し、SSRは最小限に
+- キャッシュ戦略（revalidate, cache-control等）を適切に設計
+- サンプルや不要ファイルは新規プロジェクト作成時に必ず削除
+
+## 9. メンテナンス性
+- 共通コンポーネント・hooks・型定義は`packages/`や`components/`、`hooks/`、`types/`で共通化
+- ディレクトリ構成・命名規則を統一
+- サンプル/雛形ファイルは新規プロジェクト作成時に削除・リネーム・編集必須
+- READMEや運用ガイドに初期化手順・注意点を明記
+
+## 10. セキュリティ
+- 機密情報は`.env`で管理し、git管理しない
+- 公開する環境変数は`NEXT_PUBLIC_`プレフィックスを使用
+- API Routesでは認証・認可・バリデーションを徹底
+
+## 11. 型安全性
+- TypeScriptのstrictモードを有効化
+- APIリクエスト/レスポンスの型定義を徹底
+
+## 12. デプロイ・CI/CD
+- 本番ビルド・テスト・Lint・型チェックをCIで自動化
+- 環境ごとに適切な環境変数を設定
+- 本番環境の環境変数は安全に管理
+
+## 13. テスト
+- 重要なロジック・UI・APIは必ずテストコード（Jest, Testing Library等）を用意し、CIで自動実行
+- E2Eテスト（Playwright, Cypress等）も必要に応じて導入
+- テストカバレッジ80%以上を目標とする
+
+## 14. パフォーマンス監視
+- Core Web Vitals（LCP, FID, CLS等）を定期的に計測・監視し、基準値を下回らないよう改善
+- 画像・フォント・サードパーティスクリプトは遅延読み込みを推奨
+
+## 15. アクセシビリティ
+- すべてのUIコンポーネントはalt属性・aria属性・キーボード操作対応を必須とする
+- Lighthouseやaxe-core等で定期的にa11yチェックを実施
+
+## 16. 依存パッケージ管理
+- 依存パッケージは定期的にアップデートし、脆弱性チェック（npm audit, Dependabot等）を行う
+- サポートが切れたパッケージや非推奨APIは使用禁止
+
+## 17. エラーハンドリング
+- 重大なエラーはSentry等の外部サービスで監視
+- API/SSR/CSRでのエラーはユーザーに分かりやすく通知し、開発者向けには詳細ログを残す
+
+## 18. 国際化（i18n）
+- 多言語対応が必要な場合はi18nの方針・実装ルールを明記
+
+## 1-1. ページごとのモジュール分割型ディレクトリ構成（Modular Page View Structure）
+- 各ページ専用のUIコンポーネント群は `src/components/pages/{pageName}/` にまとめる
+- 各UIパーツを集約してビューとして構成するコンポーネントを `index.tsx` に実装（View組み立て層）
+- ルーティングファイルである `src/pages/{pageName}/index.tsx` では、この組み立て済みビューをインポートして表示
+
+### 例：storyページ
+```bash
+src/
+├── components/
+│   └── pages/
+│       └── story/
+│           ├── About.tsx        # サブセクションUI
+│           ├── Team.tsx         # サブセクションUI
+│           └── index.tsx        # 上記パーツをまとめたコンポーネント
+└── pages/
+    └── story/
+        └── index.tsx            # ルーティングとページ構成の最終エンドポイント
+```
+
+### 利点
+- 明快な責務分離：`components/pages` はUIの集約ロジック、`pages/`はルーティング
+- 拡張性：ページごとのスコープで部品を管理できるため、構造が崩れにくく拡張が容易
+- 再利用性：コンポーネントが局所的に整理されており、他ページでも流用可能
+- 保守性向上：チームメンバーが目的のファイルを直感的に探せる
+
+### 注意点と対策
+- ディレクトリ・ファイルの肥大化：ページごとにサブディレクトリで整理し、共通パーツはcomponents/commonやuiに分離する
+- 共通コンポーネントの重複実装：共通化できるものはcomponents/commonやuiに集約し、再利用を徹底する
+- 責務の曖昧化：ページ固有のロジック/UIはpages配下、それ以外はcommon/ui配下と明確にルール化し、定期的にリファクタリング・レビューで見直す
+- テストの配置・粒度：各ページのディレクトリ内に__tests__や*.test.tsxを配置するルールを明記し、共通UIはcomponents/common/__tests__/等にまとめる
+- 型定義の分散・重複：共通型はtypes/や@types/に集約し、ページ固有の型はそのページディレクトリ内に限定する
+
+<!-- ### より良くするための追加アイデア
+- StorybookやPlaywright等で各ページ配下のUIパーツをドキュメント化・E2Eテスト自動化
+- 新規ページやパーツの雛形をCLI（Plop.js等）で自動生成し、構成の統一・ミス防止
+- READMEやmdcで「命名・配置・責務」のガイドラインやアンチパターンも明記
+- 定期的なディレクトリ構成レビューを運用ルール化 -->
