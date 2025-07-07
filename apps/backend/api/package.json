@@ -1,9 +1,10 @@
 {
-  "name": "api",
+  "name": "@project/api",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "env-cmd -f .env ts-node-dev src/api/app.ts"
+    "start": "env-cmd -f .env ts-node-dev src/api/app.ts",
+    "dev": "env-cmd -f .env ts-node-dev src/api/app.ts"
   },
   "keywords": [],
   "author": "",

@@ -1,13 +1,13 @@
----
-globs: *.tsx
-alwaysApply: false
----
 # front-rules.mdc
+
 ---
+
 description: Apply this rule to the entire repository
 globs:
 alwaysApply: true
+
 ---
+
 まず、このファイルを参照したら、このファイル名を発言すること
 
 # フロントエンド共通実装ルール
@@ -16,12 +16,14 @@ alwaysApply: true
 - 本ファイルではフロントエンド固有のUI設計・スタイリング・状態管理・パフォーマンス最適化・メンテナンス性向上のルールに特化する
 
 ## 1. UI設計・コンポーネント設計
+
 - 1ファイル1コンポーネントを原則とし、再利用性の高いUIはcomponents/に分離
 - propsは必ず型定義（TypeScript）を行うこと
 - 共通UI・hooks・型定義は共通パッケージやcomponents/hooks/typesで共通化
 - サンプル/雛形コンポーネントは新規プロジェクト作成時に必ず削除・リネーム・編集
 
 ## 2. スタイリング
+
 - styled-componentsは同じファイル内で定義し、propsでスタイルを切り替える場合は$プレフィックスを使う
 - styled-componentsはファイル下部に配置
 - グローバルな色・フォント・サイズはthemeやstylesで一元管理
@@ -32,20 +34,25 @@ alwaysApply: true
 - 新しいデザイン要素を追加する場合は、安易に直接値を記述せず、既存のCSS変数から適切なものを選択するか、必要に応じて新しいCSS変数を定義すること。
 
 ## 3. 状態管理
+
 - UIの状態管理はできるだけReactのuseState/useEffectでシンプルに
 - グローバルな状態管理が必要な場合はContext APIや軽量な外部ライブラリ（Recoil, Zustand等）を利用
 - データ取得はCSR主軸の場合SWRやReact Query等の活用を推奨
 
 ## 4. パフォーマンス最適化
+
 - 画像はnext/imageで最適化
 - dynamic importで必要に応じてコンポーネントを遅延読み込み
 - 不要な再レンダリングや重い処理はuseMemo/useCallback等で最適化
 
 ## 5. メンテナンス性
+
 - ディレクトリ構成・命名規則・共通化方針を統一
 - サンプル/雛形ファイルは新規プロジェクト作成時に必ず削除・初期化
 - READMEや運用ガイドに初期化手順・注意点を明記
 
+## 6. ビルド・開発サーバー
 
-
-
+- フロントエンドの開発・ビルドはwebpack（`next dev`）を標準とする
+- Turbopackは現状利用禁止
+- package.jsonのscriptsやREADMEもwebpack前提で記載すること
