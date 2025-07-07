@@ -1,6 +1,5 @@
 ---
-description:
-globs: src/pages/**/*.tsx,src/components/**/*.tsx,*.tsx
+globs: *.tsx
 alwaysApply: false
 ---
 # nextjs-rules.mdc

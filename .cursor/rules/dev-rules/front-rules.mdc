@@ -1,5 +1,4 @@
 ---
-description:
 globs: *.tsx
 alwaysApply: false
 ---
@@ -27,6 +26,10 @@ alwaysApply: true
 - styled-componentsはファイル下部に配置
 - グローバルな色・フォント・サイズはthemeやstylesで一元管理
 - レスポンシブ対応は必須。@mediaでモバイルファーストに設計
+- デザインの統一性を保つため、色、フォントサイズ、余白、border-radiusなどのデザイン要素はCSS変数（カスタムプロパティ）を用いて一元管理すること。
+- CSS変数は:rootセレクタまたは共通のテーマファイル（例: src/styles/variables.cssなど）で定義し、プロジェクト全体で参照可能にすること。
+- styled-components内や通常のCSSファイルでこれらのCSS変数を積極的に利用すること。
+- 新しいデザイン要素を追加する場合は、安易に直接値を記述せず、既存のCSS変数から適切なものを選択するか、必要に応じて新しいCSS変数を定義すること。
 
 ## 3. 状態管理
 - UIの状態管理はできるだけReactのuseState/useEffectでシンプルに
@@ -43,59 +46,6 @@ alwaysApply: true
 - サンプル/雛形ファイルは新規プロジェクト作成時に必ず削除・初期化
 - READMEや運用ガイドに初期化手順・注意点を明記
 
-# Next.js ベストプラクティス実装ルール
-
-## 1. ディレクトリ・ファイル構成
-- ページは`src/pages`、再利用UIは`src/components`、スタイルは`src/styles`、画像は`public/`に配置
-- 1ファイル1コンポーネントを原則とする
-- ファイル名・ディレクトリ名はケバブケース（例：`my-component`）
-
-## 2. 命名規則
-- 基本はケバブケース（例：my-component-name）
-- コンポーネント名はパスカルケース（例：MyComponent）
-- 変数名・props名はキャメルケース（例：myVariable, isActive）
-
-## 3. コーディングスタイル
-- セミコロン必須
-- インデントはスペース2つ
-- 1行の長さは最大120文字
-- 不要なimportや未使用変数は残さない
-- コメントは日本語で簡潔に
-
-## 4. コンポーネント設計
-- ページ単位は`pages`、小さな部品や再利用UIは`components`に分離
-- propsは型定義（TypeScript）を必須とする
-- styled-componentsは同じファイル内で定義し、propsでスタイルを切り替える場合は`$`プレフィックスを使う
--styled-componentsは下部に配置すること
-
-## 5. styled-componentsのルール
-- DOMに渡るpropsには必ず`$`プレフィックスを付ける（例：`$isActive`）
-- グローバルな色・フォント・サイズは`theme`や`styles`で一元管理
-- レスポンシブ対応は必須。`@media`でモバイルファーストに設計
-
-## 6. その他
-- 画像やSVGは`public/`配下に置き、パスは`/images/xxx.png`のように絶対パスで指定
-- UIの状態管理はできるだけReactのuseState/useEffectでシンプルに
-- Lint（ESLint）とFormatter（Prettier）は必ず導入し、CIでもチェック
-
-## 6. アクセシビリティ
-- すべてのUIコンポーネントはalt属性・aria属性・キーボード操作対応を必須とする
-- Lighthouseやaxe-core等で定期的にa11yチェックを実施
-
-## 7. テスト
-- 重要なUI・ロジックは必ずテストコード（Jest, Testing Library等）を用意し、CIで自動実行
-- E2Eテスト（Playwright, Cypress等）も必要に応じて導入
-
-## 8. パフォーマンス
-- 画像・フォント・サードパーティスクリプトは遅延読み込みを推奨
-- 不要な再レンダリングや重い処理はuseMemo/useCallback等で最適化
-
-## 9. ログ・エラーハンドリング
-- 重大なエラーはSentry等の外部サービスで監視
-- ユーザーには分かりやすいエラー通知、開発者向けには詳細ログを残す
-
-## 10. 国際化（i18n）
-- 多言語対応が必要な場合はi18nの方針・実装ルールを明記
 
 
 
