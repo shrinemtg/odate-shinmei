@@ -7,6 +7,7 @@ import NenchuSection from '../sections/NenchuSection'
 import AccessSection from '../sections/AccessSection'
 import ContactSection from '../sections/ContactSection'
 import FooterSection from '../sections/FooterSection'
+import MenuBar from '../MenuBar'
 
 const leftCloud = { src: '/top-motion/hidari-4-kumo.png', width: 900, height: 350, zIndex: 12, top: 480, left: -250 }
 const rightCloud = { src: '/top-motion/migi-1-kumo.png', width: 1100, height: 500, zIndex: 12, top: -180, right: -150 }
@@ -20,6 +21,7 @@ export const Home = () => {
   const [muted, setMuted] = useState(true) // 最初はミュート
   const videoRef = useRef<HTMLVideoElement>(null)
   const fadeDuration = 2000 // ms
+  const [showMenuBar, setShowMenuBar] = useState(false)
 
   // IntroAnimation終了後にクロスフェード開始
   const handleIntroEnd = () => {
@@ -62,6 +64,21 @@ export const Home = () => {
       videoRef.current.muted = !muted
     }
   }
+
+  useEffect(() => {
+    const handleScroll = () => {
+      // 100vhを超えたらMenuBarを表示
+      if (window.scrollY > window.innerHeight - 10) {
+        setShowMenuBar(true)
+      } else {
+        setShowMenuBar(false)
+      }
+    }
+    window.addEventListener('scroll', handleScroll)
+    // 初期表示時も判定
+    handleScroll()
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
 
   // 動画・雲の共通表示部分
   const VideoAndClouds = (
@@ -141,6 +158,7 @@ export const Home = () => {
 
   return (
     <>
+      {showMenuBar && <MenuBar />}
       {/* イントロアニメーション */}
       {introVisible && <IntroAnimation onIntroEnd={handleIntroEnd} />}
       {/* ロゴと動画のクロスフェード＋雲 */}

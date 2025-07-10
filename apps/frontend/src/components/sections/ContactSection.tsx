@@ -1,54 +1,74 @@
-// import React from 'react'
+import styled from '@emotion/styled'
+
+const Wrapper = styled.div`
+  width: 100%;
+  max-width: 520px;
+  margin: 64px auto;
+  border-radius: 0;
+  box-shadow: none;
+  padding: 0;
+  text-align: center;
+  font-family: serif;
+  color: #7c6b4f;
+`
+
+const Title = styled.div`
+  font-size: 1.7rem;
+  font-weight: 500;
+  margin-bottom: 18px;
+  letter-spacing: 0.08em;
+`
+
+const SubText = styled.div`
+  font-size: 1.08rem;
+  margin-bottom: 8px;
+`
+
+const ContactButton = styled.a`
+  display: inline-block;
+  background: #8c3a2b;
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  padding: 12px 36px;
+  font-size: 1.25rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  font-family: serif;
+  margin: 18px 0 18px 0;
+  text-decoration: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: background 0.2s;
+`
+
+const Info = styled.div`
+  margin-top: 12px;
+  font-size: 1.08rem;
+  line-height: 2;
+`
+
+const PhoneIcon = styled.span`
+  font-size: 1.2rem;
+  margin-right: 6px;
+`
 
 const ContactSection = () => (
-  <div
-    style={{
-      width: '100%',
-      maxWidth: 520,
-      margin: '64px auto',
-      borderRadius: 0,
-      boxShadow: 'none',
-      padding: '0',
-      textAlign: 'center',
-      fontFamily: 'serif',
-      color: '#7c6b4f',
-    }}
-  >
-    <div style={{ fontSize: '1.7rem', fontWeight: 500, marginBottom: 18, letterSpacing: '0.08em' }}>大館神明社</div>
-    <div style={{ fontSize: '1.08rem', marginBottom: 8 }}>
+  <Wrapper>
+    <Title>大館神明社</Title>
+    <SubText>
       御用の際は、お気軽にご連絡ください。
       <br />
       営業時間 午前9時～午後18時
-    </div>
-    <a
-      href='#contact'
-      style={{
-        display: 'inline-block',
-        background: '#8C3A2B',
-        color: '#fff',
-        border: 'none',
-        borderRadius: 20,
-        padding: '12px 36px',
-        fontSize: '1.25rem',
-        fontWeight: 500,
-        letterSpacing: '0.1em',
-        fontFamily: 'serif',
-        margin: '18px 0 18px 0',
-        textDecoration: 'none',
-        boxShadow: '0 2px 8px rgba(0,0,0,0.08)',
-        transition: 'background 0.2s',
-      }}
-    >
-      お問い合わせフォーム
-    </a>
-    <div style={{ marginTop: 12, fontSize: '1.08rem', lineHeight: 2 }}>
-      <span style={{ fontSize: '1.2rem', marginRight: 6 }}>☎</span> 0816-42-0846
+    </SubText>
+    <ContactButton href='#contact'>お問い合わせフォーム</ContactButton>
+    <Info>
+      <PhoneIcon>☎</PhoneIcon> 0816-42-0846
       <br />
       〒017-0867
       <br />
       秋田県大館市中神明町1-5
-    </div>
-  </div>
+    </Info>
+  </Wrapper>
 )
 
 export default ContactSection

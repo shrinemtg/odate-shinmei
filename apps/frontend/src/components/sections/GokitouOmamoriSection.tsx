@@ -1,269 +1,244 @@
 import Image from 'next/image'
+import styled from '@emotion/styled'
 
 const GokitouOmamoriSection = () => (
-  <>
-    <div style={{ margin: '64px 0' }}>
-      {/* --- 御祈祷セクション --- */}
-      <section
-        style={{
-          width: '100vw',
-          background: 'url(/top-motion/haikei.png) center center / cover no-repeat',
-          padding: '56px 0',
-          display: 'flex',
-          justifyContent: 'center',
-        }}
-      >
-        <div
-          style={{
-            display: 'flex',
-            flexDirection: 'row',
-            alignItems: 'stretch',
-            maxWidth: 1100,
-            width: '100%',
-            borderRadius: 32,
-            overflow: 'hidden',
-            boxShadow: '0 2px 16px rgba(0,0,0,0.06)',
-            background: '#fff',
-            minHeight: 320,
-          }}
-        >
-          {/* 左カラム：背景画像＋gokitou-01画像 */}
-          <div
-            style={{
-              flex: 1.6, // 横幅を広げる
-              minWidth: 0,
-              position: 'relative',
-              background: 'url(/backsozai/gokitou-haikei) center center / cover no-repeat',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              height: 450,
-            }}
-          >
-            <img
-              src='/backsozai/gokitou-01.png'
-              alt='祈祷イメージ'
-              style={{ width: '100%', height: '100%', objectFit: 'cover', border: 'none', borderRadius: 0 }}
+  <Wrapper>
+    {/* --- 御祈祷セクション --- */}
+    <Section>
+      <Card>
+        <LeftCol>
+          <LeftImage src='/backsozai/gokitou-01.png' alt='祈祷イメージ' />
+        </LeftCol>
+        <RightCol>
+          <Row>
+            <VerticalTitle>御祈祷</VerticalTitle>
+            <Description>
+              大館神明社では
+              <br />
+              さまざまな御祈祷に対応しております。
+              <br />
+              日々の感謝や心の平安を求めるご祈祷、
+              <br />
+              どうぞお気軽にお越しください。
+            </Description>
+          </Row>
+          <CatImageBox>
+            <Image
+              src='/neko/neko02.png'
+              alt='祈祷猫'
+              width={220}
+              height={260}
+              style={{ width: '100%', height: 'auto', display: 'block' }}
+              priority
             />
-          </div>
-          {/* 右カラム：赤背景＋縦書きテキスト＋猫イラスト＋ボタン */}
-          <div
-            style={{
-              flex: 1,
-              minWidth: 0,
-              background: '#8C3A2B',
-              color: '#fff',
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'center',
-              justifyContent: 'center',
-              padding: '40px 32px',
-              position: 'relative',
-              minHeight: 320,
-              overflow: 'visible',
-            }}
-          >
-            <div
-              style={{
-                display: 'flex',
-                flexDirection: 'row',
-                alignItems: 'flex-start',
-                width: '100%',
-                justifyContent: 'center',
-                gap: 24,
-              }}
-            >
-              {/* 縦書き「御祈祷」 */}
-              <div
-                style={{
-                  writingMode: 'vertical-rl',
-                  fontSize: '2.5rem',
-                  fontWeight: 600,
-                  letterSpacing: '0.2em',
-                  fontFamily: 'serif',
-                  color: '#fff',
-                  lineHeight: 1.1,
-                  marginRight: 8,
-                }}
-              >
-                御祈祷
-              </div>
-              {/* 説明文 */}
-              <div
-                style={{
-                  fontSize: '1.05rem',
-                  fontFamily: 'serif',
-                  color: '#fff',
-                  lineHeight: 2,
-                  maxWidth: 260,
-                  marginTop: 8,
-                }}
-              >
-                大館神明社では
-                <br />
-                さまざまな御祈祷に対応しております。
-                <br />
-                日々の感謝や心の平安を求めるご祈祷、
-                <br />
-                どうぞお気軽にお越しください。
-              </div>
-            </div>
-            {/* neko02.pngをgokitou-01と重なるように左側にはみ出すabsolute配置 */}
-            <div style={{ position: 'absolute', right: '350px', bottom: -50, width: 220, height: 260, zIndex: 3 }}>
-              <Image
-                src='/neko/neko02.png'
-                alt='祈祷猫'
-                width={220}
-                height={260}
-                style={{ width: '100%', height: 'auto', display: 'block' }}
-                priority
-              />
-            </div>
-            <button
-              style={{
-                position: 'absolute',
-                right: 24,
-                bottom: 24,
-                background: 'transparent',
-                color: '#fff',
-                border: '1.5px solid #fff',
-                borderRadius: '20px',
-                padding: '10px 32px',
-                fontSize: '1.1rem',
-                fontWeight: 400,
-                letterSpacing: '0.1em',
-                fontFamily: 'serif',
-                cursor: 'pointer',
-                boxShadow: '0 2px 8px rgba(0,0,0,0.08)',
-                transition: 'background 0.2s',
-              }}
-            >
-              詳しく見る
-            </button>
-          </div>
-        </div>
-      </section>
-      {/* --- お守りセクション --- */}
-      <section
-        style={{
-          width: '100vw',
-          background: 'url(/top-motion/haikei.png) center center / cover no-repeat',
-          padding: '56px 0',
-          display: 'flex',
-          justifyContent: 'center',
-        }}
-      >
-        <div
-          style={{
-            display: 'flex',
-            flexDirection: 'row',
-            alignItems: 'stretch',
-            maxWidth: 1100,
-            width: '100%',
-            borderRadius: 32,
-            overflow: 'hidden',
-            boxShadow: '0 2px 16px rgba(0,0,0,0.06)',
-            background: '#fff',
-            minHeight: 320,
-          }}
-        >
-          {/* 左カラム：赤背景＋縦書きテキスト＋ボタン */}
-          <div
-            style={{
-              flex: 1,
-              minWidth: 0,
-              background: '#8C3A2B',
-              color: '#fff',
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'center',
-              justifyContent: 'center',
-              padding: '40px 32px',
-              position: 'relative',
-              minHeight: 320,
-              overflow: 'visible',
-            }}
-          >
-            <div
-              style={{
-                display: 'flex',
-                flexDirection: 'row',
-                alignItems: 'flex-start',
-                width: '100%',
-                justifyContent: 'center',
-                gap: 24,
-              }}
-            >
-              {/* 縦書き「お守り」 */}
-              <div
-                style={{
-                  writingMode: 'vertical-rl',
-                  fontSize: '2.5rem',
-                  fontWeight: 600,
-                  letterSpacing: '0.2em',
-                  fontFamily: 'serif',
-                  color: '#fff',
-                  lineHeight: 1.1,
-                  marginRight: 8,
-                }}
-              >
-                お守り
-              </div>
-              {/* 説明文 */}
-              <div
-                style={{
-                  fontSize: '1.05rem',
-                  fontFamily: 'serif',
-                  color: '#fff',
-                  lineHeight: 2,
-                  maxWidth: 260,
-                  marginTop: 8,
-                }}
-              >
-                大館神明社では、古くから地域の人々の願いに寄り添い、
-                <br />
-                さまざまなご利益を授けるお守りや授与品をご用意しております。
-              </div>
-            </div>
-            {/* ボタン */}
-            <div style={{ width: '100%', display: 'flex', justifyContent: 'center', marginTop: 32 }}>
-              <button
-                style={{
-                  background: 'transparent',
-                  color: '#fff',
-                  border: '1.5px solid #fff',
-                  borderRadius: '20px',
-                  padding: '10px 32px',
-                  fontSize: '1.1rem',
-                  fontWeight: 400,
-                  letterSpacing: '0.1em',
-                  fontFamily: 'serif',
-                  cursor: 'pointer',
-                  boxShadow: '0 2px 8px rgba(0,0,0,0.08)',
-                  transition: 'background 0.2s',
-                }}
-              >
-                詳しく見る
-              </button>
-            </div>
-          </div>
-          {/* 右カラム：背景画像 */}
-          <div
-            style={{
-              flex: 1.6,
-              minWidth: 0,
-              position: 'relative',
-              background: 'url(/backsozai/omamori02.png) center center / cover no-repeat',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              height: 420,
-            }}
-          ></div>
-        </div>
-      </section>
-    </div>
-  </>
+          </CatImageBox>
+          <DetailButton>詳しく見る</DetailButton>
+        </RightCol>
+      </Card>
+    </Section>
+    {/* --- お守りセクション --- */}
+    <Section>
+      <CardRed>
+        <LeftColRed>
+          <RowRed>
+            <VerticalTitleRed>お守り</VerticalTitleRed>
+            <DescriptionRed>
+              大館神明社では、古くから地域の人々の願いに寄り添い、
+              <br />
+              さまざまなご利益を授けるお守りや授与品をご用意しております。
+            </DescriptionRed>
+          </RowRed>
+          <OmamoriButton>詳しく見る</OmamoriButton>
+        </LeftColRed>
+        <RightColWhite>
+          <RightImage src='/backsozai/omamori01.png' alt='お守りイメージ' />
+        </RightColWhite>
+      </CardRed>
+    </Section>
+  </Wrapper>
 )
 
 export default GokitouOmamoriSection
+
+// ================= styled-components =================
+const Wrapper = styled.div`
+  margin: 64px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`
+
+const Section = styled.section`
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 56px 0;
+  background: url(/top-motion/haikei.png) center center / cover no-repeat;
+`
+
+const Card = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  max-width: 900px;
+  width: 100%;
+  border-radius: 32px;
+  overflow: hidden;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.06);
+  background: #fff;
+  min-height: 320px;
+`
+
+const LeftCol = styled.div`
+  flex: 1.6;
+  min-width: 0;
+  position: relative;
+  background: url(/backsozai/gokitou-haikei) center center / cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 450px;
+`
+
+const LeftImage = styled.img`
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: none;
+  border-radius: 0;
+`
+
+const RightCol = styled.div`
+  flex: 1;
+  min-width: 0;
+  background: #8c3a2b;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 32px;
+  position: relative;
+  min-height: 320px;
+  overflow: visible;
+`
+
+const Row = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  width: 100%;
+  justify-content: center;
+  gap: 24px;
+`
+
+const VerticalTitle = styled.div`
+  writing-mode: vertical-rl;
+  font-size: 2.5rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  font-family: serif;
+  color: #fff;
+  line-height: 1.1;
+  margin-right: 8px;
+`
+
+const Description = styled.div`
+  font-size: 1.05rem;
+  font-family: serif;
+  color: #fff;
+  line-height: 2;
+  max-width: 260px;
+  margin-top: 8px;
+`
+
+const CatImageBox = styled.div`
+  position: absolute;
+  right: 260px;
+  bottom: -50px;
+  width: 220px;
+  height: 260px;
+  z-index: 3;
+`
+
+const DetailButton = styled.button`
+  position: absolute;
+  right: 24px;
+  bottom: 24px;
+  background: transparent;
+  color: #fff;
+  border: 1.5px solid #fff;
+  border-radius: 20px;
+  padding: 10px 32px;
+  font-size: 1.1rem;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  font-family: serif;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: background 0.2s;
+`
+
+// お守りセクション用
+const CardRed = styled(Card)`
+  background: #fff;
+`
+
+const LeftColRed = styled.div`
+  flex: 1;
+  min-width: 0;
+  background: #8c3a2b;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 32px;
+  position: relative;
+  min-height: 320px;
+  overflow: visible;
+`
+
+const RowRed = styled(Row)``
+
+const VerticalTitleRed = styled(VerticalTitle)``
+
+const DescriptionRed = styled(Description)``
+
+const RightColWhite = styled.div`
+  flex: 1.6;
+  min-width: 0;
+  position: relative;
+  background: url(/backsozai/gokitou-haikei) center center / cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 450px;
+`
+
+const RightImage = styled.img`
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: none;
+  border-radius: 0;
+`
+
+const OmamoriButton = styled.button`
+  position: absolute;
+  left: 24px;
+  bottom: 24px;
+  background: transparent;
+  color: #8c3a2b;
+  border: 1.5px solid #8c3a2b;
+  border-radius: 20px;
+  padding: 10px 32px;
+  font-size: 1.1rem;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  font-family: serif;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: background 0.2s;
+`
