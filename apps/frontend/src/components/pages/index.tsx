@@ -9,8 +9,24 @@ import ContactSection from '../sections/ContactSection'
 import FooterSection from '../sections/FooterSection'
 import MenuBar from '../MenuBar'
 
-const leftCloud = { src: '/top-motion/hidari-4-kumo.png', width: 900, height: 350, zIndex: 12, top: 480, left: -250 }
-const rightCloud = { src: '/top-motion/migi-1-kumo.png', width: 1100, height: 500, zIndex: 12, top: -180, right: -150 }
+const leftCloud = {
+  src: '/top-motion/hidari-4-kumo.png',
+  width: 900,
+  height: 350,
+  zIndex: 12,
+  top: 480,
+  left: -250,
+  x: -80,
+}
+const rightCloud = {
+  src: '/top-motion/migi-1-kumo.png',
+  width: 1100,
+  height: 500,
+  zIndex: 12,
+  top: -180,
+  right: -150,
+  x: 80,
+}
 const logoImage = { src: '/top-motion/montuki-rogo.png', width: 200, height: 300 }
 
 export const Home = () => {
@@ -135,6 +151,7 @@ export const Home = () => {
           height: leftCloud.height,
           zIndex: leftCloud.zIndex,
           pointerEvents: 'none',
+          transform: `translateX(${leftCloud.x}px)`,
         }}
       >
         <Image src={leftCloud.src} alt='left cloud' layout='fill' objectFit='contain' priority />
@@ -149,6 +166,7 @@ export const Home = () => {
           height: rightCloud.height,
           zIndex: rightCloud.zIndex,
           pointerEvents: 'none',
+          transform: `translateX(${rightCloud.x}px)`,
         }}
       >
         <Image src={rightCloud.src} alt='right cloud' layout='fill' objectFit='contain' priority />

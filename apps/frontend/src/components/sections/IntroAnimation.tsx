@@ -18,7 +18,7 @@ const rightClouds = [
 ]
 const haikeiImage = '/top-motion/haikei.png'
 const logoImage = { src: '/top-motion/montuki-rogo.png', width: 200, height: 300 }
-const textImage = { src: '/top-motion/midasimoji.png', width: 120, height: 600 }
+const textImage = { src: '/top-motion/midasimoji.png', width: 80, height: 400 }
 
 type AnimationPhase = 'clouds' | 'text' | 'logo' | 'end'
 
@@ -34,9 +34,12 @@ const IntroAnimation: React.FC<IntroAnimationProps> = ({ onIntroEnd }) => {
   // 雲アニメーション終了後にテキスト表示へ遷移
   useEffect(() => {
     if (phase === 'clouds') {
-      const timer = setTimeout(() => {
-        setPhase('text')
-      }, cloudAnimationDuration * 1000)
+      const timer = setTimeout(
+        () => {
+          setPhase('text')
+        },
+        cloudAnimationDuration * 1000 * 0.6, // 60%時点でテキスト表示へ遷移
+      )
       return () => clearTimeout(timer)
     }
     return undefined
