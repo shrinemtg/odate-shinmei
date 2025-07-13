@@ -1,0 +1,18 @@
+:root {
+  --color-shuiro: #993a37;
+  --color-oud: #d8cbab;
+  --color-white: #fefefe;
+  --color-brown: #927a3b;
+  --color-gray: #605856;
+
+  /* --- フォントサイズの拡張案 (体系的スケール) --- */
+  --font-size-xs: 0.75rem; /* 12px相当 */
+  --font-size-sm: 0.875rem; /* 14px相当 */
+  --font-size-base: 1rem; /* 16px相当 (基準) */
+  --font-size-lg: 1.125rem; /* 18px相当 */
+  --font-size-xl: 1.25rem; /* 20px相当 */
+  --font-size-2xl: 1.5rem; /* 24px相当 */
+  --font-size-3xl: 1.875rem; /* 30px相当 */
+  --font-size-4xl: 2.25rem; /* 36px相当 */
+  --font-size-5xl: 3rem; /* 48px相当 */
+}

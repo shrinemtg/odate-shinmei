@@ -14,10 +14,10 @@ const Root = styled.nav`
   position: fixed;
   top: 0;
   left: 0;
-  width: 160px;
-  height: 540px;
-  background: #98443d;
-  color: #fff;
+  width: 120px;
+  height: 480px;
+  background: var(--color-shuiro);
+  color: var(--color-white);
   border-radius: 8px;
   display: flex;
   flex-direction: column;
@@ -31,8 +31,7 @@ const Header = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 20px;
-  margin-bottom: 24px;
+  margin-bottom: 120px;
 `
 
 const List = styled.ul`
@@ -49,9 +48,9 @@ const Item = styled.li`
 `
 
 const Link = styled.a`
-  color: #fff;
+  color: var(--color-white);
   text-decoration: none;
-  font-size: 1rem;
+  font-size: var(--font-size-sm);
   transition: opacity 0.2s;
   &:hover {
     opacity: 0.7;
@@ -65,8 +64,8 @@ const MenuBar: React.FC = () => {
         <Image
           src='/top-motion/montuki-rogo.png'
           alt='montuki rogo'
-          width={160}
-          height={140}
+          width={130}
+          height={130}
           style={{ filter: 'brightness(0) invert(1)' }}
         />
       </Header>
