@@ -53,10 +53,12 @@ export const Home = () => {
       if (progress < 1) {
         requestAnimationFrame(animate)
       } else {
+        setFade(1)
+        setMainVisible(true)
+        // 1.2s（transition duration）+ 100msだけロゴのDOMをopacity:0のまま残す
         setTimeout(() => {
           setCrossFadeVisible(false)
-          setMainVisible(true)
-        }, 100)
+        }, 500)
       }
     }
     requestAnimationFrame(animate)
@@ -96,7 +98,7 @@ export const Home = () => {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  // 動画・雲の共通表示部分
+  // 動画・雲の共通表示部分（常時マウント、opacityは常に1）
   const VideoAndClouds = (
     <>
       {/* 動画 */}
@@ -116,8 +118,8 @@ export const Home = () => {
           position: 'absolute',
           top: 0,
           left: 0,
-          opacity: crossFadeVisible ? fade : 1,
-          transition: 'opacity 0.2s linear',
+          opacity: 1, // 常に表示
+          transition: 'opacity 1.2s cubic-bezier(0.4,0,0.2,1)',
           zIndex: 10,
         }}
       />
@@ -177,9 +179,11 @@ export const Home = () => {
   return (
     <>
       {showMenuBar && <MenuBar />}
+      {/* 動画・雲は常時マウント（opacityは常に1） */}
+      {VideoAndClouds}
       {/* イントロアニメーション */}
       {introVisible && <IntroAnimation onIntroEnd={handleIntroEnd} />}
-      {/* ロゴと動画のクロスフェード＋雲 */}
+      {/* ロゴのクロスフェード（ロゴのみ絶対配置で重ねる、動画は常に1回だけ） */}
       {crossFadeVisible && (
         <div
           style={{
@@ -189,11 +193,10 @@ export const Home = () => {
             width: '100vw',
             height: '100vh',
             zIndex: 9998,
-            background: 'black',
             pointerEvents: 'none',
+            background: 'transparent',
           }}
         >
-          {VideoAndClouds}
           {/* ロゴ */}
           <div
             style={{
@@ -203,8 +206,9 @@ export const Home = () => {
               transform: 'translate(-50%, -50%)',
               zIndex: 11,
               opacity: 1 - fade,
-              transition: 'opacity 0.2s linear',
+              transition: 'opacity 1.2s cubic-bezier(0.4,0,0.2,1)',
               pointerEvents: 'none',
+              background: 'transparent',
             }}
           >
             <Image src={logoImage.src} width={logoImage.width} height={logoImage.height} alt='logo' />
@@ -216,9 +220,8 @@ export const Home = () => {
         <>
           {/* 動画＋雲＋和紙セクションをラップする親div */}
           <div style={{ position: 'relative', width: '100vw', minHeight: '160vh', overflow: 'visible' }}>
-            {/* 動画＋雲の全画面セクション */}
+            {/* 動画＋雲の全画面セクション（VideoAndCloudsはグローバルで1回だけ描画済みなのでここでは描画しない） */}
             <div style={{ position: 'relative', width: '100vw', height: '100vh', overflow: 'hidden', zIndex: 10 }}>
-              {VideoAndClouds}
               <div style={{ position: 'relative', zIndex: 20 }}>
                 {/* ここにHeroSectionや他のメインコンテンツを配置 */}
               </div>
@@ -227,11 +230,11 @@ export const Home = () => {
             <div
               style={{
                 position: 'absolute',
-                left: 3,
-                top: 'calc(100vh - 150px)', // 境界にまたがるように調整
-                width: 600,
-                height: 320,
-                zIndex: 30,
+                left: -250,
+                top: 480,
+                width: 900,
+                height: 350,
+                zIndex: 5,
                 pointerEvents: 'none',
               }}
             >

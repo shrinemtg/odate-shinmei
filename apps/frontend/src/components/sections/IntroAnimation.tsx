@@ -38,7 +38,7 @@ const IntroAnimation: React.FC<IntroAnimationProps> = ({ onIntroEnd }) => {
         () => {
           setPhase('text')
         },
-        cloudAnimationDuration * 1000 * 0.6, // 60%時点でテキスト表示へ遷移
+        cloudAnimationDuration * 1000 * 0.5, // 60%時点でテキスト表示へ遷移
       )
       return () => clearTimeout(timer)
     }
@@ -50,7 +50,7 @@ const IntroAnimation: React.FC<IntroAnimationProps> = ({ onIntroEnd }) => {
     if (phase === 'text') {
       const timer = setTimeout(() => {
         setPhase('logo')
-      }, 2000)
+      }, 2500)
       return () => clearTimeout(timer)
     }
     return undefined
@@ -61,7 +61,7 @@ const IntroAnimation: React.FC<IntroAnimationProps> = ({ onIntroEnd }) => {
     if (phase === 'logo') {
       const timer = setTimeout(() => {
         setPhase('end')
-      }, 2000)
+      }, 2500)
       return () => clearTimeout(timer)
     }
     return undefined
@@ -93,18 +93,24 @@ const IntroAnimation: React.FC<IntroAnimationProps> = ({ onIntroEnd }) => {
           exit={{ opacity: 0, transition: { duration: 1.5 } }}
         >
           {/* --- 左側の雲 --- */}
-          {leftClouds.map((cloud) => {
+          {leftClouds.map((cloud, idx) => {
             const isPersistentCloud = cloud.src === '/top-motion/hidari-4-kumo.png'
-            if ((phase === 'logo' || phase === 'end') && !isPersistentCloud) return null
+            if (!isPersistentCloud && (phase === 'logo' || phase === 'end')) return null
+            // persistentな雲もinitial/animateで動きをつける
+            let animateProps
+            if (isPersistentCloud) {
+              animateProps = { x: -80, y: 0, opacity: 1 }
+            } else {
+              // 放射状に移動（角度をさらに強調）
+              const yOffsets = [-200, 200, 400]
+              animateProps = { x: '-100vw', y: yOffsets[idx] || 0, opacity: 0 }
+            }
             return (
               <motion.div
                 key={cloud.src}
                 style={{ position: 'absolute', ...cloud }}
-                initial={{ x: 0, opacity: 1 }}
-                animate={{
-                  x: isPersistentCloud ? -80 : '-100vw',
-                  opacity: isPersistentCloud ? 1 : 0,
-                }}
+                initial={{ x: 0, y: 0, opacity: 1 }}
+                animate={animateProps}
                 transition={{ duration: cloudAnimationDuration, ease: 'easeInOut' }}
               >
                 <Image src={cloud.src} alt='left cloud' layout='fill' objectFit='contain' priority />
@@ -113,18 +119,23 @@ const IntroAnimation: React.FC<IntroAnimationProps> = ({ onIntroEnd }) => {
           })}
 
           {/* --- 右側の雲 --- */}
-          {rightClouds.map((cloud) => {
+          {rightClouds.map((cloud, idx) => {
             const isPersistentCloud = cloud.src === '/top-motion/migi-1-kumo.png'
-            if ((phase === 'logo' || phase === 'end') && !isPersistentCloud) return null
+            if (!isPersistentCloud && (phase === 'logo' || phase === 'end')) return null
+            let animateProps
+            if (isPersistentCloud) {
+              animateProps = { x: 80, y: 0, opacity: 1 }
+            } else {
+              // 放射状に移動（角度をさらに強調）
+              const yOffsets = [200, 400, 600]
+              animateProps = { x: '100vw', y: yOffsets[idx - 1] || 0, opacity: 0 }
+            }
             return (
               <motion.div
                 key={cloud.src}
                 style={{ position: 'absolute', ...cloud }}
-                initial={{ x: 0, opacity: 1 }}
-                animate={{
-                  x: isPersistentCloud ? 80 : '100vw',
-                  opacity: isPersistentCloud ? 1 : 0,
-                }}
+                initial={{ x: 0, y: 0, opacity: 1 }}
+                animate={animateProps}
                 transition={{ duration: cloudAnimationDuration, ease: 'easeInOut' }}
               >
                 <Image src={cloud.src} alt='right cloud' layout='fill' objectFit='contain' priority />
@@ -137,8 +148,8 @@ const IntroAnimation: React.FC<IntroAnimationProps> = ({ onIntroEnd }) => {
             <motion.div
               key={centerCloud.src}
               style={{ position: 'absolute', ...centerCloud }}
-              initial={{ x: 0, opacity: 1 }}
-              animate={{ x: '100vw', opacity: 0 }}
+              initial={{ x: 0, y: 0, opacity: 1 }}
+              animate={{ x: '100vw', y: 0, opacity: 0 }}
               transition={{ duration: cloudAnimationDuration, ease: 'easeInOut', delay: 0.5 }}
             >
               <Image src={centerCloud.src} alt='cloud' layout='fill' objectFit='contain' priority />
@@ -157,33 +168,20 @@ const IntroAnimation: React.FC<IntroAnimationProps> = ({ onIntroEnd }) => {
               height: 'auto',
             }}
           >
-            <AnimatePresence mode='wait'>
-              {/* midasimoji.png の表示 */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 1.2, ease: 'easeInOut' }}
+              key={phase}
+            >
               {phase === 'text' && (
-                <motion.div
-                  key='text-image'
-                  initial={{ opacity: 0, y: 50 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -50 }}
-                  transition={{ duration: 1.5, ease: 'easeInOut' }}
-                >
-                  <Image src={textImage.src} width={textImage.width} height={textImage.height} alt='intro text' />
-                </motion.div>
+                <Image src={textImage.src} width={textImage.width} height={textImage.height} alt='intro text' />
               )}
-
-              {/* montuki-rogo.png の表示 */}
               {phase === 'logo' && (
-                <motion.div
-                  key='logo-image'
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 1.2 }}
-                  transition={{ duration: 2, ease: 'easeInOut' }}
-                >
-                  <Image src={logoImage.src} width={logoImage.width} height={logoImage.height} alt='logo' />
-                </motion.div>
+                <Image src={logoImage.src} width={logoImage.width} height={logoImage.height} alt='logo' />
               )}
-            </AnimatePresence>
+            </motion.div>
           </div>
         </motion.div>
       )}
