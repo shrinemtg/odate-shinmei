@@ -3,7 +3,7 @@ import React from 'react'
 import styled from '@emotion/styled'
 
 const menuItems = [
-  { label: '神社のご紹介', href: '#about' },
+  { label: '神社のご紹介', href: '/history' },
   { label: '御祈祷・ご参拝', href: '#prayer' },
   { label: 'お守り・授与品', href: '#omamori' },
   { label: '年中行事', href: '#events' },

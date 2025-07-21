@@ -26,8 +26,8 @@ const Container = styled.div`
 
 const Title = styled.div`
   writing-mode: vertical-rl;
-  font-size: 3rem;
-  color: #7c6b4f;
+  font-size: var(--font-size-5xl);
+  color: var(--color-brown);
   font-weight: 600;
   letter-spacing: 0.2em;
   font-family: serif;
@@ -40,7 +40,7 @@ const Title = styled.div`
 
 const MapArea = styled.div`
   flex: 1;
-  background: #e5dbc2;
+  background: var(--color-oud);
   border: 2px solid #2196f3;
   border-radius: 8px;
   padding: 32px 24px;
@@ -72,12 +72,12 @@ const ParkingImageBox = styled.div`
   overflow: hidden;
   flex-shrink: 0;
   border: 1.5px solid #bba77b;
-  background: #fff;
+  background: var(--color-white);
 `
 
 const ParkingText = styled.div`
-  color: #7c6b4f;
-  font-size: 1.1rem;
+  color: var(--color-brown);
+  font-size: var(--font-size-lg);
   font-family: serif;
   line-height: 2;
   margin-left: 8px;
@@ -86,7 +86,7 @@ const ParkingText = styled.div`
 
 const ParkingTitle = styled.div`
   font-weight: 600;
-  font-size: 1.15rem;
+  font-size: var(--font-size-lg);
   margin-bottom: 4px;
 `
 

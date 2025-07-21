@@ -112,8 +112,8 @@ const LeftImage = styled.img`
 const RightCol = styled.div`
   flex: 1;
   min-width: 0;
-  background: #8c3a2b;
-  color: #fff;
+  background: var(--color-shuiro);
+  color: var(--color-white);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -135,19 +135,19 @@ const Row = styled.div`
 
 const VerticalTitle = styled.div`
   writing-mode: vertical-rl;
-  font-size: 2.5rem;
+  font-size: var(--font-size-5xl);
   font-weight: 600;
   letter-spacing: 0.2em;
   font-family: serif;
-  color: #fff;
+  color: var(--color-white);
   line-height: 1.1;
   margin-right: 8px;
 `
 
 const Description = styled.div`
-  font-size: 1.05rem;
+  font-size: var(--font-size-lg);
   font-family: serif;
-  color: #fff;
+  color: var(--color-white);
   line-height: 2;
   max-width: 260px;
   margin-top: 8px;
@@ -167,11 +167,11 @@ const DetailButton = styled.button`
   right: 24px;
   bottom: 24px;
   background: transparent;
-  color: #fff;
-  border: 1.5px solid #fff;
+  color: var(--color-white);
+  border: 1.5px solid var(--color-white);
   border-radius: 20px;
   padding: 10px 32px;
-  font-size: 1.1rem;
+  font-size: var(--font-size-lg);
   font-weight: 400;
   letter-spacing: 0.1em;
   font-family: serif;
@@ -188,8 +188,8 @@ const CardRed = styled(Card)`
 const LeftColRed = styled.div`
   flex: 1;
   min-width: 0;
-  background: #8c3a2b;
-  color: #fff;
+  background: var(--color-shuiro);
+  color: var(--color-white);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -230,11 +230,11 @@ const OmamoriButton = styled.button`
   left: 24px;
   bottom: 24px;
   background: transparent;
-  color: #8c3a2b;
-  border: 1.5px solid #8c3a2b;
+  color: var(--color-shuiro);
+  border: 1.5px solid var(--color-shuiro);
   border-radius: 20px;
   padding: 10px 32px;
-  font-size: 1.1rem;
+  font-size: var(--font-size-lg);
   font-weight: 400;
   letter-spacing: 0.1em;
   font-family: serif;

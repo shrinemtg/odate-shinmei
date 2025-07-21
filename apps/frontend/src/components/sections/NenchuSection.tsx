@@ -81,8 +81,8 @@ const NenchuSection = () => (
       <div
         style={{
           writingMode: 'vertical-rl',
-          fontSize: '2.6rem',
-          color: '#fff',
+          fontSize: 'var(--font-size-5xl)',
+          color: 'var(--color-white)',
           fontWeight: 700,
           letterSpacing: '0.2em',
           fontFamily: 'serif',
@@ -97,8 +97,8 @@ const NenchuSection = () => (
       <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', minWidth: 220 }}>
         <div
           style={{
-            color: '#fff',
-            fontSize: '1.08rem',
+            color: 'var(--color-white)',
+            fontSize: 'var(--font-size-base)',
             fontFamily: 'serif',
             lineHeight: 2,
             marginBottom: 24,
@@ -113,11 +113,11 @@ const NenchuSection = () => (
         <button
           style={{
             background: 'transparent',
-            color: '#fff',
+            color: 'var(--color-white)',
             border: '1.5px solid #fff',
             borderRadius: '0',
             padding: '9px 18px',
-            fontSize: '1.1rem',
+            fontSize: 'var(--font-size-lg)',
             fontWeight: 400,
             letterSpacing: '0.1em',
             fontFamily: 'serif',

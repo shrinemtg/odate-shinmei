@@ -9,29 +9,29 @@ const Wrapper = styled.div`
   padding: 0;
   text-align: center;
   font-family: serif;
-  color: #7c6b4f;
+  color: var(--color-brown);
 `
 
 const Title = styled.div`
-  font-size: 1.7rem;
+  font-size: var(--font-size-xl);
   font-weight: 500;
   margin-bottom: 18px;
   letter-spacing: 0.08em;
 `
 
 const SubText = styled.div`
-  font-size: 1.08rem;
+  font-size: var(--font-size-base);
   margin-bottom: 8px;
 `
 
 const ContactButton = styled.a`
   display: inline-block;
-  background: #8c3a2b;
-  color: #fff;
+  background: var(--color-shuiro);
+  color: var(--color-white);
   border: none;
   border-radius: 20px;
   padding: 12px 36px;
-  font-size: 1.25rem;
+  font-size: var(--font-size-lg);
   font-weight: 500;
   letter-spacing: 0.1em;
   font-family: serif;
@@ -43,12 +43,12 @@ const ContactButton = styled.a`
 
 const Info = styled.div`
   margin-top: 12px;
-  font-size: 1.08rem;
+  font-size: var(--font-size-base);
   line-height: 2;
 `
 
 const PhoneIcon = styled.span`
-  font-size: 1.2rem;
+  font-size: var(--font-size-lg);
   margin-right: 6px;
 `
 

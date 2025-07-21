@@ -3,7 +3,7 @@ import styled from '@emotion/styled'
 
 const Footer = styled.footer`
   width: 100vw;
-  background: #dbcead;
+  background: var(--color-oud);
   position: relative;
   min-height: 120px;
   padding: 0;

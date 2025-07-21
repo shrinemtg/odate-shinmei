@@ -3,7 +3,7 @@ import styled from '@emotion/styled'
 
 const Section = styled.section`
   width: 100vw;
-  background: #e5dbc2;
+  background: var(--color-oud);
   border-top: 4px solid #ede7d7;
   border-bottom: 4px solid #ede7d7;
   padding: 64px 0 0 0;
@@ -12,7 +12,8 @@ const Section = styled.section`
 `
 
 const Container = styled.div`
-  max-width: 1100px;
+  max-width: 900px;
+  width: 100%;
   margin: 0 auto;
   display: flex;
   flex-direction: row;
@@ -33,19 +34,20 @@ const LeftCol = styled.div`
 
 const NoticeTitle = styled.div`
   writing-mode: vertical-rl;
-  font-size: 2.5rem;
-  color: #7c6b4f;
+  font-size: var(--font-size-5xl);
+  color: var(--color-gray);
   font-weight: 600;
   letter-spacing: 0.2em;
   font-family: serif;
   margin-bottom: 0;
   line-height: 1.1;
+  margin-left: 16px;
 `
 
 const CatImageBox = styled.div`
   position: absolute;
-  left: 25%;
-  top: 68%;
+  left: 30%;
+  top: 78%;
   transform: translate(-50%, -40%);
   width: 70px;
   height: 120px;
@@ -79,12 +81,12 @@ const NoticeItem = styled.div`
 `
 
 const NoticeButton = styled.button`
-  background: #8c3a2b;
-  color: #fff;
+  background: var(--color-shuiro);
+  color: var(--color-white);
   border: none;
   border-radius: 8px;
   padding: 4px 24px;
-  font-size: 1rem;
+  font-size: var(--font-size-base);
   font-weight: 500;
   font-family: serif;
   letter-spacing: 0.1em;
@@ -94,14 +96,14 @@ const NoticeButton = styled.button`
 `
 
 const NoticeDate = styled.span`
-  color: #7c6b4f;
-  font-size: 0.95rem;
+  color: var(--color-gray);
+  font-size: var(--font-size-base);
   min-width: 140px;
 `
 
 const NoticeText = styled.span`
-  color: #7c6b4f;
-  font-size: 1.05rem;
+  color: var(--color-gray);
+  font-size: var(--font-size-lg);
   flex: 1;
   text-align: left;
   white-space: nowrap;
@@ -110,9 +112,23 @@ const NoticeText = styled.span`
 `
 
 const NoticeArrow = styled.span`
-  color: #7c6b4f;
-  font-size: 1.5rem;
+  color: var(--color-gray);
+  font-size: var(--font-size-xl);
   margin-left: 8px;
+`
+
+const NoticeMore = styled.a`
+  display: inline-block;
+  color: var(--color-gray);
+  font-size: var(--font-size-base);
+  text-decoration: none;
+  border-bottom: 1.5px solid var(--color-gray);
+  margin-top: 24px;
+  margin-left: auto;
+  transition: opacity 0.2s;
+  &:hover {
+    opacity: 0.7;
+  }
 `
 
 const NoticeSection = () => (
@@ -144,6 +160,7 @@ const NoticeSection = () => (
             </NoticeItem>
           ))}
         </NoticeList>
+        <NoticeMore href='#'>お知らせ一覧</NoticeMore>
       </RightCol>
     </Container>
   </Section>
