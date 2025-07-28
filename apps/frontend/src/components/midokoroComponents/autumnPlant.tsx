@@ -36,7 +36,7 @@ const AutumnPlantContainer = styled.div`
   width: 100%;
   position: relative;
   overflow: visible;
-  margin-top: 24px;
+  margin-top: 80px;
 `
 
 const ContentWrapper = styled.div`

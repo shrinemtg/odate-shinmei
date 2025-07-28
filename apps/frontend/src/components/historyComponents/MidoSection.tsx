@@ -1,4 +1,5 @@
 import styled from '@emotion/styled'
+import { useRouter } from 'next/router'
 
 const images = [
   { src: '/his/his-02.png', alt: '花1' },
@@ -123,7 +124,7 @@ const ButtonArea = styled.div`
   width: 100%;
 `
 
-const SeeMoreButton = styled.button`
+const MidoButton = styled.button`
   background: var(--color-shuiro);
   color: var(--color-white);
   border: none;
@@ -140,40 +141,48 @@ const SeeMoreButton = styled.button`
   }
 `
 
-const MidokoroSection = () => (
-  <SectionWrapper>
-    <TitleArea>
-      <SubTitle>大館神明社の</SubTitle>
-      <MainTitle>見どころ</MainTitle>
-    </TitleArea>
-    <GridArea>
-      <ImageBox>
-        <img src={images[0].src} alt={images[0].alt} />
-      </ImageBox>
-      <ImageBox>
-        <img src={images[1].src} alt={images[1].alt} />
-      </ImageBox>
-      <ImageBox>
-        <img src={images[2].src} alt={images[2].alt} />
-      </ImageBox>
-      <ImageBox>
-        <img src={images[3].src} alt={images[3].alt} />
-      </ImageBox>
-    </GridArea>
-    <DescriptionArea>
-      <DescriptionColumn>
-        <DescriptionText>
-          大館神明社には、訪れる人々の心を惹きつける見どころがいくつもあります。 中でも、社殿正面に掲げられた大絵馬は、
-          地域の歴史と文化を感じさせる象徴的な存在です。 また、境内を彩る四季折々の観葉植物も、
-          自然の美しさを楽しむことができる魅力の一つです。
-          大館神明社を訪れた際には、ぜひこれらの見どころをお楽しみください。
-        </DescriptionText>
-        <ButtonArea>
-          <SeeMoreButton>大館神明社の見どころを見る</SeeMoreButton>
-        </ButtonArea>
-      </DescriptionColumn>
-    </DescriptionArea>
-  </SectionWrapper>
-)
+const MidokoroSection = () => {
+  const router = useRouter()
+
+  const handleMidoButtonClick = () => {
+    router.push('/midokoro')
+  }
+
+  return (
+    <SectionWrapper>
+      <TitleArea>
+        <SubTitle>大館神明社の</SubTitle>
+        <MainTitle>見どころ</MainTitle>
+      </TitleArea>
+      <GridArea>
+        <ImageBox>
+          <img src={images[0].src} alt={images[0].alt} />
+        </ImageBox>
+        <ImageBox>
+          <img src={images[1].src} alt={images[1].alt} />
+        </ImageBox>
+        <ImageBox>
+          <img src={images[2].src} alt={images[2].alt} />
+        </ImageBox>
+        <ImageBox>
+          <img src={images[3].src} alt={images[3].alt} />
+        </ImageBox>
+      </GridArea>
+      <DescriptionArea>
+        <DescriptionColumn>
+          <DescriptionText>
+            大館神明社には、訪れる人々の心を惹きつける見どころがいくつもあります。
+            中でも、社殿正面に掲げられた大絵馬は、 地域の歴史と文化を感じさせる象徴的な存在です。
+            また、境内を彩る四季折々の観葉植物も、 自然の美しさを楽しむことができる魅力の一つです。
+            大館神明社を訪れた際には、ぜひこれらの見どころをお楽しみください。
+          </DescriptionText>
+          <ButtonArea>
+            <MidoButton onClick={handleMidoButtonClick}>大館神明社の見どころを見る</MidoButton>
+          </ButtonArea>
+        </DescriptionColumn>
+      </DescriptionArea>
+    </SectionWrapper>
+  )
+}
 
 export default MidokoroSection

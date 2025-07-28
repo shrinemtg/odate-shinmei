@@ -60,6 +60,8 @@ const SummerPlantContainer = styled.div`
   width: 100%;
   position: relative;
   overflow: visible;
+  margin-top: 80px;
+  margin-bottom: 80px;
 `
 
 const ContentWrapper = styled.div`

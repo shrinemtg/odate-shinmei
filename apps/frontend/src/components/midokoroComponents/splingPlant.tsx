@@ -84,6 +84,7 @@ const SpringPlantContainer = styled.div`
   width: 100%;
   position: relative;
   overflow: visible;
+  margin-bottom: 80px;
 `
 
 const ContentWrapper = styled.div`
