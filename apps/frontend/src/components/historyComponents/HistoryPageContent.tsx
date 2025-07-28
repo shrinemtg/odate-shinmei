@@ -1,7 +1,7 @@
 import HeroSection from './HeroSection'
 import IntroSection from './IntroSection'
 import TimelineSection from './TimelineSection'
-import MidokoroSection from './MidokoroSection'
+import MidokoroSection from './MidoSection'
 
 const HistoryPageContent = () => (
   <>
