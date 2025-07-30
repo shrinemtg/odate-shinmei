@@ -1,13 +1,14 @@
 import Image from 'next/image'
 import React from 'react'
 import styled from '@emotion/styled'
+import NextLink from 'next/link'
 
 const menuItems = [
   { label: '神社のご紹介', href: '/history' },
-  { label: '御祈祷・ご参拝', href: '#prayer' },
+  { label: '御祈祷・ご参拝', href: '/gokitouGosanpai' },
   { label: 'お守り・授与品', href: '#omamori' },
   { label: '年中行事', href: '#events' },
-  { label: 'お問い合わせ', href: '#contact' },
+  { label: 'お問い合わせ', href: '/contact' },
 ]
 
 const Root = styled.nav`
@@ -32,6 +33,12 @@ const Header = styled.div`
   flex-direction: column;
   align-items: center;
   margin-bottom: 120px;
+  cursor: pointer;
+`
+
+const LogoLink = styled(NextLink)`
+  display: block;
+  text-decoration: none;
 `
 
 const List = styled.ul`
@@ -47,7 +54,7 @@ const Item = styled.li`
   margin: 12px 0;
 `
 
-const Link = styled.a`
+const StyledLink = styled.a`
   color: var(--color-white);
   text-decoration: none;
   font-size: var(--font-size-sm);
@@ -61,18 +68,20 @@ const MenuBar: React.FC = () => {
   return (
     <Root>
       <Header>
-        <Image
-          src='/top-motion/montuki-rogo.png'
-          alt='montuki rogo'
-          width={130}
-          height={130}
-          style={{ filter: 'brightness(0) invert(1)' }}
-        />
+        <LogoLink href='/'>
+          <Image
+            src='/top-motion/montuki-rogo.png'
+            alt='montuki rogo'
+            width={130}
+            height={130}
+            style={{ filter: 'brightness(0) invert(1)' }}
+          />
+        </LogoLink>
       </Header>
       <List>
         {menuItems.map((item) => (
           <Item key={item.label}>
-            <Link href={item.href}>{item.label}</Link>
+            <StyledLink href={item.href}>{item.label}</StyledLink>
           </Item>
         ))}
       </List>

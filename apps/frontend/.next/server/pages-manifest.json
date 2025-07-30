@@ -2,6 +2,7 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
+  "/gokitouGosanpai": "pages/gokitouGosanpai.js",
   "/midokoro": "pages/midokoro.js",
-  "/history": "pages/history.js"
+  "/contact": "pages/contact.js"
 }

@@ -32,6 +32,11 @@ const TitleArea = styled.div`
   display: flex;
   align-items: flex-start;
   justify-content: center;
+  margin-left: 100px; /* MenuBarの幅(120px) + マージン(8px) + 余白(8px) */
+
+  @media (max-width: 900px) {
+    margin-left: 0;
+  }
 `
 
 const MainTitle = styled.h2`
@@ -39,9 +44,9 @@ const MainTitle = styled.h2`
   font-family: 'Noto Serif JP', serif;
   font-size: 24px;
   font-weight: 600;
-  letter-spacing: 0.7em;
+  letter-spacing: 0.5em;
   line-height: 1.8;
-  margin: 0;
+
   span {
     font-size: 48px;
     font-weight: 700;
@@ -52,7 +57,7 @@ const MainTitle = styled.h2`
 const TextArea = styled.div`
   padding: 16px;
   height: fit-content;
-  margin-top: 240px;
+  margin-top: 200px;
   width: 320px;
 `
 
@@ -69,11 +74,12 @@ const ImageArea = styled.div`
   display: flex;
   flex-direction: column;
   gap: 24px;
+  width: 100%;
 `
 
 const MainImage = styled.div`
-  width: 660px;
-  height: 540px;
+  width: 560px;
+  height: 460px;
   margin-left: 90px;
   overflow: hidden;
   background: var(--color-light-gray);
@@ -94,7 +100,6 @@ const BottomRow = styled.div`
   grid-template-columns: 1fr 1fr;
   gap: 24px;
   align-items: start;
-  // margin-right: 100px;
 `
 
 const SubImage = styled.div`
@@ -116,9 +121,9 @@ const SubImage = styled.div`
 
 const BottomText = styled.div`
   border-radius: 12px;
-  padding: 24px;
+  padding: 16px;
   height: fit-content;
-  width: 300px;
+  width: 60%;
 `
 
 const BottomDescription = styled.p`

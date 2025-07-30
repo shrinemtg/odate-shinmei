@@ -5,6 +5,11 @@
   --color-brown: #927a3b;
   --color-gray: #605856;
 
+  /* --- フォントファミリー --- */
+  --font-family-serif: 'Noto Serif JP', serif;
+  --font-family-sans: 'Noto Sans JP', sans-serif;
+  --font-family-base: var(--font-family-serif);
+
   /* --- フォントサイズの拡張案 (体系的スケール) --- */
   --font-size-xs: 0.75rem; /* 12px相当 */
   --font-size-sm: 0.875rem; /* 14px相当 */

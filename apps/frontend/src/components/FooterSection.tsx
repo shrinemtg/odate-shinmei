@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import styled from '@emotion/styled'
 
 const Footer = styled.footer`
@@ -48,14 +49,16 @@ const FooterSection = () => (
       />
     </Cloud>
     <LogoArea>
-      <Image
-        src='/top-motion/montuki-rogo.png'
-        alt='神社ロゴ'
-        width={150}
-        height={150}
-        style={{ marginBottom: 8, filter: 'brightness(0) invert(1)' }}
-        priority
-      />
+      <Link href='/' style={{ textDecoration: 'none' }}>
+        <Image
+          src='/top-motion/montuki-rogo.png'
+          alt='神社ロゴ'
+          width={150}
+          height={150}
+          style={{ marginBottom: 8, filter: 'brightness(0) invert(1)', cursor: 'pointer' }}
+          priority
+        />
+      </Link>
     </LogoArea>
   </Footer>
 )

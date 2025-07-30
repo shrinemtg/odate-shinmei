@@ -30,7 +30,7 @@ const HeroTitle = styled.h1`
   transform: translate(-50%, -50%);
   z-index: 2;
   color: var(--color-white);
-  font-size: var(--font-size-5xl);
+  font-size: var(--font-size-2xl);
   font-weight: 600;
   writing-mode: vertical-rl;
   letter-spacing: 0.2em;

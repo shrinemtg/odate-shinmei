@@ -42,12 +42,12 @@ const MainTitle = styled.h2`
 const GridArea = styled.div`
   display: flex;
   gap: 24px;
-  width: 80%;
+  width: 90%;
   max-width: 800px;
-  margin: 0 auto 0 0;
+  margin: 0 auto;
   position: relative;
   z-index: 2;
-  justify-content: flex-start;
+  justify-content: flex-end;
   box-sizing: border-box;
   @media (max-width: 900px) {
     width: 90%;

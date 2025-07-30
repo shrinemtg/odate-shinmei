@@ -6,7 +6,6 @@ import GokitouOmamoriSection from '../homeComponents/GokitouOmamoriSection'
 import NenchuSection from '../homeComponents/NenchuSection'
 import AccessSection from '../homeComponents/AccessSection'
 import ContactSection from '../homeComponents/ContactSection'
-import FooterSection from '../FooterSection'
 import MenuBar from '../MenuBar'
 
 const leftCloud = {
@@ -396,7 +395,6 @@ export const Home = () => {
             <AccessSection />
             {/* --- お問い合わせセクション --- */}
             <ContactSection />
-            <FooterSection />
           </div>
         </>
       )}
