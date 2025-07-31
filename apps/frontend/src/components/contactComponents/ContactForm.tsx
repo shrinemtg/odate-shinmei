@@ -1,5 +1,9 @@
 import styled from '@emotion/styled'
 import { useState } from 'react'
+import ContactInputForm from './ContactInputForm'
+import ContactConfirmation from './ContactConfirmation'
+import ContactCompletion from './ContactCompletion'
+import ContactSending from './ContactSending'
 
 const PageWrapper = styled.div`
   min-height: 100vh;
@@ -112,144 +116,6 @@ const FormContainer = styled.div`
   }
 `
 
-const FormField = styled.div`
-  margin-bottom: 2rem;
-
-  @media (max-width: 768px) {
-    margin-bottom: 1.5rem;
-  }
-`
-
-const Label = styled.label`
-  display: block;
-  font-family: var(--font-family-serif);
-  font-size: var(--font-size-base);
-  color: var(--color-brown);
-  margin-bottom: 0.5rem;
-  font-weight: 500;
-
-  .required {
-    color: var(--color-shuiro);
-    margin-left: 0.25rem;
-  }
-
-  @media (max-width: 768px) {
-    font-size: var(--font-size-sm);
-    margin-bottom: 0.25rem;
-  }
-`
-
-const Input = styled.input`
-  width: 100%;
-  padding: 1rem;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  font-family: var(--font-family-serif);
-  font-size: var(--font-size-base);
-  background: var(--color-white);
-  color: var(--color-brown);
-  box-sizing: border-box;
-  transition: border-color 0.2s;
-
-  &::placeholder {
-    color: #999;
-  }
-
-  &:focus {
-    outline: none;
-    border-color: var(--color-shuiro);
-  }
-
-  @media (max-width: 768px) {
-    padding: 0.75rem;
-    font-size: var(--font-size-sm);
-  }
-`
-
-const TextArea = styled.textarea`
-  width: 100%;
-  min-height: 200px;
-  padding: 1rem;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  font-family: var(--font-family-serif);
-  font-size: var(--font-size-base);
-  background: var(--color-white);
-  color: var(--color-brown);
-  box-sizing: border-box;
-  resize: vertical;
-  transition: border-color 0.2s;
-
-  &::placeholder {
-    color: #999;
-  }
-
-  &:focus {
-    outline: none;
-    border-color: var(--color-shuiro);
-  }
-
-  @media (max-width: 768px) {
-    min-height: 150px;
-    padding: 0.75rem;
-    font-size: var(--font-size-sm);
-  }
-`
-
-const CheckboxContainer = styled.div`
-  display: flex;
-  align-items: center;
-  margin: 2rem 0;
-
-  @media (max-width: 768px) {
-    margin: 1.5rem 0;
-  }
-`
-
-const Checkbox = styled.input`
-  margin-right: 0.75rem;
-  transform: scale(1.2);
-`
-
-const CheckboxLabel = styled.label`
-  font-family: var(--font-family-serif);
-  font-size: var(--font-size-base);
-  color: var(--color-brown);
-  cursor: pointer;
-
-  @media (max-width: 768px) {
-    font-size: var(--font-size-sm);
-  }
-`
-
-const SubmitButton = styled.button`
-  background: var(--color-shuiro);
-  color: var(--color-white);
-  border: none;
-  border-radius: 8px;
-  padding: 1rem 2rem;
-  font-family: var(--font-family-serif);
-  font-size: var(--font-size-base);
-  font-weight: 500;
-  cursor: pointer;
-  transition: background 0.2s;
-  width: 100%;
-
-  &:hover {
-    background: #7a2d28;
-  }
-
-  &:disabled {
-    background: #ccc;
-    cursor: not-allowed;
-  }
-
-  @media (max-width: 768px) {
-    padding: 0.75rem 1.5rem;
-    font-size: var(--font-size-sm);
-  }
-`
-
 interface FormData {
   subject: string
   name: string
@@ -259,6 +125,8 @@ interface FormData {
   message: string
   privacyPolicy: boolean
 }
+
+type FormStep = 'input' | 'confirm' | 'sending' | 'complete'
 
 const ContactForm: React.FC = () => {
   const [formData, setFormData] = useState<FormData>({
@@ -271,18 +139,33 @@ const ContactForm: React.FC = () => {
     privacyPolicy: false,
   })
 
+  const [currentStep, setCurrentStep] = useState<FormStep>('input')
+  const [isSubmitting, setIsSubmitting] = useState(false)
+
   const handleInputChange = (field: keyof FormData, value: string | boolean) => {
     setFormData((prev) => ({
       ...prev,
-      [field]: value,
+      [field]: value as any,
     }))
   }
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleConfirm = (e: React.FormEvent) => {
     e.preventDefault()
+    setCurrentStep('confirm')
+  }
+
+  const handleBack = () => {
+    setCurrentStep('input')
+  }
+
+  const handleSubmit = async () => {
+    setIsSubmitting(true)
+    setCurrentStep('sending')
 
     try {
-      const response = await fetch('http://localhost:8081/api/contact', {
+      console.log('Sending form data:', formData)
+
+      const response = await fetch('http://localhost:8080/api/contact', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -290,10 +173,20 @@ const ContactForm: React.FC = () => {
         body: JSON.stringify(formData),
       })
 
+      console.log('Response status:', response.status)
+      console.log('Response headers:', response.headers)
+
+      if (!response.ok) {
+        const errorText = await response.text()
+        console.error('Response error:', errorText)
+        throw new Error(`HTTP ${response.status}: ${errorText}`)
+      }
+
       const result = await response.json()
+      console.log('Response result:', result)
 
       if (result.success) {
-        alert('お問い合わせを送信しました')
+        setCurrentStep('complete')
         // フォームリセット
         setFormData({
           subject: '',
@@ -306,14 +199,20 @@ const ContactForm: React.FC = () => {
         })
       } else {
         alert(result.error || '送信に失敗しました')
+        setCurrentStep('confirm')
       }
     } catch (error) {
-      console.error('Error:', error)
-      alert('送信に失敗しました')
+      console.error('Error details:', error)
+      alert(`送信に失敗しました: ${error instanceof Error ? error.message : '不明なエラー'}`)
+      setCurrentStep('confirm')
+    } finally {
+      setIsSubmitting(false)
     }
   }
 
-  const isFormValid = formData.subject && formData.name && formData.email && formData.message && formData.privacyPolicy
+  const handleNewContact = () => {
+    setCurrentStep('input')
+  }
 
   return (
     <PageWrapper>
@@ -326,98 +225,19 @@ const ContactForm: React.FC = () => {
         </VerticalTitle>
 
         <FormContainer>
-          <form onSubmit={handleSubmit}>
-            <FormField>
-              <Label>
-                ご用件<span className='required'>*</span>
-              </Label>
-              <Input
-                type='text'
-                placeholder='お問い合せ'
-                value={formData.subject}
-                onChange={(e) => handleInputChange('subject', e.target.value)}
-                required
-              />
-            </FormField>
-
-            <FormField>
-              <Label>
-                お名前<span className='required'>*</span>
-              </Label>
-              <Input
-                type='text'
-                placeholder='山田太郎'
-                value={formData.name}
-                onChange={(e) => handleInputChange('name', e.target.value)}
-                required
-              />
-            </FormField>
-
-            <FormField>
-              <Label>
-                メールアドレス<span className='required'>*</span>
-              </Label>
-              <Input
-                type='email'
-                placeholder='example@email.com'
-                value={formData.email}
-                onChange={(e) => handleInputChange('email', e.target.value)}
-                required
-              />
-            </FormField>
-
-            <FormField>
-              <Label>電話番号</Label>
-              <Input
-                type='tel'
-                placeholder='090-XXXX-XXXX'
-                value={formData.phone}
-                onChange={(e) => handleInputChange('phone', e.target.value)}
-              />
-            </FormField>
-
-            <FormField>
-              <Label>会社名</Label>
-              <Input
-                type='text'
-                placeholder='株式会社サンプル'
-                value={formData.company}
-                onChange={(e) => handleInputChange('company', e.target.value)}
-              />
-            </FormField>
-
-            <FormField>
-              <Label>
-                メッセージ<span className='required'>*</span>
-              </Label>
-              <TextArea
-                placeholder={`ご予約の際は
-・御祈祷内容
-・ご希望のお日にち(三候補日)をご記入ください
-
-お問い合わせ内容の際は
-・詳しい内容をご記入下さい`}
-                value={formData.message}
-                onChange={(e) => handleInputChange('message', e.target.value)}
-                required
-              />
-            </FormField>
-
-            <CheckboxContainer>
-              <Checkbox
-                type='checkbox'
-                id='privacy-policy'
-                checked={formData.privacyPolicy}
-                onChange={(e) => handleInputChange('privacyPolicy', e.target.checked)}
-                required
-              />
-              <CheckboxLabel htmlFor='privacy-policy'>プライバシーポリシーに同意する</CheckboxLabel>
-            </CheckboxContainer>
-
-            <SubmitButton type='submit' disabled={!isFormValid}>
-              確認画面へ
-            </SubmitButton>
-          </form>
+          {currentStep === 'input' && (
+            <ContactInputForm formData={formData} onInputChange={handleInputChange} onSubmit={handleConfirm} />
+          )}
+          {currentStep === 'confirm' && (
+            <ContactConfirmation
+              formData={formData}
+              onBack={handleBack}
+              onSubmit={handleSubmit}
+              isSubmitting={isSubmitting}
+            />
+          )}
+          {currentStep === 'sending' && <ContactSending />}
+          {currentStep === 'complete' && <ContactCompletion onNewContact={handleNewContact} />}
         </FormContainer>
       </ContactFormWrapper>
     </PageWrapper>

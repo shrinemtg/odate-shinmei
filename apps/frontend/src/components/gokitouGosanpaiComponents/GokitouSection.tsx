@@ -1,4 +1,5 @@
 import styled from '@emotion/styled'
+import { useRouter } from 'next/router'
 
 const GokitouSectionWrapper = styled.section`
   width: 100%;
@@ -144,6 +145,7 @@ const ImageCard = styled.div`
   transition:
     transform 0.3s ease,
     box-shadow 0.3s ease;
+  cursor: pointer;
 
   &:hover {
     transform: translateY(-4px);
@@ -169,9 +171,27 @@ const ImageWrapper = styled.div`
 `
 
 const GokitouSection = () => {
+  const router = useRouter()
+
   const handleContactClick = () => {
     // お問い合わせフォームへの遷移処理
     console.log('お問い合わせフォームへ遷移')
+  }
+
+  const handleLifeRtualsClick = () => {
+    router.push('/lifeRtuals')
+  }
+
+  const handleKakusyuGokitouClick = () => {
+    router.push('/kakusyuGokitou')
+  }
+
+  const handleYakubaraiToshiiwaiClick = () => {
+    router.push('/yakubaraiToshiiwai')
+  }
+
+  const handleGaisaiClick = () => {
+    router.push('/gaisai')
   }
 
   const imageData = [
@@ -232,13 +252,27 @@ const GokitouSection = () => {
 
       <ImageGridSection>
         <ImageGrid>
-          {imageData.map((item) => (
-            <ImageCard key={item.id}>
-              <ImageWrapper>
-                <img src={item.image} alt={`祈祷画像${item.id}`} />
-              </ImageWrapper>
-            </ImageCard>
-          ))}
+          {imageData.map((item) => {
+            let onClickHandler = undefined
+
+            if (item.image === '/gokitou/gokitou-02.png') {
+              onClickHandler = handleKakusyuGokitouClick
+            } else if (item.image === '/gokitou/gokitou-03.png') {
+              onClickHandler = handleLifeRtualsClick
+            } else if (item.image === '/gokitou/gokitou-04.png') {
+              onClickHandler = handleYakubaraiToshiiwaiClick
+            } else if (item.image === '/gokitou/gokitou-05.png') {
+              onClickHandler = handleGaisaiClick
+            }
+
+            return (
+              <ImageCard key={item.id} onClick={onClickHandler}>
+                <ImageWrapper>
+                  <img src={item.image} alt={`祈祷画像${item.id}`} />
+                </ImageWrapper>
+              </ImageCard>
+            )
+          })}
         </ImageGrid>
       </ImageGridSection>
     </>

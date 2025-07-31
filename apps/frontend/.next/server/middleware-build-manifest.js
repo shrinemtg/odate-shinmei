@@ -20,15 +20,15 @@ globalThis.__BUILD_MANIFEST = {
       "static/chunks/main.js",
       "static/chunks/pages/_error.js"
     ],
-    "/contact": [
+    "/gokitouGosanpai": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/contact.js"
+      "static/chunks/pages/gokitouGosanpai.js"
     ],
-    "/midokoro": [
+    "/yakubaraiToshiiwai": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/midokoro.js"
+      "static/chunks/pages/yakubaraiToshiiwai.js"
     ]
   },
   "ampFirstPages": []
