@@ -2,7 +2,7 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
+  "/lifeRtuals": "pages/lifeRtuals.js",
   "/gokitouGosanpai": "pages/gokitouGosanpai.js",
-  "/yakubaraiToshiiwai": "pages/yakubaraiToshiiwai.js",
-  "/contact": "pages/contact.js"
+  "/kakusyuGokitou": "pages/kakusyuGokitou.js"
 }
