@@ -10,7 +10,7 @@ const HeroSectionWrapper = styled.section`
   display: flex;
   align-items: center;
   justify-content: center;
-  background: url(/life/life-01.png) center center / cover no-repeat;
+  background: url(/kakusyuGokitouPhoto/kakusyugokitou-01.png) center center / cover no-repeat;
 `
 
 const Overlay = styled.div`
@@ -19,7 +19,7 @@ const Overlay = styled.div`
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.45);
+  background: rgba(0, 0, 0, 0.3);
   z-index: 1;
 `
 

@@ -29,11 +29,6 @@ globalThis.__BUILD_MANIFEST = {
       "static/chunks/webpack.js",
       "static/chunks/main.js",
       "static/chunks/pages/kakusyuGokitou.js"
-    ],
-    "/lifeRtuals": [
-      "static/chunks/webpack.js",
-      "static/chunks/main.js",
-      "static/chunks/pages/lifeRtuals.js"
     ]
   },
   "ampFirstPages": []
