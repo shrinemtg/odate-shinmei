@@ -62,8 +62,7 @@ const GaisaiTopSection = () => {
         <DescriptionContainer>
           <Description>
             <Paragraph>
-              地鎮祭や家屋のお祓いなど、神社へのご参拝が難しい場合には、現地にて
-              神さまのご加護をお届けできるよう、出張祭事を承っております。
+              地鎮祭や家屋のお祓いなど、現地にて 神さまのご加護をお届けできるよう、出張祭事を承っております。
             </Paragraph>
             <Paragraph>出張祭事の初穂料は、目安として2万円よりお納めいただいております。</Paragraph>
             <Paragraph>ご祈願の内容に応じて真心を込めてご奉仕いたしますので、 どうぞお気軽にご相談ください。</Paragraph>

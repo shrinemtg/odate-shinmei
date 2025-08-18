@@ -49,7 +49,7 @@ const VerticalTitle = styled.h2`
   font-family: var(--font-family-serif);
   line-height: 1.2;
   white-space: nowrap;
-  margin: 0 2rem 0 0;
+  margin: 0 2rem 0 2rem;
   flex-shrink: 0;
 `
 
@@ -85,28 +85,23 @@ const ImageSection = styled.div`
 `
 
 const CarImageSection = styled(ImageSection)`
-  margin: 8rem 0 0 0;
+  margin: 8rem 2rem 0 0;
 `
 
 const GoukakuImageSection = styled(ImageSection)`
-  margin: 6rem 0 2rem 0;
-`
-const RyouenImageSection = styled(ImageSection)`
-  margin: 6rem 0 3rem 0;
+  margin: 7rem 0 2rem 2rem;
 `
 
 const HisshouImageSection = styled(ImageSection)`
-  margin: 1rem 0 3rem 0;
-`
-const KenkouImageSection = styled(ImageSection)`
-  margin: 1rem 0 3rem 0;
+  margin: 1rem 2rem 3rem 0;
 `
 
-const KaiunImageSection = styled(ImageSection)`
-  margin: 3rem 0 2rem 0;
+const KenkouImageSection = styled(ImageSection)`
+  margin: 4rem 0 3rem 2rem;
 `
+
 const TravelImageSection = styled(ImageSection)`
-  margin: 3rem 0 2rem 0;
+  margin: 3rem 1rem 10rem 0;
 `
 
 const SectionImage = styled.img`
@@ -168,31 +163,10 @@ const KakusyuGokitouSection = () => {
           </GoukakuImageSection>
         </RightSectionContainer>
 
-        {/* 良縁祈願 */}
-        <SectionContainer>
-          <VerticalTitle>良縁祈願</VerticalTitle>
-          <TextSection>
-            <Description>
-              <Paragraph>
-                人生においてもっとも大切な「ご縁」に恵まれますようにと、神さまにお願いするご祈祷です。
-              </Paragraph>
-              <Paragraph>
-                結婚を望まれる方、真剣な交際相手と出会いたい方はもちろんのこと、家族や友人、職場での人間関係がより良いものとなるよう、広い意味での良縁をご祈願いたします。
-              </Paragraph>
-              <Paragraph>
-                神前で真心を込めてお祈りすることで、新たなご縁がもたらされ、人生が豊かに導かれるようお力添えをいただきます。縁結び守や絵馬の授与もございますので、あわせてご参拝ください。
-              </Paragraph>
-            </Description>
-          </TextSection>
-          <RyouenImageSection>
-            <SectionImage src='/kakusyuGokitouPhoto/kakusyugokitou-04.png' alt='良縁祈願のイラスト' />
-          </RyouenImageSection>
-        </SectionContainer>
-
         {/* 必勝祈願 */}
-        <RightSectionContainer>
-          <RightVerticalTitle>必勝祈願</RightVerticalTitle>
-          <RightTextSection>
+        <SectionContainer>
+          <VerticalTitle>必勝祈願</VerticalTitle>
+          <TextSection>
             <Description>
               <Paragraph>大事な勝負や試練に挑む際、気力と運気を高め、勝利を引き寄せるためのご祈祷です。</Paragraph>
               <Paragraph>
@@ -202,16 +176,16 @@ const KakusyuGokitouSection = () => {
                 困難に打ち克ち、望む結果が得られますよう、神前にて厳粛に祈りを捧げます。勝守（かちまもり）などの授与品もご用意しております。
               </Paragraph>
             </Description>
-          </RightTextSection>
+          </TextSection>
           <HisshouImageSection>
             <SectionImage src='/kakusyuGokitouPhoto/kakusyugokitou-05.png' alt='必勝祈願のイラスト' />
           </HisshouImageSection>
-        </RightSectionContainer>
+        </SectionContainer>
 
         {/* 健康祈願 */}
-        <SectionContainer>
-          <VerticalTitle>健康祈願</VerticalTitle>
-          <TextSection>
+        <RightSectionContainer>
+          <RightVerticalTitle>健康祈願</RightVerticalTitle>
+          <RightTextSection>
             <Description>
               <Paragraph>
                 心身の健やかさを願い、病気やけがを遠ざけるとともに、すでに病を患っておられる方の快癒を祈るご祈祷です。
@@ -223,29 +197,10 @@ const KakusyuGokitouSection = () => {
                 ご本人が参拝できない場合でも、ご家族や代理の方によるご祈祷も可能です。神前にて神職が心を込めてお祈りし、皆さまが安心して日々をお過ごしいただけるよう、ご加護を願い上げます。
               </Paragraph>
             </Description>
-          </TextSection>
+          </RightTextSection>
           <KenkouImageSection>
             <SectionImage src='/kakusyuGokitouPhoto/kakusyugokitou-06.png' alt='健康祈願のイラスト' />
           </KenkouImageSection>
-        </SectionContainer>
-
-        {/* 開運祈願 */}
-        <RightSectionContainer>
-          <RightVerticalTitle>開運祈願</RightVerticalTitle>
-          <RightTextSection>
-            <Description>
-              <Paragraph>運気の巡りを正し、人生をより良い方向へ導いていただけるように祈るご祈祷です。</Paragraph>
-              <Paragraph>
-                最近ついていないと感じている方、何か新しいことに挑戦しようとしている方、人生の節目を迎えて気持ちを新たにしたい方におすすめです。
-              </Paragraph>
-              <Paragraph>
-                神前で心を整え、厄を祓い福を招くことで、良き運気が巡ってくるよう、神さまにお願いを申し上げます。日々の生活に明るい兆しと希望がもたらされるよう、ご祈念いたします。
-              </Paragraph>
-            </Description>
-          </RightTextSection>
-          <KaiunImageSection>
-            <SectionImage src='/kakusyuGokitouPhoto/kakusyugokitou-07.png' alt='開運祈願のイラスト' />
-          </KaiunImageSection>
         </RightSectionContainer>
 
         {/* 旅行祈願 */}

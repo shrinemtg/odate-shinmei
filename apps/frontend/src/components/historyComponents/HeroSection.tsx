@@ -33,7 +33,7 @@ const HeroTitle = styled.h1`
   font-size: var(--font-size-2xl);
   font-weight: 600;
   writing-mode: vertical-rl;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.15em;
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
   font-family: serif;
   line-height: 1.2;

@@ -2,5 +2,7 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/gaisai": "pages/gaisai.js"
+  "/omamori": "pages/omamori.js",
+  "/contact": "pages/contact.js",
+  "/history": "pages/history.js"
 }

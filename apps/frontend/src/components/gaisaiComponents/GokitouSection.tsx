@@ -54,7 +54,7 @@ const VerticalTitle = styled.h2`
 `
 
 const RightVerticalTitle = styled(VerticalTitle)`
-  margin: 0 0 0 2rem;
+  margin: 0 2rem 0 0;
 `
 
 const TextSection = styled.div`
@@ -99,35 +99,35 @@ const SectionImage = styled.img`
 
 // 各祭事用の画像セクション
 const JichinsaiImageSection = styled(ImageSection)`
-  margin: 8rem 0 0 0;
+  margin: 2rem 0 0 0;
 `
 
 const SekouImageSection = styled(ImageSection)`
-  margin: 6rem 0 2rem 0;
+  margin: 3rem 0 2rem 0;
 `
 
 const JoutouImageSection = styled(ImageSection)`
-  margin: 6rem 0 3rem 0;
+  margin: 1rem 0 3rem 0;
 `
 
 const YaharaiImageSection = styled(ImageSection)`
-  margin: 1rem 0 3rem 0;
+  margin: 6rem 0 3rem 0;
 `
 
 const KamidanaImageSection = styled(ImageSection)`
-  margin: 3rem 0 2rem 0;
+  margin: 2rem 0 2rem 0;
 `
 
 const IdoImageSection = styled(ImageSection)`
-  margin: 3rem 0 2rem 0;
+  margin: 0 0 2rem 0;
 `
 
 const KaitaiImageSection = styled(ImageSection)`
-  margin: 1rem 0 3rem 0;
+  margin: 3rem 0 3rem 0;
 `
 
 const AnzenImageSection = styled(ImageSection)`
-  margin: 3rem 0 2rem 0;
+  margin: 0 0 2rem 0;
 `
 
 const ShoubaiImageSection = styled(ImageSection)`
@@ -158,15 +158,16 @@ const GokitouSection = () => {
           </JichinsaiImageSection>
         </SectionContainer>
 
-        {/* 施工祭 */}
+        {/* 起工祭 */}
         <RightSectionContainer>
-          <RightVerticalTitle>施工祭</RightVerticalTitle>
+          <RightVerticalTitle>起工祭</RightVerticalTitle>
           <RightTextSection>
             <Description>
               <Paragraph>基礎工事や重要な建築工程の開始時に、安全と円滑な進行を祈願する祭典です。</Paragraph>
               <Paragraph>
                 地鎮祭の後、具体的な施工に入る段階において、事故や災いがないように、工事の安全と完成を祈る神事です。
                 鉄骨工事・杭打ち・基礎打ち・内装工事など、大きな工程に入る前に実施することで、関係者の心も引き締まり、安全意識の高まりにもつながります。
+                ※地鎮祭と一緒に行うことがほとんどです。
               </Paragraph>
             </Description>
           </RightTextSection>
@@ -193,14 +194,30 @@ const GokitouSection = () => {
           </JoutouImageSection>
         </SectionContainer>
 
+        {/* 竣工祭 */}
+        <SectionContainer>
+          <VerticalTitle>竣工祭</VerticalTitle>
+          <TextSection>
+            <Description>
+              <Paragraph>棟木を上げる際に、建物の完成とそこに暮らす人々の安泰を祈る神事です。</Paragraph>
+              <Paragraph>
+                「棟上げ」や「建前（たてまえ）」とも呼ばれ、家づくりの中でも特に大きな節目とされる日です。
+                建物の骨組みが完成し、屋根の一番高い部分である棟木を上げる際、これまでの工事の無事を感謝し、今後の完成と家内安全・繁栄をお祈りします。
+                餅まきなど地域や家族での祝い事としても行われ、喜びのあるお祭りでもあります。
+              </Paragraph>
+            </Description>
+          </TextSection>
+          <JoutouImageSection>
+            <SectionImage src='/gaisai/gaisai-03.png' alt='上棟祭のイラスト' />
+          </JoutouImageSection>
+        </SectionContainer>
+
         {/* 家祓 */}
         <RightSectionContainer>
           <RightVerticalTitle>家祓</RightVerticalTitle>
           <RightTextSection>
             <Description>
-              <Paragraph>
-                新築や中古住宅、また引っ越し先の住まいを祓い清め、安全で安心して暮らせるように祈願します。
-              </Paragraph>
+              <Paragraph>住まいを祓い清め、安全で安心して暮らせるように祈願します。</Paragraph>
               <Paragraph>
                 人が暮らす「家」は、日々の生活を守る大切な場です。
                 新しい住まいに入る前や、住み替えの際には、住居全体を清め、神さまにご挨拶し、家内安全・災難除け・心身の平穏をお祈りします。
@@ -233,7 +250,7 @@ const GokitouSection = () => {
 
         {/* 井戸埋清祓 */}
         <RightSectionContainer>
-          <RightVerticalTitle>井戸埋清祓</RightVerticalTitle>
+          <RightVerticalTitle>井戸埋立清祓</RightVerticalTitle>
           <RightTextSection>
             <Description>
               <Paragraph>
@@ -247,7 +264,7 @@ const GokitouSection = () => {
             </Description>
           </RightTextSection>
           <IdoImageSection>
-            <SectionImage src='/gaisai/gaisai-06.png' alt='井戸埋清祓のイラスト' />
+            <SectionImage src='/gaisai/gaisai-06.png' alt='井戸埋立清祓のイラスト' />
           </IdoImageSection>
         </RightSectionContainer>
 
@@ -303,15 +320,6 @@ const GokitouSection = () => {
           <ShoubaiImageSection>
             <SectionImage src='/gaisai/gaisai-09.png' alt='商売繁盛祈願祭のイラスト' />
           </ShoubaiImageSection>
-        </SectionContainer>
-
-        {/* まとめ */}
-        <SectionContainer>
-          <TextSection>
-            <Description>
-              <Paragraph>これらの外祭は、ご希望の日時・場所に応じて神職が出張し、丁寧に斎行いたします。</Paragraph>
-            </Description>
-          </TextSection>
         </SectionContainer>
       </ContentContainer>
     </GokitouSectionWrapper>

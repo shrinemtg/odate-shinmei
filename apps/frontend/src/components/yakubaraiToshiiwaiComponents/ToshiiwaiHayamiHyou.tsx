@@ -93,7 +93,7 @@ const ToshimawariNenpyouSection = () => {
 
   return (
     <ToshimawariNenpyouSectionWrapper>
-      <MainTitle>厄払い早見表</MainTitle>
+      <MainTitle>歳祝い早見表</MainTitle>
 
       <ImageContainer>
         <NenpyouImage src='/yakubaraiPhoto/yakubarai-06.png' alt='年廻り早見表' />

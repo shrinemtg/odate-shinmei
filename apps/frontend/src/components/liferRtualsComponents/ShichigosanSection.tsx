@@ -184,7 +184,7 @@ const ShichigosanSection = () => {
           </RitualRow>
 
           <RitualRow>
-            <RitualTitle>七歳「帯解き(おびとき)」の儀</RitualTitle>
+            <RitualTitle>七歳「帯締め(おびしめ)」の儀</RitualTitle>
             <RitualDescription>
               7歳になり、女児が付けひもをはずして、大人の帯を締める儀式
               江戸時代末期から行われ、女の子の成長を祝福するものです。
