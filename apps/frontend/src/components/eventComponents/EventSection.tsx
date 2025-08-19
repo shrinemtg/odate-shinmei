@@ -5,6 +5,18 @@ const EventSectionWrapper = styled.section`
   min-height: 100vh;
   position: relative;
   padding: 4rem 0;
+
+  @media (max-width: 1023px) {
+    padding: 3rem 0;
+  }
+
+  @media (max-width: 767px) {
+    padding: 2rem 0;
+  }
+
+  @media (max-width: 374px) {
+    padding: 1.5rem 0;
+  }
 `
 
 const ContentContainer = styled.div`
@@ -15,6 +27,24 @@ const ContentContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 4rem;
+
+  @media (max-width: 1023px) {
+    max-width: 90%;
+    padding: 0 2rem;
+    gap: 3rem;
+  }
+
+  @media (max-width: 767px) {
+    max-width: 95%;
+    padding: 0 1rem;
+    gap: 2.5rem;
+  }
+
+  @media (max-width: 374px) {
+    max-width: 100%;
+    padding: 0 0.75rem;
+    gap: 2rem;
+  }
 `
 
 const SectionContainer = styled.div`
@@ -24,17 +54,26 @@ const SectionContainer = styled.div`
   position: relative;
   margin: 0 auto;
 
-  @media (max-width: 768px) {
-    flex-direction: column;
-    gap: 2rem;
+  @media (max-width: 1023px) {
     width: 100%;
+    gap: 2rem;
+  }
+
+  @media (max-width: 767px) {
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 100%;
+  }
+
+  @media (max-width: 374px) {
+    gap: 1rem;
   }
 `
 
 const RightSectionContainer = styled(SectionContainer)`
   flex-direction: row-reverse;
 
-  @media (max-width: 768px) {
+  @media (max-width: 767px) {
     flex-direction: column;
   }
 `
@@ -51,10 +90,28 @@ const VerticalTitle = styled.h2`
   white-space: nowrap;
   margin: 0 2rem 0;
   flex-shrink: 0;
+
+  @media (max-width: 1023px) {
+    font-size: var(--font-size-3xl);
+    margin: 0 1.5rem 0;
+  }
+
+  @media (max-width: 767px) {
+    writing-mode: horizontal-tb;
+    font-size: var(--font-size-2xl);
+    margin: 0 0 1rem 0;
+    text-align: center;
+    letter-spacing: 0.2em;
+  }
+
+  @media (max-width: 374px) {
+    font-size: var(--font-size-xl);
+    margin: 0 0 0.75rem 0;
+  }
 `
 
 const MonthText = styled.span`
-  color: #d32f2f;
+  color: var(--color-brown);
   font-size: var(--font-size-2xl);
   font-weight: 600;
   writing-mode: vertical-rl;
@@ -63,6 +120,20 @@ const MonthText = styled.span`
   line-height: 1.2;
   white-space: nowrap;
   margin-bottom: 0.5rem;
+
+  @media (max-width: 1023px) {
+    font-size: var(--font-size-xl);
+  }
+
+  @media (max-width: 767px) {
+    writing-mode: horizontal-tb;
+    font-size: var(--font-size-lg);
+    margin-bottom: 0.25rem;
+  }
+
+  @media (max-width: 374px) {
+    font-size: var(--font-size-base);
+  }
 `
 
 const EventTitle = styled.span`
@@ -75,10 +146,36 @@ const EventTitle = styled.span`
   font-family: var(--font-family-serif);
   line-height: 1.2;
   white-space: nowrap;
+
+  @media (max-width: 1023px) {
+    font-size: var(--font-size-4xl);
+  }
+
+  @media (max-width: 767px) {
+    writing-mode: horizontal-tb;
+    font-size: var(--font-size-3xl);
+    letter-spacing: 0.2em;
+  }
+
+  @media (max-width: 374px) {
+    font-size: var(--font-size-2xl);
+  }
 `
 
 const RightVerticalTitle = styled(VerticalTitle)`
   margin: 0 2rem 0 0;
+
+  @media (max-width: 1023px) {
+    margin: 0 1.5rem 0 0;
+  }
+
+  @media (max-width: 767px) {
+    margin: 0 0 1rem 0;
+  }
+
+  @media (max-width: 374px) {
+    margin: 0 0 0.75rem 0;
+  }
 `
 
 const TextSection = styled.div`
@@ -87,10 +184,32 @@ const TextSection = styled.div`
   flex-direction: column;
   gap: 1.5rem;
   margin: 2rem 0 0 0;
+
+  @media (max-width: 1023px) {
+    gap: 1.25rem;
+    margin: 1.5rem 0 0 0;
+  }
+
+  @media (max-width: 767px) {
+    gap: 1rem;
+    margin: 0;
+  }
+
+  @media (max-width: 374px) {
+    gap: 0.75rem;
+  }
 `
 
 const RightTextSection = styled(TextSection)`
   margin: 2rem 2rem 0 2rem;
+
+  @media (max-width: 1023px) {
+    margin: 1.5rem 1.5rem 0 1.5rem;
+  }
+
+  @media (max-width: 767px) {
+    margin: 0;
+  }
 `
 
 const Description = styled.div`
@@ -98,15 +217,50 @@ const Description = styled.div`
   font-size: var(--font-size-base);
   line-height: 1.6;
   font-family: var(--font-family-sans);
-  margin: 1rem 0 0 0;
+  margin: 0.5rem 0 0 0;
+
+  @media (max-width: 1023px) {
+    font-size: var(--font-size-base);
+    line-height: 1.5;
+    margin: 0.375rem 0 0 0;
+  }
+
+  @media (max-width: 767px) {
+    font-size: var(--font-size-sm);
+    line-height: 1.4;
+    margin: 0.25rem 0 0 0;
+  }
+
+  @media (max-width: 374px) {
+    font-size: var(--font-size-xs);
+    line-height: 1.3;
+    margin: 0.125rem 0 0 0;
+  }
 `
 
 const Paragraph = styled.p`
   margin-bottom: 1rem;
   font-size: var(--font-size-base);
+  white-space: pre-line;
+  overflow-wrap: break-word;
 
   &:last-child {
     margin-bottom: 0;
+  }
+
+  @media (max-width: 1023px) {
+    font-size: var(--font-size-base);
+    margin-bottom: 0.875rem;
+  }
+
+  @media (max-width: 767px) {
+    font-size: var(--font-size-sm);
+    margin-bottom: 0.75rem;
+  }
+
+  @media (max-width: 374px) {
+    font-size: var(--font-size-xs);
+    margin-bottom: 0.625rem;
   }
 `
 
@@ -116,6 +270,69 @@ const DateInfo = styled.div`
   font-weight: 600;
   margin-top: 1rem;
   font-family: var(--font-family-serif);
+
+  @media (max-width: 1023px) {
+    font-size: var(--font-size-base);
+    margin-top: 0.875rem;
+  }
+
+  @media (max-width: 767px) {
+    font-size: var(--font-size-sm);
+    margin-top: 0.75rem;
+  }
+
+  @media (max-width: 374px) {
+    font-size: var(--font-size-xs);
+    margin-top: 0.625rem;
+  }
+`
+
+const DetailButton = styled.a`
+  display: inline-block;
+  background-color: var(--color-brown);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  text-decoration: none;
+  border-radius: 4px;
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  font-family: var(--font-family-sans);
+  margin-top: 1.5rem;
+  transition: background-color 0.3s ease;
+  border: 2px solid var(--color-brown);
+
+  &:hover {
+    background-color: transparent;
+    color: var(--color-brown);
+  }
+
+  &:focus {
+    outline: 2px solid var(--color-brown);
+    outline-offset: 2px;
+  }
+
+  @media (max-width: 1023px) {
+    padding: 0.625rem 1.25rem;
+    font-size: var(--font-size-sm);
+    margin-top: 1.25rem;
+  }
+
+  @media (max-width: 767px) {
+    padding: 0.5rem 1rem;
+    font-size: var(--font-size-xs);
+    margin-top: 1rem;
+    text-align: center;
+    display: block;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  @media (max-width: 374px) {
+    padding: 0.5rem 0.875rem;
+    font-size: var(--font-size-xs);
+    margin-top: 0.875rem;
+  }
 `
 
 const ImageSection = styled.div`
@@ -123,6 +340,11 @@ const ImageSection = styled.div`
   display: flex;
   justify-content: center;
   align-items: flex-end;
+
+  @media (max-width: 767px) {
+    justify-content: center;
+    align-items: center;
+  }
 `
 
 const SectionImage = styled.img`
@@ -130,55 +352,216 @@ const SectionImage = styled.img`
   height: 240px;
   object-fit: cover;
   margin: 0 0 0 2rem;
+
+  @media (max-width: 1023px) {
+    width: 280px;
+    height: 210px;
+    margin: 0 0 0 1.5rem;
+  }
+
+  @media (max-width: 767px) {
+    width: 240px;
+    height: 180px;
+    margin: 0;
+  }
+
+  @media (max-width: 374px) {
+    width: 200px;
+    height: 150px;
+  }
 `
 
 // 各祭事用の画像セクション
 const GantanImageSection = styled(ImageSection)`
   margin: 4rem 0 0 0;
+
+  @media (max-width: 1023px) {
+    margin: 3rem 0 0 0;
+  }
+
+  @media (max-width: 767px) {
+    margin: 1rem 0 2rem 0;
+  }
+
+  @media (max-width: 374px) {
+    margin: 0.75rem 0 1.5rem 0;
+  }
 `
 
 const ShinnenImageSection = styled(ImageSection)`
   margin: 4.5rem 0 2rem 0;
+
+  @media (max-width: 1023px) {
+    margin: 3.5rem 0 1.5rem 0;
+  }
+
+  @media (max-width: 767px) {
+    margin: 1rem 0 2rem 0;
+  }
+
+  @media (max-width: 374px) {
+    margin: 0.75rem 0 1.5rem 0;
+  }
 `
 
 const YaharaiImageSection = styled(ImageSection)`
   margin: 4rem 0 3rem 0;
+
+  @media (max-width: 1023px) {
+    margin: 3rem 0 2rem 0;
+  }
+
+  @media (max-width: 767px) {
+    margin: 1rem 0 2rem 0;
+  }
+
+  @media (max-width: 374px) {
+    margin: 0.75rem 0 1.5rem 0;
+  }
 `
 
 const NyugakuImageSection = styled(ImageSection)`
   margin: 4.5rem 0 3rem 0;
+
+  @media (max-width: 1023px) {
+    margin: 3.5rem 0 2rem 0;
+  }
+
+  @media (max-width: 767px) {
+    margin: 1rem 0 2rem 0;
+  }
+
+  @media (max-width: 374px) {
+    margin: 0.75rem 0 1.5rem 0;
+  }
 `
 
 const NagoshiImageSection = styled(ImageSection)`
   margin: 4.5rem 0 2rem 0;
+
+  @media (max-width: 1023px) {
+    margin: 3.5rem 0 1.5rem 0;
+  }
+
+  @media (max-width: 767px) {
+    margin: 1rem 0 2rem 0;
+  }
+
+  @media (max-width: 374px) {
+    margin: 0.75rem 0 1.5rem 0;
+  }
 `
 
 const KoreisaiImageSection = styled(ImageSection)`
   margin: 4.5rem 0 2rem 0;
+
+  @media (max-width: 1023px) {
+    margin: 3.5rem 0 1.5rem 0;
+  }
+
+  @media (max-width: 767px) {
+    margin: 1rem 0 2rem 0;
+  }
+
+  @media (max-width: 374px) {
+    margin: 0.75rem 0 1.5rem 0;
+  }
 `
 
 const YomiyasaiImageSection = styled(ImageSection)`
   margin: 4.5rem 0 3rem 0;
+
+  @media (max-width: 1023px) {
+    margin: 3.5rem 0 2rem 0;
+  }
+
+  @media (max-width: 767px) {
+    margin: 1rem 0 2rem 0;
+  }
+
+  @media (max-width: 374px) {
+    margin: 0.75rem 0 1.5rem 0;
+  }
 `
 
 const NichireisaiImageSection = styled(ImageSection)`
   margin: 4.5rem 0 2rem 0;
+
+  @media (max-width: 1023px) {
+    margin: 3.5rem 0 1.5rem 0;
+  }
+
+  @media (max-width: 767px) {
+    margin: 1rem 0 2rem 0;
+  }
+
+  @media (max-width: 374px) {
+    margin: 0.75rem 0 1.5rem 0;
+  }
 `
 
 const GoshinkoImageSection = styled(ImageSection)`
   margin: 4.5rem 0 2rem 0;
+
+  @media (max-width: 1023px) {
+    margin: 3.5rem 0 1.5rem 0;
+  }
+
+  @media (max-width: 767px) {
+    margin: 1rem 0 2rem 0;
+  }
+
+  @media (max-width: 374px) {
+    margin: 0.75rem 0 1.5rem 0;
+  }
 `
 
 const ShichigosanImageSection = styled(ImageSection)`
   margin: 4.5rem 0 2rem 0;
+
+  @media (max-width: 1023px) {
+    margin: 3.5rem 0 1.5rem 0;
+  }
+
+  @media (max-width: 767px) {
+    margin: 1rem 0 2rem 0;
+  }
+
+  @media (max-width: 374px) {
+    margin: 0.75rem 0 1.5rem 0;
+  }
 `
 
 const ToshikoshiImageSection = styled(ImageSection)`
   margin: 6.5rem 0 2rem 0;
+
+  @media (max-width: 1023px) {
+    margin: 5rem 0 1.5rem 0;
+  }
+
+  @media (max-width: 767px) {
+    margin: 1rem 0 2rem 0;
+  }
+
+  @media (max-width: 374px) {
+    margin: 0.75rem 0 1.5rem 0;
+  }
 `
 
 const ToshikoshiDescription = styled(Description)`
-  margin: 3rem 0 0 0;
+  margin: 1.5rem 0 0 0;
+
+  @media (max-width: 1023px) {
+    margin: 1rem 0 0 0;
+  }
+
+  @media (max-width: 767px) {
+    margin: 0.25rem 0 0 0;
+  }
+
+  @media (max-width: 374px) {
+    margin: 0.125rem 0 0 0;
+  }
 `
 
 const EventSection = () => {
@@ -194,13 +577,13 @@ const EventSection = () => {
           <TextSection>
             <Description>
               <Paragraph>
-                元旦祭（がんたんさい）は、新年のはじまりにあたり、皇室の安泰と氏子崇敬者の無病息災・家内安全・商売繁盛などを祈念する、年の最初の大切なお祭りです。
+                元旦祭（がんたんさい）は、新年のはじまりにあたり、皇室の安泰をはじめ、氏子崇敬者の無病息災・家内安全・商売繁盛などを祈念する、年の最初の大切なお祭りです。
+                <br />
+                大館神明社では、毎年一月一日に歳神様（としがみさま）をお迎えし、地域の皆さまとともに、新しい年の平穏無事と発展をお祈りいたします。
+                <br />
+                清らかな気持ちで新年をお迎えいただくために、ぜひご家族そろってご参拝ください。
               </Paragraph>
-              <Paragraph>
-                大館神明社では、毎年一月一日、歳神様（としがみさま）をお迎えし、地域の皆さまとともに新しい年の平穏無事と発展をお祈りいたします。
-                新しい年を清らかな気持ちで迎えるために、ぜひご家族そろってご参拝ください。
-              </Paragraph>
-              <DateInfo>開催日時1月1日</DateInfo>
+              <DateInfo>開催日時：1月1日</DateInfo>
             </Description>
           </TextSection>
           <GantanImageSection>
@@ -218,13 +601,15 @@ const EventSection = () => {
             <Description>
               <Paragraph>
                 新しい年を健やかに、穏やかに過ごせるように
+                <br />
                 大館神明社では、年の初めにあたって、皆さまの家内安全・無病息災・商売繁盛・厄除開運などをお祈りする「新年祈祷」を承っております。
-              </Paragraph>
-              <Paragraph>
+                <br />
                 個人やご家族はもちろん、企業・団体のご祈祷も受け付けております。
+                <br />
                 新しい年のはじまりに、ぜひご参拝いただき、神さまとのご縁を深めてください。
+                <br />
               </Paragraph>
-              <DateInfo>開催期間1月2日～1月15日前後</DateInfo>
+              <DateInfo>開催期間：1月2日～1月15日前後</DateInfo>
             </Description>
           </RightTextSection>
           <ShinnenImageSection>
@@ -240,13 +625,17 @@ const EventSection = () => {
           </VerticalTitle>
           <TextSection>
             <Description>
-              <Paragraph>厄年は、身体や環境の変化が起こりやすく、古くから"慎みの年"とされてきました。</Paragraph>
               <Paragraph>
+                厄年は、身体や環境の変化が起こりやすく、古くから"慎みの年"とされてきました。
+                <br />
                 大館神明社では、厄年を迎えた皆さまが、災厄を避け、健やかな日々を送れるよう、「厄除け・厄払い」のご祈祷を執り行っております。
+                <br />
                 神さまの御前で心を整え、日々の感謝とこれからの無事を祈ることは、これまでの歩みを見つめ直す良い機会でもあります。
+                <br />
                 ご本人はもちろん、ご家族の代理でのご祈祷も承っておりますので、どうぞお気軽にご相談ください。
+                <br />
               </Paragraph>
-              <DateInfo>開催期間1月～2月末</DateInfo>
+              <DateInfo>開催期間：1月下旬～2月末</DateInfo>
             </Description>
           </TextSection>
           <YaharaiImageSection>
@@ -264,14 +653,17 @@ const EventSection = () => {
             <Description>
               <Paragraph>
                 入学は、人生の中でも大きな節目のひとつです。
+                <br />
                 新しい環境での出会いや学びが、実り多きものとなるよう、「入学祈願」のご祈祷を承っております。
-              </Paragraph>
-              <Paragraph>
+                <br />
                 お子さまの健やかな成長と、学業成就・登下校の安全を願い、神前にて真心を込めてご奉仕いたします。
+                <br />
                 ご本人はもちろん、保護者さまのみでのご参拝も可能です。
+                <br />
                 ご家族そろって、節目を祈りとともにお迎えください。
+                <br />
               </Paragraph>
-              <DateInfo>開催期間3月～4月</DateInfo>
+              <DateInfo>開催期間：3月～4月</DateInfo>
             </Description>
           </RightTextSection>
           <NyugakuImageSection>
@@ -289,13 +681,15 @@ const EventSection = () => {
             <Description>
               <Paragraph>
                 「夏越の大祓い（なごしのおおはらい）」は、毎年六月行われる伝統の神事で、
+                <br />
                 この半年のあいだに知らずに犯した過ちや、心身についた穢れを祓い、無病息災を願うものです。
-              </Paragraph>
-              <Paragraph>
+                <br />
                 大館神明社では、皆さまが清らかな心で残りの半年を迎えられるよう、夏越の大祓を斎行しております。
+                <br />
                 日々の感謝とともに、心身を整える節目として、どなたさまもどうぞご参列ください。
+                <br />
               </Paragraph>
-              <DateInfo>開催日時6月30日</DateInfo>
+              <DateInfo>開催日時：6月30日</DateInfo>
             </Description>
           </TextSection>
           <NagoshiImageSection>
@@ -312,13 +706,13 @@ const EventSection = () => {
           <RightTextSection>
             <Description>
               <Paragraph>
-                「古例祭（これいさい）」は、大館神明社において特に由緒深い祭日に斎行される、年間を通じて最も重要な神事のひとつです。
-              </Paragraph>
-              <Paragraph>
+                古例祭は、当初斎行していた旧暦８月１日の例祭を偲び、９月の例祭が無事斎行されることを祈願しております。
+                <br />
                 氏子崇敬者の皆さまとともに、神さまのご加護に感謝を捧げ、地域の安寧と五穀豊穣をお祈りいたします。
+                <br />
                 どうぞ皆さまおそろいでご参拝いただき、心あらたに神さまと向き合うひとときをお過ごしください。
               </Paragraph>
-              <DateInfo>開催日時8月1日</DateInfo>
+              <DateInfo>開催日時：8月1日</DateInfo>
             </Description>
           </RightTextSection>
           <KoreisaiImageSection>
@@ -330,18 +724,17 @@ const EventSection = () => {
         <SectionContainer>
           <VerticalTitle>
             <MonthText>九月</MonthText>
-            <EventTitle>神明社令祭 宵宮祭</EventTitle>
+            <EventTitle>宵宮祭</EventTitle>
           </VerticalTitle>
           <TextSection>
             <Description>
               <Paragraph>
-                「宵宮祭（よいみやさい）」は、例祭や本祭の前夜に執り行われる、神さまをお迎えするための大切な神事です。
+                宵宮祭は翌日の本祭・御神幸祭が無事に斎行されるよう祈願する神事です。
+                <br />
+                静かな夕暮れのなかで心を整え、氏子崇敬者の皆様の神恩感謝の心を届けられるよう、厳粛に斎行されます。
+                <br />
               </Paragraph>
-              <Paragraph>
-                静かな夕暮れのなかで心を整え、神さまをお招きする準備を整えるこの祭りは、祭礼の始まりを告げる儀式として古くから大切にされてきました。
-                大館神明社では、宵宮祭を通じて、地域の皆さまが神さまとのご縁をあらためて感じられるよう、厳粛かつ丁寧にご奉仕しております。
-              </Paragraph>
-              <DateInfo>開催日時9月10日</DateInfo>
+              <DateInfo>開催日時：9月10日</DateInfo>
             </Description>
           </TextSection>
           <YomiyasaiImageSection>
@@ -353,16 +746,16 @@ const EventSection = () => {
         <RightSectionContainer>
           <RightVerticalTitle>
             <MonthText>九月</MonthText>
-            <EventTitle>神明社例祭 当日祭</EventTitle>
+            <EventTitle>例祭</EventTitle>
           </RightVerticalTitle>
           <RightTextSection>
             <Description>
-              <Paragraph>「日例祭（にちれいさい）」は、9月11日に執り行う、定例のご神事です。</Paragraph>
               <Paragraph>
-                大館神明社では、氏子崇敬者の皆さまの無事平穏と地域の安寧、五穀豊穣をお祈りし、神さまへの日々の感謝をこめてご奉仕しております。
-                どなたでもご参列いただけますので、お時間のある方はぜひご一緒にお参りください。
+                例祭は神恩に感謝するとともに、氏子崇敬者の皆さまを始め地域の安寧、五穀豊穣等を祈願します。
+                <br />
+                御神輿の御巡幸も行われ、氏子の皆さまは各町内に設置される祭典事務所でお迎えをします。
               </Paragraph>
-              <DateInfo>開催日時9月11日</DateInfo>
+              <DateInfo>開催日時：9月11日</DateInfo>
             </Description>
           </RightTextSection>
           <NichireisaiImageSection>
@@ -374,15 +767,21 @@ const EventSection = () => {
         <SectionContainer>
           <VerticalTitle>
             <MonthText>九月</MonthText>
-            <EventTitle>神明社祭 御神幸行事</EventTitle>
+            <EventTitle>御神幸行事</EventTitle>
           </VerticalTitle>
           <TextSection>
             <Description>
-              <Paragraph>御神幸行事は、神明社祭の重要な行事の一つとして執り行われます。</Paragraph>
               <Paragraph>
+                御神幸行事は、神明社祭の重要な行事の一つとして執り行われます。
+                <br />
                 神さまの御霊を神輿に遷し、地域を巡行することで、地域の安寧と繁栄をお祈りいたします。
+                <br />
                 多くの氏子崇敬者の皆さまにご参加いただき、神さまとともに地域を巡る大切な行事です。
+                <br />
               </Paragraph>
+              <DetailButton href='https://odate-shinmei.com/' target='_blank' rel='noopener noreferrer'>
+                詳しくはこちら
+              </DetailButton>
             </Description>
           </TextSection>
           <GoshinkoImageSection>
@@ -400,13 +799,15 @@ const EventSection = () => {
             <Description>
               <Paragraph>
                 「七五三」は、3歳・5歳・7歳を迎えたお子さまの成長を神さまに感謝し、これからの健やかな成長と無事をお祈りする、日本の美しい伝統行事です。
-              </Paragraph>
-              <Paragraph>
+                <br />
                 大館神明社では、晴れの日にふさわしい清らかなご祈祷を通して、ご家族の皆さまとともにお子さまの節目をお祝いしております。
+                <br />
                 ご祈祷を受けられたお子さまには、児童守りや千歳飴などの授与品をご用意しております。
+                <br />
                 ぜひご家族そろって、心に残るひとときをお過ごしください。
+                <br />
               </Paragraph>
-              <DateInfo>開催期間 1年を通して</DateInfo>
+              <DateInfo>開催期間：10月～11月を中心に随時受付しております。</DateInfo>
             </Description>
           </RightTextSection>
           <ShichigosanImageSection>
@@ -424,12 +825,13 @@ const EventSection = () => {
             <ToshikoshiDescription>
               <Paragraph>
                 「年越の大祓（としこしのおおばらい）」は、古来より続く日本の伝統行事で、知らず知らずのうちに身についた罪や穢れを祓い清め、心新たに新年を迎えるための神事です。
-              </Paragraph>
-              <Paragraph>
+                <br />
                 一年の感謝を込め、清らかな気持ちで年を越していただけるよう、どなたでもご参列いただけます。
+                <br />
                 どうぞご家族おそろいでお参りください。
+                <br />
               </Paragraph>
-              <DateInfo>開催日時12月31日</DateInfo>
+              <DateInfo>開催日時：12月31日</DateInfo>
             </ToshikoshiDescription>
           </TextSection>
           <ToshikoshiImageSection>

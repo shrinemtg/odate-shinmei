@@ -23,10 +23,10 @@
       "static/chunks/main.js",
       "static/chunks/pages/_error.js"
     ],
-    "/history": [
+    "/event": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/history.js"
+      "static/chunks/pages/event.js"
     ],
     "/omamori": [
       "static/chunks/webpack.js",

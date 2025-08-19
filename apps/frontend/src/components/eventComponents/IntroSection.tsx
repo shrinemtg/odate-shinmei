@@ -8,6 +8,21 @@ const IntroSectionWrapper = styled.section`
   align-items: center;
   justify-content: center;
   padding: 48px 0 56px 0;
+
+  @media (max-width: 1023px) {
+    min-height: 280px;
+    padding: 40px 0 48px 0;
+  }
+
+  @media (max-width: 767px) {
+    min-height: 240px;
+    padding: 32px 0 40px 0;
+  }
+
+  @media (max-width: 374px) {
+    min-height: 200px;
+    padding: 24px 0 32px 0;
+  }
 `
 
 const IntroTitle = styled.h2`
@@ -18,6 +33,21 @@ const IntroTitle = styled.h2`
   font-family: serif;
   margin-bottom: 24px;
   text-align: center;
+
+  @media (max-width: 1023px) {
+    font-size: var(--font-size-3xl);
+    margin-bottom: 20px;
+  }
+
+  @media (max-width: 767px) {
+    font-size: var(--font-size-2xl);
+    margin-bottom: 16px;
+  }
+
+  @media (max-width: 374px) {
+    font-size: var(--font-size-xl);
+    margin-bottom: 12px;
+  }
 `
 
 const IntroTextContainer = styled.div`
@@ -28,6 +58,27 @@ const IntroTextContainer = styled.div`
   text-align: center;
   max-width: 520px;
   margin: 0 auto 48px auto;
+
+  @media (max-width: 1023px) {
+    font-size: var(--font-size-base);
+    line-height: 1.8;
+    max-width: 480px;
+    margin: 0 auto 40px auto;
+  }
+
+  @media (max-width: 767px) {
+    font-size: var(--font-size-sm);
+    line-height: 1.6;
+    max-width: 90%;
+    margin: 0 auto 32px auto;
+  }
+
+  @media (max-width: 374px) {
+    font-size: var(--font-size-xs);
+    line-height: 1.5;
+    max-width: 95%;
+    margin: 0 auto 24px auto;
+  }
 `
 
 const IntroParagraph = styled.p`
