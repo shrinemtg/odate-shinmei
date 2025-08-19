@@ -344,6 +344,7 @@ const ImageSection = styled.div`
   @media (max-width: 767px) {
     justify-content: center;
     align-items: center;
+    width: 100%;
   }
 `
 
@@ -362,12 +363,13 @@ const SectionImage = styled.img`
   @media (max-width: 767px) {
     width: 240px;
     height: 180px;
-    margin: 0;
+    margin: 0 auto;
   }
 
   @media (max-width: 374px) {
     width: 200px;
     height: 150px;
+    margin: 0 auto;
   }
 `
 
