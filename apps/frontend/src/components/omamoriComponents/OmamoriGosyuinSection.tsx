@@ -6,7 +6,20 @@ const OmamoriGosyuinSectionWrapper = styled.section`
   min-height: 100vh;
   position: relative;
   padding: 4rem 0;
+  margin: 0 0 12rem 0;
   background: var(--color-beige-light);
+
+  @media (max-width: 1023px) {
+    padding: 3rem 0;
+  }
+
+  @media (max-width: 767px) {
+    padding: 2rem 0;
+  }
+
+  @media (max-width: 374px) {
+    padding: 1.5rem 0;
+  }
 `
 
 const ContentContainer = styled.div`
@@ -15,12 +28,33 @@ const ContentContainer = styled.div`
   margin: 0 auto;
   display: flex;
   align-items: flex-start;
+
+  @media (max-width: 1023px) {
+    max-width: 90%;
+    gap: 2rem;
+  }
+
+  @media (max-width: 767px) {
+    flex-direction: column;
+    align-items: center;
+    max-width: 95%;
+    gap: 1.5rem;
+  }
+
+  @media (max-width: 374px) {
+    max-width: 100%;
+    gap: 1rem;
+  }
 `
 
 const TitleContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  @media (max-width: 767px) {
+    order: -1;
+  }
 `
 
 const Title = styled.h1`
@@ -33,6 +67,23 @@ const Title = styled.h1`
   text-orientation: mixed;
   line-height: 1.2;
   margin: 0 0 0 2rem;
+
+  @media (max-width: 1023px) {
+    font-size: var(--font-size-4xl);
+    margin: 0 0 0 1.5rem;
+  }
+
+  @media (max-width: 767px) {
+    writing-mode: horizontal-tb;
+    font-size: var(--font-size-3xl);
+    margin: 0 0 1rem 0;
+    letter-spacing: 0.2em;
+  }
+
+  @media (max-width: 374px) {
+    font-size: var(--font-size-2xl);
+    margin: 0 0 0.75rem 0;
+  }
 `
 
 const OmamoriGosyuinGrid = styled.div`
@@ -40,6 +91,20 @@ const OmamoriGosyuinGrid = styled.div`
   grid-template-columns: repeat(2, 1fr);
   flex: 1;
   gap: 2rem;
+
+  @media (max-width: 1023px) {
+    gap: 1.5rem;
+  }
+
+  @media (max-width: 767px) {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    width: 100%;
+  }
+
+  @media (max-width: 374px) {
+    gap: 1.5rem;
+  }
 `
 
 const OmamoriGosyuinCard = styled.div`
@@ -53,6 +118,10 @@ const OmamoriGosyuinCard = styled.div`
   &:hover {
     transform: none;
   }
+
+  @media (max-width: 767px) {
+    text-align: center;
+  }
 `
 
 const OmamoriGosyuinImage = styled.div`
@@ -65,6 +134,22 @@ const OmamoriGosyuinImage = styled.div`
   align-items: center;
   justify-content: center;
   margin-top: 1rem;
+
+  @media (max-width: 1023px) {
+    width: 250px;
+    height: 250px;
+  }
+
+  @media (max-width: 767px) {
+    width: 200px;
+    height: 200px;
+    margin-top: 0;
+  }
+
+  @media (max-width: 374px) {
+    width: 180px;
+    height: 180px;
+  }
 `
 
 const OmamoriGosyuinTitle = styled.h3`
@@ -74,6 +159,22 @@ const OmamoriGosyuinTitle = styled.h3`
   text-align: left;
   font-family: var(--font-family-serif);
   margin: 0 0 0.5rem 0;
+
+  @media (max-width: 1023px) {
+    font-size: var(--font-size-base);
+    margin: 0 0 0.375rem 0;
+  }
+
+  @media (max-width: 767px) {
+    text-align: center;
+    font-size: var(--font-size-base);
+    margin: 0.75rem 0 0.5rem 0;
+  }
+
+  @media (max-width: 374px) {
+    font-size: var(--font-size-sm);
+    margin: 0.5rem 0 0.375rem 0;
+  }
 `
 
 const OmamoriGosyuinDescription = styled.p`
@@ -84,6 +185,25 @@ const OmamoriGosyuinDescription = styled.p`
   font-family: var(--font-family-sans);
   margin: 0;
   max-width: 280px;
+
+  @media (max-width: 1023px) {
+    font-size: var(--font-size-sm);
+    max-width: 240px;
+    line-height: 1.5;
+  }
+
+  @media (max-width: 767px) {
+    text-align: center;
+    font-size: var(--font-size-sm);
+    max-width: 200px;
+    line-height: 1.4;
+  }
+
+  @media (max-width: 374px) {
+    font-size: var(--font-size-xs);
+    max-width: 180px;
+    line-height: 1.3;
+  }
 `
 
 const omamoriGosyuinData = [
@@ -117,20 +237,6 @@ const omamoriGosyuinData = [
   },
 ]
 
-const Description = styled.div`
-  color: var(--color-gray);
-  font-size: var(--font-size-base);
-  line-height: 1.6;
-  font-family: var(--font-family-sans);
-  text-align: center;
-  margin-top: 2rem;
-`
-
-const Paragraph = styled.p`
-  margin: 0;
-  padding: 0;
-`
-
 const OmamoriGosyuinSection = () => {
   return (
     <OmamoriGosyuinSectionWrapper>
@@ -157,9 +263,6 @@ const OmamoriGosyuinSection = () => {
           ))}
         </OmamoriGosyuinGrid>
       </ContentContainer>
-      <Description>
-        <Paragraph>その他にも様々な御朱印をご用意しております。</Paragraph>
-      </Description>
     </OmamoriGosyuinSectionWrapper>
   )
 }

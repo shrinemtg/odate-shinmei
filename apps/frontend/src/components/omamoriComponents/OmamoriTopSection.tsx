@@ -8,6 +8,21 @@ const OmamoriTopSectionWrapper = styled.section`
   display: flex;
   align-items: center;
   justify-content: center;
+
+  @media (max-width: 1023px) {
+    min-height: 50vh;
+    padding: 3rem 0;
+  }
+
+  @media (max-width: 767px) {
+    min-height: 40vh;
+    padding: 2rem 0;
+  }
+
+  @media (max-width: 374px) {
+    min-height: 35vh;
+    padding: 1.5rem 0;
+  }
 `
 
 const ContentContainer = styled.div`
@@ -19,6 +34,23 @@ const ContentContainer = styled.div`
   flex-direction: column;
   align-items: center;
   gap: 3rem;
+
+  @media (max-width: 1023px) {
+    max-width: 90%;
+    gap: 2.5rem;
+  }
+
+  @media (max-width: 767px) {
+    max-width: 95%;
+    padding: 0 1rem;
+    gap: 2rem;
+  }
+
+  @media (max-width: 374px) {
+    max-width: 100%;
+    padding: 0 0.75rem;
+    gap: 1.5rem;
+  }
 `
 
 const Title = styled.h1`
@@ -28,14 +60,48 @@ const Title = styled.h1`
   text-align: center;
   margin-bottom: 2rem;
   font-family: var(--font-family-serif);
+
+  @media (max-width: 1023px) {
+    font-size: var(--font-size-3xl);
+    margin-bottom: 1.5rem;
+  }
+
+  @media (max-width: 767px) {
+    font-size: var(--font-size-2xl);
+    margin-bottom: 1rem;
+  }
+
+  @media (max-width: 374px) {
+    font-size: var(--font-size-xl);
+    margin-bottom: 0.75rem;
+  }
 `
 
 const DescriptionContainer = styled.div`
   width: 100%;
   max-width: 600px;
   padding: 3rem;
-  border: 2px solid var(--color-gray);
+  border: 1px solid var(--color-gray);
   border-radius: 8px;
+
+  @media (max-width: 1023px) {
+    max-width: 550px;
+    padding: 2.5rem;
+  }
+
+  @media (max-width: 767px) {
+    max-width: calc(100% - 2rem);
+    padding: 1.5rem;
+    border-radius: 6px;
+    margin: 0 1rem;
+  }
+
+  @media (max-width: 374px) {
+    max-width: calc(100% - 1.5rem);
+    padding: 1rem;
+    border-radius: 4px;
+    margin: 0 0.75rem;
+  }
 `
 
 const Description = styled.div`
@@ -47,6 +113,23 @@ const Description = styled.div`
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+
+  @media (max-width: 1023px) {
+    font-size: var(--font-size-base);
+    line-height: 1.7;
+  }
+
+  @media (max-width: 767px) {
+    font-size: var(--font-size-sm);
+    line-height: 1.6;
+    gap: 0.375rem;
+  }
+
+  @media (max-width: 374px) {
+    font-size: var(--font-size-xs);
+    line-height: 1.5;
+    gap: 0.25rem;
+  }
 `
 
 const Paragraph = styled.p`
@@ -61,9 +144,13 @@ const OmamoriTopSection = () => {
         <Title>お守り・授与品</Title>
         <DescriptionContainer>
           <Description>
-            <Paragraph>大館神明社ではさまざまなご利益を授ける お守りや授与品をご用意しております。</Paragraph>
-            <Paragraph>ご参拝の際にはぜひ ご自身の願いや状況に合わせご覧ください。</Paragraph>
-            <Paragraph>古くなったお守りは神社で御焚き上げも行っております。</Paragraph>
+            <Paragraph>
+              大館神明社ではさまざまなご利益を授ける お守りを授与しております。
+              <br />
+              ご参拝の際にはぜひ ご自身の願いや状況に合わせてお受け下さい。
+              <br />
+              古くなったお守りは神社で御焚き上げも行っております。
+            </Paragraph>
           </Description>
         </DescriptionContainer>
       </ContentContainer>

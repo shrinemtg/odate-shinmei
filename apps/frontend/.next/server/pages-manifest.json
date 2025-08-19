@@ -2,6 +2,6 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/event": "pages/event.js",
-  "/omamori": "pages/omamori.js"
+  "/omamori": "pages/omamori.js",
+  "/event": "pages/event.js"
 }
