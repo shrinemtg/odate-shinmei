@@ -16,6 +16,22 @@ const TopSection = styled.div`
   display: flex;
   align-items: center;
   gap: 1.5rem;
+
+  @media (max-width: 1024px) {
+    padding: 3rem 1.5rem;
+    gap: 1rem;
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    padding: 2rem 1rem;
+    gap: 2rem;
+  }
+
+  @media (max-width: 480px) {
+    padding: 1.5rem 0.5rem;
+    gap: 1.5rem;
+  }
 `
 
 const LeftContent = styled.div`
@@ -25,6 +41,21 @@ const LeftContent = styled.div`
   align-items: flex-start;
   position: relative;
   gap: 1rem;
+
+  @media (max-width: 1024px) {
+    width: 100%;
+    gap: 0.75rem;
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  @media (max-width: 480px) {
+    gap: 0.75rem;
+  }
 `
 
 const VerticalTitle = styled.h1`
@@ -39,6 +70,23 @@ const VerticalTitle = styled.h1`
   margin: 0 0 2rem 8rem;
   white-space: nowrap;
   flex-shrink: 0;
+
+  @media (max-width: 1024px) {
+    font-size: var(--font-size-4xl);
+    margin: 0 0 1.5rem 6rem;
+  }
+
+  @media (max-width: 768px) {
+    writing-mode: horizontal-tb;
+    font-size: var(--font-size-3xl);
+    text-align: center;
+    margin: 0 0 1rem 0;
+    letter-spacing: 0.1em;
+  }
+
+  @media (max-width: 480px) {
+    font-size: var(--font-size-2xl);
+  }
 `
 
 const TextContent = styled.div`
@@ -46,6 +94,11 @@ const TextContent = styled.div`
   flex-direction: column;
   align-items: flex-start;
   flex: 1;
+
+  @media (max-width: 768px) {
+    align-items: center;
+    text-align: center;
+  }
 `
 
 const SectionTitle = styled.h2`
@@ -55,6 +108,21 @@ const SectionTitle = styled.h2`
   margin: 4rem 0 1rem 0;
   font-family: var(--font-family-serif);
   line-height: 1;
+
+  @media (max-width: 1024px) {
+    font-size: var(--font-size-xl);
+    margin: 3rem 0 0.75rem 0;
+  }
+
+  @media (max-width: 768px) {
+    font-size: var(--font-size-lg);
+    margin: 2rem 0 0.5rem 0;
+  }
+
+  @media (max-width: 480px) {
+    font-size: var(--font-size-base);
+    margin: 1.5rem 0 0.5rem 0;
+  }
 `
 
 const Description = styled.div`
@@ -62,6 +130,21 @@ const Description = styled.div`
   font-size: var(--font-size-base);
   line-height: 1.6;
   max-width: 100%;
+
+  @media (max-width: 1024px) {
+    font-size: var(--font-size-base);
+    line-height: 1.5;
+  }
+
+  @media (max-width: 768px) {
+    font-size: var(--font-size-sm);
+    line-height: 1.4;
+  }
+
+  @media (max-width: 480px) {
+    font-size: var(--font-size-xs);
+    line-height: 1.3;
+  }
 `
 
 const Paragraph = styled.p`
@@ -71,6 +154,21 @@ const Paragraph = styled.p`
   &:last-child {
     margin-bottom: 0;
   }
+
+  @media (max-width: 1024px) {
+    margin-bottom: 1.25rem;
+    font-size: var(--font-size-base);
+  }
+
+  @media (max-width: 768px) {
+    margin-bottom: 1rem;
+    font-size: var(--font-size-sm);
+  }
+
+  @media (max-width: 480px) {
+    margin-bottom: 0.75rem;
+    font-size: var(--font-size-xs);
+  }
 `
 
 const ImageSection = styled.div`
@@ -78,6 +176,10 @@ const ImageSection = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 `
 
 const ShichigosanImage = styled.img`
@@ -89,6 +191,20 @@ const ShichigosanImage = styled.img`
   border-radius: 8px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
   margin-top: 2rem;
+
+  @media (max-width: 1024px) {
+    max-width: 500px;
+    margin-top: 1.5rem;
+  }
+
+  @media (max-width: 768px) {
+    max-width: 400px;
+    margin-top: 0;
+  }
+
+  @media (max-width: 480px) {
+    max-width: 350px;
+  }
 `
 
 const BottomSection = styled.div`
@@ -96,6 +212,18 @@ const BottomSection = styled.div`
   max-width: 900px;
   margin: 0 auto;
   padding: 2rem 4rem 4rem;
+
+  @media (max-width: 1024px) {
+    padding: 1.5rem 3rem 3rem;
+  }
+
+  @media (max-width: 768px) {
+    padding: 1rem 2rem 2rem;
+  }
+
+  @media (max-width: 480px) {
+    padding: 0.75rem 1rem 1.5rem;
+  }
 `
 
 const RitualTable = styled.div`
@@ -107,6 +235,10 @@ const RitualTable = styled.div`
   overflow: hidden;
   background: transparent;
   box-shadow: none;
+
+  @media (max-width: 768px) {
+    border-radius: 4px;
+  }
 `
 
 const RitualRow = styled.div`
@@ -115,6 +247,10 @@ const RitualRow = styled.div`
 
   &:last-child {
     border-bottom: none;
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
   }
 `
 
@@ -129,6 +265,25 @@ const RitualTitle = styled.div`
   display: flex;
   align-items: center;
   border-right: 1px solid var(--color-gray);
+
+  @media (max-width: 1024px) {
+    padding: 1.5rem;
+    font-size: var(--font-size-lg);
+  }
+
+  @media (max-width: 768px) {
+    padding: 1rem;
+    font-size: var(--font-size-base);
+    border-right: none;
+    border-bottom: 1px solid var(--color-gray);
+    text-align: center;
+    justify-content: center;
+  }
+
+  @media (max-width: 480px) {
+    padding: 0.75rem;
+    font-size: var(--font-size-sm);
+  }
 `
 
 const RitualDescription = styled.div`
@@ -139,6 +294,25 @@ const RitualDescription = styled.div`
   line-height: 1.8;
   font-family: var(--font-family-serif);
   text-align: left;
+
+  @media (max-width: 1024px) {
+    padding: 1.5rem;
+    font-size: var(--font-size-base);
+    line-height: 1.6;
+  }
+
+  @media (max-width: 768px) {
+    padding: 1rem;
+    font-size: var(--font-size-sm);
+    line-height: 1.5;
+    text-align: center;
+  }
+
+  @media (max-width: 480px) {
+    padding: 0.75rem;
+    font-size: var(--font-size-xs);
+    line-height: 1.4;
+  }
 `
 
 const ShichigosanSection = () => {

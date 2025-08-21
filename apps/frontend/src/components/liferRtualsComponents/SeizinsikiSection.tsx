@@ -10,6 +10,18 @@ const SeizinsikiSectionWrapper = styled.section`
   align-items: center;
   justify-content: center;
   background: url(/life/life-07.png) 20% center / cover no-repeat;
+
+  @media (max-width: 1024px) {
+    min-height: 70vh;
+  }
+
+  @media (max-width: 768px) {
+    min-height: 60vh;
+  }
+
+  @media (max-width: 480px) {
+    min-height: 50vh;
+  }
 `
 
 const VerticalTitle = styled.section`
@@ -21,6 +33,24 @@ const VerticalTitle = styled.section`
   align-items: center;
   justify-content: center;
   margin: 4rem auto 4rem;
+
+  @media (max-width: 1024px) {
+    height: 35vh;
+    min-height: 250px;
+    margin: 3rem auto 3rem;
+  }
+
+  @media (max-width: 768px) {
+    height: 30vh;
+    min-height: 200px;
+    margin: 2rem auto 2rem;
+  }
+
+  @media (max-width: 480px) {
+    height: 25vh;
+    min-height: 150px;
+    margin: 1.5rem auto 1.5rem;
+  }
 `
 
 const VerticalTitleText = styled.h1`
@@ -35,6 +65,23 @@ const VerticalTitleText = styled.h1`
   margin: 12rem auto 4rem;
   white-space: nowrap;
   overflow: hidden;
+
+  @media (max-width: 1024px) {
+    font-size: var(--font-size-4xl);
+    margin: 10rem auto 3rem;
+  }
+
+  @media (max-width: 768px) {
+    writing-mode: horizontal-tb;
+    font-size: var(--font-size-3xl);
+    text-align: center;
+    margin: 0;
+    letter-spacing: 0.2em;
+  }
+
+  @media (max-width: 480px) {
+    font-size: var(--font-size-2xl);
+  }
 `
 
 const Overlay = styled.div`
@@ -61,6 +108,27 @@ const ContentContainer = styled.div`
   right: 5%;
   top: 50%;
   transform: translateY(-50%);
+
+  @media (max-width: 1024px) {
+    max-width: 350px;
+    padding: 2.5rem 1.5rem;
+    right: 3%;
+  }
+
+  @media (max-width: 768px) {
+    position: relative;
+    right: auto;
+    top: auto;
+    transform: none;
+    max-width: 100%;
+    padding: 2rem 1rem;
+    align-items: center;
+    text-align: center;
+  }
+
+  @media (max-width: 480px) {
+    padding: 1.5rem 0.5rem;
+  }
 `
 
 const Title = styled.h2`
@@ -71,6 +139,20 @@ const Title = styled.h2`
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
   font-family: var(--font-family-serif);
   line-height: 1;
+
+  @media (max-width: 1024px) {
+    font-size: var(--font-size-2xl);
+  }
+
+  @media (max-width: 768px) {
+    font-size: var(--font-size-xl);
+    color: var(--color-brown);
+    text-shadow: none;
+  }
+
+  @media (max-width: 480px) {
+    font-size: var(--font-size-lg);
+  }
 `
 
 const Description = styled.div`
@@ -80,6 +162,24 @@ const Description = styled.div`
   max-width: 100%;
   text-align: left;
   text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+
+  @media (max-width: 1024px) {
+    font-size: var(--font-size-base);
+    line-height: 1.5;
+  }
+
+  @media (max-width: 768px) {
+    color: var(--color-gray);
+    font-size: var(--font-size-sm);
+    line-height: 1.4;
+    text-align: center;
+    text-shadow: none;
+  }
+
+  @media (max-width: 480px) {
+    font-size: var(--font-size-xs);
+    line-height: 1.3;
+  }
 `
 
 const Paragraph = styled.p`
@@ -89,7 +189,23 @@ const Paragraph = styled.p`
   &:last-child {
     margin-bottom: 0;
   }
+
+  @media (max-width: 1024px) {
+    margin-bottom: 0.875rem;
+    font-size: var(--font-size-base);
+  }
+
+  @media (max-width: 768px) {
+    margin-bottom: 0.75rem;
+    font-size: var(--font-size-sm);
+  }
+
+  @media (max-width: 480px) {
+    margin-bottom: 0.5rem;
+    font-size: var(--font-size-xs);
+  }
 `
+
 const Notice = styled.div`
   color: var(--color-gray);
   font-size: var(--font-size-base);
@@ -103,7 +219,26 @@ const Notice = styled.div`
   p {
     margin-bottom: 0;
   }
+
+  @media (max-width: 1024px) {
+    font-size: var(--font-size-base);
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+  }
+
+  @media (max-width: 768px) {
+    font-size: var(--font-size-sm);
+    line-height: 1.4;
+    margin-bottom: 1rem;
+  }
+
+  @media (max-width: 480px) {
+    font-size: var(--font-size-xs);
+    line-height: 1.3;
+    margin-bottom: 0.75rem;
+  }
 `
+
 const ReservationButton = styled.button`
   background: var(--color-shuiro);
   color: var(--color-white);
@@ -120,6 +255,21 @@ const ReservationButton = styled.button`
   &:hover {
     background: var(--color-shuiro);
   }
+
+  @media (max-width: 1024px) {
+    padding: 0.875rem 2.5rem;
+    font-size: var(--font-size-base);
+  }
+
+  @media (max-width: 768px) {
+    padding: 0.75rem 2rem;
+    font-size: var(--font-size-sm);
+  }
+
+  @media (max-width: 480px) {
+    padding: 0.625rem 1.5rem;
+    font-size: var(--font-size-xs);
+  }
 `
 
 const SubContainer = styled.div`
@@ -131,6 +281,18 @@ const SubContainer = styled.div`
   flex-direction: column;
   align-items: center;
   gap: 1rem;
+
+  @media (max-width: 1024px) {
+    padding: 1.5rem 1.5rem;
+  }
+
+  @media (max-width: 768px) {
+    padding: 1rem 1rem;
+  }
+
+  @media (max-width: 480px) {
+    padding: 0.75rem 0.5rem;
+  }
 `
 
 const SeizinsikiSection = () => {

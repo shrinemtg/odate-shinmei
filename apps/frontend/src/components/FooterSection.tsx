@@ -3,7 +3,7 @@ import Link from 'next/link'
 import styled from '@emotion/styled'
 
 const Footer = styled.footer`
-  width: 100vw;
+  width: 100%;
   background: var(--color-oud);
   position: relative;
   min-height: 120px;

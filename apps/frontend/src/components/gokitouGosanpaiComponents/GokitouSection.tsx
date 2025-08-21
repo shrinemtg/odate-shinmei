@@ -10,6 +10,25 @@ const GokitouSectionWrapper = styled.section`
   flex-direction: column;
   align-items: center;
   gap: 3rem;
+
+  @media (max-width: 1023px) {
+    padding: 3rem 1.5rem;
+    gap: 2.5rem;
+  }
+
+  @media (max-width: 767px) {
+    width: 100%;
+    max-width: 100%;
+    padding: 2rem 1rem;
+    gap: 2rem;
+  }
+
+  @media (max-width: 374px) {
+    width: 100%;
+    max-width: 100%;
+    padding: 1.5rem 0.5rem;
+    gap: 1.5rem;
+  }
 `
 
 const MainTitle = styled.h2`
@@ -21,6 +40,21 @@ const MainTitle = styled.h2`
   font-family: var(--font-family-serif);
   margin: 0;
   line-height: 1.2;
+
+  @media (max-width: 1023px) {
+    font-size: var(--font-size-4xl);
+  }
+
+  @media (max-width: 767px) {
+    writing-mode: horizontal-tb;
+    font-size: var(--font-size-3xl);
+    text-align: center;
+    letter-spacing: 0.1em;
+  }
+
+  @media (max-width: 374px) {
+    font-size: var(--font-size-2xl);
+  }
 `
 
 const ContentBox = styled.div`
@@ -30,12 +64,48 @@ const ContentBox = styled.div`
   border-radius: 8px;
   padding: 3rem 2rem;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+
+  @media (max-width: 1023px) {
+    width: calc(90% - 2rem);
+    max-width: calc(90% - 2rem);
+    padding: 2.5rem 1.5rem;
+    margin: 0 1rem;
+  }
+
+  @media (max-width: 767px) {
+    width: calc(80% - 2rem);
+    max-width: calc(350px - 2rem);
+    padding: 1.5rem 0.75rem;
+    border-radius: 6px;
+    margin: 0 1rem;
+  }
+
+  @media (max-width: 374px) {
+    width: calc(95% - 2rem);
+    max-width: calc(320px - 2rem);
+    padding: 1rem 0.5rem;
+    border-radius: 4px;
+    margin: 0 1rem;
+  }
 `
 
 const SectionContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 2rem;
+
+  @media (max-width: 1023px) {
+    gap: 1.75rem;
+  }
+
+  @media (max-width: 767px) {
+    gap: 1.5rem;
+  }
+
+  @media (max-width: 374px) {
+    gap: 1.25rem;
+  }
 `
 
 const Section = styled.div`
@@ -43,9 +113,17 @@ const Section = styled.div`
   align-items: flex-start;
   gap: 1.5rem;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1023px) {
+    gap: 1.25rem;
+  }
+
+  @media (max-width: 767px) {
     flex-direction: column;
     gap: 1rem;
+  }
+
+  @media (max-width: 374px) {
+    gap: 0.75rem;
   }
 `
 
@@ -62,9 +140,25 @@ const SectionLabel = styled.div`
   text-align: center;
   flex-shrink: 0;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1023px) {
+    font-size: var(--font-size-base);
+    padding: 0.5rem 0.7rem;
+    min-width: 110px;
+  }
+
+  @media (max-width: 767px) {
     min-width: auto;
     width: fit-content;
+    font-size: var(--font-size-sm);
+    padding: 0.4rem 0.6rem;
+    border-radius: 6px;
+    margin-top: 0;
+  }
+
+  @media (max-width: 374px) {
+    font-size: var(--font-size-xs);
+    padding: 0.3rem 0.5rem;
+    border-radius: 4px;
   }
 `
 
@@ -85,6 +179,56 @@ const SectionContent = styled.div`
 
   li {
     margin-bottom: 0.25rem;
+  }
+
+  @media (max-width: 1023px) {
+    font-size: var(--font-size-base);
+    line-height: 1.7;
+
+    p {
+      margin: 0 0 0.4rem 0;
+    }
+
+    ul {
+      margin: 0.4rem 0;
+      padding-left: 1.25rem;
+    }
+  }
+
+  @media (max-width: 767px) {
+    font-size: var(--font-size-sm);
+    line-height: 1.6;
+
+    p {
+      margin: 0 0 0.3rem 0;
+    }
+
+    ul {
+      margin: 0.3rem 0;
+      padding-left: 1rem;
+    }
+
+    li {
+      margin-bottom: 0.2rem;
+    }
+  }
+
+  @media (max-width: 374px) {
+    font-size: var(--font-size-xs);
+    line-height: 1.5;
+
+    p {
+      margin: 0 0 0.25rem 0;
+    }
+
+    ul {
+      margin: 0.25rem 0;
+      padding-left: 0.75rem;
+    }
+
+    li {
+      margin-bottom: 0.15rem;
+    }
   }
 `
 
@@ -115,6 +259,29 @@ const ContactButton = styled.button`
   &:active {
     transform: translateY(0);
   }
+
+  @media (max-width: 1023px) {
+    font-size: var(--font-size-base);
+    padding: 0.875rem 1.75rem;
+    margin-top: 1.75rem;
+    max-width: 280px;
+  }
+
+  @media (max-width: 767px) {
+    font-size: var(--font-size-sm);
+    padding: 0.75rem 1.5rem;
+    margin-top: 1.5rem;
+    max-width: 260px;
+    border-radius: 6px;
+  }
+
+  @media (max-width: 374px) {
+    font-size: var(--font-size-xs);
+    padding: 0.625rem 1.25rem;
+    margin-top: 1.25rem;
+    max-width: 240px;
+    border-radius: 4px;
+  }
 `
 
 const ImageGridSection = styled.section`
@@ -122,6 +289,22 @@ const ImageGridSection = styled.section`
   max-width: 1200px;
   margin: 0 auto;
   padding: 4rem 2rem;
+
+  @media (max-width: 1023px) {
+    padding: 3rem 1.5rem;
+  }
+
+  @media (max-width: 767px) {
+    width: 100vw;
+    max-width: 100vw;
+    padding: 2rem 0.5rem;
+  }
+
+  @media (max-width: 374px) {
+    width: 100vw;
+    max-width: 100vw;
+    padding: 1.5rem 0.25rem;
+  }
 `
 
 const ImageGrid = styled.div`
@@ -130,9 +313,26 @@ const ImageGrid = styled.div`
   gap: 2rem;
   margin: 8rem;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1023px) {
+    gap: 1.5rem;
+    margin: 6rem;
+  }
+
+  @media (max-width: 767px) {
     grid-template-columns: 1fr;
     gap: 1.5rem;
+    margin: 2rem;
+    justify-items: center;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  @media (max-width: 374px) {
+    gap: 1rem;
+    margin: 1.5rem auto;
+    justify-items: center;
+    max-width: 350px;
   }
 `
 
@@ -151,6 +351,35 @@ const ImageCard = styled.div`
     transform: translateY(-4px);
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
   }
+
+  @media (max-width: 1023px) {
+    border-radius: 6px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+
+    &:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+    }
+  }
+
+  @media (max-width: 767px) {
+    border-radius: 4px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  @media (max-width: 374px) {
+    border-radius: 3px;
+
+    &:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    }
+  }
 `
 
 const ImageWrapper = styled.div`
@@ -167,6 +396,18 @@ const ImageWrapper = styled.div`
     height: 100%;
     object-fit: fill;
     object-position: center;
+  }
+
+  @media (max-width: 1023px) {
+    height: 250px;
+  }
+
+  @media (max-width: 767px) {
+    height: 200px;
+  }
+
+  @media (max-width: 374px) {
+    height: 180px;
   }
 `
 
@@ -240,7 +481,7 @@ const GokitouSection = () => {
             <Section>
               <SectionLabel>祈願受付</SectionLabel>
               <SectionContent>
-                <p>午前九時~午後六時</p>
+                <p>午前八時三十分～午後五時</p>
                 <p>※その他ご不明な点等は神社社務所にお尋ねください。</p>
               </SectionContent>
             </Section>

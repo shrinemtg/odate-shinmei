@@ -7,6 +7,18 @@ const TitoseameSectionWrapper = styled.section`
   position: relative;
   display: flex;
   align-items: center;
+
+  @media (max-width: 1024px) {
+    min-height: 70vh;
+  }
+
+  @media (max-width: 768px) {
+    min-height: 60vh;
+  }
+
+  @media (max-width: 480px) {
+    min-height: 50vh;
+  }
 `
 
 const ContentContainer = styled.div`
@@ -18,6 +30,18 @@ const ContentContainer = styled.div`
   flex-direction: column;
   align-items: center;
   gap: 1rem;
+
+  @media (max-width: 1024px) {
+    padding: 3rem 1.5rem;
+  }
+
+  @media (max-width: 768px) {
+    padding: 2rem 1rem;
+  }
+
+  @media (max-width: 480px) {
+    padding: 1.5rem 0.5rem;
+  }
 `
 
 const MainContent = styled.div`
@@ -30,11 +54,25 @@ const MainContent = styled.div`
   padding: 3rem;
   border: 2px solid var(--color-shuiro);
   border-radius: 8px;
+  box-sizing: border-box;
+
+  @media (max-width: 1024px) {
+    gap: 3rem;
+    padding: 2.5rem;
+    margin-bottom: 2rem;
+  }
 
   @media (max-width: 768px) {
     flex-direction: column;
     gap: 2rem;
     padding: 2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  @media (max-width: 480px) {
+    gap: 1.5rem;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
   }
 `
 
@@ -43,6 +81,18 @@ const TextSection = styled.div`
   display: flex;
   flex-direction: column;
   gap: 2rem;
+
+  @media (max-width: 1024px) {
+    gap: 1.5rem;
+  }
+
+  @media (max-width: 768px) {
+    gap: 1rem;
+  }
+
+  @media (max-width: 480px) {
+    gap: 0.75rem;
+  }
 `
 
 const Title = styled.h2`
@@ -52,6 +102,41 @@ const Title = styled.h2`
   font-family: var(--font-family-serif);
   margin-bottom: 0.2rem;
   text-align: left;
+
+  @media (max-width: 1024px) {
+    font-size: var(--font-size-3xl);
+  }
+
+  @media (max-width: 768px) {
+    font-size: var(--font-size-2xl);
+    text-align: center;
+  }
+
+  @media (max-width: 480px) {
+    font-size: var(--font-size-xl);
+  }
+`
+
+const TitleImage = styled.img`
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  margin-bottom: 0.5rem;
+
+  @media (max-width: 1024px) {
+    max-width: 350px;
+    margin-bottom: 1.5rem;
+  }
+
+  @media (max-width: 768px) {
+    max-width: 300px;
+    margin-bottom: 1rem;
+  }
+
+  @media (max-width: 480px) {
+    max-width: 250px;
+    margin-bottom: 0.75rem;
+  }
 `
 
 const Description = styled.div`
@@ -62,6 +147,22 @@ const Description = styled.div`
   flex-direction: column;
   gap: 1rem;
   text-align: left;
+
+  @media (max-width: 1024px) {
+    font-size: var(--font-size-base);
+    line-height: 1.5;
+  }
+
+  @media (max-width: 768px) {
+    font-size: var(--font-size-sm);
+    line-height: 1.4;
+    text-align: center;
+  }
+
+  @media (max-width: 480px) {
+    font-size: var(--font-size-xs);
+    line-height: 1.3;
+  }
 `
 
 const Paragraph = styled.p`
@@ -79,13 +180,40 @@ const Notice = styled.div`
   flex-direction: column;
   gap: 1rem;
   align-items: center;
+
+  @media (max-width: 1024px) {
+    font-size: var(--font-size-base);
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+  }
+
+  @media (max-width: 768px) {
+    font-size: var(--font-size-sm);
+    line-height: 1.4;
+    margin-bottom: 1rem;
+  }
+
+  @media (max-width: 480px) {
+    font-size: var(--font-size-xs);
+    line-height: 1.3;
+    margin-bottom: 0.75rem;
+  }
 `
+
 const ImageSection = styled.div`
   flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
   margin-top: 4rem;
+
+  @media (max-width: 1024px) {
+    margin-top: 3rem;
+  }
+
+  @media (max-width: 768px) {
+    margin-top: 0;
+  }
 `
 
 const TitoseameImage = styled.img`
@@ -93,6 +221,18 @@ const TitoseameImage = styled.img`
   height: auto;
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+
+  @media (max-width: 1024px) {
+    max-width: 90%;
+  }
+
+  @media (max-width: 768px) {
+    max-width: 80%;
+  }
+
+  @media (max-width: 480px) {
+    max-width: 75%;
+  }
 `
 
 const ReservationButton = styled.button`
@@ -112,6 +252,21 @@ const ReservationButton = styled.button`
   &:hover {
     background: var(--color-shuiro);
   }
+
+  @media (max-width: 1024px) {
+    padding: 0.875rem 2.5rem;
+    font-size: var(--font-size-base);
+  }
+
+  @media (max-width: 768px) {
+    padding: 0.75rem 2rem;
+    font-size: var(--font-size-sm);
+  }
+
+  @media (max-width: 480px) {
+    padding: 0.625rem 1.5rem;
+    font-size: var(--font-size-xs);
+  }
 `
 
 const TitoseameSection = () => {
@@ -127,14 +282,17 @@ const TitoseameSection = () => {
         <MainContent>
           <TextSection>
             <Title>千歳飴</Title>
+            <TitleImage src='/life/life-09.png' alt='千歳飴の写真' />
             <Description>
-              <Paragraph>大館神明社では 七五三のご祈祷を受けられたお子さまに、千歳飴をお渡ししております。</Paragraph>
               <Paragraph>
+                大館神明社では 七五三のご祈祷を受けられたお子さまに、千歳飴をお配りしております。
+                <br />
                 七五三のお祝いに欠かせない「千歳飴(ちとせあめ)」は 子どもの健やかな成長と長寿を願う象徴的な贈り物です。
               </Paragraph>
-              <Paragraph>「千歳」は「千年」を意味し、長寿や繁栄を願う気持ちが 込められ</Paragraph>
               <Paragraph>
-                細長い形状は「長生き」を象徴し、 紅白の色合いは「めでたさ」や「健康」を表しています。
+                千歳飴は、長寿の願いを込めて、粘り強く細長い飴を、 人生になぞらえた縁起ものです。
+                <br />
+                七五三の内祝い、またそのお返しにご親戚、ご友人、ご近所とで贈り合ったりもします。
               </Paragraph>
             </Description>
           </TextSection>

@@ -5,6 +5,18 @@ const TemizuSectionWrapper = styled.section`
   height: 460px;
   position: relative;
   overflow: hidden;
+
+  @media (max-width: 1024px) {
+    height: 400px;
+  }
+
+  @media (max-width: 768px) {
+    height: 350px;
+  }
+
+  @media (max-width: 480px) {
+    height: 300px;
+  }
 `
 
 const BackgroundImage = styled.div`
@@ -24,6 +36,14 @@ const Overlay = styled.div`
   display: flex;
   align-items: center;
   padding: 2rem;
+
+  @media (max-width: 768px) {
+    padding: 1.5rem;
+  }
+
+  @media (max-width: 480px) {
+    padding: 1rem;
+  }
 `
 
 const TextArea = styled.div`
@@ -32,6 +52,17 @@ const TextArea = styled.div`
   width: 90%;
   max-width: 1200px;
   margin: 0 auto;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+
+  @media (max-width: 480px) {
+    width: 95%;
+    gap: 1rem;
+  }
 `
 
 const VerticalTitle = styled.h2`
@@ -44,6 +75,23 @@ const VerticalTitle = styled.h2`
   line-height: 1.2;
   margin: 0;
   margin: 0 3rem;
+
+  @media (max-width: 1024px) {
+    font-size: var(--font-size-4xl);
+    margin: 0 2rem;
+  }
+
+  @media (max-width: 768px) {
+    writing-mode: horizontal-tb;
+    font-size: var(--font-size-3xl);
+    margin: 0;
+    text-align: center;
+    align-self: center;
+  }
+
+  @media (max-width: 480px) {
+    font-size: var(--font-size-2xl);
+  }
 `
 
 const ContentArea = styled.div`
@@ -51,6 +99,14 @@ const ContentArea = styled.div`
   color: var(--color-white);
   font-family: var(--font-family-serif);
   max-width: 50%;
+
+  @media (max-width: 1024px) {
+    max-width: 60%;
+  }
+
+  @media (max-width: 768px) {
+    max-width: 100%;
+  }
 `
 
 const ContentTitle = styled.h3`
@@ -58,6 +114,20 @@ const ContentTitle = styled.h3`
   font-weight: 600;
   margin: 0 0 1rem 0;
   line-height: 1.4;
+
+  @media (max-width: 1024px) {
+    font-size: var(--font-size-lg);
+  }
+
+  @media (max-width: 768px) {
+    font-size: var(--font-size-base);
+    margin: 0 0 0.75rem 0;
+  }
+
+  @media (max-width: 480px) {
+    font-size: var(--font-size-sm);
+    margin: 0 0 0.5rem 0;
+  }
 `
 
 const ContentText = styled.p`
@@ -66,6 +136,21 @@ const ContentText = styled.p`
   margin: 0;
   text-align: justify;
   max-width: 400px;
+
+  @media (max-width: 1024px) {
+    font-size: var(--font-size-sm);
+    max-width: 100%;
+  }
+
+  @media (max-width: 768px) {
+    font-size: var(--font-size-xs);
+    line-height: 1.6;
+  }
+
+  @media (max-width: 480px) {
+    font-size: var(--font-size-xs);
+    line-height: 1.5;
+  }
 `
 
 const TemizuSection = () => {

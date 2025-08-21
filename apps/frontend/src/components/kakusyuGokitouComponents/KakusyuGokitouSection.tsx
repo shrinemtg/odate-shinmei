@@ -5,6 +5,18 @@ const KakusyuGokitouSectionWrapper = styled.section`
   min-height: 100vh;
   position: relative;
   padding: 4rem 0;
+
+  @media (max-width: 1024px) {
+    padding: 3rem 0;
+  }
+
+  @media (max-width: 768px) {
+    padding: 2rem 0;
+  }
+
+  @media (max-width: 480px) {
+    padding: 1.5rem 0;
+  }
 `
 
 const ContentContainer = styled.div`
@@ -15,6 +27,21 @@ const ContentContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 6rem;
+
+  @media (max-width: 1024px) {
+    padding: 0 2rem;
+    gap: 4rem;
+  }
+
+  @media (max-width: 768px) {
+    padding: 0 1.5rem;
+    gap: 3rem;
+  }
+
+  @media (max-width: 480px) {
+    padding: 0 1rem;
+    gap: 2rem;
+  }
 `
 
 const SectionContainer = styled.div`
@@ -24,10 +51,19 @@ const SectionContainer = styled.div`
   position: relative;
   margin: 0 auto;
 
+  @media (max-width: 1024px) {
+    width: 100%;
+    max-width: 900px;
+  }
+
   @media (max-width: 768px) {
     flex-direction: column;
     gap: 2rem;
     width: 100%;
+  }
+
+  @media (max-width: 480px) {
+    gap: 1.5rem;
   }
 `
 
@@ -51,6 +87,23 @@ const VerticalTitle = styled.h2`
   white-space: nowrap;
   margin: 0 2rem 0 2rem;
   flex-shrink: 0;
+
+  @media (max-width: 1024px) {
+    font-size: var(--font-size-3xl);
+    margin: 0 1.5rem 0 1.5rem;
+  }
+
+  @media (max-width: 768px) {
+    writing-mode: horizontal-tb;
+    font-size: var(--font-size-2xl);
+    text-align: center;
+    margin: 0;
+    letter-spacing: 0.2em;
+  }
+
+  @media (max-width: 480px) {
+    font-size: var(--font-size-xl);
+  }
 `
 
 const TextSection = styled.div`
@@ -59,6 +112,20 @@ const TextSection = styled.div`
   flex-direction: column;
   gap: 1.5rem;
   margin: 2rem 0 0 0;
+
+  @media (max-width: 1024px) {
+    gap: 1.25rem;
+    margin: 1.5rem 0 0 0;
+  }
+
+  @media (max-width: 768px) {
+    gap: 1rem;
+    margin: 0;
+  }
+
+  @media (max-width: 480px) {
+    gap: 0.75rem;
+  }
 `
 
 const Description = styled.div`
@@ -66,6 +133,21 @@ const Description = styled.div`
   font-size: var(--font-size-base);
   line-height: 1.6;
   font-family: var(--font-family-sans);
+
+  @media (max-width: 1024px) {
+    font-size: var(--font-size-base);
+    line-height: 1.5;
+  }
+
+  @media (max-width: 768px) {
+    font-size: var(--font-size-sm);
+    line-height: 1.4;
+  }
+
+  @media (max-width: 480px) {
+    font-size: var(--font-size-xs);
+    line-height: 1.3;
+  }
 `
 
 const Paragraph = styled.p`
@@ -75,6 +157,18 @@ const Paragraph = styled.p`
   &:last-child {
     margin-bottom: 0;
   }
+
+  @media (max-width: 1024px) {
+    margin-bottom: 0.875rem;
+  }
+
+  @media (max-width: 768px) {
+    margin-bottom: 0.75rem;
+  }
+
+  @media (max-width: 480px) {
+    margin-bottom: 0.5rem;
+  }
 `
 
 const ImageSection = styled.div`
@@ -82,39 +176,111 @@ const ImageSection = styled.div`
   display: flex;
   justify-content: center;
   align-items: flex-end;
+
+  @media (max-width: 768px) {
+    align-items: center;
+  }
 `
 
 const CarImageSection = styled(ImageSection)`
   margin: 8rem 2rem 0 0;
+
+  @media (max-width: 1024px) {
+    margin: 6rem 1.5rem 0 0;
+  }
+
+  @media (max-width: 768px) {
+    margin: 0;
+  }
 `
 
 const GoukakuImageSection = styled(ImageSection)`
   margin: 7rem 0 2rem 2rem;
+
+  @media (max-width: 1024px) {
+    margin: 5rem 0 1.5rem 1.5rem;
+  }
+
+  @media (max-width: 768px) {
+    margin: 0;
+  }
 `
 
 const HisshouImageSection = styled(ImageSection)`
   margin: 1rem 2rem 3rem 0;
+
+  @media (max-width: 1024px) {
+    margin: 0.75rem 1.5rem 2rem 0;
+  }
+
+  @media (max-width: 768px) {
+    margin: 0;
+  }
 `
 
 const KenkouImageSection = styled(ImageSection)`
   margin: 4rem 0 3rem 2rem;
+
+  @media (max-width: 1024px) {
+    margin: 3rem 0 2rem 1.5rem;
+  }
+
+  @media (max-width: 768px) {
+    margin: 0;
+  }
 `
 
 const TravelImageSection = styled(ImageSection)`
   margin: 3rem 1rem 10rem 0;
+
+  @media (max-width: 1024px) {
+    margin: 2rem 0.75rem 7rem 0;
+  }
+
+  @media (max-width: 768px) {
+    margin: 0;
+  }
 `
 
 const SectionImage = styled.img`
   max-width: 100%;
   height: auto;
+
+  @media (max-width: 1024px) {
+    max-width: 90%;
+  }
+
+  @media (max-width: 768px) {
+    max-width: 80%;
+  }
+
+  @media (max-width: 480px) {
+    max-width: 75%;
+  }
 `
 
 const RightVerticalTitle = styled(VerticalTitle)`
   margin: 0 2rem 0 0; // 右側用のマージン調整
+
+  @media (max-width: 1024px) {
+    margin: 0 1.5rem 0 0;
+  }
+
+  @media (max-width: 768px) {
+    margin: 0;
+  }
 `
 
 const RightTextSection = styled(TextSection)`
   margin: 2rem 2rem 0 2rem;
+
+  @media (max-width: 1024px) {
+    margin: 1.5rem 1.5rem 0 1.5rem;
+  }
+
+  @media (max-width: 768px) {
+    margin: 0;
+  }
 `
 
 const KakusyuGokitouSection = () => {

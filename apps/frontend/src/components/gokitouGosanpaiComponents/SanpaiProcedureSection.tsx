@@ -9,6 +9,18 @@ const ProcedureSectionWrapper = styled.section`
   flex-direction: column;
   align-items: center;
   gap: 2rem;
+
+  @media (max-width: 1024px) {
+    margin: 3rem auto;
+    padding: 0 1.5rem;
+    gap: 1.5rem;
+  }
+
+  @media (max-width: 768px) {
+    margin: 2rem auto;
+    padding: 0 1rem;
+    gap: 1rem;
+  }
 `
 
 const SectionTitle = styled.h2`
@@ -20,11 +32,21 @@ const SectionTitle = styled.h2`
   margin: 0 0 0 9rem;
   align-self: flex-start;
 
+  @media (max-width: 1024px) {
+    font-size: var(--font-size-3xl);
+    margin: 0 0 0 6rem;
+  }
+
   @media (max-width: 768px) {
     writing-mode: horizontal-tb;
     margin-left: 0;
     text-align: center;
     align-self: center;
+    font-size: var(--font-size-2xl);
+  }
+
+  @media (max-width: 480px) {
+    font-size: var(--font-size-xl);
   }
 `
 
@@ -38,16 +60,31 @@ const ProcedureBox = styled.div`
   align-items: flex-start;
   gap: 1.5rem;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  box-sizing: border-box;
 
   @media (max-width: 1024px) {
+    width: calc(85% - 3rem);
     flex-wrap: wrap;
     justify-content: center;
+    padding: 1.5rem;
+    gap: 1rem;
+    margin: 0 1rem;
   }
 
   @media (max-width: 768px) {
+    width: calc(95% - 3rem);
     flex-direction: column;
     align-items: center;
     padding: 1.5rem;
+    gap: 1.5rem;
+    margin: 0 1rem;
+  }
+
+  @media (max-width: 480px) {
+    width: calc(100% - 3rem);
+    padding: 1rem;
+    gap: 1rem;
+    margin: 0 1.5rem;
   }
 `
 
@@ -74,6 +111,18 @@ const StepNumber = styled.span`
   color: var(--color-gray);
   font-family: var(--font-family-serif);
   align-self: flex-start;
+
+  @media (max-width: 1024px) {
+    font-size: var(--font-size-4xl);
+  }
+
+  @media (max-width: 768px) {
+    font-size: var(--font-size-3xl);
+  }
+
+  @media (max-width: 480px) {
+    font-size: var(--font-size-2xl);
+  }
 `
 
 const StepImageWrapper = styled.div`
@@ -82,6 +131,18 @@ const StepImageWrapper = styled.div`
   position: relative;
   margin-bottom: 1rem;
   overflow: hidden;
+
+  @media (max-width: 1024px) {
+    height: 180px;
+  }
+
+  @media (max-width: 768px) {
+    height: 160px;
+  }
+
+  @media (max-width: 480px) {
+    height: 140px;
+  }
 
   img {
     width: 100%;
@@ -98,6 +159,21 @@ const StepDescription = styled.p`
   line-height: 1.6;
   margin: 0;
   white-space: pre-line;
+
+  @media (max-width: 1024px) {
+    font-size: var(--font-size-xs);
+    line-height: 1.5;
+  }
+
+  @media (max-width: 768px) {
+    font-size: var(--font-size-xs);
+    line-height: 1.4;
+  }
+
+  @media (max-width: 480px) {
+    font-size: var(--font-size-xs);
+    line-height: 1.3;
+  }
 `
 
 const Arrow = styled.div`
@@ -107,6 +183,7 @@ const Arrow = styled.div`
   align-self: center;
 
   @media (max-width: 1024px) {
+    font-size: var(--font-size-2xl);
     display: none;
   }
 
@@ -114,6 +191,12 @@ const Arrow = styled.div`
     display: block;
     transform: rotate(90deg);
     margin: 1rem 0;
+    font-size: var(--font-size-xl);
+  }
+
+  @media (max-width: 480px) {
+    font-size: var(--font-size-lg);
+    margin: 0.5rem 0;
   }
 `
 
@@ -134,8 +217,8 @@ const SanpaiProcedureSection = () => {
     {
       number: '三',
       image: '/gokitou/sanpaisahou-03.png',
-      alt: '深く二礼をする',
-      description: '深く二礼をします。',
+      alt: '深く二回拝をする',
+      description: '深く二回拝をします。',
     },
     {
       number: '四',
@@ -146,8 +229,8 @@ const SanpaiProcedureSection = () => {
     {
       number: '五',
       image: '/gokitou/sanpaisahou-05.png',
-      alt: '一礼する',
-      description: '最後にもう一度、深く一礼します。',
+      alt: '最後に深く一拝します',
+      description: '最後にもう一度、深く一拝します。',
     },
   ]
 

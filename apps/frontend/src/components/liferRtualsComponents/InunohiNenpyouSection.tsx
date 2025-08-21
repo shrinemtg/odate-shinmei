@@ -10,6 +10,27 @@ const InunohiNenpyouSectionWrapper = styled.section`
   flex-direction: column;
   align-items: center;
   gap: 3rem;
+
+  @media (max-width: 1024px) {
+    width: 80%;
+    margin: 1.5rem 6rem;
+    padding: 1.5rem 2rem;
+    gap: 2rem;
+  }
+
+  @media (max-width: 768px) {
+    width: 90%;
+    margin: 1rem 2rem;
+    padding: 1rem 1.5rem;
+    gap: 1.5rem;
+  }
+
+  @media (max-width: 480px) {
+    width: 95%;
+    margin: 0.75rem 1rem;
+    padding: 0.75rem 1rem;
+    gap: 1rem;
+  }
 `
 
 const MainTitle = styled.h2`
@@ -19,6 +40,18 @@ const MainTitle = styled.h2`
   font-family: var(--font-family-serif);
   margin: 0;
   text-align: center;
+
+  @media (max-width: 1024px) {
+    font-size: var(--font-size-3xl);
+  }
+
+  @media (max-width: 768px) {
+    font-size: var(--font-size-2xl);
+  }
+
+  @media (max-width: 480px) {
+    font-size: var(--font-size-xl);
+  }
 `
 
 const ImageContainer = styled.div`
@@ -31,6 +64,18 @@ const ImageContainer = styled.div`
   padding: 2rem 6rem;
   border: 1px solid var(--color-gray);
   border-radius: 8px;
+
+  @media (max-width: 1024px) {
+    padding: 1.5rem 4rem;
+  }
+
+  @media (max-width: 768px) {
+    padding: 1rem 2rem;
+  }
+
+  @media (max-width: 480px) {
+    padding: 0.75rem 1rem;
+  }
 `
 
 const NenpyouImage = styled.img`
@@ -66,6 +111,27 @@ const ReservationButton = styled.button`
 
   &:active {
     transform: translateY(0);
+  }
+
+  @media (max-width: 1024px) {
+    padding: 0.875rem 1.75rem;
+    font-size: var(--font-size-base);
+    margin-top: 1.5rem;
+    max-width: 280px;
+  }
+
+  @media (max-width: 768px) {
+    padding: 0.75rem 1.5rem;
+    font-size: var(--font-size-sm);
+    margin-top: 1rem;
+    max-width: 260px;
+  }
+
+  @media (max-width: 480px) {
+    padding: 0.625rem 1.25rem;
+    font-size: var(--font-size-xs);
+    margin-top: 0.75rem;
+    max-width: 240px;
   }
 `
 

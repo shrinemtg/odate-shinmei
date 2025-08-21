@@ -5,6 +5,18 @@ const SanpaiSectionWrapper = styled.section`
   height: 460px;
   position: relative;
   overflow: hidden;
+
+  @media (max-width: 1024px) {
+    height: 400px;
+  }
+
+  @media (max-width: 768px) {
+    height: 350px;
+  }
+
+  @media (max-width: 480px) {
+    height: 300px;
+  }
 `
 
 const BackgroundImage = styled.div`
@@ -23,6 +35,15 @@ const Overlay = styled.div`
   background: linear-gradient(135deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.7) 100%);
   display: flex;
   align-items: center;
+  padding: 2rem;
+
+  @media (max-width: 768px) {
+    padding: 1.5rem;
+  }
+
+  @media (max-width: 480px) {
+    padding: 1rem;
+  }
 `
 
 const TextArea = styled.div`
@@ -32,6 +53,17 @@ const TextArea = styled.div`
   max-width: 1200px;
   margin: 0 auto;
   justify-content: flex-end;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+
+  @media (max-width: 480px) {
+    width: 95%;
+    gap: 1rem;
+  }
 `
 
 const VerticalTitle = styled.h2`
@@ -43,6 +75,23 @@ const VerticalTitle = styled.h2`
   letter-spacing: 0.2em;
   line-height: 1.2;
   margin: 0 3rem 0 0;
+
+  @media (max-width: 1024px) {
+    font-size: var(--font-size-4xl);
+    margin: 0 2rem 0 0;
+  }
+
+  @media (max-width: 768px) {
+    writing-mode: horizontal-tb;
+    font-size: var(--font-size-3xl);
+    margin: 0;
+    text-align: center;
+    align-self: center;
+  }
+
+  @media (max-width: 480px) {
+    font-size: var(--font-size-2xl);
+  }
 `
 
 const ContentArea = styled.div`
@@ -51,6 +100,14 @@ const ContentArea = styled.div`
   font-family: var(--font-family-serif);
   max-width: 50%;
   text-align: left;
+
+  @media (max-width: 1024px) {
+    max-width: 60%;
+  }
+
+  @media (max-width: 768px) {
+    max-width: 100%;
+  }
 `
 
 const ContentTitle = styled.h3`
@@ -58,6 +115,21 @@ const ContentTitle = styled.h3`
   font-weight: 600;
   margin: 0 1rem 1rem 5rem;
   line-height: 1.4;
+
+  @media (max-width: 1024px) {
+    font-size: var(--font-size-lg);
+    margin: 0 1rem 1rem 3rem;
+  }
+
+  @media (max-width: 768px) {
+    font-size: var(--font-size-base);
+    margin: 0 0 0.75rem 0;
+  }
+
+  @media (max-width: 480px) {
+    font-size: var(--font-size-sm);
+    margin: 0 0 0.5rem 0;
+  }
 `
 
 const ContentText = styled.p`
@@ -66,6 +138,24 @@ const ContentText = styled.p`
   margin: 0 1rem 1rem 5rem;
   text-align: justify;
   max-width: 400px;
+
+  @media (max-width: 1024px) {
+    font-size: var(--font-size-sm);
+    margin: 0 1rem 1rem 3rem;
+    max-width: 100%;
+  }
+
+  @media (max-width: 768px) {
+    font-size: var(--font-size-xs);
+    line-height: 1.6;
+    margin: 0 0 0.75rem 0;
+  }
+
+  @media (max-width: 480px) {
+    font-size: var(--font-size-xs);
+    line-height: 1.5;
+    margin: 0 0 0.5rem 0;
+  }
 `
 
 const RitualBox = styled.div`
@@ -73,6 +163,22 @@ const RitualBox = styled.div`
   margin: 0 1rem 1rem 5rem;
   padding: 1rem;
   max-width: 400px;
+
+  @media (max-width: 1024px) {
+    margin: 0 1rem 1rem 3rem;
+    padding: 0.75rem;
+  }
+
+  @media (max-width: 768px) {
+    margin: 0 0 0.75rem 0;
+    padding: 0.75rem;
+    max-width: 100%;
+  }
+
+  @media (max-width: 480px) {
+    margin: 0 0 0.5rem 0;
+    padding: 0.5rem;
+  }
 `
 
 const RitualItem = styled.div`
@@ -90,6 +196,21 @@ const RitualItem = styled.div`
     min-width: 4rem;
     display: inline-block;
   }
+
+  @media (max-width: 1024px) {
+    font-size: var(--font-size-xs);
+    line-height: 1.5;
+  }
+
+  @media (max-width: 768px) {
+    font-size: var(--font-size-xs);
+    line-height: 1.4;
+  }
+
+  @media (max-width: 480px) {
+    font-size: var(--font-size-xs);
+    line-height: 1.3;
+  }
 `
 
 const SanpaiSection = () => {
@@ -99,19 +220,19 @@ const SanpaiSection = () => {
       <Overlay>
         <TextArea>
           <ContentArea>
-            <ContentTitle>二礼二拍手一礼</ContentTitle>
+            <ContentTitle>二拝二拍手一拝</ContentTitle>
             <ContentText>
-              明治時代の神道国教化政策(国家神道)以降、神社の礼法が統一され、「二礼二拍手一礼」が公式な参拝作法として定着していきました。
+              明治時代の神道国教化政策(国家神道)以降、神社の礼法が統一され、「二拝二拍手一拝」が公式な参拝作法として定着していきました。
             </ContentText>
             <RitualBox>
               <RitualItem>
-                <strong>二礼</strong> 敬意を示す（始めと終わり）
+                <strong>二拝</strong> 敬意を示す（始めと終わり）
               </RitualItem>
               <RitualItem>
                 <strong>二拍手</strong> 祈りを届ける、神様と心を通わせる
               </RitualItem>
               <RitualItem>
-                <strong>一礼</strong> 感謝と締めくくり
+                <strong>一拝</strong> 感謝と締めくくり
               </RitualItem>
             </RitualBox>
           </ContentArea>

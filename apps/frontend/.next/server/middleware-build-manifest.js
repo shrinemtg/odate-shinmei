@@ -20,15 +20,25 @@ globalThis.__BUILD_MANIFEST = {
       "static/chunks/main.js",
       "static/chunks/pages/_error.js"
     ],
-    "/event": [
+    "/gokitouGosanpai": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/event.js"
+      "static/chunks/pages/gokitouGosanpai.js"
     ],
-    "/omamori": [
+    "/history": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/omamori.js"
+      "static/chunks/pages/history.js"
+    ],
+    "/kakusyuGokitou": [
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/kakusyuGokitou.js"
+    ],
+    "/lifeRtuals": [
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/lifeRtuals.js"
     ]
   },
   "ampFirstPages": []
