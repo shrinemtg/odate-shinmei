@@ -49,12 +49,12 @@ const ContentContainer = styled.div`
   }
 
   @media (min-width: 769px) {
-    padding: 0 3rem;
+    padding: 0 2rem;
     gap: 3rem;
   }
 
   @media (min-width: 1025px) {
-    padding: 0 4rem;
+    padding: 0 2.5rem;
     gap: 3rem;
   }
 `
@@ -79,19 +79,19 @@ const Title = styled.h1`
   @media (min-width: 481px) {
     font-size: var(--font-size-2xl);
     margin-bottom: 1.5rem;
-    padding: 0 1.5rem;
+    padding: 0 1rem;
   }
 
   @media (min-width: 769px) {
     font-size: var(--font-size-3xl);
     margin-bottom: 2rem;
-    padding: 0 2rem;
+    padding: 0;
   }
 
   @media (min-width: 1025px) {
     font-size: var(--font-size-4xl);
     margin-bottom: 2rem;
-    padding: 0 3rem;
+    padding: 0;
   }
 `
 
