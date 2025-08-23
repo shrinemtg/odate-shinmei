@@ -4,84 +4,197 @@ const GokitouSectionWrapper = styled.section`
   width: 100vw;
   min-height: 100vh;
   position: relative;
-  padding: 4rem 0;
+  padding: 2rem 0;
+
+  @media (min-width: 481px) {
+    padding: 2.5rem 0;
+  }
+
+  @media (min-width: 769px) {
+    padding: 3rem 0;
+  }
+
+  @media (min-width: 1025px) {
+    padding: 4rem 0;
+  }
 `
 
 const ContentContainer = styled.div`
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 3rem;
+  padding: 0 1rem;
   display: flex;
   flex-direction: column;
   gap: 6rem;
+
+  @media (min-width: 481px) {
+    padding: 0 1.5rem;
+    gap: 6rem;
+  }
+
+  @media (min-width: 769px) {
+    padding: 0 2rem;
+    gap: 6rem;
+  }
+
+  @media (min-width: 1025px) {
+    padding: 0 3rem;
+    gap: 6rem;
+  }
+
+  @media (min-width: 1201px) {
+    gap: 6rem;
+  }
 `
 
 const SectionContainer = styled.div`
-  width: 900px;
+  width: 100%;
   display: flex;
-  align-items: flex-start;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
   position: relative;
   margin: 0 auto;
 
-  @media (max-width: 768px) {
-    flex-direction: column;
+  @media (min-width: 769px) {
+    flex-direction: row;
+    align-items: flex-start;
     gap: 2rem;
-    width: 100%;
+    max-width: 900px;
+  }
+
+  @media (min-width: 1025px) {
+    gap: 3rem;
+    width: 900px;
   }
 `
 
 const RightSectionContainer = styled(SectionContainer)`
-  flex-direction: row-reverse;
-
-  @media (max-width: 768px) {
-    flex-direction: column;
+  @media (min-width: 769px) {
+    flex-direction: row-reverse;
   }
 `
 
 const VerticalTitle = styled.h2`
   color: var(--color-brown);
-  font-size: var(--font-size-4xl);
+  font-size: var(--font-size-xl);
   font-weight: 600;
-  writing-mode: vertical-rl;
-  letter-spacing: 0.3em;
+  writing-mode: horizontal-tb;
+  letter-spacing: 0.2em;
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   font-family: var(--font-family-serif);
   line-height: 1.2;
-  white-space: nowrap;
-  margin: 0 2rem 0 0;
+  text-align: center;
+  margin: 0;
   flex-shrink: 0;
+  order: 0;
+
+  @media (min-width: 481px) {
+    font-size: var(--font-size-2xl);
+  }
+
+  @media (min-width: 769px) {
+    writing-mode: vertical-rl;
+    font-size: var(--font-size-3xl);
+    letter-spacing: 0.3em;
+    margin: 0 1.5rem 0 1.5rem;
+  }
+
+  @media (min-width: 1025px) {
+    font-size: var(--font-size-4xl);
+    margin: 0 2rem 0 2rem;
+  }
 `
 
 const RightVerticalTitle = styled(VerticalTitle)`
-  margin: 0 2rem 0 0;
+  @media (min-width: 769px) {
+    margin: 0 1.5rem 0 0;
+  }
+
+  @media (min-width: 1025px) {
+    margin: 0 2rem 0 0;
+  }
 `
 
 const TextSection = styled.div`
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
-  margin: 2rem 0 0 0;
+  gap: 1rem;
+  margin: 0;
+  width: 90%;
+  order: 1;
+
+  @media (min-width: 481px) {
+    gap: 1.25rem;
+  }
+
+  @media (min-width: 769px) {
+    gap: 1.5rem;
+    margin: 2rem 0 0 0;
+    width: 100%;
+    order: 0;
+  }
+
+  @media (min-width: 1025px) {
+    gap: 1.5rem;
+  }
 `
 
 const RightTextSection = styled(TextSection)`
-  margin: 2rem 2rem 0 2rem;
+  @media (min-width: 769px) {
+    margin: 1.5rem 1.5rem 0 1.5rem;
+  }
+
+  @media (min-width: 1025px) {
+    margin: 2rem 2rem 0 2rem;
+  }
 `
 
 const Description = styled.div`
   color: var(--color-gray);
-  font-size: var(--font-size-base);
-  line-height: 1.6;
+  font-size: var(--font-size-sm);
+  line-height: 1.5;
   font-family: var(--font-family-sans);
+
+  @media (min-width: 481px) {
+    font-size: var(--font-size-base);
+    line-height: 1.6;
+  }
+
+  @media (min-width: 769px) {
+    font-size: var(--font-size-base);
+    line-height: 1.6;
+  }
+
+  @media (min-width: 1025px) {
+    font-size: var(--font-size-base);
+    line-height: 1.6;
+  }
 `
 
 const Paragraph = styled.p`
-  margin-bottom: 1rem;
-  font-size: var(--font-size-base);
+  margin-bottom: 0.75rem;
+  font-size: var(--font-size-sm);
 
   &:last-child {
     margin-bottom: 0;
+  }
+
+  @media (min-width: 481px) {
+    margin-bottom: 0.875rem;
+    font-size: var(--font-size-base);
+  }
+
+  @media (min-width: 769px) {
+    margin-bottom: 1rem;
+    font-size: var(--font-size-base);
+  }
+
+  @media (min-width: 1025px) {
+    margin-bottom: 1rem;
+    font-size: var(--font-size-base);
   }
 `
 
@@ -89,49 +202,141 @@ const ImageSection = styled.div`
   flex: 1;
   display: flex;
   justify-content: center;
-  align-items: flex-end;
+  align-items: center;
+  width: 90%;
+  order: 2;
+
+  @media (min-width: 769px) {
+    order: 0;
+    align-items: flex-end;
+    width: 100%;
+  }
 `
 
 const SectionImage = styled.img`
-  max-width: 100%;
+  max-width: 80%;
   height: auto;
+
+  @media (min-width: 481px) {
+    max-width: 85%;
+  }
+
+  @media (min-width: 769px) {
+    max-width: 90%;
+  }
+
+  @media (min-width: 1025px) {
+    max-width: 100%;
+  }
 `
 
 // 各祭事用の画像セクション
 const JichinsaiImageSection = styled(ImageSection)`
-  margin: 2rem 0 0 0;
+  margin: 0;
+
+  @media (min-width: 769px) {
+    margin: 2rem 0 0 0;
+  }
+
+  @media (min-width: 1025px) {
+    margin: 2rem 0 0 0;
+  }
 `
 
 const SekouImageSection = styled(ImageSection)`
-  margin: 3rem 0 2rem 0;
+  margin: 0;
+
+  @media (min-width: 769px) {
+    margin: 3rem 0 2rem 0;
+  }
+
+  @media (min-width: 1025px) {
+    margin: 3rem 0 2rem 0;
+  }
 `
 
 const JoutouImageSection = styled(ImageSection)`
-  margin: 1rem 0 3rem 0;
+  margin: 0;
+
+  @media (min-width: 769px) {
+    margin: 1rem 0 3rem 0;
+  }
+
+  @media (min-width: 1025px) {
+    margin: 1rem 0 3rem 0;
+  }
 `
 
 const YaharaiImageSection = styled(ImageSection)`
-  margin: 6rem 0 3rem 0;
+  margin: 0;
+
+  @media (min-width: 769px) {
+    margin: 6rem 0 3rem 0;
+  }
+
+  @media (min-width: 1025px) {
+    margin: 6rem 0 3rem 0;
+  }
 `
 
 const KamidanaImageSection = styled(ImageSection)`
-  margin: 2rem 0 2rem 0;
+  margin: 0;
+
+  @media (min-width: 769px) {
+    margin: 2rem 0 2rem 0;
+  }
+
+  @media (min-width: 1025px) {
+    margin: 2rem 0 2rem 0;
+  }
 `
 
 const IdoImageSection = styled(ImageSection)`
-  margin: 0 0 2rem 0;
+  margin: 0;
+
+  @media (min-width: 769px) {
+    margin: 0 0 2rem 0;
+  }
+
+  @media (min-width: 1025px) {
+    margin: 0 0 2rem 0;
+  }
 `
 
 const KaitaiImageSection = styled(ImageSection)`
-  margin: 3rem 0 3rem 0;
+  margin: 0;
+
+  @media (min-width: 769px) {
+    margin: 3rem 0 3rem 0;
+  }
+
+  @media (min-width: 1025px) {
+    margin: 3rem 0 3rem 0;
+  }
 `
 
 const AnzenImageSection = styled(ImageSection)`
-  margin: 0 0 2rem 0;
+  margin: 0;
+
+  @media (min-width: 769px) {
+    margin: 0 0 2rem 0;
+  }
+
+  @media (min-width: 1025px) {
+    margin: 0 0 2rem 0;
+  }
 `
 
 const ShoubaiImageSection = styled(ImageSection)`
-  margin: 3rem 0 2rem 0;
+  margin: 0;
+
+  @media (min-width: 769px) {
+    margin: 3rem 0 2rem 0;
+  }
+
+  @media (min-width: 1025px) {
+    margin: 3rem 0 2rem 0;
+  }
 `
 
 const GokitouSection = () => {
@@ -144,11 +349,9 @@ const GokitouSection = () => {
           <TextSection>
             <Description>
               <Paragraph>
-                家や建物を建てる前に、土地の神さまにご挨拶し、工事の安全と家の繁栄を祈願する祭典です。
+                家や建物を建てる前に、その土地をお守りしている大地主神、産土神、建築をお守りする神様達をお迎えして土地のお祓いや工事の安全を祈願します。
               </Paragraph>
               <Paragraph>
-                新しく家を建てる際や、建物の建設に取りかかる前に行う最も代表的な神事です。
-                その土地に住まう神さま（氏神様・産土神）に、これからここで工事を始めることを報告し、土地を祓い清め、安全に工事が進みますよう祈ります。
                 施主様をはじめ、設計者や施工関係者も参列されることが多く、建築の無事と繁栄を願う重要な節目です。
               </Paragraph>
             </Description>
@@ -166,8 +369,8 @@ const GokitouSection = () => {
               <Paragraph>基礎工事や重要な建築工程の開始時に、安全と円滑な進行を祈願する祭典です。</Paragraph>
               <Paragraph>
                 地鎮祭の後、具体的な施工に入る段階において、事故や災いがないように、工事の安全と完成を祈る神事です。
-                鉄骨工事・杭打ち・基礎打ち・内装工事など、大きな工程に入る前に実施することで、関係者の心も引き締まり、安全意識の高まりにもつながります。
-                ※地鎮祭と一緒に行うことがほとんどです。
+                鉄骨工事・杭打ち・基礎打ち・内装工事など、大きな工程に入る前に実施することで、関係者の心も引き締まり、安全意識の高まりにも繋がります。
+                地鎮祭と一緒に行うことが多いです。
               </Paragraph>
             </Description>
           </RightTextSection>
@@ -195,45 +398,47 @@ const GokitouSection = () => {
         </SectionContainer>
 
         {/* 竣工祭 */}
-        <SectionContainer>
-          <VerticalTitle>竣工祭</VerticalTitle>
-          <TextSection>
-            <Description>
-              <Paragraph>棟木を上げる際に、建物の完成とそこに暮らす人々の安泰を祈る神事です。</Paragraph>
-              <Paragraph>
-                「棟上げ」や「建前（たてまえ）」とも呼ばれ、家づくりの中でも特に大きな節目とされる日です。
-                建物の骨組みが完成し、屋根の一番高い部分である棟木を上げる際、これまでの工事の無事を感謝し、今後の完成と家内安全・繁栄をお祈りします。
-                餅まきなど地域や家族での祝い事としても行われ、喜びのあるお祭りでもあります。
-              </Paragraph>
-            </Description>
-          </TextSection>
-          <JoutouImageSection>
-            <SectionImage src='/gaisai/gaisai-03.png' alt='上棟祭のイラスト' />
-          </JoutouImageSection>
-        </SectionContainer>
-
-        {/* 家祓 */}
         <RightSectionContainer>
-          <RightVerticalTitle>家祓</RightVerticalTitle>
+          <RightVerticalTitle>竣工祭-家祓い</RightVerticalTitle>
           <RightTextSection>
             <Description>
-              <Paragraph>住まいを祓い清め、安全で安心して暮らせるように祈願します。</Paragraph>
               <Paragraph>
-                人が暮らす「家」は、日々の生活を守る大切な場です。
-                新しい住まいに入る前や、住み替えの際には、住居全体を清め、神さまにご挨拶し、家内安全・災難除け・心身の平穏をお祈りします。
-                特に中古物件や以前に事情のあった場所などでは、家を祓い清めることで心身ともに安心して新生活を始められます。
+                竣工祭は、建物や施設の完成を神前に報告し、その加護と関係者への感謝をお伝えするお祭りです。
+              </Paragraph>
+              <Paragraph>
+                工事中の安全を守っていただいたことへのお礼と、これからの事業や暮らしの繁栄を祈願いたします。
+                神職が新しい建物の前で祝詞を奏上し、お清めとお祓いを行うことで、末永く安全で健やかな使用を願います。
+                企業や店舗、住宅など、あらゆる竣工の場面で執り行うことができ、上棟祭と一緒に行われることが多いです。
               </Paragraph>
             </Description>
           </RightTextSection>
-          <YaharaiImageSection>
-            <SectionImage src='/gaisai/gaisai-04.png' alt='家祓のイラスト' />
-          </YaharaiImageSection>
+          <JoutouImageSection>
+            <SectionImage src='/gaisai/gaisai-04.png' alt='竣工祭のイラスト' />
+          </JoutouImageSection>
         </RightSectionContainer>
 
-        {/* 神棚祭 */}
+        {/* 家祓 */}
         <SectionContainer>
-          <VerticalTitle>神棚祭</VerticalTitle>
+          <VerticalTitle>中古住宅の清祓</VerticalTitle>
           <TextSection>
+            <Description>
+              <Paragraph>
+                中古住宅、また引っ越し先の住まいを祓い清め、安全で安心して暮らせるように祈願します。
+              </Paragraph>
+              <Paragraph>
+                人が暮らす「家」は、日々の生活を守る大切な場です。住み替えの際には、住居全体を清め、神さまにご挨拶し、家内安全・災難除け・心身の平穏をお祈りします。中古物件や以前に事情のあった場所などでは、家を祓い清めることで心身ともに安心して新生活を始められます。
+              </Paragraph>
+            </Description>
+          </TextSection>
+          <YaharaiImageSection>
+            <SectionImage src='/gaisai/gaisai-05.png' alt='家祓のイラスト' />
+          </YaharaiImageSection>
+        </SectionContainer>
+
+        {/* 神棚祭 */}
+        <RightSectionContainer>
+          <RightVerticalTitle>神棚祭</RightVerticalTitle>
+          <RightTextSection>
             <Description>
               <Paragraph>神棚を設置・移動・交換する際に、神さまを丁寧にお迎えし、日々の守護を願います。</Paragraph>
               <Paragraph>
@@ -242,16 +447,16 @@ const GokitouSection = () => {
                 ご家庭はもちろん、会社・店舗などでも神棚を設けて日々の安全や商売繁盛を祈る習慣は古くから大切にされています。
               </Paragraph>
             </Description>
-          </TextSection>
+          </RightTextSection>
           <KamidanaImageSection>
-            <SectionImage src='/gaisai/gaisai-05.png' alt='神棚祭のイラスト' />
+            <SectionImage src='/gaisai/gaisai-06.png' alt='神棚祭のイラスト' />
           </KamidanaImageSection>
-        </SectionContainer>
+        </RightSectionContainer>
 
         {/* 井戸埋清祓 */}
-        <RightSectionContainer>
-          <RightVerticalTitle>井戸埋立清祓</RightVerticalTitle>
-          <RightTextSection>
+        <SectionContainer>
+          <VerticalTitle>井戸埋立清祓</VerticalTitle>
+          <TextSection>
             <Description>
               <Paragraph>
                 長年使ってきた井戸を埋める前に、水の神さまに感謝を捧げ、清らかにお見送りする神事です。
@@ -262,34 +467,34 @@ const GokitouSection = () => {
                 自然と共に生きてきた日本ならではの、心のこもった神事です。
               </Paragraph>
             </Description>
-          </RightTextSection>
+          </TextSection>
           <IdoImageSection>
-            <SectionImage src='/gaisai/gaisai-06.png' alt='井戸埋立清祓のイラスト' />
+            <SectionImage src='/gaisai/gaisai-07.png' alt='井戸埋立清祓のイラスト' />
           </IdoImageSection>
-        </RightSectionContainer>
+        </SectionContainer>
 
         {/* 解体清祭 */}
-        <SectionContainer>
-          <VerticalTitle>解体清祭</VerticalTitle>
-          <TextSection>
+        <RightSectionContainer>
+          <RightVerticalTitle>解体清祭</RightVerticalTitle>
+          <RightTextSection>
             <Description>
               <Paragraph>これまでお世話になった建物を取り壊す前に感謝を込めて清め、安全な解体を祈ります。</Paragraph>
               <Paragraph>
                 長年住まわれたご自宅や、使われてきた建物には多くの思い出と感謝が込められています。
                 解体の前に、神職がその場を祓い清め、建物の御霊に感謝を捧げ、作業中の安全を祈願します。
-                このお祭りを通じて、建物に敬意を表し、次の新たな生活や建築へと心を整えることができます。
+                この祭事を通じて、建物に敬意を表し、次の新たな生活や建築へと心を整えることができます。
               </Paragraph>
             </Description>
-          </TextSection>
+          </RightTextSection>
           <KaitaiImageSection>
-            <SectionImage src='/gaisai/gaisai-07.png' alt='解体清祭のイラスト' />
+            <SectionImage src='/gaisai/gaisai-08.png' alt='解体清祭のイラスト' />
           </KaitaiImageSection>
-        </SectionContainer>
+        </RightSectionContainer>
 
         {/* 安全祈願祭 */}
-        <RightSectionContainer>
-          <RightVerticalTitle>安全祈願祭</RightVerticalTitle>
-          <RightTextSection>
+        <SectionContainer>
+          <VerticalTitle>安全祈願祭</VerticalTitle>
+          <TextSection>
             <Description>
               <Paragraph>工事現場や事業所などで、作業に関わる全ての方々の安全と健康、無事故を願う神事です。</Paragraph>
               <Paragraph>
@@ -298,16 +503,16 @@ const GokitouSection = () => {
                 特に新年度・新規事業・大規模工事の開始前には、多くの企業で実施されています。
               </Paragraph>
             </Description>
-          </RightTextSection>
+          </TextSection>
           <AnzenImageSection>
-            <SectionImage src='/gaisai/gaisai-08.png' alt='安全祈願祭のイラスト' />
+            <SectionImage src='/gaisai/gaisai-09.png' alt='安全祈願祭のイラスト' />
           </AnzenImageSection>
-        </RightSectionContainer>
+        </SectionContainer>
 
         {/* 商売繁盛祈願祭 */}
-        <SectionContainer>
-          <VerticalTitle>商売繁盛祈願祭</VerticalTitle>
-          <TextSection>
+        <RightSectionContainer>
+          <RightVerticalTitle>商売繁盛祈願祭</RightVerticalTitle>
+          <RightTextSection>
             <Description>
               <Paragraph>お店や会社の商売繁盛・千客万来・社運隆昌を祈願する祭典です。</Paragraph>
               <Paragraph>
@@ -316,11 +521,11 @@ const GokitouSection = () => {
                 法人・個人問わず、店舗・事務所・工場など、幅広い業種に対応いたします。
               </Paragraph>
             </Description>
-          </TextSection>
+          </RightTextSection>
           <ShoubaiImageSection>
-            <SectionImage src='/gaisai/gaisai-09.png' alt='商売繁盛祈願祭のイラスト' />
+            <SectionImage src='/gaisai/gaisai-10.png' alt='商売繁盛祈願祭のイラスト' />
           </ShoubaiImageSection>
-        </SectionContainer>
+        </RightSectionContainer>
       </ContentContainer>
     </GokitouSectionWrapper>
   )

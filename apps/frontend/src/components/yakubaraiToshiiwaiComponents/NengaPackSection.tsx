@@ -119,16 +119,19 @@ const PriceTableImage = styled.img`
 `
 
 const Notes = styled.div`
-  text-align: left;
   color: var(--color-gray);
   font-size: var(--font-size-sm);
   font-family: var(--font-family-serif);
   line-height: 1.8;
   margin-bottom: 0;
+  text-align: right;
+  align-self: flex-end;
+  width: 100%;
 
   p {
     margin: 0;
     padding: 0;
+    text-align: right;
   }
 
   @media (max-width: 1024px) {
@@ -137,14 +140,22 @@ const Notes = styled.div`
   }
 
   @media (max-width: 768px) {
-    text-align: center;
+    text-align: right;
     font-size: var(--font-size-sm);
     line-height: 1.5;
+
+    p {
+      text-align: right;
+    }
   }
 
   @media (max-width: 480px) {
     font-size: var(--font-size-xs);
     line-height: 1.4;
+
+    p {
+      text-align: right;
+    }
   }
 `
 
