@@ -1,9 +1,9 @@
 import HeroSection from './HeroSection'
 import YakubaraiSection from './YakubaraiSection'
 import YakubaraiNenpyouSection from './YakubaraiNenpyouSection'
-import ToshimawariNenpyouSection from './ToshimawariNenpyouSection'
 import ToshiiwaiSection from './ToshiiwaiSection'
 import ToshiiwaiHayamiHyou from './ToshiiwaiHayamiHyou'
+import NengaPackSection from './NengaPackSection'
 
 const YakurabaiToshiiwaiPageContent = () => {
   return (
@@ -11,9 +11,9 @@ const YakurabaiToshiiwaiPageContent = () => {
       <HeroSection />
       <YakubaraiSection />
       <YakubaraiNenpyouSection />
-      <ToshimawariNenpyouSection />
       <ToshiiwaiSection />
       <ToshiiwaiHayamiHyou />
+      <NengaPackSection />
     </>
   )
 }

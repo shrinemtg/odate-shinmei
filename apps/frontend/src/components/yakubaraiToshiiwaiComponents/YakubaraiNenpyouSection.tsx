@@ -1,14 +1,50 @@
 import styled from '@emotion/styled'
 
 const YakubaraiNenpyouSectionWrapper = styled.section`
-  width: 68%;
+  width: 100vw;
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  @media (max-width: 1024px) {
+    min-height: 90vh;
+  }
+
+  @media (max-width: 768px) {
+    min-height: 80vh;
+  }
+
+  @media (max-width: 480px) {
+    min-height: 70vh;
+  }
+`
+
+const ContentContainer = styled.div`
+  width: 100%;
   max-width: 1200px;
-  margin: 2rem 12rem;
-  padding: 2rem 3rem;
+  margin: 0 auto;
+  padding: 4rem 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 3rem;
+
+  @media (max-width: 1024px) {
+    padding: 3rem 1.5rem;
+    gap: 2rem;
+  }
+
+  @media (max-width: 768px) {
+    padding: 2rem 1rem;
+    gap: 1.5rem;
+    align-items: center;
+  }
+
+  @media (max-width: 480px) {
+    padding: 1.5rem 0.5rem;
+    gap: 1rem;
+  }
 `
 
 const MainTitle = styled.h2`
@@ -18,6 +54,18 @@ const MainTitle = styled.h2`
   font-family: var(--font-family-serif);
   margin: 0;
   text-align: center;
+
+  @media (max-width: 1024px) {
+    font-size: var(--font-size-3xl);
+  }
+
+  @media (max-width: 768px) {
+    font-size: var(--font-size-2xl);
+  }
+
+  @media (max-width: 480px) {
+    font-size: var(--font-size-xl);
+  }
 `
 
 const ImageContainer = styled.div`
@@ -31,6 +79,18 @@ const ImageContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+
+  @media (max-width: 1024px) {
+    max-width: 800px;
+  }
+
+  @media (max-width: 768px) {
+    max-width: calc(100% - 2rem);
+  }
+
+  @media (max-width: 480px) {
+    border-width: 1px;
+  }
 `
 
 const NenpyouImage = styled.img`
@@ -53,22 +113,43 @@ const ExplanationText = styled.div`
   p {
     margin: 0 0 0.5rem 0;
   }
+
+  @media (max-width: 1024px) {
+    font-size: var(--font-size-base);
+    line-height: 1.7;
+    margin-top: 1.5rem;
+  }
+
+  @media (max-width: 768px) {
+    font-size: var(--font-size-sm);
+    line-height: 1.6;
+    margin-top: 1rem;
+    max-width: 600px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: var(--font-size-xs);
+    line-height: 1.5;
+    margin-top: 0.75rem;
+  }
 `
 
 const YakubaraiNenpyouSection = () => {
   return (
     <YakubaraiNenpyouSectionWrapper>
-      <MainTitle>令和7年 厄年</MainTitle>
+      <ContentContainer>
+        <MainTitle>令和7年 厄年</MainTitle>
 
-      <ImageContainer>
-        <NenpyouImage src='/yakubaraiPhoto/yakubarai-04.png' alt='令和7年厄年表' />
-      </ImageContainer>
+        <ImageContainer>
+          <NenpyouImage src='/yakubaraiPhoto/yakubarai-04.png' alt='令和7年厄年表' />
+        </ImageContainer>
 
-      <ExplanationText>
-        <p>厄年の年齢は、一般的に数え年で数えられ</p>
-        <p>男性では25歳・42歳・61歳、女性では19歳・33歳・37歳が該当します。</p>
-        <p>特に男性の42歳と女性の33歳は「大厄」と呼ばれています</p>
-      </ExplanationText>
+        <ExplanationText>
+          <p>厄年の年齢は、一般的に数え年で数えられ</p>
+          <p>男性では25歳・42歳・61歳、女性では19歳・33歳・37歳が該当します。</p>
+          <p>特に男性の42歳と女性の33歳は「大厄」と呼ばれています</p>
+        </ExplanationText>
+      </ContentContainer>
     </YakubaraiNenpyouSectionWrapper>
   )
 }

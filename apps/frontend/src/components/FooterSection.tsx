@@ -14,6 +14,18 @@ const Footer = styled.footer`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
+  @media (max-width: 1024px) {
+    min-height: 100px;
+  }
+
+  @media (max-width: 768px) {
+    min-height: 80px;
+  }
+
+  @media (max-width: 480px) {
+    min-height: 70px;
+  }
 `
 
 const Cloud = styled.div`
@@ -24,6 +36,24 @@ const Cloud = styled.div`
   height: 180px;
   z-index: 1;
   pointer-events: none;
+
+  @media (max-width: 1024px) {
+    left: -120px;
+    width: 360px;
+    height: 135px;
+  }
+
+  @media (max-width: 768px) {
+    left: -80px;
+    width: 240px;
+    height: 90px;
+  }
+
+  @media (max-width: 480px) {
+    left: -60px;
+    width: 180px;
+    height: 68px;
+  }
 `
 
 const LogoArea = styled.div`
@@ -34,6 +64,18 @@ const LogoArea = styled.div`
   align-items: center;
   justify-content: center;
   margin: 38px 0 28px 0;
+
+  @media (max-width: 1024px) {
+    margin: 30px 0 22px 0;
+  }
+
+  @media (max-width: 768px) {
+    margin: 24px 0 18px 0;
+  }
+
+  @media (max-width: 480px) {
+    margin: 20px 0 15px 0;
+  }
 `
 
 const FooterSection = () => (
@@ -55,7 +97,15 @@ const FooterSection = () => (
           alt='神社ロゴ'
           width={150}
           height={150}
-          style={{ marginBottom: 8, filter: 'brightness(0) invert(1)', cursor: 'pointer' }}
+          style={{
+            marginBottom: 8,
+            filter: 'brightness(0) invert(1)',
+            cursor: 'pointer',
+            width: 'auto',
+            height: 'auto',
+            maxWidth: '150px',
+            maxHeight: '150px',
+          }}
           priority
         />
       </Link>

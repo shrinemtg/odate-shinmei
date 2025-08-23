@@ -9,9 +9,21 @@ const YakubaraiSectionWrapper = styled.section`
   align-items: flex-start;
   gap: 4rem;
 
+  @media (max-width: 1024px) {
+    padding: 3rem 1.5rem;
+    gap: 3rem;
+  }
+
   @media (max-width: 768px) {
     flex-direction: column;
     gap: 2rem;
+    padding: 2rem 1rem;
+    align-items: center;
+  }
+
+  @media (max-width: 480px) {
+    padding: 1.5rem 0.5rem;
+    gap: 1.5rem;
   }
 `
 
@@ -20,9 +32,19 @@ const ContentSection = styled.div`
   display: flex;
   gap: 2rem;
 
+  @media (max-width: 1024px) {
+    gap: 1.5rem;
+  }
+
   @media (max-width: 768px) {
     flex-direction: column;
     gap: 1.5rem;
+    width: 100%;
+    align-items: center;
+  }
+
+  @media (max-width: 480px) {
+    gap: 1rem;
   }
 `
 
@@ -36,6 +58,23 @@ const MainTitle = styled.h2`
   margin: 0 0 0 8rem;
   line-height: 1.2;
   flex-shrink: 0;
+
+  @media (max-width: 1024px) {
+    font-size: var(--font-size-4xl);
+    margin: 0 0 0 6rem;
+  }
+
+  @media (max-width: 768px) {
+    writing-mode: horizontal-tb;
+    font-size: var(--font-size-3xl);
+    text-align: center;
+    margin: 0;
+    letter-spacing: 0.1em;
+  }
+
+  @media (max-width: 480px) {
+    font-size: var(--font-size-2xl);
+  }
 `
 
 const TextContent = styled.div`
@@ -45,6 +84,31 @@ const TextContent = styled.div`
   line-height: 1.8;
   font-family: var(--font-family-serif);
   margin: 2rem 0 0 0;
+  padding: 0 1rem;
+
+  @media (max-width: 1024px) {
+    font-size: var(--font-size-base);
+    line-height: 1.7;
+    margin: 1.5rem 0 0 0;
+    padding: 0 0.75rem;
+  }
+
+  @media (max-width: 768px) {
+    font-size: var(--font-size-sm);
+    line-height: 1.6;
+    margin: 0;
+    text-align: center;
+    width: 90%;
+    max-width: 600px;
+    padding: 0 1rem;
+  }
+
+  @media (max-width: 480px) {
+    width: 90%;
+    font-size: var(--font-size-xs);
+    line-height: 1.5;
+    padding: 0 0.5rem;
+  }
 `
 
 const PhotoSection = styled.div`
@@ -52,6 +116,11 @@ const PhotoSection = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    justify-content: center;
+  }
 `
 
 const PhotoWrapper = styled.div`
@@ -63,6 +132,23 @@ const PhotoWrapper = styled.div`
   overflow: hidden;
   margin: 3rem 0 0 0;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+
+  @media (max-width: 1024px) {
+    max-width: 350px;
+    height: 250px;
+    margin: 2rem 0 0 0;
+  }
+
+  @media (max-width: 768px) {
+    max-width: 300px;
+    height: 200px;
+    margin: 0;
+  }
+
+  @media (max-width: 480px) {
+    max-width: 250px;
+    height: 180px;
+  }
 
   img {
     width: 100%;
@@ -80,10 +166,8 @@ const YakubaraiSection = () => {
         <TextContent>
           <p>災厄を未然に防ぐ『転ばぬ先の杖』として神社でお願いを受け、厄災を除くのが厄払いです。</p>
           <p>
-            しかし、厄年はけして悪いことではなく、役につく年頃になったという意味もあり、その時を無事に迎えられたことに感謝の気持ちを込めて歳祝いとして自分で祝うことも大切です。
+            しかし、厄年はけして悪いことではなく、役につく年頃になったという意味もあり、その時を無事に迎えられたことに感謝の気持ちを込めて家族、友人達と共に歳祝としてお祝いします。
           </p>
-          <p>また、9年に一度巡る運気停滞の年が『年廻り』と言い、これは男女ともに誕生年から数えます。</p>
-          <p>今年の『厄年』『年廻り』は下記表をご覧下さい。</p>
         </TextContent>
       </ContentSection>
 

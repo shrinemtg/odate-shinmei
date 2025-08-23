@@ -23,25 +23,10 @@
       "static/chunks/main.js",
       "static/chunks/pages/_error.js"
     ],
-    "/gokitouGosanpai": [
+    "/yakubaraiToshiiwai": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/gokitouGosanpai.js"
-    ],
-    "/history": [
-      "static/chunks/webpack.js",
-      "static/chunks/main.js",
-      "static/chunks/pages/history.js"
-    ],
-    "/kakusyuGokitou": [
-      "static/chunks/webpack.js",
-      "static/chunks/main.js",
-      "static/chunks/pages/kakusyuGokitou.js"
-    ],
-    "/lifeRtuals": [
-      "static/chunks/webpack.js",
-      "static/chunks/main.js",
-      "static/chunks/pages/lifeRtuals.js"
+      "static/chunks/pages/yakubaraiToshiiwai.js"
     ]
   },
   "ampFirstPages": []

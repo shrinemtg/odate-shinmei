@@ -48,7 +48,7 @@ const MainTitle = styled.h1`
   font-size: var(--font-size-3xl);
   font-weight: 600;
   text-align: center;
-  margin-bottom: 0.2rem;
+  margin-bottom: 3rem;
   font-family: var(--font-family-serif);
 
   @media (max-width: 1024px) {
@@ -64,65 +64,47 @@ const MainTitle = styled.h1`
   }
 `
 
-const Subtitle = styled.p`
-  color: var(--color-gray);
-  font-size: var(--font-size-sm);
-  text-align: center;
-  margin-bottom: 3rem;
-  font-family: var(--font-family-serif);
-
-  @media (max-width: 1024px) {
-    font-size: var(--font-size-base);
-    margin-bottom: 2.5rem;
-  }
-
-  @media (max-width: 768px) {
-    font-size: var(--font-size-sm);
-    margin-bottom: 2rem;
-  }
-
-  @media (max-width: 480px) {
-    font-size: var(--font-size-xs);
-    margin-bottom: 1.5rem;
-  }
-`
-
 const PriceTableContainer = styled.div`
   width: 100%;
   max-width: 600px;
   position: relative;
   margin-bottom: 0.5rem;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   background: var(--color-oud);
   padding: 2rem;
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  gap: 2rem;
 
   @media (max-width: 1024px) {
     max-width: 550px;
     padding: 1.5rem;
+    gap: 1.5rem;
   }
 
   @media (max-width: 768px) {
     max-width: 100%;
     padding: 1rem;
+    gap: 1rem;
   }
 
   @media (max-width: 480px) {
     max-width: calc(100% - 1rem);
     padding: 0.75rem;
+    gap: 0.75rem;
   }
 `
 
 const PriceTableImage = styled.img`
   width: 100%;
-  max-width: 700px;
+  max-width: 800px;
   height: auto;
 
   @media (max-width: 1024px) {
-    max-width: 550px;
+    max-width: 700px;
   }
 
   @media (max-width: 768px) {
@@ -164,52 +146,19 @@ const Notes = styled.div`
   }
 `
 
-const InfoContainer = styled.div`
-  width: 100%;
-  max-width: 900px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  margin-top: 2rem;
-  gap: 1rem;
-
-  @media (max-width: 1024px) {
-    margin-top: 1.5rem;
-    gap: 0.75rem;
-  }
-
-  @media (max-width: 768px) {
-    align-items: center;
-    margin-top: 1rem;
-    gap: 0.5rem;
-  }
-
-  @media (max-width: 480px) {
-    margin-top: 0.75rem;
-  }
-`
-
 const ShichigosanPackSection = () => {
   return (
     <ShichigosanPackSectionWrapper>
       <ContentContainer>
         <MainTitle>七五三パック料金表</MainTitle>
-        <Subtitle>※パックは10月と11月のみ行っています</Subtitle>
 
         <PriceTableContainer>
           <PriceTableImage src='/life/life-08.png' alt='七五三パック料金表' />
-        </PriceTableContainer>
-
-        <InfoContainer>
           <Notes>
-            {/* <p> */}
-            {/* ※パックは10月と11月のみご用意しております。
-              <br />
-              その他の期間は御祈祷のみとなります。
-            </p> */}
-            <p>※衣装代には着付けとヘアメイクの料金が含まれています</p>
+            <p>※パックは10月と11月のみ行っています。</p>
+            <p>※衣装代には着付けとヘアメイクの料金が含まれています。</p>
           </Notes>
-        </InfoContainer>
+        </PriceTableContainer>
       </ContentContainer>
     </ShichigosanPackSectionWrapper>
   )
