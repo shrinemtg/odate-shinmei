@@ -16,11 +16,19 @@ const SectionWrapper = styled.section`
   flex-direction: column;
   align-items: center;
   box-sizing: border-box;
+
+  @media (max-width: 768px) {
+    padding: 48px 0 0 0;
+  }
 `
 
 const TitleArea = styled.div`
   text-align: center;
   margin-bottom: 32px;
+
+  @media (max-width: 768px) {
+    margin-bottom: 24px;
+  }
 `
 
 const SubTitle = styled.div`
@@ -28,6 +36,11 @@ const SubTitle = styled.div`
   font-family: 'Noto Serif JP', serif;
   font-size: 20px;
   margin-bottom: 8px;
+
+  @media (max-width: 768px) {
+    font-size: 16px;
+    margin-bottom: 4px;
+  }
 `
 
 const MainTitle = styled.h2`
@@ -37,6 +50,11 @@ const MainTitle = styled.h2`
   font-weight: 600;
   letter-spacing: 0.08em;
   margin: 0 0 16px 0;
+
+  @media (max-width: 768px) {
+    font-size: 32px;
+    margin: 0 0 12px 0;
+  }
 `
 
 const GridArea = styled.div`
@@ -49,10 +67,16 @@ const GridArea = styled.div`
   z-index: 2;
   justify-content: flex-end;
   box-sizing: border-box;
+
   @media (max-width: 900px) {
     width: 90%;
     flex-wrap: wrap;
     justify-content: center;
+  }
+
+  @media (max-width: 768px) {
+    gap: 16px;
+    width: 95%;
   }
 `
 
@@ -68,6 +92,12 @@ const ImageBox = styled.div`
   position: relative;
   z-index: 2;
   max-width: 240px;
+
+  @media (max-width: 768px) {
+    max-width: 160px;
+    border-radius: 12px;
+  }
+
   img {
     width: 100%;
     height: 100%;
@@ -81,7 +111,7 @@ const DescriptionArea = styled.div`
   flex-direction: row;
   align-items: flex-start;
   justify-content: center;
-  margin: -100px 0 0 0;
+  margin: -60px 0 0 0;
   background: var(--color-oud);
   padding: 160px 32px 80px 32px;
   gap: 32px;
@@ -89,11 +119,17 @@ const DescriptionArea = styled.div`
   z-index: 1;
   width: 100%;
   box-sizing: border-box;
+
   @media (max-width: 900px) {
     flex-direction: column;
     padding: 24px 8px 32px 8px;
     gap: 16px;
     margin-top: 0;
+  }
+
+  @media (max-width: 768px) {
+    padding: 24px 16px 32px 16px;
+    gap: 12px;
   }
 `
 
@@ -105,6 +141,10 @@ const DescriptionColumn = styled.div`
   justify-content: flex-start;
   max-width: 450px;
   margin: 0 auto;
+
+  @media (max-width: 768px) {
+    max-width: 100%;
+  }
 `
 
 const DescriptionText = styled.div`
@@ -114,6 +154,12 @@ const DescriptionText = styled.div`
   line-height: 2;
   margin: 0 0 24px 0;
   white-space: pre-line;
+
+  @media (max-width: 768px) {
+    font-size: 14px;
+    line-height: 1.8;
+    margin: 0 0 20px 0;
+  }
 `
 
 const ButtonArea = styled.div`
@@ -122,6 +168,10 @@ const ButtonArea = styled.div`
   justify-content: center;
   margin-top: 24px;
   width: 100%;
+
+  @media (max-width: 768px) {
+    margin-top: 20px;
+  }
 `
 
 const MidoButton = styled.button`
@@ -136,8 +186,15 @@ const MidoButton = styled.button`
   letter-spacing: 0.08em;
   cursor: pointer;
   transition: background 0.2s;
+
   &:hover {
     background: #7a2d28;
+  }
+
+  @media (max-width: 768px) {
+    padding: 12px 24px;
+    font-size: 14px;
+    border-radius: 6px;
   }
 `
 

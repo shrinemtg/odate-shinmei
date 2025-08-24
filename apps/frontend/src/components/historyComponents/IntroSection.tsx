@@ -8,6 +8,11 @@ const IntroSectionWrapper = styled.section`
   align-items: center;
   justify-content: center;
   padding: 48px 0 56px 0;
+
+  @media (max-width: 768px) {
+    min-height: 280px;
+    padding: 32px 0 40px 0;
+  }
 `
 
 const IntroTitle = styled.h2`
@@ -18,6 +23,11 @@ const IntroTitle = styled.h2`
   font-family: serif;
   margin-bottom: 24px;
   text-align: center;
+
+  @media (max-width: 768px) {
+    font-size: var(--font-size-3xl);
+    margin-bottom: 16px;
+  }
 `
 
 const IntroTextContainer = styled.div`
@@ -28,6 +38,14 @@ const IntroTextContainer = styled.div`
   text-align: center;
   max-width: 520px;
   margin: 0 auto 48px auto;
+
+  @media (max-width: 768px) {
+    font-size: var(--font-size-sm);
+    line-height: 1.8;
+    max-width: 90%;
+    margin: 0 auto 32px auto;
+    padding: 0 16px;
+  }
 `
 
 const IntroParagraph = styled.p`
@@ -46,6 +64,7 @@ const ImageContainer = styled.div`
     flex-direction: column;
     align-items: center;
     gap: 1rem;
+    padding: 0 1rem;
   }
 `
 
@@ -59,6 +78,7 @@ const ImageWrapper = styled.div`
   @media (max-width: 768px) {
     width: 100%;
     max-width: 300px;
+    height: 180px;
   }
 
   img {

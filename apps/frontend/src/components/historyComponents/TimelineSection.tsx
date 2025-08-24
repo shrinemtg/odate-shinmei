@@ -2,25 +2,25 @@ import styled from '@emotion/styled'
 
 const timelineData = [
   {
-    year: '平安時代',
-    title: '創建',
-    description: '小館花道上にある古神明社が\n大館の小館花の産土神であったとされています。',
-  },
-  {
-    year: '1675年',
+    year: '1602年',
     title: '現在地に移設',
     description:
-      '延宝3年に大館神明社が現在地に移され\n佐竹氏を先に持つ長倉義尚の二男上平義景家が\n常陸時代から祀っていた御神像を\n神明社御神体として奉鎮座しました。',
+      '慶長7年佐竹義宣侯が秋田にご遷封になり大館初代城代小場義成の支裔長倉義尚の次男、上平義景が氏神として祀るご神体と小館花鎮座のご祭神とを合祀して1675年（延宝3年）現在地に遷座しました。',
   },
   {
-    year: '1868年',
-    title: '明治維新',
-    description: '神仏分離により、\n神社としての地位が明確化されます。',
+    year: '1758年',
+    title: '850年祭',
+    description: '延般若院英泉発願紀年録に宝暦8年6月に850年祭を斎行したとの記録があります。',
   },
   {
     year: '1870年',
     title: '大火による社殿焼失',
-    description: '明治3年9月の大火により、\n御神輿とともに社殿が焼失しました。',
+    description: '明治3年9月の大火により、\n御神輿とともに社殿が焼失しました',
+  },
+  {
+    year: '1873年',
+    title: '郷社に指定',
+    description: '再建されないまま明治6年、\n郷社に指定されました。',
   },
   {
     year: '1874年',
@@ -33,19 +33,10 @@ const timelineData = [
     description: '全郷から四千円余の献納金を得て工事が始まり\n明治9年秋に現在の社殿が完成しました。',
   },
   {
-    year: '1909年',
-    title: '例大祭日程変更',
-    description: '明治42年に例大祭が\n新暦9月14・15日に変更されました',
-  },
-  {
     year: '1910年',
-    title: '現在の例大祭日程確立',
-    description: '明治天皇の御巡幸を記念して\n例大祭が9月10・11日の開催となり\n現在まで続いています',
-  },
-  {
-    year: '1950年',
-    title: '戦後の例大祭復興',
-    description: '戦後の一時期は、曳き手が足りず\n山車をトラックに載せて巡行した時代もありました。',
+    title: '現在の例祭日の確立',
+    description:
+      '明治14年明治天皇の御巡幸を記念し旧暦7月31日から8月2日までの例祭を新暦9月10・11日の2日間とする。\nこれ以降、例祭は9月10・11日の2日間となりました。',
   },
   {
     year: '1975年',
@@ -62,17 +53,27 @@ const timelineData = [
 
 const TimelineWrapper = styled.section`
   width: 100vw;
-
   padding: 64px 0;
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  @media (max-width: 768px) {
+    padding: 48px 0;
+  }
 `
 
 const TimelineRows = styled.div`
   position: relative;
   width: 900px;
   margin: 0 auto;
+  z-index: 1;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    max-width: 500px;
+    padding: 0 16px;
+  }
 `
 
 const VerticalLine = styled.div`
@@ -84,6 +85,11 @@ const VerticalLine = styled.div`
   height: 100%;
   background: #605856;
   z-index: 1;
+
+  @media (max-width: 768px) {
+    left: 29px;
+    transform: none;
+  }
 `
 
 const TimelineRow = styled.div<{ isLeft: boolean }>`
@@ -96,6 +102,13 @@ const TimelineRow = styled.div<{ isLeft: boolean }>`
   margin-bottom: 32px;
   z-index: 2;
   justify-content: ${(props) => (props.isLeft ? 'flex-start' : 'flex-end')};
+
+  @media (max-width: 768px) {
+    justify-content: flex-start;
+    min-height: auto;
+    margin-bottom: 24px;
+    align-items: flex-start;
+  }
 `
 
 const Side = styled.div<{ align: 'right' | 'left' }>`
@@ -107,6 +120,21 @@ const Side = styled.div<{ align: 'right' | 'left' }>`
   padding: 0 48px;
   justify-content: center;
   height: 100%;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
+`
+
+const TimelineContent = styled.div`
+  display: none;
+
+  @media (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    margin-left: 48px;
+    width: calc(100% - 48px);
+  }
 `
 
 const TimelineTitle = styled.div`
@@ -116,6 +144,11 @@ const TimelineTitle = styled.div`
   font-weight: 400;
   line-height: 1.1;
   margin-bottom: 8px;
+
+  @media (max-width: 768px) {
+    font-size: 24px;
+    margin-bottom: 4px;
+  }
 `
 
 const TimelineYear = styled.div`
@@ -124,6 +157,11 @@ const TimelineYear = styled.div`
   color: #605856;
   font-weight: 400;
   margin-bottom: 4px;
+
+  @media (max-width: 768px) {
+    font-size: 20px;
+    margin-bottom: 2px;
+  }
 `
 
 const TimelineDesc = styled.div`
@@ -133,6 +171,11 @@ const TimelineDesc = styled.div`
   font-weight: 400;
   white-space: pre-line;
   line-height: 1.7;
+
+  @media (max-width: 768px) {
+    font-size: 14px;
+    line-height: 1.6;
+  }
 `
 
 const TimelineDot = styled.div`
@@ -146,6 +189,16 @@ const TimelineDot = styled.div`
   border: 2px solid #605856;
   border-radius: 50%;
   z-index: 3;
+
+  @media (max-width: 768px) {
+    left: 30px;
+    top: 6px;
+    transform: translateX(-50%);
+    width: 12px;
+    height: 12px;
+    background: #fefefe;
+    border: 2px solid #605856;
+  }
 `
 
 const TimelineSection = () => (
@@ -166,6 +219,11 @@ const TimelineSection = () => (
                   <TimelineYear>{item.year}</TimelineYear>
                   <TimelineDesc>{item.description}</TimelineDesc>
                 </Side>
+                <TimelineContent>
+                  <TimelineTitle>{item.title}</TimelineTitle>
+                  <TimelineYear>{item.year}</TimelineYear>
+                  <TimelineDesc>{item.description}</TimelineDesc>
+                </TimelineContent>
               </>
             ) : (
               <>
@@ -177,6 +235,11 @@ const TimelineSection = () => (
                 <Side align='left'>
                   <TimelineTitle>{item.title}</TimelineTitle>
                 </Side>
+                <TimelineContent>
+                  <TimelineTitle>{item.title}</TimelineTitle>
+                  <TimelineYear>{item.year}</TimelineYear>
+                  <TimelineDesc>{item.description}</TimelineDesc>
+                </TimelineContent>
               </>
             )}
           </TimelineRow>

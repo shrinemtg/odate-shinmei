@@ -11,6 +11,12 @@ const HeroSectionWrapper = styled.section`
   align-items: center;
   justify-content: center;
   background: url(/his/his-01.png) center center / cover no-repeat;
+
+  @media (max-width: 768px) {
+    height: 50vh;
+    min-height: 300px;
+    max-height: 400px;
+  }
 `
 
 const Overlay = styled.div`
@@ -38,6 +44,11 @@ const HeroTitle = styled.h1`
   font-family: serif;
   line-height: 1.2;
   margin: 0;
+
+  @media (max-width: 768px) {
+    font-size: var(--font-size-xl);
+    letter-spacing: 0.1em;
+  }
 `
 
 const HeroSection = () => (
