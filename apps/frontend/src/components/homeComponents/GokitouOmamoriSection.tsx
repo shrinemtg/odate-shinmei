@@ -13,13 +13,9 @@ const GokitouOmamoriSection = () => (
           <Row>
             <VerticalTitle>御祈祷</VerticalTitle>
             <Description>
-              大館神明社では
+              大館神明社では、さまざまな御祈祷に対応しております。
               <br />
-              さまざまな御祈祷に対応しております。
-              <br />
-              日々の感謝や心の平安を求めるご祈祷、
-              <br />
-              どうぞお気軽にお越しください。
+              日々の感謝や心の平安を求めるご祈祷、どうぞお気軽にお越しください。
             </Description>
           </Row>
           <CatImageBox>
@@ -38,22 +34,22 @@ const GokitouOmamoriSection = () => (
     </Section>
     {/* --- お守りセクション --- */}
     <Section>
-      <CardRed>
-        <LeftColRed>
-          <RowRed>
-            <VerticalTitleRed>お守り</VerticalTitleRed>
-            <DescriptionRed>
+      <Card>
+        <LeftCol>
+          <LeftImage src='/backsozai/omamori01.png' alt='お守りイメージ' />
+        </LeftCol>
+        <RightCol>
+          <Row>
+            <VerticalTitle>お守り</VerticalTitle>
+            <Description>
               大館神明社では、古くから地域の人々の願いに寄り添い、
               <br />
               さまざまなご利益を授けるお守りや授与品をご用意しております。
-            </DescriptionRed>
-          </RowRed>
-          <OmamoriButton>詳しく見る</OmamoriButton>
-        </LeftColRed>
-        <RightColWhite>
-          <RightImage src='/backsozai/omamori01.png' alt='お守りイメージ' />
-        </RightColWhite>
-      </CardRed>
+            </Description>
+          </Row>
+          <DetailButton>詳しく見る</DetailButton>
+        </RightCol>
+      </Card>
     </Section>
   </Wrapper>
 )
@@ -66,6 +62,10 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  @media (max-width: 768px) {
+    margin: 48px 0;
+  }
 `
 
 const Section = styled.section`
@@ -75,6 +75,18 @@ const Section = styled.section`
   align-items: center;
   padding: 56px 0;
   background: url(/top-motion/haikei.png) center center / cover no-repeat;
+
+  @media (max-width: 1024px) {
+    padding: 40px 0;
+  }
+
+  @media (max-width: 768px) {
+    padding: 32px 0;
+  }
+
+  @media (max-width: 480px) {
+    padding: 24px 0;
+  }
 `
 
 const Card = styled.div`
@@ -88,6 +100,23 @@ const Card = styled.div`
   box-shadow: 0 2px 16px rgba(0, 0, 0, 0.06);
   background: #fff;
   min-height: 320px;
+
+  @media (max-width: 1024px) {
+    max-width: 90%;
+    border-radius: 28px;
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    max-width: 90%;
+    border-radius: 24px;
+    min-height: auto;
+  }
+
+  @media (max-width: 480px) {
+    max-width: 95%;
+    border-radius: 20px;
+  }
 `
 
 const LeftCol = styled.div`
@@ -99,6 +128,19 @@ const LeftCol = styled.div`
   align-items: center;
   justify-content: center;
   height: 450px;
+
+  @media (max-width: 1024px) {
+    height: 350px;
+  }
+
+  @media (max-width: 768px) {
+    flex: none;
+    height: 200px;
+  }
+
+  @media (max-width: 480px) {
+    height: 160px;
+  }
 `
 
 const LeftImage = styled.img`
@@ -122,6 +164,21 @@ const RightCol = styled.div`
   position: relative;
   min-height: 320px;
   overflow: visible;
+
+  @media (max-width: 1024px) {
+    padding: 32px 24px;
+    min-height: 280px;
+  }
+
+  @media (max-width: 768px) {
+    padding: 24px 20px;
+    min-height: 240px;
+  }
+
+  @media (max-width: 480px) {
+    padding: 20px 16px;
+    min-height: 200px;
+  }
 `
 
 const Row = styled.div`
@@ -131,6 +188,12 @@ const Row = styled.div`
   width: 100%;
   justify-content: center;
   gap: 24px;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
 `
 
 const VerticalTitle = styled.div`
@@ -142,6 +205,13 @@ const VerticalTitle = styled.div`
   color: var(--color-white);
   line-height: 1.1;
   margin-right: 8px;
+
+  @media (max-width: 768px) {
+    writing-mode: horizontal-tb;
+    font-size: var(--font-size-3xl);
+    margin-right: 0;
+    margin-bottom: 8px;
+  }
 `
 
 const Description = styled.div`
@@ -151,6 +221,14 @@ const Description = styled.div`
   line-height: 2;
   max-width: 260px;
   margin-top: 8px;
+
+  @media (max-width: 768px) {
+    font-size: var(--font-size-base);
+    line-height: 1.8;
+    max-width: 100%;
+    text-align: center;
+    margin-top: 0;
+  }
 `
 
 const CatImageBox = styled.div`
@@ -160,6 +238,28 @@ const CatImageBox = styled.div`
   width: 220px;
   height: 260px;
   z-index: 3;
+
+  @media (max-width: 1024px) {
+    right: 180px;
+    bottom: -35px;
+    width: 160px;
+    height: 190px;
+  }
+
+  @media (max-width: 768px) {
+    position: relative;
+    right: auto;
+    bottom: auto;
+    width: 120px;
+    height: 150px;
+    margin: 10px 0;
+  }
+
+  @media (max-width: 480px) {
+    width: 100px;
+    height: 120px;
+    margin: 8px 0;
+  }
 `
 
 const DetailButton = styled.button`
@@ -178,67 +278,32 @@ const DetailButton = styled.button`
   cursor: pointer;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   transition: background 0.2s;
-`
 
-// お守りセクション用
-const CardRed = styled(Card)`
-  background: #fff;
-`
+  &:hover {
+    background: rgba(255, 255, 255, 0.1);
+  }
 
-const LeftColRed = styled.div`
-  flex: 1;
-  min-width: 0;
-  background: var(--color-shuiro);
-  color: var(--color-white);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 40px 32px;
-  position: relative;
-  min-height: 320px;
-  overflow: visible;
-`
+  @media (max-width: 1024px) {
+    right: 18px;
+    bottom: 18px;
+    padding: 8px 24px;
+    font-size: var(--font-size-base);
+  }
 
-const RowRed = styled(Row)``
+  @media (max-width: 768px) {
+    position: relative;
+    right: auto;
+    bottom: auto;
+    padding: 6px 20px;
+    font-size: var(--font-size-sm);
+    border-radius: 14px;
+    margin: 12px 0 6px 0;
+  }
 
-const VerticalTitleRed = styled(VerticalTitle)``
-
-const DescriptionRed = styled(Description)``
-
-const RightColWhite = styled.div`
-  flex: 1.6;
-  min-width: 0;
-  position: relative;
-  background: url(/backsozai/gokitou-haikei) center center / cover no-repeat;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 450px;
-`
-
-const RightImage = styled.img`
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border: none;
-  border-radius: 0;
-`
-
-const OmamoriButton = styled.button`
-  position: absolute;
-  left: 24px;
-  bottom: 24px;
-  background: transparent;
-  color: var(--color-shuiro);
-  border: 1.5px solid var(--color-shuiro);
-  border-radius: 20px;
-  padding: 10px 32px;
-  font-size: var(--font-size-lg);
-  font-weight: 400;
-  letter-spacing: 0.1em;
-  font-family: serif;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-  transition: background 0.2s;
+  @media (max-width: 480px) {
+    padding: 5px 16px;
+    font-size: var(--font-size-xs);
+    border-radius: 10px;
+    margin: 10px 0 5px 0;
+  }
 `

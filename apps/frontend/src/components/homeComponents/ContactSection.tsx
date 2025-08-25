@@ -10,6 +10,11 @@ const Wrapper = styled.div`
   text-align: center;
   font-family: serif;
   color: var(--color-brown);
+
+  @media (max-width: 768px) {
+    margin: 48px auto;
+    padding: 0 16px;
+  }
 `
 
 const Title = styled.div`
@@ -17,11 +22,21 @@ const Title = styled.div`
   font-weight: 500;
   margin-bottom: 18px;
   letter-spacing: 0.08em;
+
+  @media (max-width: 768px) {
+    font-size: var(--font-size-lg);
+    margin-bottom: 16px;
+  }
 `
 
 const SubText = styled.div`
   font-size: var(--font-size-base);
   margin-bottom: 8px;
+
+  @media (max-width: 768px) {
+    font-size: var(--font-size-sm);
+    margin-bottom: 6px;
+  }
 `
 
 const ContactButton = styled.a`
@@ -39,17 +54,35 @@ const ContactButton = styled.a`
   text-decoration: none;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   transition: background 0.2s;
+
+  @media (max-width: 768px) {
+    padding: 10px 28px;
+    font-size: var(--font-size-base);
+    margin: 16px 0 16px 0;
+    border-radius: 16px;
+  }
 `
 
 const Info = styled.div`
   margin-top: 12px;
   font-size: var(--font-size-base);
   line-height: 2;
+
+  @media (max-width: 768px) {
+    font-size: var(--font-size-sm);
+    line-height: 1.8;
+    margin-top: 10px;
+  }
 `
 
 const PhoneIcon = styled.span`
   font-size: var(--font-size-lg);
   margin-right: 6px;
+
+  @media (max-width: 768px) {
+    font-size: var(--font-size-base);
+    margin-right: 4px;
+  }
 `
 
 const ContactSection = () => (

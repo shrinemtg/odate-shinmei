@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import Image from 'next/image'
 import { motion, AnimatePresence } from 'framer-motion'
+import styled from '@emotion/styled'
 
 // 雲や画像のデータ
 const leftClouds = [
@@ -19,6 +20,67 @@ const rightClouds = [
 const haikeiImage = '/top-motion/haikei.png'
 const logoImage = { src: '/top-motion/montuki-rogo.png', width: 200, height: 300 }
 const textImage = { src: '/top-motion/midasimoji.png', width: 80, height: 400 }
+
+const IntroContainer = styled(motion.div)`
+  inset: 0;
+  position: fixed;
+  z-index: 9999;
+  background: url(${haikeiImage}) center center / cover no-repeat;
+  overflow: hidden;
+`
+
+const CloudElement = styled(motion.div)<{
+  width: number
+  height: number
+  zIndex: number
+  top: number
+  left?: number
+  right?: number
+}>`
+  position: absolute;
+  width: ${(props) => props.width}px;
+  height: ${(props) => props.height}px;
+  z-index: ${(props) => props.zIndex};
+  top: ${(props) => props.top}px;
+  ${(props) => (props.left !== undefined ? `left: ${props.left}px;` : '')}
+  ${(props) => (props.right !== undefined ? `right: ${props.right}px;` : '')}
+
+  @media (max-width: 768px) {
+    width: ${(props) => Math.round(props.width * 0.67)}px;
+    height: ${(props) => Math.round(props.height * 0.67)}px;
+    top: ${(props) => Math.round(props.top * 0.67)}px;
+    ${(props) => (props.left !== undefined ? `left: ${Math.round(props.left * 0.67)}px;` : '')}
+    ${(props) => (props.right !== undefined ? `right: ${Math.round(props.right * 0.67)}px;` : '')}
+  }
+
+  @media (max-width: 480px) {
+    width: ${(props) => Math.round(props.width * 0.5)}px;
+    height: ${(props) => Math.round(props.height * 0.5)}px;
+    top: ${(props) => Math.round(props.top * 0.5)}px;
+    ${(props) => (props.left !== undefined ? `left: ${Math.round(props.left * 0.5)}px;` : '')}
+    ${(props) => (props.right !== undefined ? `right: ${Math.round(props.right * 0.5)}px;` : '')}
+  }
+`
+
+const ContentCenter = styled.div`
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2000;
+  width: auto;
+  height: auto;
+`
+
+const ContentElement = styled(motion.div)`
+  @media (max-width: 768px) {
+    transform: scale(0.8);
+  }
+
+  @media (max-width: 480px) {
+    transform: scale(0.6);
+  }
+`
 
 type AnimationPhase = 'clouds' | 'text' | 'logo' | 'end'
 
@@ -81,17 +143,7 @@ const IntroAnimation: React.FC<IntroAnimationProps> = ({ onIntroEnd }) => {
   return (
     <AnimatePresence>
       {isIntroVisible && (
-        <motion.div
-          key='intro-container'
-          style={{
-            inset: 0,
-            position: 'fixed',
-            zIndex: 9999,
-            background: `url(${haikeiImage}) center center / cover no-repeat`,
-            overflow: 'hidden',
-          }}
-          exit={{ opacity: 0, transition: { duration: 1.5 } }}
-        >
+        <IntroContainer key='intro-container' exit={{ opacity: 0, transition: { duration: 1.5 } }}>
           {/* --- 左側の雲 --- */}
           {leftClouds.map((cloud, idx) => {
             const isPersistentCloud = cloud.src === '/top-motion/hidari-4-kumo.png'
@@ -106,15 +158,19 @@ const IntroAnimation: React.FC<IntroAnimationProps> = ({ onIntroEnd }) => {
               animateProps = { x: '-100vw', y: yOffsets[idx] || 0, opacity: 0 }
             }
             return (
-              <motion.div
+              <CloudElement
                 key={cloud.src}
-                style={{ position: 'absolute', ...cloud }}
+                width={cloud.width}
+                height={cloud.height}
+                zIndex={cloud.zIndex}
+                top={cloud.top}
+                left={cloud.left}
                 initial={{ x: 0, y: 0, opacity: 1 }}
                 animate={animateProps}
                 transition={{ duration: cloudAnimationDuration, ease: 'easeInOut' }}
               >
                 <Image src={cloud.src} alt='left cloud' layout='fill' objectFit='contain' priority />
-              </motion.div>
+              </CloudElement>
             )
           })}
 
@@ -131,44 +187,42 @@ const IntroAnimation: React.FC<IntroAnimationProps> = ({ onIntroEnd }) => {
               animateProps = { x: '100vw', y: yOffsets[idx - 1] || 0, opacity: 0 }
             }
             return (
-              <motion.div
+              <CloudElement
                 key={cloud.src}
-                style={{ position: 'absolute', ...cloud }}
+                width={cloud.width}
+                height={cloud.height}
+                zIndex={cloud.zIndex}
+                top={cloud.top}
+                right={cloud.right}
                 initial={{ x: 0, y: 0, opacity: 1 }}
                 animate={animateProps}
                 transition={{ duration: cloudAnimationDuration, ease: 'easeInOut' }}
               >
                 <Image src={cloud.src} alt='right cloud' layout='fill' objectFit='contain' priority />
-              </motion.div>
+              </CloudElement>
             )
           })}
 
           {/* --- 中央の雲 --- */}
           {phase === 'clouds' && (
-            <motion.div
+            <CloudElement
               key={centerCloud.src}
-              style={{ position: 'absolute', ...centerCloud }}
+              width={centerCloud.width}
+              height={centerCloud.height}
+              zIndex={centerCloud.zIndex}
+              top={centerCloud.top}
+              left={centerCloud.left}
               initial={{ x: 0, y: 0, opacity: 1 }}
               animate={{ x: '100vw', y: 0, opacity: 0 }}
               transition={{ duration: cloudAnimationDuration, ease: 'easeInOut', delay: 0.5 }}
             >
               <Image src={centerCloud.src} alt='cloud' layout='fill' objectFit='contain' priority />
-            </motion.div>
+            </CloudElement>
           )}
 
           {/* --- テキストとロゴの表示制御 --- */}
-          <div
-            style={{
-              position: 'fixed',
-              top: '50%',
-              left: '50%',
-              transform: 'translate(-50%, -50%)',
-              zIndex: 2000,
-              width: 'auto',
-              height: 'auto',
-            }}
-          >
-            <motion.div
+          <ContentCenter>
+            <ContentElement
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0 }}
@@ -181,9 +235,9 @@ const IntroAnimation: React.FC<IntroAnimationProps> = ({ onIntroEnd }) => {
               {phase === 'logo' && (
                 <Image src={logoImage.src} width={logoImage.width} height={logoImage.height} alt='logo' />
               )}
-            </motion.div>
-          </div>
-        </motion.div>
+            </ContentElement>
+          </ContentCenter>
+        </IntroContainer>
       )}
     </AnimatePresence>
   )

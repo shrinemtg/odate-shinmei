@@ -12,6 +12,11 @@ const Section = styled.section`
   padding: 0;
   margin: 64px 0;
   overflow: hidden;
+
+  @media (max-width: 768px) {
+    min-height: 500px;
+    margin: 48px 0;
+  }
 `
 
 const Container = styled.div`
@@ -22,6 +27,11 @@ const Container = styled.div`
   margin: 0 auto;
   align-items: flex-start;
   background: none;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    padding: 0 16px;
+  }
 `
 
 const Title = styled.div`
@@ -36,6 +46,15 @@ const Title = styled.div`
   margin-right: 32px;
   text-align: center;
   background: none;
+
+  @media (max-width: 768px) {
+    writing-mode: horizontal-tb;
+    font-size: var(--font-size-3xl);
+    min-width: auto;
+    margin-right: 0;
+    margin-bottom: 24px;
+    text-align: center;
+  }
 `
 
 const MapArea = styled.div`
@@ -46,6 +65,11 @@ const MapArea = styled.div`
   padding: 32px 24px;
   box-sizing: border-box;
   max-width: 700px;
+
+  @media (max-width: 768px) {
+    padding: 24px 16px;
+    max-width: 100%;
+  }
 `
 
 const MapFrame = styled.div`
@@ -55,6 +79,11 @@ const MapFrame = styled.div`
   overflow: hidden;
   border: 1.5px solid #bba77b;
   margin-bottom: 24px;
+
+  @media (max-width: 768px) {
+    height: 250px;
+    margin-bottom: 20px;
+  }
 `
 
 const ParkingRow = styled.div`
@@ -62,6 +91,11 @@ const ParkingRow = styled.div`
   flex-direction: row;
   align-items: flex-start;
   gap: 20px;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 16px;
+  }
 `
 
 const ParkingImageBox = styled.div`
@@ -73,6 +107,12 @@ const ParkingImageBox = styled.div`
   flex-shrink: 0;
   border: 1.5px solid #bba77b;
   background: var(--color-white);
+
+  @media (max-width: 768px) {
+    width: 100%;
+    height: 150px;
+    min-width: auto;
+  }
 `
 
 const ParkingText = styled.div`
@@ -82,12 +122,23 @@ const ParkingText = styled.div`
   line-height: 2;
   margin-left: 8px;
   margin-top: 8px;
+
+  @media (max-width: 768px) {
+    font-size: var(--font-size-base);
+    line-height: 1.8;
+    margin-left: 0;
+    margin-top: 0;
+  }
 `
 
 const ParkingTitle = styled.div`
   font-weight: 600;
   font-size: var(--font-size-lg);
   margin-bottom: 4px;
+
+  @media (max-width: 768px) {
+    font-size: var(--font-size-base);
+  }
 `
 
 const AccessSection = () => (

@@ -1,5 +1,6 @@
 import { useRef } from 'react'
 import Image from 'next/image'
+import styled from '@emotion/styled'
 
 const leftCloud = {
   src: '/top-motion/hidari-4-kumo.png',
@@ -20,6 +21,158 @@ const rightCloud = {
   x: 80,
 }
 
+const VideoElement = styled.video`
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 1;
+  transition: opacity 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 10;
+
+  @media (max-width: 1024px) {
+    height: 100vh;
+    object-position: center;
+  }
+
+  @media (max-width: 768px) {
+    height: 100vh;
+    object-position: center;
+  }
+
+  @media (max-width: 640px) {
+    height: 100vh;
+    object-position: center;
+  }
+
+  @media (max-width: 480px) {
+    object-position: center;
+  }
+
+  @media (max-width: 375px) {
+    object-position: center;
+  }
+`
+
+const MuteButton = styled.button`
+  position: absolute;
+  bottom: 32px;
+  right: 32px;
+  z-index: 30;
+  background: rgba(255, 255, 255, 0.8);
+  border: none;
+  border-radius: 24px;
+  padding: 8px 16px;
+  font-size: 18px;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+
+  @media (max-width: 1024px) {
+    bottom: 24px;
+    right: 24px;
+    padding: 7px 14px;
+    font-size: 16px;
+    border-radius: 22px;
+  }
+
+  @media (max-width: 768px) {
+    bottom: 16px;
+    right: 16px;
+    padding: 6px 12px;
+    font-size: 14px;
+    border-radius: 20px;
+  }
+
+  @media (max-width: 640px) {
+    bottom: 12px;
+    right: 12px;
+    padding: 5px 10px;
+    font-size: 13px;
+    border-radius: 18px;
+  }
+
+  @media (max-width: 480px) {
+    bottom: 8px;
+    right: 8px;
+    padding: 4px 8px;
+    font-size: 12px;
+    border-radius: 16px;
+  }
+
+  @media (max-width: 375px) {
+    bottom: 6px;
+    right: 6px;
+    padding: 3px 6px;
+    font-size: 11px;
+    border-radius: 14px;
+  }
+`
+
+const LeftCloudContainer = styled.div`
+  position: absolute;
+  top: ${leftCloud.top}px;
+  left: ${leftCloud.left}px;
+  width: ${leftCloud.width}px;
+  height: ${leftCloud.height}px;
+  z-index: ${leftCloud.zIndex};
+  pointer-events: none;
+  transform: translateX(${leftCloud.x}px);
+
+  @media (max-width: 1024px) {
+    display: none;
+  }
+
+  @media (max-width: 768px) {
+    display: none;
+  }
+
+  @media (max-width: 640px) {
+    display: none;
+  }
+
+  @media (max-width: 480px) {
+    display: none;
+  }
+
+  @media (max-width: 375px) {
+    display: none;
+  }
+`
+
+const RightCloudContainer = styled.div`
+  position: absolute;
+  top: ${rightCloud.top}px;
+  right: ${rightCloud.right}px;
+  width: ${rightCloud.width}px;
+  height: ${rightCloud.height}px;
+  z-index: ${rightCloud.zIndex};
+  pointer-events: none;
+  transform: translateX(${rightCloud.x}px);
+
+  @media (max-width: 1024px) {
+    display: none;
+  }
+
+  @media (max-width: 768px) {
+    display: none;
+  }
+
+  @media (max-width: 640px) {
+    display: none;
+  }
+
+  @media (max-width: 480px) {
+    display: none;
+  }
+
+  @media (max-width: 375px) {
+    display: none;
+  }
+`
+
 interface VideoBackgroundProps {
   muted: boolean
   onToggleMute: () => void
@@ -31,7 +184,7 @@ const VideoBackground = ({ muted, onToggleMute }: VideoBackgroundProps) => {
   return (
     <>
       {/* 動画 */}
-      <video
+      <VideoElement
         ref={videoRef}
         src='/videos/shinmei-mv.mp4'
         autoPlay
@@ -39,69 +192,19 @@ const VideoBackground = ({ muted, onToggleMute }: VideoBackgroundProps) => {
         loop={true}
         muted={muted}
         playsInline
-        style={{
-          width: '100vw',
-          height: '100vh',
-          objectFit: 'cover',
-          display: 'block',
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          opacity: 1,
-          transition: 'opacity 1.2s cubic-bezier(0.4,0,0.2,1)',
-          zIndex: 10,
-        }}
       />
       {/* ミュート切り替えボタン */}
-      <button
-        onClick={onToggleMute}
-        style={{
-          position: 'absolute',
-          bottom: 32,
-          right: 32,
-          zIndex: 30,
-          background: 'rgba(255,255,255,0.8)',
-          border: 'none',
-          borderRadius: 24,
-          padding: '8px 16px',
-          fontSize: 18,
-          cursor: 'pointer',
-          boxShadow: '0 2px 8px rgba(0,0,0,0.15)',
-        }}
-        aria-label={muted ? '音声オン' : '音声オフ'}
-      >
+      <MuteButton onClick={onToggleMute} aria-label={muted ? '音声オン' : '音声オフ'}>
         {muted ? '🔇 音声オン' : '🔊 音声オフ'}
-      </button>
+      </MuteButton>
       {/* 雲（左下） */}
-      <div
-        style={{
-          position: 'absolute',
-          top: leftCloud.top,
-          left: leftCloud.left,
-          width: leftCloud.width,
-          height: leftCloud.height,
-          zIndex: leftCloud.zIndex,
-          pointerEvents: 'none',
-          transform: `translateX(${leftCloud.x}px)`,
-        }}
-      >
+      <LeftCloudContainer>
         <Image src={leftCloud.src} alt='left cloud' layout='fill' objectFit='contain' priority />
-      </div>
+      </LeftCloudContainer>
       {/* 雲（右上） */}
-      <div
-        style={{
-          position: 'absolute',
-          top: rightCloud.top,
-          right: rightCloud.right,
-          width: rightCloud.width,
-          height: rightCloud.height,
-          zIndex: rightCloud.zIndex,
-          pointerEvents: 'none',
-          transform: `translateX(${rightCloud.x}px)`,
-        }}
-      >
+      <RightCloudContainer>
         <Image src={rightCloud.src} alt='right cloud' layout='fill' objectFit='contain' priority />
-      </div>
+      </RightCloudContainer>
     </>
   )
 }

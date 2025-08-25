@@ -1,31 +1,160 @@
 import Image from 'next/image'
+import styled from '@emotion/styled'
+
+const Section = styled.section`
+  width: 100vw;
+  min-height: 420px;
+  background: url(/top-motion/haikei.png) center center / cover no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: 0;
+  margin: 64px 0;
+  overflow: hidden;
+
+  @media (max-width: 768px) {
+    min-height: 320px;
+    margin: 48px 0;
+  }
+`
+
+const BackgroundImage = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+`
+
+const FrontIllustration = styled.div`
+  position: absolute;
+  left: 55%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 800px;
+  height: 340px;
+  z-index: 10;
+  pointer-events: none;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+
+  @media (max-width: 768px) {
+    width: 600px;
+    height: 255px;
+  }
+
+  @media (max-width: 480px) {
+    width: 400px;
+    height: 170px;
+  }
+`
+
+const TextArea = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 20;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 48px 56px 40px 160px;
+  margin: 0;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.1);
+  min-width: 340px;
+  max-width: 360px;
+
+  @media (max-width: 768px) {
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+    border-radius: 0 0 16px 16px;
+    padding: 32px 24px 24px 24px;
+    min-width: 0;
+    max-width: 95vw;
+    flex-direction: column;
+    align-items: center;
+  }
+`
+
+const VerticalTitle = styled.div`
+  writing-mode: vertical-rl;
+  font-size: var(--font-size-5xl);
+  color: var(--color-white);
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  font-family: serif;
+  line-height: 1.1;
+  margin-right: 32px;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+
+  @media (max-width: 768px) {
+    writing-mode: horizontal-tb;
+    font-size: var(--font-size-3xl);
+    margin-right: 0;
+    margin-bottom: 16px;
+  }
+`
+
+const ContentContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 220px;
+
+  @media (max-width: 768px) {
+    min-width: auto;
+    width: 100%;
+    text-align: center;
+  }
+`
+
+const Description = styled.div`
+  color: var(--color-white);
+  font-size: var(--font-size-base);
+  font-family: serif;
+  line-height: 2;
+  margin-bottom: 24px;
+  background-color: rgba(0, 0, 0, 0.23);
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
+  white-space: pre-line;
+
+  @media (max-width: 768px) {
+    font-size: var(--font-size-sm);
+    line-height: 1.8;
+    margin-bottom: 16px;
+  }
+`
+
+const DetailButton = styled.button`
+  background: transparent;
+  color: var(--color-white);
+  border: 1.5px solid #fff;
+  border-radius: 0;
+  padding: 9px 18px;
+  font-size: var(--font-size-lg);
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  font-family: serif;
+  cursor: pointer;
+  box-shadow: none;
+  transition: background 0.2s;
+  align-self: flex-start;
+  margin-left: 0;
+
+  @media (max-width: 768px) {
+    align-self: center;
+    padding: 8px 16px;
+    font-size: var(--font-size-base);
+  }
+`
 
 const NenchuSection = () => (
-  <section
-    style={{
-      width: '100vw',
-      minHeight: 420,
-      background: 'url(/top-motion/haikei.png) center center / cover no-repeat',
-      display: 'flex',
-      justifyContent: 'center',
-      alignItems: 'center',
-      position: 'relative',
-      padding: '0',
-      margin: '64px 0',
-      overflow: 'hidden',
-    }}
-  >
+  <Section>
     {/* 背景画像 */}
-    <div
-      style={{
-        position: 'absolute',
-        top: 0,
-        left: 0,
-        width: '100%',
-        height: '100%',
-        zIndex: 1,
-      }}
-    >
+    <BackgroundImage>
       <Image
         src='/backsozai/maturi01.png'
         alt='祭り背景'
@@ -34,23 +163,9 @@ const NenchuSection = () => (
         priority
         style={{ filter: 'brightness(0.7)' }}
       />
-    </div>
+    </BackgroundImage>
     {/* 前面イラスト（大きく中央下） */}
-    <div
-      style={{
-        position: 'absolute',
-        left: '55%',
-        bottom: 0,
-        transform: 'translateX(-50%)',
-        width: 800,
-        height: 340,
-        zIndex: 10,
-        pointerEvents: 'none',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'flex-end',
-      }}
-    >
+    <FrontIllustration>
       <Image
         src='/backsozai/irasut.png'
         alt='イラスト'
@@ -59,99 +174,21 @@ const NenchuSection = () => (
         style={{ width: '100%', height: 'auto', display: 'block' }}
         priority
       />
-    </div>
+    </FrontIllustration>
     {/* テキストエリア */}
-    <div
-      style={{
-        position: 'absolute',
-        top: 0,
-        left: 0,
-        zIndex: 20,
-        display: 'flex',
-        flexDirection: 'row',
-        alignItems: 'flex-start',
-        padding: '48px 56px 40px 160px',
-        margin: 0,
-        boxShadow: '0 2px 16px rgba(0,0,0,0.10)',
-        minWidth: 340,
-        maxWidth: 360,
-      }}
-    >
+    <TextArea>
       {/* 縦書きタイトル */}
-      <div
-        style={{
-          writingMode: 'vertical-rl',
-          fontSize: 'var(--font-size-5xl)',
-          color: 'var(--color-white)',
-          fontWeight: 700,
-          letterSpacing: '0.2em',
-          fontFamily: 'serif',
-          lineHeight: 1.1,
-          marginRight: 32,
-          textShadow: '0 2px 8px rgba(0,0,0,0.25)',
-        }}
-      >
-        年中行事
-      </div>
+      <VerticalTitle>年中行事</VerticalTitle>
       {/* 横テキスト＋ボタン */}
-      <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', minWidth: 220 }}>
-        <div
-          style={{
-            color: 'var(--color-white)',
-            fontSize: 'var(--font-size-base)',
-            fontFamily: 'serif',
-            lineHeight: 2,
-            marginBottom: 24,
-            backgroundColor: ' rgba(0, 0, 0, 0.23)',
-            textShadow: '0 2px 8px rgba(0,0,0,0.18)',
-            whiteSpace: 'pre-line',
-          }}
-        >
+      <ContentContainer>
+        <Description>
           大館神明社では、季節ごとに様々な祭事や行事を行っております。
           古くから伝わる伝統行事を通じて、地域の皆様とともに四季を感じ 神様への感謝の気持ちを表します。
-        </div>
-        <button
-          style={{
-            background: 'transparent',
-            color: 'var(--color-white)',
-            border: '1.5px solid #fff',
-            borderRadius: '0',
-            padding: '9px 18px',
-            fontSize: 'var(--font-size-lg)',
-            fontWeight: 400,
-            letterSpacing: '0.1em',
-            fontFamily: 'serif',
-            cursor: 'pointer',
-            boxShadow: 'none',
-            transition: 'background 0.2s',
-            alignSelf: 'flex-start',
-            marginLeft: 0,
-          }}
-        >
-          詳しく見る
-        </button>
-      </div>
-    </div>
-    {/* レスポンシブ対応: スマホではテキスト中央寄せ */}
-    <style jsx>{`
-      @media (max-width: 700px) {
-        div[style*='position: absolute'][style*='z-index: 20'] {
-          left: 50% !important;
-          top: 0 !important;
-          transform: translateX(-50%) !important;
-          border-radius: 0 0 16px 16px !important;
-          padding: 32px 16px 24px 16px !important;
-          min-width: 0 !important;
-          max-width: 95vw !important;
-        }
-        div[style*='position: absolute'][style*='z-index: 10'] {
-          width: 100vw !important;
-          left: 50% !important;
-          transform: translateX(-50%) !important;
-        }
-      }
-    `}</style>
-  </section>
+        </Description>
+        <DetailButton>詳しく見る</DetailButton>
+      </ContentContainer>
+    </TextArea>
+  </Section>
 )
 
 export default NenchuSection
