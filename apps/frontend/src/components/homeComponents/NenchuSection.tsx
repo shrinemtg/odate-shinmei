@@ -3,7 +3,7 @@ import styled from '@emotion/styled'
 
 const Section = styled.section`
   width: 100vw;
-  min-height: 420px;
+  min-height: 480px;
   background: url(/top-motion/haikei.png) center center / cover no-repeat;
   display: flex;
   justify-content: center;
@@ -66,16 +66,28 @@ const TextArea = styled.div`
   min-width: 340px;
   max-width: 360px;
 
+  @media (max-width: 1024px) {
+    padding: 40px 48px 32px 140px;
+    min-width: 400px;
+    max-width: 500px;
+  }
+
   @media (max-width: 768px) {
     left: 50%;
     top: 0;
     transform: translateX(-50%);
     border-radius: 0 0 16px 16px;
-    padding: 32px 24px 24px 24px;
-    min-width: 0;
-    max-width: 95vw;
+    padding: 1rem;
+    min-width: 400px;
+    max-width: 500px;
     flex-direction: column;
     align-items: center;
+  }
+
+  @media (max-width: 480px) {
+    padding: 1rem;
+    min-width: 300px;
+    max-width: 340px;
   }
 `
 
@@ -90,11 +102,21 @@ const VerticalTitle = styled.div`
   margin-right: 32px;
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
 
+  @media (max-width: 1024px) {
+    font-size: var(--font-size-4xl);
+    margin-right: 28px;
+  }
+
   @media (max-width: 768px) {
     writing-mode: horizontal-tb;
     font-size: var(--font-size-3xl);
     margin-right: 0;
-    margin-bottom: 16px;
+    margin-bottom: 12px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: var(--font-size-xl);
+    margin-bottom: 10px;
   }
 `
 
@@ -104,8 +126,18 @@ const ContentContainer = styled.div`
   justify-content: center;
   min-width: 220px;
 
+  @media (max-width: 1024px) {
+    min-width: 300px;
+  }
+
   @media (max-width: 768px) {
-    min-width: auto;
+    min-width: 0;
+    width: 100%;
+    text-align: center;
+  }
+
+  @media (max-width: 480px) {
+    min-width: 0;
     width: 100%;
     text-align: center;
   }
@@ -117,14 +149,29 @@ const Description = styled.div`
   font-family: serif;
   line-height: 2;
   margin-bottom: 24px;
-  background-color: rgba(0, 0, 0, 0.23);
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
   white-space: pre-line;
+  max-width: 400px;
+  width: 100%;
+
+  @media (max-width: 1024px) {
+    font-size: var(--font-size-base);
+    line-height: 1.9;
+    margin-bottom: 20px;
+    max-width: 480px;
+  }
 
   @media (max-width: 768px) {
     font-size: var(--font-size-sm);
     line-height: 1.8;
-    margin-bottom: 16px;
+    margin-bottom: 14px;
+    max-width: 660px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: var(--font-size-xs);
+    line-height: 1.7;
+    margin-bottom: 12px;
+    max-width: 620px;
   }
 `
 
@@ -143,11 +190,26 @@ const DetailButton = styled.button`
   transition: background 0.2s;
   align-self: flex-start;
   margin-left: 0;
+  border-radius: 8px;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  @media (max-width: 1024px) {
+    padding: 8px 16px;
+    font-size: var(--font-size-base);
+  }
 
   @media (max-width: 768px) {
     align-self: center;
-    padding: 8px 16px;
-    font-size: var(--font-size-base);
+    padding: 7px 14px;
+    font-size: var(--font-size-sm);
+  }
+
+  @media (max-width: 480px) {
+    padding: 6px 12px;
+    font-size: var(--font-size-xs);
   }
 `
 
