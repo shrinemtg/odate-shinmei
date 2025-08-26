@@ -3,8 +3,7 @@ import { useState, useEffect } from 'react'
 import NoticeSection from '../homeComponents/NoticeSection'
 import GokitouOmamoriSection from '../homeComponents/GokitouOmamoriSection'
 import NenchuSection from '../homeComponents/NenchuSection'
-import AccessSection from '../homeComponents/AccessSection'
-import ContactSection from '../homeComponents/ContactSection'
+import AccessContactWrapper from '../homeComponents/AccessContactWrapper'
 import MenuBar from '../MenuBar'
 import VideoBackground from '../homeComponents/VideoBackground'
 import LogoCrossfade from '../homeComponents/LogoCrossfade'
@@ -95,9 +94,7 @@ export const Home = () => {
           {/* --- 年中行事セクション --- */}
           <NenchuSection />
           {/* --- ご来社案内セクション --- */}
-          <AccessSection />
-          {/* --- お問い合わせセクション --- */}
-          <ContactSection />
+          <AccessContactWrapper />
         </>
       )}
     </>

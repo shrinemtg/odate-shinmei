@@ -44,7 +44,7 @@ const GokitouOmamoriSection = () => (
             <Description>
               大館神明社では、古くから地域の人々の願いに寄り添い、
               <br />
-              さまざまなご利益を授けるお守りや授与品をご用意しております。
+              御神符やお守りを授与しております。
             </Description>
           </Row>
           <DetailButton>詳しく見る</DetailButton>

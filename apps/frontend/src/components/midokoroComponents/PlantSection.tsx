@@ -4,12 +4,28 @@ const PlantSectionWrapper = styled.section`
   width: 100%;
   padding: 80px 0;
   position: relative;
+
+  @media (max-width: 768px) {
+    padding: 60px 0;
+  }
+
+  @media (max-width: 480px) {
+    padding: 40px 0;
+  }
 `
 
 const Container = styled.div`
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 24px;
+
+  @media (max-width: 768px) {
+    padding: 0 16px;
+  }
+
+  @media (max-width: 480px) {
+    padding: 0 12px;
+  }
 `
 
 const ContentGrid = styled.div`
@@ -22,6 +38,11 @@ const ContentGrid = styled.div`
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
     gap: 40px;
+    min-height: auto;
+  }
+
+  @media (max-width: 480px) {
+    gap: 24px;
   }
 `
 
@@ -40,6 +61,16 @@ const ImageArea = styled.div`
     height: 100%;
     object-fit: cover;
   }
+
+  @media (max-width: 768px) {
+    height: 300px;
+    margin-left: 0;
+    order: 3; /* モバイルで3番目に表示 */
+  }
+
+  @media (max-width: 480px) {
+    height: 250px;
+  }
 `
 
 const TextArea = styled.div`
@@ -48,6 +79,16 @@ const TextArea = styled.div`
   gap: 32px;
   height: 100%;
   padding-top: 160px;
+
+  @media (max-width: 768px) {
+    padding-top: 0;
+    gap: 24px;
+    order: 2; /* モバイルで2番目に表示 */
+  }
+
+  @media (max-width: 480px) {
+    gap: 16px;
+  }
 `
 
 const TitleArea = styled.div`
@@ -58,6 +99,15 @@ const TitleArea = styled.div`
   justify-content: center;
   height: 240px;
   padding-top: 100px;
+
+  @media (max-width: 768px) {
+    writing-mode: horizontal-tb;
+    text-orientation: initial;
+    height: auto;
+    padding-top: 0;
+    justify-content: center;
+    order: 1; /* モバイルで最初に表示 */
+  }
 `
 
 const MainTitle = styled.h2`
@@ -74,6 +124,25 @@ const MainTitle = styled.h2`
     font-weight: 700;
     color: var(--color-brown);
   }
+
+  @media (max-width: 768px) {
+    font-size: 20px;
+    letter-spacing: 0.05em;
+    text-align: center;
+    white-space: normal;
+
+    span {
+      font-size: 36px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    font-size: 18px;
+
+    span {
+      font-size: 28px;
+    }
+  }
 `
 
 const DescriptionArea = styled.div`
@@ -82,6 +151,10 @@ const DescriptionArea = styled.div`
   flex-direction: column;
   justify-content: flex-start;
   padding-left: 20px;
+
+  @media (max-width: 768px) {
+    padding-left: 0;
+  }
 `
 
 const DescriptionText = styled.p`
@@ -91,6 +164,16 @@ const DescriptionText = styled.p`
   line-height: 1.8;
   margin: 0;
   white-space: pre-line;
+
+  @media (max-width: 768px) {
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 13px;
+    line-height: 1.6;
+  }
 `
 
 const PlantSection = () => (

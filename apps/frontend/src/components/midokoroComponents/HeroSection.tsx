@@ -11,6 +11,18 @@ const HeroSectionWrapper = styled.section`
   align-items: center;
   justify-content: center;
   background: url(/ema/ema-hero.png) center center / cover no-repeat;
+
+  @media (max-width: 768px) {
+    height: 70vh;
+    min-height: 300px;
+    max-height: 500px;
+  }
+
+  @media (max-width: 480px) {
+    height: 60vh;
+    min-height: 250px;
+    max-height: 400px;
+  }
 `
 
 const Overlay = styled.div`
@@ -38,6 +50,16 @@ const HeroTitle = styled.h1`
   font-family: serif;
   line-height: 1.2;
   margin: 0;
+
+  @media (max-width: 768px) {
+    font-size: var(--font-size-4xl);
+    letter-spacing: 0.15em;
+  }
+
+  @media (max-width: 480px) {
+    font-size: var(--font-size-3xl);
+    letter-spacing: 0.1em;
+  }
 `
 
 const HeroSection = () => (

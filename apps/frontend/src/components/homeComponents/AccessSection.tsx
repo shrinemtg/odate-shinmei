@@ -2,7 +2,7 @@ import Image from 'next/image'
 import styled from '@emotion/styled'
 
 const Section = styled.section`
-  width: 100vw;
+  width: 100%;
   min-height: 600px;
   background: url(/top-motion/haikei.png) center center / cover no-repeat;
   display: flex;
@@ -10,12 +10,22 @@ const Section = styled.section`
   align-items: center;
   position: relative;
   padding: 0;
-  margin: 64px 0;
+  margin: 120px 0;
   overflow: hidden;
+
+  @media (max-width: 1024px) {
+    min-height: 550px;
+    margin: 80px 0;
+  }
 
   @media (max-width: 768px) {
     min-height: 500px;
-    margin: 48px 0;
+    margin: 64px 0;
+  }
+
+  @media (max-width: 480px) {
+    min-height: 450px;
+    margin: 56px 0;
   }
 `
 
@@ -24,13 +34,26 @@ const Container = styled.div`
   flex-direction: row;
   width: 100%;
   max-width: 900px;
-  margin: 0 auto;
+  margin: 32px auto 0 auto;
   align-items: flex-start;
   background: none;
 
+  @media (max-width: 1024px) {
+    max-width: 800px;
+    padding: 32px 24px 0 24px;
+    justify-content: center;
+  }
+
   @media (max-width: 768px) {
     flex-direction: column;
-    padding: 0 16px;
+    padding: 32px 16px 0 16px;
+    max-width: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+
+  @media (max-width: 480px) {
+    padding: 32px 12px 0 12px;
   }
 `
 
@@ -47,12 +70,25 @@ const Title = styled.div`
   text-align: center;
   background: none;
 
+  @media (max-width: 1024px) {
+    font-size: var(--font-size-4xl);
+    min-width: 70px;
+    margin-right: 28px;
+    text-align: center;
+  }
+
   @media (max-width: 768px) {
     writing-mode: horizontal-tb;
     font-size: var(--font-size-3xl);
     min-width: auto;
     margin-right: 0;
     margin-bottom: 24px;
+    text-align: center;
+  }
+
+  @media (max-width: 480px) {
+    font-size: var(--font-size-2xl);
+    margin-bottom: 20px;
     text-align: center;
   }
 `
@@ -66,9 +102,18 @@ const MapArea = styled.div`
   box-sizing: border-box;
   max-width: 700px;
 
+  @media (max-width: 1024px) {
+    padding: 28px 20px;
+    max-width: 600px;
+  }
+
   @media (max-width: 768px) {
     padding: 24px 16px;
     max-width: 100%;
+  }
+
+  @media (max-width: 480px) {
+    padding: 20px 12px;
   }
 `
 
@@ -80,9 +125,19 @@ const MapFrame = styled.div`
   border: 1.5px solid #bba77b;
   margin-bottom: 24px;
 
+  @media (max-width: 1024px) {
+    height: 280px;
+    margin-bottom: 20px;
+  }
+
   @media (max-width: 768px) {
     height: 250px;
     margin-bottom: 20px;
+  }
+
+  @media (max-width: 480px) {
+    height: 200px;
+    margin-bottom: 16px;
   }
 `
 
@@ -92,9 +147,17 @@ const ParkingRow = styled.div`
   align-items: flex-start;
   gap: 20px;
 
+  @media (max-width: 1024px) {
+    gap: 16px;
+  }
+
   @media (max-width: 768px) {
     flex-direction: column;
     gap: 16px;
+  }
+
+  @media (max-width: 480px) {
+    gap: 12px;
   }
 `
 
@@ -108,10 +171,19 @@ const ParkingImageBox = styled.div`
   border: 1.5px solid #bba77b;
   background: var(--color-white);
 
+  @media (max-width: 1024px) {
+    width: 180px;
+    height: 110px;
+  }
+
   @media (max-width: 768px) {
     width: 100%;
     height: 150px;
     min-width: auto;
+  }
+
+  @media (max-width: 480px) {
+    height: 120px;
   }
 `
 
@@ -123,11 +195,23 @@ const ParkingText = styled.div`
   margin-left: 8px;
   margin-top: 8px;
 
+  @media (max-width: 1024px) {
+    font-size: var(--font-size-base);
+    line-height: 1.9;
+    margin-left: 6px;
+    margin-top: 6px;
+  }
+
   @media (max-width: 768px) {
     font-size: var(--font-size-base);
     line-height: 1.8;
     margin-left: 0;
     margin-top: 0;
+  }
+
+  @media (max-width: 480px) {
+    font-size: var(--font-size-sm);
+    line-height: 1.7;
   }
 `
 
@@ -136,8 +220,18 @@ const ParkingTitle = styled.div`
   font-size: var(--font-size-lg);
   margin-bottom: 4px;
 
+  @media (max-width: 1024px) {
+    font-size: var(--font-size-base);
+    margin-bottom: 3px;
+  }
+
   @media (max-width: 768px) {
     font-size: var(--font-size-base);
+  }
+
+  @media (max-width: 480px) {
+    font-size: var(--font-size-sm);
+    margin-bottom: 2px;
   }
 `
 

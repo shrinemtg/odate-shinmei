@@ -62,6 +62,14 @@ const SummerPlantContainer = styled.div`
   overflow: visible;
   margin-top: 80px;
   margin-bottom: 80px;
+
+  @media (max-width: 768px) {
+    margin-bottom: 60px;
+  }
+
+  @media (max-width: 480px) {
+    margin-bottom: 40px;
+  }
 `
 
 const ContentWrapper = styled.div`
@@ -73,11 +81,29 @@ const ContentWrapper = styled.div`
   position: relative;
   overflow: visible;
   flex-direction: row-reverse;
+
+  @media (max-width: 768px) {
+    gap: 16px;
+    padding: 0 16px;
+  }
+
+  @media (max-width: 480px) {
+    gap: 12px;
+    padding: 0 12px;
+  }
 `
 
 const TitleSection = styled.div`
   flex-shrink: 0;
   margin: 0 120px 0 20px;
+
+  @media (max-width: 768px) {
+    margin: 0 60px 0 12px;
+  }
+
+  @media (max-width: 480px) {
+    margin: 0 40px 0 8px;
+  }
 `
 
 const VerticalTitle = styled.div`
@@ -87,11 +113,28 @@ const VerticalTitle = styled.div`
   font-weight: bold;
   font-size: var(--font-size-2xl);
   line-height: 1.6;
+  letter-spacing: 0.3em;
   font-family: 'Noto Serif JP', serif;
   span {
     font-size: 48px;
     font-weight: 700;
     color: var(--color-brown);
+  }
+
+  @media (max-width: 768px) {
+    font-size: var(--font-size-xl);
+
+    span {
+      font-size: 36px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    font-size: var(--font-size-lg);
+
+    span {
+      font-size: 28px;
+    }
   }
 `
 
@@ -112,6 +155,14 @@ const PlantGallery = styled.div`
   }
   -ms-overflow-style: none;
   scrollbar-width: none;
+
+  @media (max-width: 768px) {
+    gap: 12px;
+  }
+
+  @media (max-width: 480px) {
+    gap: 8px;
+  }
 `
 
 const PlantItem = styled.div`
@@ -130,6 +181,16 @@ const PlantImageContainer = styled.div`
   overflow: hidden;
   background-color: var(--color-white);
   z-index: 2;
+
+  @media (max-width: 768px) {
+    width: 180px;
+    height: 240px;
+  }
+
+  @media (max-width: 480px) {
+    width: 150px;
+    height: 200px;
+  }
 `
 
 const NameBarBackground = styled.div`
@@ -170,6 +231,14 @@ const NameBarContainer = styled.div`
   width: 100%;
   height: 32px;
   z-index: 3;
+
+  @media (max-width: 768px) {
+    height: 28px;
+  }
+
+  @media (max-width: 480px) {
+    height: 24px;
+  }
 `
 
 const NameBar = styled.div`
@@ -183,6 +252,16 @@ const NameBar = styled.div`
   align-items: center;
   justify-content: center;
   z-index: 3;
+
+  @media (max-width: 768px) {
+    height: 28px;
+    top: -6px;
+  }
+
+  @media (max-width: 480px) {
+    height: 24px;
+    top: -4px;
+  }
 `
 
 const PlantName = styled.span`
@@ -193,6 +272,14 @@ const PlantName = styled.span`
   font-family: 'Noto Serif JP', serif;
   z-index: 4;
   position: relative;
+
+  @media (max-width: 768px) {
+    font-size: var(--font-size-xs);
+  }
+
+  @media (max-width: 480px) {
+    font-size: 0.75rem;
+  }
 `
 
 const SummerPlantSlide: React.FC = () => {

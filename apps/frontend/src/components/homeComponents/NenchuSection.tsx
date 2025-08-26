@@ -244,8 +244,7 @@ const NenchuSection = () => (
       {/* 横テキスト＋ボタン */}
       <ContentContainer>
         <Description>
-          大館神明社では、季節ごとに様々な祭事や行事を行っております。
-          古くから伝わる伝統行事を通じて、地域の皆様とともに四季を感じ 神様への感謝の気持ちを表します。
+          大館神明社では古くから伝わる伝統行事を通じて、地域の皆様の安寧を祈り、感謝の心を捧げています。
         </Description>
         <DetailButton>詳しく見る</DetailButton>
       </ContentContainer>

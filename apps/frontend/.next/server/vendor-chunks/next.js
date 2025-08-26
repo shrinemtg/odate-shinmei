@@ -821,6 +821,16 @@ eval("module.exports = __webpack_require__(/*! ./dist/pages/_document */ \"(page
 
 /***/ }),
 
+/***/ "(pages-dir-node)/../../node_modules/next/head.js":
+/*!***************************************!*\
+  !*** ../../node_modules/next/head.js ***!
+  \***************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+eval("module.exports = __webpack_require__(/*! ./dist/shared/lib/head */ \"(pages-dir-node)/../../node_modules/next/dist/shared/lib/head.js\")\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiKHBhZ2VzLWRpci1ub2RlKS8uLi8uLi9ub2RlX21vZHVsZXMvbmV4dC9oZWFkLmpzIiwibWFwcGluZ3MiOiJBQUFBLHNJQUFrRCIsInNvdXJjZXMiOlsiL2hvbWUvdWItbXRnL3VidW50dXByb2plY3RzL25leHRqcy9vZGF0ZS1zaGlubWVpL25vZGVfbW9kdWxlcy9uZXh0L2hlYWQuanMiXSwic291cmNlc0NvbnRlbnQiOlsibW9kdWxlLmV4cG9ydHMgPSByZXF1aXJlKCcuL2Rpc3Qvc2hhcmVkL2xpYi9oZWFkJylcbiJdLCJuYW1lcyI6W10sImlnbm9yZUxpc3QiOlswXSwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///(pages-dir-node)/../../node_modules/next/head.js\n");
+
+/***/ }),
+
 /***/ "(pages-dir-node)/../../node_modules/next/image.js":
 /*!****************************************!*\
   !*** ../../node_modules/next/image.js ***!
