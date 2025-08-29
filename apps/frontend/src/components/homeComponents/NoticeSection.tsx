@@ -240,20 +240,19 @@ const NoticeItem = styled.div`
   }
 
   @media (max-width: 1024px) {
-    gap: 0.875rem;
+    gap: 1.25rem;
     min-height: 3.25rem;
   }
 
   @media (max-width: 768px) {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.5rem;
-    padding: 0.75rem 0;
+    flex-direction: row;
+    align-items: center;
+    gap: 1.25rem;
+    padding: 0.75rem;
     min-height: auto;
     border-radius: 0.5rem;
     margin-bottom: 1rem;
     border: 1px solid #bba77b;
-    padding: 0.75rem;
 
     &:hover {
       transform: translateY(-0.125rem);
@@ -262,19 +261,19 @@ const NoticeItem = styled.div`
   }
 
   @media (max-width: 640px) {
-    gap: 0.375rem;
+    gap: 1.25rem;
     padding: 0.625rem;
     margin-bottom: 0.875rem;
   }
 
   @media (max-width: 480px) {
-    gap: 0.25rem;
+    gap: 0.7rem;
     padding: 0.5rem;
     margin-bottom: 0.75rem;
   }
 
   @media (max-width: 375px) {
-    gap: 0.1875rem;
+    gap: 0.7rem;
     padding: 0.375rem;
     margin-bottom: 0.625rem;
   }
@@ -284,7 +283,7 @@ const NoticeButton = styled.button`
   background: var(--color-shuiro);
   color: var(--color-white);
   border: none;
-  border-radius: 0.5rem;
+  border-radius: 0.4rem;
   padding: 0.25rem 1.5rem;
   font-size: var(--font-size-base);
   font-weight: 500;
@@ -312,7 +311,8 @@ const NoticeButton = styled.button`
     font-size: var(--font-size-sm);
     min-width: 4.375rem;
     margin-right: 0;
-    align-self: flex-start;
+    flex-shrink: 0;
+    align-self: center;
   }
 
   @media (max-width: 640px) {
@@ -346,7 +346,9 @@ const NoticeDate = styled.span`
 
   @media (max-width: 768px) {
     font-size: var(--font-size-sm);
-    min-width: auto;
+    min-width: 6rem;
+    flex-shrink: 0;
+    display: block;
   }
 
   @media (max-width: 640px) {
@@ -380,6 +382,8 @@ const NoticeText = styled.span`
     white-space: normal;
     overflow: visible;
     text-overflow: clip;
+    flex: 1;
+    display: block;
   }
 
   @media (max-width: 640px) {
@@ -392,6 +396,18 @@ const NoticeText = styled.span`
 
   @media (max-width: 375px) {
     font-size: var(--font-size-xs);
+  }
+`
+
+const NoticeContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  flex: 1;
+
+  @media (max-width: 768px) {
+    gap: 0.125rem;
+    align-self: center;
   }
 `
 
@@ -410,7 +426,7 @@ const NoticeArrow = styled.span<{ isOpen: boolean }>`
   @media (max-width: 768px) {
     font-size: var(--font-size-lg);
     margin-left: 0;
-    align-self: flex-end;
+    flex-shrink: 0;
   }
 
   @media (max-width: 640px) {
@@ -436,11 +452,13 @@ const NoticeDetail = styled(motion.div)`
   font-family: serif;
   backdrop-filter: blur(10px);
   border-radius: 0 0 0.5rem 0.5rem;
+  margin-bottom: 1rem;
 
   @media (max-width: 1024px) {
     padding: 0.875rem;
     font-size: var(--font-size-sm);
     line-height: 1.7;
+    margin-bottom: 0.875rem;
   }
 
   @media (max-width: 768px) {
@@ -448,28 +466,28 @@ const NoticeDetail = styled(motion.div)`
     font-size: var(--font-size-sm);
     line-height: 1.6;
     border-radius: 0 0 0.5rem 0.5rem;
-    margin: 0 0.75rem 0.5rem 0.75rem;
+    margin: 0 0.75rem 0.75rem 0.75rem;
   }
 
   @media (max-width: 640px) {
     padding: 0.625rem;
     font-size: var(--font-size-xs);
     line-height: 1.5;
-    margin: 0 0.625rem 0.375rem 0.625rem;
+    margin: 0 0.625rem 0.625rem 0.625rem;
   }
 
   @media (max-width: 480px) {
     padding: 0.5rem;
     font-size: var(--font-size-xs);
     line-height: 1.4;
-    margin: 0 0.5rem 0.25rem 0.5rem;
+    margin: 0 0.5rem 0.5rem 0.5rem;
   }
 
   @media (max-width: 375px) {
     padding: 0.375rem;
     font-size: var(--font-size-xs);
     line-height: 1.3;
-    margin: 0 0.375rem 0.1875rem 0.375rem;
+    margin: 0 0.375rem 0.375rem 0.375rem;
   }
 `
 
@@ -479,7 +497,7 @@ const NoticeMore = styled(Link)`
   font-size: var(--font-size-base);
   text-decoration: none;
   border-bottom: 1.5px solid var(--color-gray);
-  margin: 2rem 0 0 0;
+  margin: 2rem 0;
   margin-left: auto;
   transition: all 0.3s ease;
   padding: 0.5rem 1rem;
@@ -528,24 +546,24 @@ const NoticeMore = styled(Link)`
 const noticeData = [
   {
     id: 1,
-    title: '360年祭の日程について',
-    date: '令和7年9月10日,11日,13日',
+    title: '鎮座350年記念大祭を斎行',
+    date: '令和7年9月10日、11日',
     detail:
-      '大館神明社では、創建360年を記念して盛大な祭事を執り行います。期間中は特別な御祈祷や奉納行事が予定されており、多くの皆様のご参拝をお待ちしております。詳細な日程や行事内容については、後日改めてお知らせいたします。',
+      'この度、当神社では鎮座350年を記念し、大祭を執り行います。9月10日は午後6時より宵宮祭を、9月11日は午前8時30分より例祭、午前10時より御神幸（おみゆき）を斎行いたします。なお、宵宮祭・例祭の両日において、神楽舞（浦安の舞・悠久の舞）を奉納いたします。また、11日午後1時からは余興奉納奉告祭が行われ、14台の山車が境内に集合し、祭りを賑やかに彩ります。皆様お誘い合わせの上、ご参拝ください。',
   },
   {
     id: 2,
-    title: '新型コロナウイルス感染症対策について',
-    date: '令和7年5月15日',
+    title: '境内整備工事完了のお知らせ',
+    date: '令和7年5月8日',
     detail:
-      '新型コロナウイルス感染症の拡大防止のため、参拝時のマスク着用や手指消毒のご協力をお願いいたします。また、体調不良の際はご参拝をお控えいただき、ご理解とご協力を賜りますようお願い申し上げます。',
+      '神社の鎮座350年祭記念事業として進めておりました境内整備が、このたび無事に完了いたしました。老朽化していた参道や手水舎などを一新し、地域の皆様にこれまで以上に清々しい気持ちでお参りいただけるようになりました。これもひとえに、ご支援ご協力いただきました皆様のご厚情の賜物と、心より感謝申し上げます。今後も、皆様にとって心の拠り所となるような神社を目指してまいります。引き続きのご支援をどうぞよろしくお願い申し上げます。',
   },
   {
     id: 3,
-    title: '境内整備工事のお知らせ',
-    date: '令和7年5月8日',
+    title: '七五三のご予約について',
+    date: '令和7年3月25日',
     detail:
-      '境内の老朽化した設備の改修工事を実施いたします。工事期間中は一部参拝経路に変更がございますが、ご不便をおかけいたしますが、ご理解とご協力を賜りますようお願い申し上げます。工事完了後は、より安全で快適な参拝環境をご提供いたします。',
+      '今年も「七五三パック」をご用意いたしました。当社の齋館でゆっくりお着替え、プロのカメラマンによる記念撮影の後、ご祈祷を行います。ご祈祷後は、そのままお着替えをしてお帰りいただけますので、ご家族の負担も少なく、スムーズです。ご希望の方には、衣装選びにぴったりの「衣装展示会」を9月20日（土）から28日まで開催いたします。お気軽にご利用ください。',
   },
 ]
 
@@ -580,8 +598,10 @@ const NoticeSection = () => {
               <div key={notice.id}>
                 <NoticeItem onClick={() => toggleItem(notice.id)}>
                   <NoticeButton>お知らせ</NoticeButton>
-                  <NoticeDate>{notice.date}</NoticeDate>
-                  <NoticeText>{notice.title}</NoticeText>
+                  <NoticeContent>
+                    <NoticeDate>{notice.date}</NoticeDate>
+                    <NoticeText>{notice.title}</NoticeText>
+                  </NoticeContent>
                   <NoticeArrow isOpen={openItems.includes(notice.id)}>&#8250;</NoticeArrow>
                 </NoticeItem>
                 <AnimatePresence>

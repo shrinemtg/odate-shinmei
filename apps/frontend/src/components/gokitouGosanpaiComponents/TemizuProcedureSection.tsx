@@ -55,6 +55,7 @@ const ProcedureBox = styled.div`
   border: 2px solid var(--color-shuiro);
   border-radius: 8px;
   padding: 2rem;
+  margin: 0 auto 8rem;
   display: flex;
   justify-content: space-around;
   align-items: flex-start;
@@ -64,6 +65,7 @@ const ProcedureBox = styled.div`
 
   @media (max-width: 1024px) {
     width: calc(85% - 3rem);
+    margin: 0 auto 8rem;
     flex-wrap: wrap;
     justify-content: center;
     padding: 1.5rem;
@@ -77,14 +79,14 @@ const ProcedureBox = styled.div`
     align-items: center;
     padding: 1.5rem;
     gap: 1.5rem;
-    margin: 0 1rem;
+    margin: 0 auto 8rem;
   }
 
   @media (max-width: 480px) {
     width: calc(100% - 3rem);
     padding: 1rem;
     gap: 1rem;
-    margin: 0 1.5rem;
+    margin: 0 auto 8rem;
   }
 `
 
@@ -111,17 +113,21 @@ const StepNumber = styled.span`
   color: var(--color-gray);
   font-family: var(--font-family-serif);
   align-self: flex-start;
+  margin-bottom: 0.5rem;
 
   @media (max-width: 1024px) {
     font-size: var(--font-size-4xl);
+    margin-bottom: 0.5rem;
   }
 
   @media (max-width: 768px) {
     font-size: var(--font-size-3xl);
+    margin-bottom: 0.5rem;
   }
 
   @media (max-width: 480px) {
     font-size: var(--font-size-2xl);
+    margin-bottom: 0.5rem;
   }
 `
 
@@ -218,7 +224,7 @@ const TemizuProcedureSection = () => {
       number: '三',
       image: '/gokitou/temizu-03.png',
       alt: '左手で水を受け口をすすぐ',
-      description: '右手に持ち替え\n左手で水を受け\n口をすすぎます。',
+      description: '右手に持ち替え\n左手で水を受け\n口を漱ぎます。',
     },
     {
       number: '四',
@@ -230,7 +236,7 @@ const TemizuProcedureSection = () => {
       number: '五',
       image: '/gokitou/temizu-05.png',
       alt: '柄杓の柄の部分を洗う',
-      description: '最後に柄杓の柄の部分を洗います。',
+      description: '最後に\n柄杓の柄の部分を洗います。',
     },
   ]
 

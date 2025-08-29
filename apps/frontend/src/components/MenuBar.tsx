@@ -37,6 +37,7 @@ const Root = styled.nav<{ $isMobile: boolean }>`
     border-radius: 0;
     margin: 0;
     padding: 0 16px;
+    position: relative;
   }
 `
 
@@ -68,13 +69,18 @@ const HamburgerButton = styled.button`
   cursor: pointer;
   padding: 8px;
   transition: opacity 0.2s;
+  min-width: 40px;
+  min-height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   &:hover {
     opacity: 0.7;
   }
 
   @media (max-width: 768px) {
-    display: block;
+    display: flex;
   }
 `
 
@@ -95,6 +101,9 @@ const List = styled.ul<{ $isMobile: boolean; $isOpen: boolean }>`
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     display: ${(props) => (props.$isOpen ? 'block' : 'none')};
+    max-height: calc(100vh - 60px);
+    overflow-y: auto;
+    z-index: 1001;
   }
 `
 

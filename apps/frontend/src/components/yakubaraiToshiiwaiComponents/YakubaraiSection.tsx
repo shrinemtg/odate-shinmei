@@ -7,7 +7,7 @@ const YakubaraiSectionWrapper = styled.section`
   padding: 4rem 2rem;
   display: flex;
   align-items: flex-start;
-  gap: 4rem;
+  gap: 2rem;
 
   @media (max-width: 1024px) {
     padding: 3rem 1.5rem;
@@ -30,7 +30,7 @@ const YakubaraiSectionWrapper = styled.section`
 const ContentSection = styled.div`
   flex: 1;
   display: flex;
-  gap: 2rem;
+  gap: 0.8rem;
 
   @media (max-width: 1024px) {
     gap: 1.5rem;
@@ -41,6 +41,7 @@ const ContentSection = styled.div`
     gap: 1.5rem;
     width: 100%;
     align-items: center;
+    order: 1;
   }
 
   @media (max-width: 480px) {
@@ -70,6 +71,7 @@ const MainTitle = styled.h2`
     text-align: center;
     margin: 0;
     letter-spacing: 0.1em;
+    order: 1;
   }
 
   @media (max-width: 480px) {
@@ -101,6 +103,7 @@ const TextContent = styled.div`
     width: 90%;
     max-width: 600px;
     padding: 0 1rem;
+    order: 3;
   }
 
   @media (max-width: 480px) {
@@ -120,6 +123,7 @@ const PhotoSection = styled.div`
   @media (max-width: 768px) {
     width: 100%;
     justify-content: center;
+    order: 2;
   }
 `
 
@@ -164,8 +168,9 @@ const YakubaraiSection = () => {
       <ContentSection>
         <MainTitle>厄払い</MainTitle>
         <TextContent>
-          <p>災厄を未然に防ぐ『転ばぬ先の杖』として神社でお願いを受け、厄災を除くのが厄払いです。</p>
           <p>
+            災厄を未然に防ぐ『転ばぬ先の杖』として神社でお願いを受け、厄災を除くのが厄払いです。
+            <br />
             しかし、厄年はけして悪いことではなく、役につく年頃になったという意味もあり、その時を無事に迎えられたことに感謝の気持ちを込めて家族、友人達と共に歳祝としてお祝いします。
           </p>
         </TextContent>

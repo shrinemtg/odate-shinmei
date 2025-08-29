@@ -26,35 +26,12 @@ const TopSection = styled.div`
     flex-direction: column;
     padding: 2rem 1rem;
     gap: 2rem;
+    align-items: center;
   }
 
   @media (max-width: 480px) {
     padding: 1.5rem 0.5rem;
     gap: 1.5rem;
-  }
-`
-
-const LeftContent = styled.div`
-  width: 80%;
-  flex: 1;
-  display: flex;
-  align-items: flex-start;
-  position: relative;
-  gap: 1rem;
-
-  @media (max-width: 1024px) {
-    width: 100%;
-    gap: 0.75rem;
-  }
-
-  @media (max-width: 768px) {
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-  }
-
-  @media (max-width: 480px) {
-    gap: 0.75rem;
   }
 `
 
@@ -67,13 +44,13 @@ const VerticalTitle = styled.h1`
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   font-family: var(--font-family-serif);
   line-height: 1.2;
-  margin: 0 0 2rem 8rem;
+  margin: -2rem 0 0 8rem;
   white-space: nowrap;
   flex-shrink: 0;
 
   @media (max-width: 1024px) {
     font-size: var(--font-size-4xl);
-    margin: 0 0 1.5rem 6rem;
+    margin: -1.5rem 0 1.5rem 6rem;
   }
 
   @media (max-width: 768px) {
@@ -82,6 +59,7 @@ const VerticalTitle = styled.h1`
     text-align: center;
     margin: 0 0 1rem 0;
     letter-spacing: 0.1em;
+    order: 1;
   }
 
   @media (max-width: 480px) {
@@ -98,6 +76,7 @@ const TextContent = styled.div`
   @media (max-width: 768px) {
     align-items: center;
     text-align: center;
+    order: 3;
   }
 `
 
@@ -117,6 +96,7 @@ const SectionTitle = styled.h2`
   @media (max-width: 768px) {
     font-size: var(--font-size-lg);
     margin: 2rem 0 0.5rem 0;
+    order: 3;
   }
 
   @media (max-width: 480px) {
@@ -129,9 +109,10 @@ const Description = styled.div`
   color: var(--color-gray);
   font-size: var(--font-size-base);
   line-height: 1.6;
-  max-width: 100%;
+  max-width: 400px;
 
   @media (max-width: 1024px) {
+    max-width: 100%;
     font-size: var(--font-size-base);
     line-height: 1.5;
   }
@@ -139,11 +120,14 @@ const Description = styled.div`
   @media (max-width: 768px) {
     font-size: var(--font-size-sm);
     line-height: 1.4;
+    order: 4;
+    padding: 0 1rem;
   }
 
   @media (max-width: 480px) {
     font-size: var(--font-size-xs);
     line-height: 1.3;
+    padding: 0 0.5rem;
   }
 `
 
@@ -179,6 +163,7 @@ const ImageSection = styled.div`
 
   @media (max-width: 768px) {
     width: 100%;
+    order: 2;
   }
 `
 
@@ -190,7 +175,7 @@ const ShichigosanImage = styled.img`
   object-position: center;
   border-radius: 8px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-  margin-top: 2rem;
+  margin: 0 8rem 0 0;
 
   @media (max-width: 1024px) {
     max-width: 500px;
@@ -199,7 +184,7 @@ const ShichigosanImage = styled.img`
 
   @media (max-width: 768px) {
     max-width: 400px;
-    margin-top: 0;
+    margin: 0 auto;
   }
 
   @media (max-width: 480px) {
@@ -319,23 +304,19 @@ const ShichigosanSection = () => {
   return (
     <ShichigosanSectionWrapper>
       <TopSection>
-        <LeftContent>
-          <VerticalTitle>七五三詣</VerticalTitle>
-          <TextContent>
-            <SectionTitle>七五三のお話</SectionTitle>
-            <Description>
-              <Paragraph>
-                七五三は、3歳・5歳・7歳の子どもの成長を祝い、神社に参拝して
-                今後の健やかな成長を祈願する伝統的な行事です。
-              </Paragraph>
-              <Paragraph>
-                江戸時代に始まったこの風習は、11月15日の「吉日」に行われることが多く、
-                子どもの成長の節目として大切にされています。
-              </Paragraph>
-            </Description>
-          </TextContent>
-        </LeftContent>
-
+        <VerticalTitle>七五三詣</VerticalTitle>
+        <TextContent>
+          <SectionTitle>七五三のお話</SectionTitle>
+          <Description>
+            <Paragraph>
+              七五三は、3歳・5歳・7歳の子どもの成長を祝い、神社に参拝して 今後の健やかな成長を祈願する伝統的な行事です。
+            </Paragraph>
+            <Paragraph>
+              江戸時代に始まったこの風習は、11月15日の「吉日」に行われることが多く、
+              子どもの成長の節目として大切にされています。
+            </Paragraph>
+          </Description>
+        </TextContent>
         <ImageSection>
           <ShichigosanImage src='/life/life-05.png' alt='七五三の写真' />
         </ImageSection>

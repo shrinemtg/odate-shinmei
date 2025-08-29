@@ -4,6 +4,7 @@ import ContactInputForm from './ContactInputForm'
 import ContactConfirmation from './ContactConfirmation'
 import ContactCompletion from './ContactCompletion'
 import ContactSending from './ContactSending'
+import ContactErrorPopup from './ContactErrorPopup'
 
 const PageWrapper = styled.div`
   min-height: 100vh;
@@ -56,9 +57,21 @@ const ContactFormWrapper = styled.div`
   position: relative;
   z-index: 2;
 
+  @media (max-width: 1024px) {
+    gap: 2rem;
+    padding: 3rem 1.5rem 3rem 6rem;
+    max-width: 95%;
+  }
+
   @media (max-width: 768px) {
     gap: 1.5rem;
-    padding: 2rem 1rem 2rem 4rem;
+    padding: 2rem 1rem 2rem 4.5rem;
+    max-width: 100%;
+  }
+
+  @media (max-width: 480px) {
+    gap: 1rem;
+    padding: 1.5rem 0.5rem 1.5rem 2.5rem;
     max-width: 100%;
   }
 `
@@ -88,9 +101,24 @@ const VerticalTitle = styled.div`
     margin-top: -2rem;
   }
 
+  @media (max-width: 1024px) {
+    font-size: var(--font-size-3xl);
+    left: 8rem;
+    top: 4rem;
+
+    .title-line {
+      margin-bottom: 0.75rem;
+    }
+
+    .title-line:last-child {
+      margin-top: -1.5rem;
+    }
+  }
+
   @media (max-width: 768px) {
     font-size: var(--font-size-2xl);
     left: 2rem;
+    top: 3rem;
 
     .title-line {
       margin-bottom: 0.5rem;
@@ -98,6 +126,20 @@ const VerticalTitle = styled.div`
 
     .title-line:last-child {
       margin-top: -1rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    font-size: var(--font-size-xl);
+    left: 1rem;
+    top: 2rem;
+
+    .title-line {
+      margin-bottom: 0.25rem;
+    }
+
+    .title-line:last-child {
+      margin-top: -0.5rem;
     }
   }
 `
@@ -110,9 +152,22 @@ const FormContainer = styled.div`
   margin: 10rem 3rem;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 
+  @media (max-width: 1024px) {
+    padding: 4rem 2rem;
+    margin: 8rem 2rem;
+    border-radius: 10px;
+  }
+
   @media (max-width: 768px) {
     padding: 2rem 1rem;
+    margin: 6rem 1rem;
     border-radius: 8px;
+  }
+
+  @media (max-width: 480px) {
+    padding: 1.5rem 0.75rem;
+    margin: 4rem 0.5rem;
+    border-radius: 6px;
   }
 `
 
@@ -141,11 +196,12 @@ const ContactForm: React.FC = () => {
 
   const [currentStep, setCurrentStep] = useState<FormStep>('input')
   const [isSubmitting, setIsSubmitting] = useState(false)
+  const [sendError, setSendError] = useState<string | null>(null)
 
   const handleInputChange = (field: keyof FormData, value: string | boolean) => {
     setFormData((prev) => ({
       ...prev,
-      [field]: value as any,
+      [field]: value,
     }))
   }
 
@@ -161,31 +217,32 @@ const ContactForm: React.FC = () => {
   const handleSubmit = async () => {
     setIsSubmitting(true)
     setCurrentStep('sending')
+    setSendError(null)
 
     try {
-      console.log('Sending form data:', formData)
+      // Formspreeのエンドポイントに送信
+      const formDataToSend = new FormData()
+      formDataToSend.append('subject', formData.subject)
+      formDataToSend.append('name', formData.name)
+      formDataToSend.append('email', formData.email)
+      formDataToSend.append('phone', formData.phone)
+      formDataToSend.append('company', formData.company)
+      formDataToSend.append('message', formData.message)
 
-      const response = await fetch('http://localhost:8080/api/contact', {
+      // FormspreeのフォームIDを環境変数から取得
+      const formId = process.env.NEXT_PUBLIC_FORMSPREE_FORM_ID
+      if (!formId) {
+        throw new Error('Formspree form ID is not configured')
+      }
+      const response = await fetch(`https://formspree.io/f/${formId}`, {
         method: 'POST',
+        body: formDataToSend,
         headers: {
-          'Content-Type': 'application/json',
+          Accept: 'application/json',
         },
-        body: JSON.stringify(formData),
       })
 
-      console.log('Response status:', response.status)
-      console.log('Response headers:', response.headers)
-
-      if (!response.ok) {
-        const errorText = await response.text()
-        console.error('Response error:', errorText)
-        throw new Error(`HTTP ${response.status}: ${errorText}`)
-      }
-
-      const result = await response.json()
-      console.log('Response result:', result)
-
-      if (result.success) {
+      if (response.ok) {
         setCurrentStep('complete')
         // フォームリセット
         setFormData({
@@ -198,12 +255,11 @@ const ContactForm: React.FC = () => {
           privacyPolicy: false,
         })
       } else {
-        alert(result.error || '送信に失敗しました')
-        setCurrentStep('confirm')
+        throw new Error('送信に失敗しました。しばらく時間をおいて再度お試しください。')
       }
     } catch (error) {
-      console.error('Error details:', error)
-      alert(`送信に失敗しました: ${error instanceof Error ? error.message : '不明なエラー'}`)
+      const errorMessage = error instanceof Error ? error.message : '不明なエラー'
+      setSendError(errorMessage)
       setCurrentStep('confirm')
     } finally {
       setIsSubmitting(false)
@@ -212,6 +268,10 @@ const ContactForm: React.FC = () => {
 
   const handleNewContact = () => {
     setCurrentStep('input')
+  }
+
+  const handleCloseSendError = () => {
+    setSendError(null)
   }
 
   return (
@@ -240,6 +300,8 @@ const ContactForm: React.FC = () => {
           {currentStep === 'complete' && <ContactCompletion onNewContact={handleNewContact} />}
         </FormContainer>
       </ContactFormWrapper>
+
+      {sendError && <ContactErrorPopup errors={[sendError]} onClose={handleCloseSendError} title='送信エラー' />}
     </PageWrapper>
   )
 }

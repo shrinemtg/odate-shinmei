@@ -1,9 +1,5 @@
 import ContactForm from './ContactForm'
 
-const ContactPageContent = () => (
-  <>
-    <ContactForm />
-  </>
-)
+const ContactPageContent = () => <ContactForm />
 
 export default ContactPageContent

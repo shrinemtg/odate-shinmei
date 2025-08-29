@@ -71,40 +71,46 @@ const SubText = styled.div`
 `
 
 const ContactButton = styled.a`
-  display: inline-block;
   background: var(--color-shuiro);
   color: var(--color-white);
   border: none;
-  border-radius: 20px;
-  padding: 12px 36px;
-  font-size: var(--font-size-lg);
-  font-weight: 500;
-  letter-spacing: 0.1em;
-  font-family: serif;
-  margin: 18px 0 18px 0;
+  border-radius: 8px;
+  padding: 1rem 2rem;
+  font-size: var(--font-size-base);
+  font-weight: 600;
+  font-family: var(--font-family-serif);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin: 2rem auto 3rem;
   text-decoration: none;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-  transition: background 0.2s;
+  display: block;
+  width: fit-content;
+
+  &:hover {
+    background: #7a2e2b;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(153, 58, 55, 0.3);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
 
   @media (max-width: 1024px) {
-    padding: 11px 32px;
+    padding: 0.875rem 1.75rem;
     font-size: var(--font-size-base);
-    margin: 16px 0 16px 0;
-    border-radius: 18px;
   }
 
   @media (max-width: 768px) {
-    padding: 10px 28px;
-    font-size: var(--font-size-base);
-    margin: 16px 0 16px 0;
-    border-radius: 16px;
+    align-self: center;
+    padding: 0.75rem 1.5rem;
+    font-size: var(--font-size-sm);
+    order: 5;
   }
 
   @media (max-width: 480px) {
-    padding: 9px 24px;
-    font-size: var(--font-size-sm);
-    margin: 14px 0 14px 0;
-    border-radius: 14px;
+    padding: 0.625rem 1.25rem;
+    font-size: var(--font-size-xs);
   }
 `
 

@@ -160,18 +160,18 @@ const DescriptionArea = styled.div`
 const DescriptionText = styled.p`
   color: var(--color-gray);
   font-family: 'Noto Serif JP', serif;
-  font-size: 15px;
+  font-size: 1rem;
   line-height: 1.8;
   margin: 0;
   white-space: pre-line;
 
   @media (max-width: 768px) {
-    font-size: 14px;
+    font-size: 0.875rem;
     line-height: 1.7;
   }
 
   @media (max-width: 480px) {
-    font-size: 13px;
+    font-size: 0.875rem;
     line-height: 1.6;
   }
 `

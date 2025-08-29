@@ -14,7 +14,6 @@ const GokitouOmamoriSection = () => (
             <VerticalTitle>御祈祷</VerticalTitle>
             <Description>
               大館神明社では、さまざまな御祈祷に対応しております。
-              <br />
               日々の感謝や心の平安を求めるご祈祷、どうぞお気軽にお越しください。
             </Description>
           </Row>
@@ -28,7 +27,7 @@ const GokitouOmamoriSection = () => (
               priority
             />
           </CatImageBox>
-          <DetailButton>詳しく見る</DetailButton>
+          <DetailButton href='/gokitouGosanpai'>詳しく見る</DetailButton>
         </RightCol>
       </Card>
     </Section>
@@ -42,12 +41,20 @@ const GokitouOmamoriSection = () => (
           <Row>
             <VerticalTitle>お守り</VerticalTitle>
             <Description>
-              大館神明社では、古くから地域の人々の願いに寄り添い、
-              <br />
-              御神符やお守りを授与しております。
+              大館神明社では、古くから地域の人々の願いに寄り添い、御神符やお守りを授与しております。
             </Description>
           </Row>
-          <DetailButton>詳しく見る</DetailButton>
+          <OmamoriCatImageBox>
+            <Image
+              src='/neko/neko06.png'
+              alt='お守り猫'
+              width={220}
+              height={260}
+              style={{ width: '100%', height: 'auto', display: 'block' }}
+              priority
+            />
+          </OmamoriCatImageBox>
+          <DetailButton href='/omamori'>詳しく見る</DetailButton>
         </RightCol>
       </Card>
     </Section>
@@ -123,7 +130,6 @@ const LeftCol = styled.div`
   flex: 1.6;
   min-width: 0;
   position: relative;
-  background: url(/backsozai/gokitou-haikei) center center / cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -204,11 +210,11 @@ const VerticalTitle = styled.div`
   font-family: serif;
   color: var(--color-white);
   line-height: 1.1;
-  margin-right: 8px;
+  margin: 1rem 0 8rem 0;
 
   @media (max-width: 768px) {
     writing-mode: horizontal-tb;
-    font-size: var(--font-size-3xl);
+    font-size: var(--font-size-2xl);
     margin-right: 0;
     margin-bottom: 8px;
   }
@@ -223,7 +229,7 @@ const Description = styled.div`
   margin-top: 8px;
 
   @media (max-width: 768px) {
-    font-size: var(--font-size-base);
+    font-size: var(--font-size-sm);
     line-height: 1.8;
     max-width: 100%;
     text-align: center;
@@ -250,26 +256,57 @@ const CatImageBox = styled.div`
     position: relative;
     right: auto;
     bottom: auto;
-    width: 120px;
+    width: 140px;
     height: 150px;
     margin: 10px 0;
   }
 
   @media (max-width: 480px) {
-    width: 100px;
-    height: 120px;
+    width: 130px;
+    height: 140px;
     margin: 8px 0;
   }
 `
 
-const DetailButton = styled.button`
+const OmamoriCatImageBox = styled.div`
+  position: absolute;
+  right: 220px;
+  bottom: -140px;
+  width: 280px;
+  height: 330px;
+  z-index: 3;
+
+  @media (max-width: 1024px) {
+    right: 180px;
+    bottom: -60px;
+    width: 200px;
+    height: 240px;
+  }
+
+  @media (max-width: 768px) {
+    position: relative;
+    right: auto;
+    bottom: auto;
+    width: 180px;
+    height: 140px;
+    margin: 10px 0;
+  }
+
+  @media (max-width: 480px) {
+    width: 180px;
+    height: 140px;
+    margin: 8px 0;
+  }
+`
+
+const DetailButton = styled.a`
   position: absolute;
   right: 24px;
   bottom: 24px;
   background: transparent;
   color: var(--color-white);
   border: 1.5px solid var(--color-white);
-  border-radius: 20px;
+  border-radius: 8px;
   padding: 10px 32px;
   font-size: var(--font-size-lg);
   font-weight: 400;
@@ -278,6 +315,8 @@ const DetailButton = styled.button`
   cursor: pointer;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   transition: background 0.2s;
+  text-decoration: none;
+  display: inline-block;
 
   &:hover {
     background: rgba(255, 255, 255, 0.1);
@@ -287,7 +326,7 @@ const DetailButton = styled.button`
     right: 18px;
     bottom: 18px;
     padding: 8px 24px;
-    font-size: var(--font-size-base);
+    font-size: var(--font-size-sm);
   }
 
   @media (max-width: 768px) {
@@ -295,15 +334,15 @@ const DetailButton = styled.button`
     right: auto;
     bottom: auto;
     padding: 6px 20px;
-    font-size: var(--font-size-sm);
-    border-radius: 14px;
+    font-size: var(--font-size-xs);
+    border-radius: 8px;
     margin: 12px 0 6px 0;
   }
 
   @media (max-width: 480px) {
     padding: 5px 16px;
     font-size: var(--font-size-xs);
-    border-radius: 10px;
+    border-radius: 8px;
     margin: 10px 0 5px 0;
   }
 `

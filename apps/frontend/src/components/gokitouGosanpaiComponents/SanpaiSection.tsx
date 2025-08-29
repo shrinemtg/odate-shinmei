@@ -56,7 +56,7 @@ const TextArea = styled.div`
 
   @media (max-width: 768px) {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     gap: 1.5rem;
   }
 
@@ -87,6 +87,7 @@ const VerticalTitle = styled.h2`
     margin: 0;
     text-align: center;
     align-self: center;
+    order: 1;
   }
 
   @media (max-width: 480px) {
@@ -107,6 +108,7 @@ const ContentArea = styled.div`
 
   @media (max-width: 768px) {
     max-width: 100%;
+    order: 2;
   }
 `
 
@@ -170,13 +172,13 @@ const RitualBox = styled.div`
   }
 
   @media (max-width: 768px) {
-    margin: 0 0 0.75rem 0;
+    margin: 1rem 0;
     padding: 0.75rem;
     max-width: 100%;
   }
 
   @media (max-width: 480px) {
-    margin: 0 0 0.5rem 0;
+    margin: 1rem 0;
     padding: 0.5rem;
   }
 `

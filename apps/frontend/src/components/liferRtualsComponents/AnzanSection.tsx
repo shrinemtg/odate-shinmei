@@ -42,13 +42,13 @@ const VerticalTitle = styled.section`
   @media (max-width: 768px) {
     height: 30vh;
     min-height: 200px;
-    margin: 8rem auto 2rem;
+    margin: 6rem auto 2rem;
   }
 
   @media (max-width: 480px) {
     height: 25vh;
     min-height: 150px;
-    margin: 6rem auto 1.5rem;
+    margin: 4rem auto 1.5rem;
   }
 `
 
@@ -74,7 +74,7 @@ const VerticalTitleText = styled.h1`
     writing-mode: horizontal-tb;
     font-size: var(--font-size-3xl);
     text-align: center;
-    margin: 0;
+    margin: 8rem auto 3rem;
     letter-spacing: 0.2em;
   }
 
@@ -149,8 +149,8 @@ const Title = styled.h2`
   @media (max-width: 768px) {
     font-size: var(--font-size-lg);
     margin-bottom: 1.5rem;
-    color: var(--color-brown);
-    text-shadow: none;
+    color: var(--color-white);
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
   }
 
   @media (max-width: 480px) {
@@ -174,16 +174,17 @@ const Description = styled.div`
   }
 
   @media (max-width: 768px) {
-    color: var(--color-gray);
+    color: var(--color-white);
     font-size: var(--font-size-sm);
     line-height: 1.4;
     text-align: center;
-    text-shadow: none;
+    padding: 0 1rem;
   }
 
   @media (max-width: 480px) {
     font-size: var(--font-size-xs);
     line-height: 1.3;
+    padding: 0 0.5rem;
   }
 `
 

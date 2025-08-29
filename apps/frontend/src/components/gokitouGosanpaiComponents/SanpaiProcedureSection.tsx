@@ -61,6 +61,7 @@ const ProcedureBox = styled.div`
   gap: 1.5rem;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
   box-sizing: border-box;
+  margin: 0 auto 8rem;
 
   @media (max-width: 1024px) {
     width: calc(85% - 3rem);
@@ -68,7 +69,7 @@ const ProcedureBox = styled.div`
     justify-content: center;
     padding: 1.5rem;
     gap: 1rem;
-    margin: 0 1rem;
+    margin: 0 auto 8rem;
   }
 
   @media (max-width: 768px) {
@@ -77,14 +78,14 @@ const ProcedureBox = styled.div`
     align-items: center;
     padding: 1.5rem;
     gap: 1.5rem;
-    margin: 0 1rem;
+    margin: 0 auto 8rem;
   }
 
   @media (max-width: 480px) {
     width: calc(100% - 3rem);
     padding: 1rem;
     gap: 1rem;
-    margin: 0 1.5rem;
+    margin: 0 auto 8rem;
   }
 `
 
@@ -224,13 +225,13 @@ const SanpaiProcedureSection = () => {
       number: '四',
       image: '/gokitou/sanpaisahou-04.png',
       alt: '二拍手して手を合わせ祈りを込める',
-      description: '二拍手した後、手を合わせ祈りを込めます。',
+      description: '二拍手し、手を合わせ\n祈りを込めます。',
     },
     {
       number: '五',
       image: '/gokitou/sanpaisahou-05.png',
       alt: '最後に深く一拝します',
-      description: '最後にもう一度、深く一拝します。',
+      description: '最後にもう一度、\n深く一拝します。',
     },
   ]
 

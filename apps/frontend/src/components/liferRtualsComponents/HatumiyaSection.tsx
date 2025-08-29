@@ -39,6 +39,7 @@ const ContentContainer = styled.div`
     flex-direction: column;
     padding: 2rem 1rem;
     gap: 2rem;
+    align-items: center;
   }
 
   @media (max-width: 480px) {
@@ -60,6 +61,9 @@ const ImageSection = styled.div`
 
   @media (max-width: 768px) {
     max-width: 100%;
+    order: 2;
+    justify-content: center;
+    align-items: center;
   }
 `
 
@@ -99,12 +103,13 @@ const TextSection = styled.div`
     max-width: 100%;
     align-items: center;
     text-align: center;
+    order: 3;
   }
 `
 
 const VerticalTitle = styled.h1`
   position: absolute;
-  top: -2rem;
+  top: -0.1rem;
   right: 0;
   color: var(--color-brown);
   font-size: var(--font-size-5xl);
@@ -114,7 +119,7 @@ const VerticalTitle = styled.h1`
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   font-family: var(--font-family-serif);
   line-height: 1.2;
-  margin: 0 2rem 0 0;
+  margin: 0 8rem 0 0;
   white-space: nowrap;
 
   @media (max-width: 1024px) {
@@ -129,6 +134,7 @@ const VerticalTitle = styled.h1`
     text-align: center;
     margin: 0 0 1rem 0;
     letter-spacing: 0.2em;
+    order: 1;
   }
 
   @media (max-width: 480px) {
@@ -150,6 +156,7 @@ const SectionTitle = styled.h2`
 
   @media (max-width: 768px) {
     font-size: var(--font-size-xl);
+    order: 3;
   }
 
   @media (max-width: 480px) {
@@ -172,11 +179,14 @@ const Description = styled.div`
   @media (max-width: 768px) {
     font-size: var(--font-size-sm);
     line-height: 1.4;
+    order: 4;
+    padding: 0 1rem;
   }
 
   @media (max-width: 480px) {
     font-size: var(--font-size-xs);
     line-height: 1.3;
+    padding: 0 0.5rem;
   }
 `
 
@@ -216,6 +226,7 @@ const ReservationButton = styled.button`
   cursor: pointer;
   transition: all 0.3s ease;
   align-self: flex-end;
+  margin: 2rem auto 3rem;
 
   &:hover {
     background: #7a2e2b;
@@ -236,6 +247,7 @@ const ReservationButton = styled.button`
     align-self: center;
     padding: 0.75rem 1.5rem;
     font-size: var(--font-size-sm);
+    order: 5;
   }
 
   @media (max-width: 480px) {
@@ -254,12 +266,12 @@ const HatumiyaSection = () => {
   return (
     <HatumiyaSectionWrapper>
       <ContentContainer>
+        <VerticalTitle>初宮参り</VerticalTitle>
         <ImageSection>
           <HatumiyaImage src='/life/life-04.png' alt='初宮詣の写真' />
         </ImageSection>
 
         <TextSection>
-          <VerticalTitle>初宮詣</VerticalTitle>
           <SectionTitle>初宮参りとは？</SectionTitle>
           <Description>
             <Paragraph>

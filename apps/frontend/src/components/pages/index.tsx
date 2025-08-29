@@ -10,13 +10,50 @@ import LogoCrossfade from '../homeComponents/LogoCrossfade'
 import HeroContent from '../homeComponents/HeroContent'
 
 export const Home = () => {
-  const [introVisible, setIntroVisible] = useState(true)
+  const [introVisible, setIntroVisible] = useState(false) // 初期値をfalseに変更
   const [crossFadeVisible, setCrossFadeVisible] = useState(false)
   const [mainVisible, setMainVisible] = useState(false)
   const [fade, setFade] = useState(0)
   const [muted, setMuted] = useState(true)
   const fadeDuration = 2000
   const [showMenuBar, setShowMenuBar] = useState(false)
+  const [isInitialized, setIsInitialized] = useState(false) // 初期化完了フラグ
+
+  // 初回訪問判定とintroAnimationの制御
+  useEffect(() => {
+    const hasVisitedBefore = () => {
+      if (typeof window === 'undefined') return false
+      try {
+        return localStorage.getItem('hasVisitedBefore') === 'true'
+      } catch (error) {
+        // localStorageが利用できない場合（プライベートモード等）は初回として扱う
+        return false
+      }
+    }
+
+    const markAsVisited = () => {
+      if (typeof window === 'undefined') return
+      try {
+        localStorage.setItem('hasVisitedBefore', 'true')
+      } catch (error) {
+        // localStorageが利用できない場合は無視
+      }
+    }
+
+    const visitedBefore = hasVisitedBefore()
+
+    if (visitedBefore) {
+      // 初回以外の場合はintroAnimationをスキップ
+      setIntroVisible(false)
+      setMainVisible(true)
+      setIsInitialized(true)
+    } else {
+      // 初回の場合はintroAnimationを表示
+      setIntroVisible(true)
+      markAsVisited()
+      setIsInitialized(true)
+    }
+  }, [])
 
   // IntroAnimation終了後にクロスフェード開始
   const handleIntroEnd = () => {
@@ -73,6 +110,24 @@ export const Home = () => {
     handleScroll()
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
+
+  // 開発用：Ctrl+Shift+R でリセット
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.ctrlKey && e.shiftKey && e.key === 'R') {
+        localStorage.removeItem('hasVisitedBefore')
+        window.location.reload()
+      }
+    }
+
+    window.addEventListener('keydown', handleKeyDown)
+    return () => window.removeEventListener('keydown', handleKeyDown)
+  }, [])
+
+  // 初期化が完了するまで何も表示しない
+  if (!isInitialized) {
+    return null
+  }
 
   return (
     <>

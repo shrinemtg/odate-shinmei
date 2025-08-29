@@ -88,16 +88,21 @@ const CloseButton = styled.button`
 interface ContactErrorPopupProps {
   errors: string[]
   onClose: () => void
+  title?: string
 }
 
-const ContactErrorPopup: React.FC<ContactErrorPopupProps> = ({ errors, onClose }) => {
+const ContactErrorPopup: React.FC<ContactErrorPopupProps> = ({
+  errors,
+  onClose,
+  title = '入力内容をご確認ください',
+}) => {
   return (
     <PopupOverlay onClick={onClose}>
       <PopupContainer onClick={(e) => e.stopPropagation()}>
-        <PopupTitle>入力内容をご確認ください</PopupTitle>
+        <PopupTitle>{title}</PopupTitle>
         <ErrorList>
-          {errors.map((error, index) => (
-            <ErrorItem key={index}>• {error}</ErrorItem>
+          {errors.map((error) => (
+            <ErrorItem key={error}>• {error}</ErrorItem>
           ))}
         </ErrorList>
         <CloseButton onClick={onClose}>閉じる</CloseButton>

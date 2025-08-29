@@ -41,15 +41,15 @@ const VerticalTitle = styled.section`
   }
 
   @media (max-width: 768px) {
-    height: 30vh;
-    min-height: 200px;
-    margin: 2rem auto 2rem;
+    height: 20vh;
+    min-height: 150px;
+    margin: 1rem auto 1rem;
   }
 
   @media (max-width: 480px) {
-    height: 25vh;
-    min-height: 150px;
-    margin: 1.5rem auto 1.5rem;
+    height: 15vh;
+    min-height: 100px;
+    margin: 0.5rem auto 0.5rem;
   }
 `
 
@@ -146,8 +146,8 @@ const Title = styled.h2`
 
   @media (max-width: 768px) {
     font-size: var(--font-size-xl);
-    color: var(--color-brown);
-    text-shadow: none;
+    color: var(--color-white);
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
   }
 
   @media (max-width: 480px) {
@@ -169,16 +169,22 @@ const Description = styled.div`
   }
 
   @media (max-width: 768px) {
-    color: var(--color-gray);
+    color: var(--color-white);
     font-size: var(--font-size-sm);
     line-height: 1.4;
     text-align: center;
-    text-shadow: none;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+    background: rgba(128, 128, 128, 0.1);
+    padding: 1rem;
+    border-radius: 8px;
   }
 
   @media (max-width: 480px) {
     font-size: var(--font-size-xs);
     line-height: 1.3;
+    padding: 0.75rem;
+    background: rgba(128, 128, 128, 0.1);
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
   }
 `
 
@@ -243,31 +249,40 @@ const ReservationButton = styled.button`
   background: var(--color-shuiro);
   color: var(--color-white);
   border: none;
-  padding: 1rem 3rem;
+  border-radius: 8px;
+  padding: 1rem 2rem;
   font-size: var(--font-size-base);
   font-weight: 600;
-  font-family: var(--font-family-sans);
-  border-radius: 6px;
+  font-family: var(--font-family-serif);
   cursor: pointer;
   transition: all 0.3s ease;
-  margin-top: 1rem;
+  align-self: flex-end;
+  margin: 2rem auto 3rem;
 
   &:hover {
-    background: var(--color-shuiro);
+    background: #7a2e2b;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(153, 58, 55, 0.3);
+  }
+
+  &:active {
+    transform: translateY(0);
   }
 
   @media (max-width: 1024px) {
-    padding: 0.875rem 2.5rem;
+    padding: 0.875rem 1.75rem;
     font-size: var(--font-size-base);
   }
 
   @media (max-width: 768px) {
-    padding: 0.75rem 2rem;
+    align-self: center;
+    padding: 0.75rem 1.5rem;
     font-size: var(--font-size-sm);
+    order: 5;
   }
 
   @media (max-width: 480px) {
-    padding: 0.625rem 1.5rem;
+    padding: 0.625rem 1.25rem;
     font-size: var(--font-size-xs);
   }
 `

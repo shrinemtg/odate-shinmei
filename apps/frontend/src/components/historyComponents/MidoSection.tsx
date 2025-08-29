@@ -46,13 +46,13 @@ const SubTitle = styled.div`
 const MainTitle = styled.h2`
   color: var(--color-brown);
   font-family: 'Noto Serif JP', serif;
-  font-size: 48px;
+  font-size: 3rem;
   font-weight: 600;
   letter-spacing: 0.08em;
   margin: 0 0 16px 0;
 
   @media (max-width: 768px) {
-    font-size: 32px;
+    font-size: 2rem;
     margin: 0 0 12px 0;
   }
 `
@@ -62,7 +62,7 @@ const GridArea = styled.div`
   gap: 24px;
   width: 90%;
   max-width: 800px;
-  margin: 0 auto;
+  margin: 1rem auto;
   position: relative;
   z-index: 2;
   justify-content: flex-end;

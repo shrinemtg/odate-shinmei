@@ -243,12 +243,9 @@ const ContactButton = styled.button`
   font-family: var(--font-family-serif);
   cursor: pointer;
   transition: all 0.3s ease;
-  margin-top: 2rem;
-  width: 100%;
-  max-width: 300px;
+  margin: 2rem auto 1rem;
   display: block;
-  margin-left: auto;
-  margin-right: auto;
+  width: fit-content;
 
   &:hover {
     background: #7a2e2b;
@@ -260,27 +257,21 @@ const ContactButton = styled.button`
     transform: translateY(0);
   }
 
-  @media (max-width: 1023px) {
-    font-size: var(--font-size-base);
+  @media (max-width: 1024px) {
     padding: 0.875rem 1.75rem;
-    margin-top: 1.75rem;
-    max-width: 280px;
+    font-size: var(--font-size-base);
   }
 
-  @media (max-width: 767px) {
-    font-size: var(--font-size-sm);
+  @media (max-width: 768px) {
+    align-self: center;
     padding: 0.75rem 1.5rem;
-    margin-top: 1.5rem;
-    max-width: 260px;
-    border-radius: 6px;
+    font-size: var(--font-size-sm);
+    order: 5;
   }
 
-  @media (max-width: 374px) {
-    font-size: var(--font-size-xs);
+  @media (max-width: 480px) {
     padding: 0.625rem 1.25rem;
-    margin-top: 1.25rem;
-    max-width: 240px;
-    border-radius: 4px;
+    font-size: var(--font-size-xs);
   }
 `
 
@@ -416,7 +407,7 @@ const GokitouSection = () => {
 
   const handleContactClick = () => {
     // お問い合わせフォームへの遷移処理
-    console.log('お問い合わせフォームへ遷移')
+    router.push('/contact')
   }
 
   const handleLifeRtualsClick = () => {

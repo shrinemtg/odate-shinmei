@@ -13,11 +13,13 @@ const ShichigosanPackSectionWrapper = styled.section`
   }
 
   @media (max-width: 768px) {
-    min-height: 80vh;
+    min-height: auto;
+    padding: 2rem 0;
   }
 
   @media (max-width: 480px) {
-    min-height: 70vh;
+    min-height: auto;
+    padding: 1rem 0;
   }
 `
 
@@ -35,11 +37,11 @@ const ContentContainer = styled.div`
   }
 
   @media (max-width: 768px) {
-    padding: 2rem 1rem;
+    padding: 1rem 1rem;
   }
 
   @media (max-width: 480px) {
-    padding: 1.5rem 0.5rem;
+    padding: 0.5rem 0.5rem;
   }
 `
 
@@ -57,10 +59,12 @@ const MainTitle = styled.h1`
 
   @media (max-width: 768px) {
     font-size: var(--font-size-xl);
+    margin-bottom: 1.5rem;
   }
 
   @media (max-width: 480px) {
     font-size: var(--font-size-lg);
+    margin-bottom: 1rem;
   }
 `
 
@@ -87,14 +91,14 @@ const PriceTableContainer = styled.div`
 
   @media (max-width: 768px) {
     max-width: 100%;
-    padding: 1rem;
-    gap: 1rem;
+    padding: 0.75rem;
+    gap: 0.75rem;
   }
 
   @media (max-width: 480px) {
     max-width: calc(100% - 1rem);
-    padding: 0.75rem;
-    gap: 0.75rem;
+    padding: 0.5rem;
+    gap: 0.5rem;
   }
 `
 

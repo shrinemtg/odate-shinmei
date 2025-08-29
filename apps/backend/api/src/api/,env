@@ -1,0 +1,11 @@
+# SMTP設定（テスト用）
+SMTP_HOST=smtp.gmail.com
+SMTP_PORT=587
+SMTP_USER=your-email@gmail.com
+SMTP_PASS=your-app-password
+
+# 管理者メールアドレス（テスト用）
+ADMIN_EMAIL=side.palette@gmail.com
+
+# フロントエンドURL
+FRONTEND_URL=http://localhost:3000

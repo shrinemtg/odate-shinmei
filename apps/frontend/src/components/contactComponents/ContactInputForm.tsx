@@ -5,8 +5,16 @@ import ContactErrorPopup from './ContactErrorPopup'
 const FormField = styled.div`
   margin-bottom: 2rem;
 
+  @media (max-width: 1024px) {
+    margin-bottom: 1.75rem;
+  }
+
   @media (max-width: 768px) {
     margin-bottom: 1.5rem;
+  }
+
+  @media (max-width: 480px) {
+    margin-bottom: 1.25rem;
   }
 `
 
@@ -23,8 +31,18 @@ const Label = styled.label`
     margin-left: 0.25rem;
   }
 
+  @media (max-width: 1024px) {
+    font-size: var(--font-size-base);
+    margin-bottom: 0.375rem;
+  }
+
   @media (max-width: 768px) {
     font-size: var(--font-size-sm);
+    margin-bottom: 0.25rem;
+  }
+
+  @media (max-width: 480px) {
+    font-size: var(--font-size-xs);
     margin-bottom: 0.25rem;
   }
 `
@@ -50,9 +68,19 @@ const Input = styled.input`
     border-color: var(--color-shuiro);
   }
 
+  @media (max-width: 1024px) {
+    padding: 0.875rem;
+    font-size: var(--font-size-base);
+  }
+
   @media (max-width: 768px) {
     padding: 0.75rem;
     font-size: var(--font-size-sm);
+  }
+
+  @media (max-width: 480px) {
+    padding: 0.625rem;
+    font-size: var(--font-size-xs);
   }
 `
 
@@ -79,10 +107,22 @@ const TextArea = styled.textarea`
     border-color: var(--color-shuiro);
   }
 
+  @media (max-width: 1024px) {
+    min-height: 200px;
+    padding: 0.875rem;
+    font-size: var(--font-size-base);
+  }
+
   @media (max-width: 768px) {
-    min-height: 150px;
+    min-height: 180px;
     padding: 0.75rem;
     font-size: var(--font-size-sm);
+  }
+
+  @media (max-width: 480px) {
+    min-height: 160px;
+    padding: 0.625rem;
+    font-size: var(--font-size-xs);
   }
 `
 
@@ -134,9 +174,19 @@ const SubmitButton = styled.button`
     cursor: not-allowed;
   }
 
+  @media (max-width: 1024px) {
+    padding: 0.875rem 1.75rem;
+    font-size: var(--font-size-base);
+  }
+
   @media (max-width: 768px) {
     padding: 0.75rem 1.5rem;
     font-size: var(--font-size-sm);
+  }
+
+  @media (max-width: 480px) {
+    padding: 0.625rem 1.25rem;
+    font-size: var(--font-size-xs);
   }
 `
 

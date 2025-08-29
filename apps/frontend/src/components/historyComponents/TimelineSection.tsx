@@ -99,14 +99,14 @@ const TimelineRow = styled.div<{ isLeft: boolean }>`
   width: 100%;
   min-height: 110px;
   position: relative;
-  margin-bottom: 32px;
+  margin-bottom: 2rem;
   z-index: 2;
   justify-content: ${(props) => (props.isLeft ? 'flex-start' : 'flex-end')};
 
   @media (max-width: 768px) {
     justify-content: flex-start;
     min-height: auto;
-    margin-bottom: 24px;
+    margin-bottom: 2.5rem;
     align-items: flex-start;
   }
 `
@@ -140,40 +140,40 @@ const TimelineContent = styled.div`
 const TimelineTitle = styled.div`
   color: #993a37;
   font-family: 'Noto Serif JP', serif;
-  font-size: 32px;
+  font-size: 2rem;
   font-weight: 400;
   line-height: 1.1;
-  margin-bottom: 8px;
+  margin-bottom: 0.5rem;
 
   @media (max-width: 768px) {
-    font-size: 24px;
-    margin-bottom: 4px;
+    font-size: 1.25rem;
+    margin-bottom: 0.25rem;
   }
 `
 
 const TimelineYear = styled.div`
   font-family: 'Noto Serif JP', serif;
-  font-size: 24px;
+  font-size: 1.5rem;
   color: #605856;
   font-weight: 400;
-  margin-bottom: 4px;
+  margin-bottom: 0.25rem;
 
   @media (max-width: 768px) {
-    font-size: 20px;
-    margin-bottom: 2px;
+    font-size: 1rem;
+    margin-bottom: 0.125rem;
   }
 `
 
 const TimelineDesc = styled.div`
   font-family: 'Noto Serif JP', serif;
-  font-size: 16px;
+  font-size: 1rem;
   color: #605856;
   font-weight: 400;
   white-space: pre-line;
   line-height: 1.7;
 
   @media (max-width: 768px) {
-    font-size: 14px;
+    font-size: 0.875rem;
     line-height: 1.6;
   }
 `

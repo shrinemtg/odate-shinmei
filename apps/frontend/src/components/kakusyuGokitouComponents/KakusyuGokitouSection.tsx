@@ -89,6 +89,7 @@ const VerticalTitle = styled.h2`
   margin: 0;
   flex-shrink: 0;
   order: 0;
+  width: 100%;
 
   @media (min-width: 481px) {
     font-size: var(--font-size-2xl);
@@ -99,6 +100,7 @@ const VerticalTitle = styled.h2`
     font-size: var(--font-size-3xl);
     letter-spacing: 0.3em;
     margin: 0 1.5rem 0 1.5rem;
+    width: auto;
   }
 
   @media (min-width: 1025px) {

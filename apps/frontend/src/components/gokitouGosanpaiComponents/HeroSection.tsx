@@ -37,7 +37,7 @@ const HeroTitle = styled.h1`
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
   font-family: serif;
   line-height: 1.2;
-  margin: 0;
+  margin: 0 auto;
 `
 
 const HeroSection = () => (

@@ -2,22 +2,9 @@ import styled from '@emotion/styled'
 
 const ToshimawariNenpyouSectionWrapper = styled.section`
   width: 100vw;
-  min-height: 100vh;
   position: relative;
   display: flex;
   align-items: center;
-
-  @media (max-width: 1024px) {
-    min-height: 90vh;
-  }
-
-  @media (max-width: 768px) {
-    min-height: 80vh;
-  }
-
-  @media (max-width: 480px) {
-    min-height: 70vh;
-  }
 `
 
 const ContentContainer = styled.div`

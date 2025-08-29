@@ -1,5 +1,16 @@
 import Image from 'next/image'
 import styled from '@emotion/styled'
+import { keyframes } from '@emotion/react'
+
+// 猫のアニメーション用のkeyframes
+const catWalk = keyframes`
+  0% {
+    transform: translateX(-100px);
+  }
+  100% {
+    transform: translateX(calc(100vw + 100px));
+  }
+`
 
 const Section = styled.section`
   width: 100vw;
@@ -115,7 +126,7 @@ const VerticalTitle = styled.div`
   }
 
   @media (max-width: 480px) {
-    font-size: var(--font-size-xl);
+    font-size: var(--font-size-2xl);
     margin-bottom: 10px;
   }
 `
@@ -168,9 +179,9 @@ const Description = styled.div`
   }
 
   @media (max-width: 480px) {
-    font-size: var(--font-size-xs);
+    font-size: var(--font-size-sm);
     line-height: 1.7;
-    margin-bottom: 12px;
+    margin-bottom: 14px;
     max-width: 620px;
   }
 `
@@ -208,8 +219,36 @@ const DetailButton = styled.button`
   }
 
   @media (max-width: 480px) {
-    padding: 6px 12px;
+    padding: 6px 14px;
     font-size: var(--font-size-xs);
+  }
+`
+
+const WalkingCat = styled.div`
+  position: absolute;
+  top: 80%;
+  left: 0;
+  width: 140px;
+  height: 140px;
+  z-index: 30;
+  animation: ${catWalk} 20s linear infinite;
+
+  @media (max-width: 1024px) {
+    width: 100px;
+    height: 100px;
+    top: 85%;
+  }
+
+  @media (max-width: 768px) {
+    width: 80px;
+    height: 80px;
+    top: 82%;
+  }
+
+  @media (max-width: 480px) {
+    width: 60px;
+    height: 60px;
+    top: 87%;
   }
 `
 
@@ -249,6 +288,17 @@ const NenchuSection = () => (
         <DetailButton>詳しく見る</DetailButton>
       </ContentContainer>
     </TextArea>
+    {/* 歩いている猫 */}
+    <WalkingCat>
+      <Image
+        src='/neko/neko07.gif'
+        alt='歩いている猫'
+        width={120}
+        height={120}
+        style={{ width: '100%', height: 'auto', display: 'block' }}
+        priority
+      />
+    </WalkingCat>
   </Section>
 )
 

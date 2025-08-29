@@ -50,7 +50,7 @@ const MainTitle = styled.h1`
   font-size: var(--font-size-3xl);
   font-weight: 600;
   text-align: center;
-  margin-bottom: 3rem;
+  margin-bottom: 1rem;
   font-family: var(--font-family-serif);
 
   @media (max-width: 1024px) {
@@ -204,15 +204,12 @@ const ReservationButton = styled.button`
   font-family: var(--font-family-serif);
   cursor: pointer;
   transition: all 0.3s ease;
-  margin-top: 4rem;
-  width: 100%;
-  max-width: 300px;
+  margin: 2rem auto 3rem;
   display: block;
-  margin-left: auto;
-  margin-right: auto;
+  width: fit-content;
 
   &:hover {
-    background: var(--color-shuiro);
+    background: #7a2e2b;
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(153, 58, 55, 0.3);
   }
@@ -224,19 +221,16 @@ const ReservationButton = styled.button`
   @media (max-width: 1024px) {
     padding: 0.875rem 1.75rem;
     font-size: var(--font-size-base);
-    margin-top: 2rem;
   }
 
   @media (max-width: 768px) {
     padding: 0.75rem 1.5rem;
     font-size: var(--font-size-sm);
-    margin-top: 2rem;
   }
 
   @media (max-width: 480px) {
     padding: 0.625rem 1.25rem;
     font-size: var(--font-size-xs);
-    margin-top: 3rem;
   }
 `
 

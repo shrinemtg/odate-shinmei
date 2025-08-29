@@ -211,11 +211,11 @@ const DescriptionText = styled.p`
 
 const ActionButton = styled.button`
   margin-top: 32px;
-  background: #8c3a2b;
+  background: var(--color-shuiro);
   color: #fff;
   border: none;
-  border-radius: 20px;
-  padding: 8px 20px;
+  border-radius: 0.4rem;
+  padding: 0.8rem 1.5rem;
   font-size: 1.1rem;
   font-weight: 400;
   letter-spacing: 0.1em;
@@ -228,14 +228,14 @@ const ActionButton = styled.button`
     margin-top: 24px;
     padding: 6px 16px;
     font-size: 1rem;
-    border-radius: 16px;
+    border-radius: 0.4rem;
   }
 
   @media (max-width: 480px) {
     margin-top: 20px;
     padding: 5px 14px;
     font-size: 0.9rem;
-    border-radius: 14px;
+    border-radius: 0.4rem;
   }
 `
 

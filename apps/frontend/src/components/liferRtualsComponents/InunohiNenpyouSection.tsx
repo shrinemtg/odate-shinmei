@@ -26,7 +26,7 @@ const InunohiNenpyouSectionWrapper = styled.section`
   }
 
   @media (max-width: 480px) {
-    width: 95%;
+    width: 85%;
     margin: 0.75rem 1rem;
     padding: 0.75rem 1rem;
     gap: 1rem;
@@ -96,12 +96,8 @@ const ReservationButton = styled.button`
   font-family: var(--font-family-serif);
   cursor: pointer;
   transition: all 0.3s ease;
-  margin-top: 2rem;
-  width: 100%;
-  max-width: 300px;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+  align-self: flex-end;
+  margin: 2rem auto 3rem;
 
   &:hover {
     background: #7a2e2b;
@@ -116,22 +112,18 @@ const ReservationButton = styled.button`
   @media (max-width: 1024px) {
     padding: 0.875rem 1.75rem;
     font-size: var(--font-size-base);
-    margin-top: 1.5rem;
-    max-width: 280px;
   }
 
   @media (max-width: 768px) {
+    align-self: center;
     padding: 0.75rem 1.5rem;
     font-size: var(--font-size-sm);
-    margin-top: 1rem;
-    max-width: 260px;
+    order: 5;
   }
 
   @media (max-width: 480px) {
     padding: 0.625rem 1.25rem;
     font-size: var(--font-size-xs);
-    margin-top: 0.75rem;
-    max-width: 240px;
   }
 `
 

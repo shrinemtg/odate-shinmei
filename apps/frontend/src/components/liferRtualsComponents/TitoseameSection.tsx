@@ -67,6 +67,7 @@ const MainContent = styled.div`
     gap: 2rem;
     padding: 2rem;
     margin-bottom: 1.5rem;
+    align-items: center;
   }
 
   @media (max-width: 480px) {
@@ -88,6 +89,7 @@ const TextSection = styled.div`
 
   @media (max-width: 768px) {
     gap: 1rem;
+    align-items: center;
   }
 
   @media (max-width: 480px) {
@@ -110,6 +112,7 @@ const Title = styled.h2`
   @media (max-width: 768px) {
     font-size: var(--font-size-2xl);
     text-align: center;
+    align-self: center;
   }
 
   @media (max-width: 480px) {
@@ -131,6 +134,7 @@ const TitleImage = styled.img`
   @media (max-width: 768px) {
     max-width: 300px;
     margin-bottom: 1rem;
+    align-self: center;
   }
 
   @media (max-width: 480px) {
@@ -157,11 +161,14 @@ const Description = styled.div`
     font-size: var(--font-size-sm);
     line-height: 1.4;
     text-align: center;
+    align-items: center;
+    padding: 0 1rem;
   }
 
   @media (max-width: 480px) {
     font-size: var(--font-size-xs);
     line-height: 1.3;
+    padding: 0 0.5rem;
   }
 `
 
@@ -213,6 +220,8 @@ const ImageSection = styled.div`
 
   @media (max-width: 768px) {
     margin-top: 0;
+    justify-content: center;
+    align-items: center;
   }
 `
 
@@ -239,32 +248,40 @@ const ReservationButton = styled.button`
   background: var(--color-shuiro);
   color: var(--color-white);
   border: none;
-  padding: 1rem 3rem;
+  border-radius: 8px;
+  padding: 1rem 2rem;
   font-size: var(--font-size-base);
   font-weight: 600;
-  font-family: var(--font-family-sans);
-  border-radius: 6px;
+  font-family: var(--font-family-serif);
   cursor: pointer;
   transition: all 0.3s ease;
-  margin-top: 1rem;
-  align-self: center;
+  align-self: flex-end;
+  margin: 2rem auto 3rem;
 
   &:hover {
-    background: var(--color-shuiro);
+    background: #7a2e2b;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(153, 58, 55, 0.3);
+  }
+
+  &:active {
+    transform: translateY(0);
   }
 
   @media (max-width: 1024px) {
-    padding: 0.875rem 2.5rem;
+    padding: 0.875rem 1.75rem;
     font-size: var(--font-size-base);
   }
 
   @media (max-width: 768px) {
-    padding: 0.75rem 2rem;
+    align-self: center;
+    padding: 0.75rem 1.5rem;
     font-size: var(--font-size-sm);
+    order: 5;
   }
 
   @media (max-width: 480px) {
-    padding: 0.625rem 1.5rem;
+    padding: 0.625rem 1.25rem;
     font-size: var(--font-size-xs);
   }
 `

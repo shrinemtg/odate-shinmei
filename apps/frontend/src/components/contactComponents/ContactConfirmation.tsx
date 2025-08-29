@@ -5,9 +5,20 @@ const ButtonGroup = styled.div`
   gap: 1rem;
   margin-top: 2rem;
 
+  @media (max-width: 1024px) {
+    gap: 0.875rem;
+    margin-top: 1.75rem;
+  }
+
   @media (max-width: 768px) {
     flex-direction: column;
     gap: 0.75rem;
+    margin-top: 1.5rem;
+  }
+
+  @media (max-width: 480px) {
+    gap: 0.5rem;
+    margin-top: 1.25rem;
   }
 `
 
@@ -69,9 +80,19 @@ const ConfirmationSection = styled.div`
   margin-bottom: 2rem;
   border: 1px solid #ddd;
 
+  @media (max-width: 1024px) {
+    padding: 1.5rem;
+    margin-bottom: 1.75rem;
+  }
+
   @media (max-width: 768px) {
     padding: 1rem;
     margin-bottom: 1.5rem;
+  }
+
+  @media (max-width: 480px) {
+    padding: 0.75rem;
+    margin-bottom: 1.25rem;
   }
 `
 

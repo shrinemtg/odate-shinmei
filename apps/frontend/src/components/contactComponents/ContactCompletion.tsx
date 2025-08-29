@@ -20,7 +20,7 @@ const CompletionTitle = styled.h2`
   }
 `
 
-const CompletionText = styled.p`
+const CompletionText = styled.div`
   font-family: var(--font-family-serif);
   font-size: var(--font-size-base);
   color: var(--color-brown);
@@ -69,11 +69,9 @@ const ContactCompletion: React.FC<ContactCompletionProps> = ({ onNewContact }) =
     <CompletionMessage>
       <CompletionTitle>お問い合わせありがとうございます</CompletionTitle>
       <CompletionText>
-        お問い合わせを受け付けました。
-        <br />
-        内容を確認の上、担当者よりご連絡いたします。
-        <br />
-        しばらくお待ちください。
+        <p>お問い合わせを受け付けました。</p>
+        <p>内容を確認の上、担当者よりご連絡いたします。</p>
+        <p>しばらくお待ちください。</p>
       </CompletionText>
       <SubmitButton type='button' onClick={onNewContact}>
         新しいお問い合わせ

@@ -20,7 +20,7 @@ const CompletionTitle = styled.h2`
   }
 `
 
-const CompletionText = styled.p`
+const CompletionText = styled.div`
   font-family: var(--font-family-serif);
   font-size: var(--font-size-base);
   color: var(--color-brown);
@@ -54,9 +54,8 @@ const ContactSending: React.FC = () => {
     <CompletionMessage>
       <CompletionTitle>送信中...</CompletionTitle>
       <CompletionText>
-        お問い合わせを送信しています。
-        <br />
-        しばらくお待ちください。
+        <p>お問い合わせを送信しています。</p>
+        <p>しばらくお待ちください。</p>
       </CompletionText>
       <LoadingSpinner />
     </CompletionMessage>
