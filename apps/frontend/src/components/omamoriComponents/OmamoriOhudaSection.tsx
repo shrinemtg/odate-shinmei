@@ -234,35 +234,6 @@ const omamoriOhudaData = [
   },
 ]
 
-const Description = styled.div`
-  color: var(--color-gray);
-  font-size: var(--font-size-base);
-  line-height: 1.6;
-  font-family: var(--font-family-sans);
-  text-align: center;
-  margin-top: 2rem;
-
-  @media (max-width: 1023px) {
-    font-size: var(--font-size-base);
-    margin-top: 1.5rem;
-  }
-
-  @media (max-width: 767px) {
-    font-size: var(--font-size-sm);
-    margin-top: 1rem;
-  }
-
-  @media (max-width: 374px) {
-    font-size: var(--font-size-xs);
-    margin-top: 0.75rem;
-  }
-`
-
-const Paragraph = styled.p`
-  margin: 0;
-  padding: 0;
-`
-
 const OmamoriOhudaSection = () => {
   return (
     <OmamoriOhudaSectionWrapper>
@@ -289,9 +260,6 @@ const OmamoriOhudaSection = () => {
           ))}
         </OmamoriOhudaGrid>
       </ContentContainer>
-      <Description>
-        <Paragraph>その他にも様々な神礼・礼儀札をご用意しております。</Paragraph>
-      </Description>
     </OmamoriOhudaSectionWrapper>
   )
 }

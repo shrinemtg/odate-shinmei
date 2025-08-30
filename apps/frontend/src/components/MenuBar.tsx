@@ -12,9 +12,9 @@ const menuItems = [
 ]
 
 // レスポンシブ対応のルートコンテナ
-const Root = styled.nav<{ $isMobile: boolean }>`
-  position: fixed;
-  top: 0;
+const Root = styled.nav<{ $isMobile: boolean; $isScrolled: boolean }>`
+  position: ${(props) => (props.$isMobile ? 'fixed' : 'fixed')};
+  top: ${(props) => (props.$isMobile && props.$isScrolled ? '0' : props.$isMobile ? '0' : '0')};
   left: 0;
   width: ${(props) => (props.$isMobile ? '100%' : '120px')};
   height: ${(props) => (props.$isMobile ? 'auto' : '480px')};
@@ -37,7 +37,9 @@ const Root = styled.nav<{ $isMobile: boolean }>`
     border-radius: 0;
     margin: 0;
     padding: 0 16px;
-    position: relative;
+    position: fixed;
+    top: ${(props) => (props.$isScrolled ? '0' : '0')};
+    transform: ${(props) => (props.$isScrolled ? 'translateY(0)' : 'translateY(0)')};
   }
 `
 
@@ -151,6 +153,7 @@ const StyledLink = styled.a<{ $isMobile: boolean }>`
 const MenuBar: React.FC = () => {
   const [isMobile, setIsMobile] = useState(false)
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [isScrolled, setIsScrolled] = useState(false)
 
   // 画面サイズの監視
   useEffect(() => {
@@ -166,6 +169,17 @@ const MenuBar: React.FC = () => {
     return () => window.removeEventListener('resize', checkScreenSize)
   }, [])
 
+  // スクロールの監視
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop
+      setIsScrolled(scrollTop > 0)
+    }
+
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
   // メニューの開閉
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen)
@@ -179,7 +193,7 @@ const MenuBar: React.FC = () => {
   }
 
   return (
-    <Root $isMobile={isMobile}>
+    <Root $isMobile={isMobile} $isScrolled={isScrolled}>
       <Header $isMobile={isMobile}>
         <LogoLink href='/'>
           <Image

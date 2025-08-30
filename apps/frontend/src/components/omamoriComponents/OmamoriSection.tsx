@@ -251,21 +251,21 @@ const Description = styled.div`
   line-height: 1.6;
   font-family: var(--font-family-sans);
   text-align: center;
-  margin-top: 2rem;
+  margin: 4rem 0 0 4rem;
 
   @media (max-width: 1023px) {
     font-size: var(--font-size-base);
-    margin-top: 1.5rem;
+    margin: 4rem 0 0 4rem;
   }
 
   @media (max-width: 767px) {
     font-size: var(--font-size-sm);
-    margin-top: 1rem;
+    margin: 4rem auto;
   }
 
   @media (max-width: 374px) {
     font-size: var(--font-size-xs);
-    margin-top: 0.75rem;
+    margin: 4rem auto;
   }
 `
 const Paragraph = styled.p`

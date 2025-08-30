@@ -1,4 +1,5 @@
 import styled from '@emotion/styled'
+import { useState, useEffect } from 'react'
 
 const YakubaraiNenpyouSectionWrapper = styled.section`
   width: 100vw;
@@ -9,14 +10,17 @@ const YakubaraiNenpyouSectionWrapper = styled.section`
 
   @media (max-width: 1024px) {
     min-height: 90vh;
+    margin: 0 0 0 6rem;
   }
 
   @media (max-width: 768px) {
     min-height: 80vh;
+    margin: 0;
   }
 
   @media (max-width: 480px) {
     min-height: 70vh;
+    margin: 0;
   }
 `
 
@@ -81,7 +85,7 @@ const ImageContainer = styled.div`
   align-items: center;
 
   @media (max-width: 1024px) {
-    max-width: 800px;
+    max-width: 700px;
   }
 
   @media (max-width: 768px) {
@@ -135,13 +139,36 @@ const ExplanationText = styled.div`
 `
 
 const YakubaraiNenpyouSection = () => {
+  const [imageSrc, setImageSrc] = useState('/yakubaraiPhoto/yakubarai-04.png')
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth <= 480) {
+        setImageSrc('/yakubaraiPhoto/s-yakubarai-04.png')
+      } else {
+        setImageSrc('/yakubaraiPhoto/yakubarai-04.png')
+      }
+    }
+
+    // 初期設定
+    handleResize()
+
+    // リサイズイベントリスナーを追加
+    window.addEventListener('resize', handleResize)
+
+    // クリーンアップ
+    return () => {
+      window.removeEventListener('resize', handleResize)
+    }
+  }, [])
+
   return (
     <YakubaraiNenpyouSectionWrapper>
       <ContentContainer>
         <MainTitle>令和7年 厄年</MainTitle>
 
         <ImageContainer>
-          <NenpyouImage src='/yakubaraiPhoto/yakubarai-04.png' alt='令和7年厄年表' />
+          <NenpyouImage src={imageSrc} alt='令和7年厄年表' />
         </ImageContainer>
 
         <ExplanationText>

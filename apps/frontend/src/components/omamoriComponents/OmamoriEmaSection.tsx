@@ -210,7 +210,7 @@ const omamoriEmaData = [
     id: 1,
     title: '干支絵馬',
     description: '新年の干支を描いた絵馬です。その年の幸運と無事を祈り、感謝と願いを奉納します。',
-    image: '/omamoriPhoto/omamori-ema-03.png',
+    image: '/omamoriPhoto/omamori-ema-01.png',
   },
   {
     id: 2,
@@ -222,38 +222,9 @@ const omamoriEmaData = [
     id: 3,
     title: '合格絵馬',
     description: '学業成就・受験合格の願いを込めて奉納する絵馬です。努力の成果が実を結びますように。',
-    image: '/omamoriPhoto/omamori-ema-01.png',
+    image: '/omamoriPhoto/omamori-ema-03.png',
   },
 ]
-
-const Description = styled.div`
-  color: var(--color-gray);
-  font-size: var(--font-size-base);
-  line-height: 1.6;
-  font-family: var(--font-family-sans);
-  text-align: center;
-  margin-top: 2rem;
-
-  @media (max-width: 1023px) {
-    font-size: var(--font-size-base);
-    margin-top: 1.5rem;
-  }
-
-  @media (max-width: 767px) {
-    font-size: var(--font-size-sm);
-    margin-top: 1rem;
-  }
-
-  @media (max-width: 374px) {
-    font-size: var(--font-size-xs);
-    margin-top: 0.75rem;
-  }
-`
-
-const Paragraph = styled.p`
-  margin: 0;
-  padding: 0;
-`
 
 const OmamoriEmaSection = () => {
   return (
@@ -281,9 +252,6 @@ const OmamoriEmaSection = () => {
           ))}
         </OmamoriEmaGrid>
       </ContentContainer>
-      <Description>
-        <Paragraph>その他にも様々な絵馬をご用意しております。</Paragraph>
-      </Description>
     </OmamoriEmaSectionWrapper>
   )
 }

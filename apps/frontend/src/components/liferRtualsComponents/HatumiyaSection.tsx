@@ -69,21 +69,25 @@ const ImageSection = styled.div`
 
 const HatumiyaImage = styled.img`
   width: 100%;
-  max-width: 600px;
+  max-width: 90%;
   height: auto;
   border-radius: 12px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  margin: 0 2rem 0 6rem;
 
   @media (max-width: 1024px) {
-    max-width: 500px;
+    max-width: 100%;
+    margin: 0 2rem 5rem 2rem;
   }
 
   @media (max-width: 768px) {
-    max-width: 400px;
+    max-width: 80%;
+    margin: 0;
   }
 
   @media (max-width: 480px) {
-    max-width: 350px;
+    max-width: 70%;
+    margin: 0;
   }
 `
 
@@ -96,7 +100,7 @@ const TextSection = styled.div`
   position: relative;
 
   @media (max-width: 1024px) {
-    max-width: 55%;
+    max-width: 45%;
   }
 
   @media (max-width: 768px) {
@@ -119,12 +123,12 @@ const VerticalTitle = styled.h1`
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   font-family: var(--font-family-serif);
   line-height: 1.2;
-  margin: 0 8rem 0 0;
+  margin: 0 5rem 0 0;
   white-space: nowrap;
 
   @media (max-width: 1024px) {
-    font-size: var(--font-size-3xl);
-    margin: 0 1.5rem 0 0;
+    font-size: var(--font-size-4xl);
+    margin: 0 5rem 0 0;
   }
 
   @media (max-width: 768px) {
@@ -168,10 +172,10 @@ const Description = styled.div`
   color: var(--color-gray);
   font-size: var(--font-size-base);
   line-height: 1.6;
-  max-width: 400px;
+  max-width: 80%;
 
   @media (max-width: 1024px) {
-    max-width: 100%;
+    max-width: 80%;
     font-size: var(--font-size-base);
     line-height: 1.5;
   }

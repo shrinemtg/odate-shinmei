@@ -1,4 +1,5 @@
 import styled from '@emotion/styled'
+import { useState, useEffect } from 'react'
 
 const ToshimawariNenpyouSectionWrapper = styled.section`
   width: 100vw;
@@ -20,17 +21,20 @@ const ContentContainer = styled.div`
   @media (max-width: 1024px) {
     padding: 3rem 1.5rem;
     gap: 2rem;
+    margin: 0 0 0 8rem;
   }
 
   @media (max-width: 768px) {
     padding: 2rem 1rem;
     gap: 1.5rem;
     align-items: center;
+    margin: 0 2rem;
   }
 
   @media (max-width: 480px) {
     padding: 1.5rem 0.5rem;
     gap: 1rem;
+    margin: 0 0.5rem;
   }
 `
 
@@ -89,13 +93,36 @@ const NenpyouImage = styled.img`
 `
 
 const ToshimawariNenpyouSection = () => {
+  const [imageSrc, setImageSrc] = useState('/yakubaraiPhoto/yakubarai-06.png')
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth <= 480) {
+        setImageSrc('/yakubaraiPhoto/s-yakubarai-06.png')
+      } else {
+        setImageSrc('/yakubaraiPhoto/yakubarai-06.png')
+      }
+    }
+
+    // 初期設定
+    handleResize()
+
+    // リサイズイベントリスナーを追加
+    window.addEventListener('resize', handleResize)
+
+    // クリーンアップ
+    return () => {
+      window.removeEventListener('resize', handleResize)
+    }
+  }, [])
+
   return (
     <ToshimawariNenpyouSectionWrapper>
       <ContentContainer>
         <MainTitle>歳祝い早見表</MainTitle>
 
         <ImageContainer>
-          <NenpyouImage src='/yakubaraiPhoto/yakubarai-06.png' alt='年廻り早見表' />
+          <NenpyouImage src={imageSrc} alt='年廻り早見表' />
         </ImageContainer>
       </ContentContainer>
     </ToshimawariNenpyouSectionWrapper>

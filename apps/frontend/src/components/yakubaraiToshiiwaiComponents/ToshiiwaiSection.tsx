@@ -33,7 +33,7 @@ const PhotoSection = styled.div`
   align-items: center;
 
   @media (max-width: 1024px) {
-    margin: 0 0 0 1.5rem;
+    margin: 0 0 0 6rem;
   }
 
   @media (max-width: 768px) {
@@ -107,9 +107,11 @@ const MainTitle = styled.h2`
   font-family: var(--font-family-serif);
   line-height: 1.2;
   flex-shrink: 0;
+  margin: 0 4rem 0 0;
 
   @media (max-width: 1024px) {
     font-size: var(--font-size-4xl);
+    margin: 0 4rem 0 0;
   }
 
   @media (max-width: 768px) {
@@ -118,10 +120,12 @@ const MainTitle = styled.h2`
     text-align: center;
     letter-spacing: 0.1em;
     order: 1;
+    margin: 0;
   }
 
   @media (max-width: 480px) {
     font-size: var(--font-size-2xl);
+    margin: 0;
   }
 `
 

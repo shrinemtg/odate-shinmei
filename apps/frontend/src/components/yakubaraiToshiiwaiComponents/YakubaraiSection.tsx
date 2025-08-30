@@ -11,7 +11,7 @@ const YakubaraiSectionWrapper = styled.section`
 
   @media (max-width: 1024px) {
     padding: 3rem 1.5rem;
-    gap: 3rem;
+    gap: 1rem;
   }
 
   @media (max-width: 768px) {
@@ -62,7 +62,7 @@ const MainTitle = styled.h2`
 
   @media (max-width: 1024px) {
     font-size: var(--font-size-4xl);
-    margin: 0 0 0 6rem;
+    margin: 0 0 0 8rem;
   }
 
   @media (max-width: 768px) {
@@ -92,7 +92,6 @@ const TextContent = styled.div`
     font-size: var(--font-size-base);
     line-height: 1.7;
     margin: 1.5rem 0 0 0;
-    padding: 0 0.75rem;
   }
 
   @media (max-width: 768px) {

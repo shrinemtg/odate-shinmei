@@ -1,4 +1,5 @@
 import styled from '@emotion/styled'
+import { useState, useEffect } from 'react'
 // import { useRouter } from 'next/router'
 
 const ShichigosanPackSectionWrapper = styled.section`
@@ -10,16 +11,19 @@ const ShichigosanPackSectionWrapper = styled.section`
 
   @media (max-width: 1024px) {
     min-height: 90vh;
+    margin: 0 0 0 5rem;
   }
 
   @media (max-width: 768px) {
     min-height: auto;
     padding: 2rem 0;
+    margin: 0;
   }
 
   @media (max-width: 480px) {
     min-height: auto;
     padding: 1rem 0;
+    margin: 0;
   }
 `
 
@@ -70,7 +74,7 @@ const MainTitle = styled.h1`
 
 const PriceTableContainer = styled.div`
   width: 100%;
-  max-width: 600px;
+  max-width: 900px;
   position: relative;
   margin-bottom: 0.5rem;
   display: flex;
@@ -84,35 +88,37 @@ const PriceTableContainer = styled.div`
   gap: 2rem;
 
   @media (max-width: 1024px) {
-    max-width: 550px;
+    max-width: 700px;
     padding: 1.5rem;
     gap: 1.5rem;
   }
 
   @media (max-width: 768px) {
-    max-width: 100%;
+    max-width: 80%;
     padding: 0.75rem;
+    margin: 0;
     gap: 0.75rem;
   }
 
   @media (max-width: 480px) {
-    max-width: calc(100% - 1rem);
+    max-width: 80%;
     padding: 0.5rem;
+    margin: 0;
     gap: 0.5rem;
   }
 `
 
 const PriceTableImage = styled.img`
   width: 100%;
-  max-width: 800px;
+  max-width: 1000px;
   height: auto;
 
   @media (max-width: 1024px) {
-    max-width: 700px;
+    max-width: 100%;
   }
 
   @media (max-width: 768px) {
-    max-width: 100%;
+    max-width: 90%;
   }
 
   @media (max-width: 480px) {
@@ -134,13 +140,13 @@ const Notes = styled.div`
   }
 
   @media (max-width: 1024px) {
-    font-size: var(--font-size-base);
+    font-size: var(--font-size-sm);
     line-height: 1.6;
   }
 
   @media (max-width: 768px) {
     text-align: center;
-    font-size: var(--font-size-sm);
+    font-size: var(--font-size-xs);
     line-height: 1.5;
   }
 
@@ -151,13 +157,36 @@ const Notes = styled.div`
 `
 
 const ShichigosanPackSection = () => {
+  const [imageSrc, setImageSrc] = useState('/life/life-08.png')
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth <= 768) {
+        setImageSrc('/life/s-life-08.png')
+      } else {
+        setImageSrc('/life/life-08.png')
+      }
+    }
+
+    // 初期設定
+    handleResize()
+
+    // リサイズイベントリスナーを追加
+    window.addEventListener('resize', handleResize)
+
+    // クリーンアップ
+    return () => {
+      window.removeEventListener('resize', handleResize)
+    }
+  }, [])
+
   return (
     <ShichigosanPackSectionWrapper>
       <ContentContainer>
         <MainTitle>七五三パック料金表</MainTitle>
 
         <PriceTableContainer>
-          <PriceTableImage src='/life/life-08.png' alt='七五三パック料金表' />
+          <PriceTableImage src={imageSrc} alt='七五三パック料金表' />
           <Notes>
             <p>※パックは10月と11月のみ行っています。</p>
             <p>※衣装代には着付けとヘアメイクの料金が含まれています。</p>

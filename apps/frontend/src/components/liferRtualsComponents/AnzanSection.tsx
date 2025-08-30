@@ -109,10 +109,10 @@ const ContentContainer = styled.div`
   transform: translateY(-50%);
 
   @media (max-width: 1024px) {
-    max-width: 500px;
-    width: 60%;
+    max-width: 400px;
+    width: 70%;
     padding: 2.5rem 1.5rem;
-    left: 5%;
+    left: 14%;
   }
 
   @media (max-width: 768px) {
@@ -121,7 +121,7 @@ const ContentContainer = styled.div`
     top: auto;
     transform: none;
     width: 100%;
-    max-width: 100%;
+    max-width: 90%;
     padding: 2rem 1rem;
     align-items: center;
     text-align: center;

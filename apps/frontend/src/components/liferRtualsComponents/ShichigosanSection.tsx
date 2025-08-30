@@ -50,7 +50,7 @@ const VerticalTitle = styled.h1`
 
   @media (max-width: 1024px) {
     font-size: var(--font-size-4xl);
-    margin: -1.5rem 0 1.5rem 6rem;
+    margin: -1.5rem 0 1.5rem 7rem;
   }
 
   @media (max-width: 768px) {
@@ -109,19 +109,20 @@ const Description = styled.div`
   color: var(--color-gray);
   font-size: var(--font-size-base);
   line-height: 1.6;
-  max-width: 400px;
+  max-width: 90%;
 
   @media (max-width: 1024px) {
-    max-width: 100%;
+    max-width: 90%;
     font-size: var(--font-size-base);
     line-height: 1.5;
   }
 
   @media (max-width: 768px) {
     font-size: var(--font-size-sm);
+    max-width: 80%;
     line-height: 1.4;
     order: 4;
-    padding: 0 1rem;
+    padding: 0 0.5rem;
   }
 
   @media (max-width: 480px) {
@@ -179,7 +180,7 @@ const ShichigosanImage = styled.img`
 
   @media (max-width: 1024px) {
     max-width: 500px;
-    margin-top: 1.5rem;
+    margin: 0 1rem 0 0;
   }
 
   @media (max-width: 768px) {
@@ -194,20 +195,23 @@ const ShichigosanImage = styled.img`
 
 const BottomSection = styled.div`
   width: 100%;
-  max-width: 900px;
-  margin: 0 auto;
+  max-width: 80%;
+  margin: 0 0 0 6rem;
   padding: 2rem 4rem 4rem;
 
   @media (max-width: 1024px) {
     padding: 1.5rem 3rem 3rem;
+    margin: 0 0 0 6rem;
   }
 
   @media (max-width: 768px) {
     padding: 1rem 2rem 2rem;
+    margin: 0 auto;
   }
 
   @media (max-width: 480px) {
     padding: 0.75rem 1rem 1.5rem;
+    margin: 0 auto;
   }
 `
 

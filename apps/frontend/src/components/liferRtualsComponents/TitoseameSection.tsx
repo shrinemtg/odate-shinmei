@@ -46,20 +46,21 @@ const ContentContainer = styled.div`
 
 const MainContent = styled.div`
   width: 100%;
-  max-width: 900px;
+  max-width: 80%;
   display: flex;
   align-items: flex-start;
   gap: 4rem;
   margin-bottom: 3rem;
-  padding: 3rem;
+  padding: 2rem;
   border: 2px solid var(--color-shuiro);
   border-radius: 8px;
   box-sizing: border-box;
 
   @media (max-width: 1024px) {
-    gap: 3rem;
-    padding: 2.5rem;
-    margin-bottom: 2rem;
+    max-width: 80%;
+    gap: 2rem;
+    padding: 2rem;
+    margin: 0 0 0 6rem;
   }
 
   @media (max-width: 768px) {
@@ -68,12 +69,14 @@ const MainContent = styled.div`
     padding: 2rem;
     margin-bottom: 1.5rem;
     align-items: center;
+    margin: 0 auto;
   }
 
   @media (max-width: 480px) {
     gap: 1.5rem;
     padding: 1.5rem;
     margin-bottom: 1rem;
+    margin: 0 auto;
   }
 `
 
@@ -191,19 +194,21 @@ const Notice = styled.div`
   @media (max-width: 1024px) {
     font-size: var(--font-size-base);
     line-height: 1.5;
-    margin-bottom: 1.5rem;
+    margin: 0 0 0 6rem;
   }
 
   @media (max-width: 768px) {
     font-size: var(--font-size-sm);
     line-height: 1.4;
     margin-bottom: 1rem;
+    margin: 0 auto;
   }
 
   @media (max-width: 480px) {
     font-size: var(--font-size-xs);
     line-height: 1.3;
     margin-bottom: 0.75rem;
+    margin: 0 auto;
   }
 `
 
