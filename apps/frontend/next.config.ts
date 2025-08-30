@@ -5,7 +5,7 @@ const nextConfig: NextConfig = {
   compiler: {
     emotion: true,
   },
-  output: 'export',
+  // Vercelデプロイのため、output: 'export'を削除
   images: {
     unoptimized: true,
   },

@@ -20,5 +20,6 @@
   },
   "rules": {
     "no-unused-vars": "warn"
-  }
+  },
+  "ignorePatterns": [".next/**/*", "out/**/*", "node_modules/**/*"]
 }
