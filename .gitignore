@@ -18,3 +18,7 @@ dist/
 
 # 環境変数設定用
 .env
+
+
+.next/
+out/
