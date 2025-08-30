@@ -4,6 +4,8 @@
 type AppRoutes = never
 type PageRoutes =
   | '/'
+  | '/_app'
+  | '/_document'
   | '/contact'
   | '/event'
   | '/gaisai'
@@ -22,6 +24,8 @@ type Routes = AppRoutes | PageRoutes | LayoutRoutes | RedirectRoutes | RewriteRo
 
 interface ParamMap {
   '/': {}
+  '/_app': {}
+  '/_document': {}
   '/contact': {}
   '/event': {}
   '/gaisai': {}
