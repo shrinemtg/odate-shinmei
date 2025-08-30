@@ -2,5 +2,17 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/": "pages/index.js"
+  "/contact": "pages/contact.html",
+  "/event": "pages/event.html",
+  "/gaisai": "pages/gaisai.html",
+  "/gokitouGosanpai": "pages/gokitouGosanpai.html",
+  "/history": "pages/history.html",
+  "/": "pages/index.html",
+  "/kakusyuGokitou": "pages/kakusyuGokitou.html",
+  "/lifeRtuals": "pages/lifeRtuals.html",
+  "/midokoro": "pages/midokoro.html",
+  "/notices": "pages/notices.html",
+  "/omamori": "pages/omamori.html",
+  "/yakubaraiToshiiwai": "pages/yakubaraiToshiiwai.html",
+  "/404": "pages/404.html"
 }
