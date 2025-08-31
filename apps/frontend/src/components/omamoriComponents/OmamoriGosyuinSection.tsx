@@ -29,8 +29,8 @@ const ContentContainer = styled.div`
   display: flex;
   align-items: flex-start;
 
-  @media (max-width: 1023px) {
-    max-width: 90%;
+  @media (max-width: 1024px) {
+    max-width: 70%;
     gap: 2rem;
   }
 

@@ -7,21 +7,21 @@ const IntroSectionWrapper = styled.section`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 48px 0 56px 0;
+  padding: 3rem 0 3rem 0;
 
-  @media (max-width: 1023px) {
+  @media (max-width: 1024px) {
     min-height: 280px;
-    padding: 40px 0 48px 0;
+    padding: 2.5rem 0 2.5rem 0;
   }
 
   @media (max-width: 767px) {
     min-height: 240px;
-    padding: 32px 0 40px 0;
+    padding: 2rem 0 2.5rem 0;
   }
 
   @media (max-width: 374px) {
     min-height: 200px;
-    padding: 24px 0 32px 0;
+    padding: 1.5rem 0 2rem 0;
   }
 `
 

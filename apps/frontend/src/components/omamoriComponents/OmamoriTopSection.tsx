@@ -28,25 +28,28 @@ const OmamoriTopSectionWrapper = styled.section`
 const ContentContainer = styled.div`
   width: 100%;
   max-width: 800px;
-  margin: 0 auto;
+  margin: 0 0 0;
   padding: 0 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 3rem;
 
-  @media (max-width: 1023px) {
-    max-width: 90%;
+  @media (max-width: 1024px) {
+    margin: 0 0 0;
+    max-width: 70%;
     gap: 2.5rem;
   }
 
   @media (max-width: 767px) {
+    margin: 0;
     max-width: 95%;
     padding: 0 1rem;
     gap: 2rem;
   }
 
   @media (max-width: 374px) {
+    margin: 0;
     max-width: 100%;
     padding: 0 0.75rem;
     gap: 1.5rem;
@@ -80,24 +83,31 @@ const Title = styled.h1`
 const DescriptionContainer = styled.div`
   width: 100%;
   max-width: 600px;
-  padding: 3rem;
+  padding: 2rem;
   border: 1px solid var(--color-gray);
   border-radius: 8px;
 
-  @media (max-width: 1023px) {
+  @media (max-width: 1024px) {
     max-width: 550px;
-    padding: 2.5rem;
+    padding: 1.5rem;
   }
 
   @media (max-width: 767px) {
-    max-width: calc(100% - 2rem);
-    padding: 1.5rem;
+    max-width: calc(100% - 10rem);
+    padding: 1rem;
     border-radius: 6px;
     margin: 0 1rem;
   }
 
-  @media (max-width: 374px) {
-    max-width: calc(100% - 1.5rem);
+  @media (max-width: 600px) {
+    max-width: calc(100% - 3rem);
+    padding: 0.5rem;
+    border-radius: 6px;
+    margin: 0 1rem;
+  }
+
+  @media (max-width: 480px) {
+    max-width: calc(100% - 3rem);
     padding: 1rem;
     border-radius: 4px;
     margin: 0 0.75rem;
@@ -114,7 +124,7 @@ const Description = styled.div`
   flex-direction: column;
   gap: 0.5rem;
 
-  @media (max-width: 1023px) {
+  @media (max-width: 1024px) {
     font-size: var(--font-size-base);
     line-height: 1.7;
   }

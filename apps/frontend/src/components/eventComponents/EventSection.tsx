@@ -10,7 +10,7 @@ const EventSectionWrapper = styled.section`
     padding: 3rem 0;
   }
 
-  @media (max-width: 767px) {
+  @media (max-width: 768px) {
     padding: 2rem 0;
   }
 
@@ -34,7 +34,7 @@ const ContentContainer = styled.div`
     gap: 3rem;
   }
 
-  @media (max-width: 767px) {
+  @media (max-width: 768px) {
     max-width: 95%;
     padding: 0 1rem;
     gap: 2.5rem;
@@ -59,16 +59,18 @@ const SectionContainer = styled.div`
     margin: 0 0 0 4em;
   }
 
-  @media (max-width: 767px) {
+  @media (max-width: 768px) {
     flex-direction: column;
     gap: 1.5rem;
     width: 100%;
-    margin: 0;
+    margin: 0 auto;
+    align-items: center;
+    text-align: center;
   }
 
   @media (max-width: 374px) {
     gap: 1rem;
-    margin: 0;
+    margin: 0 auto;
   }
 `
 
@@ -79,9 +81,11 @@ const RightSectionContainer = styled(SectionContainer)`
     width: 100%;
     margin: 0 0 0 3rem;
   }
-  @media (max-width: 767px) {
+  @media (max-width: 768px) {
     flex-direction: column;
-    margin: 0;
+    margin: 0 auto;
+    align-items: center;
+    text-align: center;
   }
 `
 
@@ -103,12 +107,13 @@ const VerticalTitle = styled.h2`
     margin: 0 1.5rem 0;
   }
 
-  @media (max-width: 767px) {
+  @media (max-width: 768px) {
     writing-mode: horizontal-tb;
     font-size: var(--font-size-2xl);
     margin: 0 0 1rem 0;
     text-align: center;
     letter-spacing: 0.2em;
+    order: 1;
   }
 
   @media (max-width: 374px) {
@@ -132,7 +137,7 @@ const MonthText = styled.span`
     font-size: var(--font-size-xl);
   }
 
-  @media (max-width: 767px) {
+  @media (max-width: 768px) {
     writing-mode: horizontal-tb;
     font-size: var(--font-size-lg);
     margin-bottom: 0.25rem;
@@ -158,7 +163,7 @@ const EventTitle = styled.span`
     font-size: var(--font-size-4xl);
   }
 
-  @media (max-width: 767px) {
+  @media (max-width: 768px) {
     writing-mode: horizontal-tb;
     font-size: var(--font-size-3xl);
     letter-spacing: 0.2em;
@@ -176,8 +181,9 @@ const RightVerticalTitle = styled(VerticalTitle)`
     margin: 0 1.5rem 0 0;
   }
 
-  @media (max-width: 767px) {
+  @media (max-width: 768px) {
     margin: 0 0 1rem 0;
+    order: 1;
   }
 
   @media (max-width: 374px) {
@@ -197,13 +203,18 @@ const TextSection = styled.div`
     margin: 1.5rem 0 0 0;
   }
 
-  @media (max-width: 767px) {
+  @media (max-width: 768px) {
     gap: 1rem;
-    margin: 0;
+    margin: 0 auto;
+    order: 2;
+    width: 100%;
+    max-width: 80%;
+    text-align: center;
   }
 
   @media (max-width: 374px) {
     gap: 0.75rem;
+    max-width: 80%;
   }
 `
 
@@ -214,8 +225,16 @@ const RightTextSection = styled(TextSection)`
     margin: 1.5rem 1.5rem 0 1.5rem;
   }
 
-  @media (max-width: 767px) {
-    margin: 0;
+  @media (max-width: 768px) {
+    margin: 0 auto;
+    order: 2;
+    width: 100%;
+    max-width: 80%;
+    text-align: center;
+  }
+
+  @media (max-width: 374px) {
+    max-width: 80%;
   }
 `
 
@@ -224,7 +243,7 @@ const Description = styled.div`
   font-size: var(--font-size-base);
   line-height: 1.6;
   font-family: var(--font-family-sans);
-  margin: 0.5rem 0 0 0;
+  margin: 0.5rem 0 0;
 
   @media (max-width: 1023px) {
     font-size: var(--font-size-base);
@@ -232,16 +251,20 @@ const Description = styled.div`
     margin: 0.375rem 0 0 0;
   }
 
-  @media (max-width: 767px) {
+  @media (max-width: 768px) {
     font-size: var(--font-size-sm);
     line-height: 1.4;
-    margin: 0.25rem 0 0 0;
+    margin: 0.25rem auto 0 auto;
+    text-align: center;
+    width: 100%;
+    max-width: 80%;
   }
 
-  @media (max-width: 374px) {
+  @media (max-width: 480px) {
     font-size: var(--font-size-xs);
     line-height: 1.3;
-    margin: 0.125rem 0 0 0;
+    margin: 0.125rem auto 0 auto;
+    max-width: 80%;
   }
 `
 
@@ -260,9 +283,10 @@ const Paragraph = styled.p`
     margin-bottom: 0.875rem;
   }
 
-  @media (max-width: 767px) {
+  @media (max-width: 768px) {
     font-size: var(--font-size-sm);
     margin-bottom: 0.75rem;
+    text-align: center;
   }
 
   @media (max-width: 374px) {
@@ -283,9 +307,10 @@ const DateInfo = styled.div`
     margin-top: 0.875rem;
   }
 
-  @media (max-width: 767px) {
+  @media (max-width: 768px) {
     font-size: var(--font-size-sm);
     margin-top: 0.75rem;
+    text-align: center;
   }
 
   @media (max-width: 374px) {
@@ -324,7 +349,7 @@ const DetailButton = styled.a`
     margin-top: 1.25rem;
   }
 
-  @media (max-width: 767px) {
+  @media (max-width: 768px) {
     padding: 0.5rem 1rem;
     font-size: var(--font-size-xs);
     margin-top: 1rem;
@@ -348,10 +373,11 @@ const ImageSection = styled.div`
   justify-content: center;
   align-items: flex-end;
 
-  @media (max-width: 767px) {
+  @media (max-width: 768px) {
     justify-content: center;
     align-items: center;
     width: 100%;
+    order: 3;
   }
 `
 
@@ -365,7 +391,7 @@ const SectionImage = styled.img`
     height: 210px;
   }
 
-  @media (max-width: 767px) {
+  @media (max-width: 768px) {
     width: 240px;
     height: 180px;
     margin: 0 auto;
@@ -386,7 +412,7 @@ const GantanImageSection = styled(ImageSection)`
     margin: 3rem 0 0 0;
   }
 
-  @media (max-width: 767px) {
+  @media (max-width: 768px) {
     margin: 1rem 0 2rem 0;
   }
 
@@ -402,7 +428,7 @@ const ShinnenImageSection = styled(ImageSection)`
     margin: 3.5rem 0 1.5rem 0;
   }
 
-  @media (max-width: 767px) {
+  @media (max-width: 768px) {
     margin: 1rem 0 2rem 0;
   }
 
@@ -418,7 +444,7 @@ const YaharaiImageSection = styled(ImageSection)`
     margin: 3rem 0 2rem 0;
   }
 
-  @media (max-width: 767px) {
+  @media (max-width: 768px) {
     margin: 1rem 0 2rem 0;
   }
 
@@ -434,7 +460,7 @@ const NyugakuImageSection = styled(ImageSection)`
     margin: 3.5rem 0 2rem 0;
   }
 
-  @media (max-width: 767px) {
+  @media (max-width: 768px) {
     margin: 1rem 0 2rem 0;
   }
 
@@ -450,7 +476,7 @@ const NagoshiImageSection = styled(ImageSection)`
     margin: 3.5rem 0 1.5rem 0;
   }
 
-  @media (max-width: 767px) {
+  @media (max-width: 768px) {
     margin: 1rem 0 2rem 0;
   }
 
@@ -466,7 +492,7 @@ const KoreisaiImageSection = styled(ImageSection)`
     margin: 3.5rem 0 1.5rem 0;
   }
 
-  @media (max-width: 767px) {
+  @media (max-width: 768px) {
     margin: 1rem 0 2rem 0;
   }
 
@@ -482,7 +508,7 @@ const YomiyasaiImageSection = styled(ImageSection)`
     margin: 3.5rem 0 2rem 0;
   }
 
-  @media (max-width: 767px) {
+  @media (max-width: 768px) {
     margin: 1rem 0 2rem 0;
   }
 
@@ -498,7 +524,7 @@ const NichireisaiImageSection = styled(ImageSection)`
     margin: 3.5rem 0 1.5rem 0;
   }
 
-  @media (max-width: 767px) {
+  @media (max-width: 768px) {
     margin: 1rem 0 2rem 0;
   }
 
@@ -514,7 +540,7 @@ const GoshinkoImageSection = styled(ImageSection)`
     margin: 3.5rem 0 1.5rem 0;
   }
 
-  @media (max-width: 767px) {
+  @media (max-width: 768px) {
     margin: 1rem 0 2rem 0;
   }
 
@@ -530,7 +556,7 @@ const ShichigosanImageSection = styled(ImageSection)`
     margin: 3.5rem 0 1.5rem 0;
   }
 
-  @media (max-width: 767px) {
+  @media (max-width: 768px) {
     margin: 1rem 0 2rem 0;
   }
 
@@ -546,7 +572,7 @@ const ToshikoshiImageSection = styled(ImageSection)`
     margin: 5rem 0 1.5rem 0;
   }
 
-  @media (max-width: 767px) {
+  @media (max-width: 768px) {
     margin: 1rem 0 2rem 0;
   }
 
@@ -562,12 +588,15 @@ const ToshikoshiDescription = styled(Description)`
     margin: 1rem 0 0 0;
   }
 
-  @media (max-width: 767px) {
-    margin: 0.25rem 0 0 0;
+  @media (max-width: 768px) {
+    margin: 0.25rem auto 0 auto;
+    text-align: center;
+    width: 100%;
+    max-width: 80%;
   }
 
   @media (max-width: 374px) {
-    margin: 0.125rem 0 0 0;
+    margin: 0.125rem auto 0 auto;
   }
 `
 

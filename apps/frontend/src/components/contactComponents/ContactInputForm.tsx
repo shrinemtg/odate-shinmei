@@ -1,6 +1,7 @@
 import styled from '@emotion/styled'
 import { useState } from 'react'
 import ContactErrorPopup from './ContactErrorPopup'
+import Link from 'next/link'
 
 const FormField = styled.div`
   margin-bottom: 2rem;
@@ -128,8 +129,8 @@ const TextArea = styled.textarea`
 
 const CheckboxContainer = styled.div`
   display: flex;
-  align-items: center;
-  margin: 2rem 0;
+  align-items: flex-start;
+  margin: 1rem 0;
 
   @media (max-width: 768px) {
     margin: 1.5rem 0;
@@ -353,7 +354,13 @@ const ContactInputForm: React.FC<ContactInputFormProps> = ({ formData, onInputCh
             onChange={(e) => onInputChange('privacyPolicy', e.target.checked)}
             required
           />
-          <CheckboxLabel htmlFor='privacy-policy'>プライバシーポリシーに同意する</CheckboxLabel>
+          <CheckboxLabel htmlFor='privacy-policy'>
+            プライバシーポリシーに同意する
+            <br />
+            <Link href='/privacy-policy' style={{ color: 'var(--color-shuiro)', fontSize: 'var(--font-size-sm)' }}>
+              ※プライバシーポリシー
+            </Link>
+          </CheckboxLabel>
         </CheckboxContainer>
 
         <SubmitButton type='submit'>確認画面へ</SubmitButton>

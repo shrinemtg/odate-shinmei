@@ -71,7 +71,7 @@ const ContactFormWrapper = styled.div`
 
   @media (max-width: 480px) {
     gap: 1rem;
-    padding: 1.5rem 0.5rem 1.5rem 2.5rem;
+    padding: 2rem 0.5rem 1.5rem 2.5rem;
     max-width: 100%;
   }
 `
@@ -87,7 +87,7 @@ const VerticalTitle = styled.div`
   line-height: 1.2;
   position: absolute;
   top: 6rem;
-  left: 13rem;
+  left: 10rem;
   z-index: 3;
   display: flex;
   flex-direction: column;
@@ -103,8 +103,8 @@ const VerticalTitle = styled.div`
 
   @media (max-width: 1024px) {
     font-size: var(--font-size-3xl);
-    left: 8rem;
-    top: 4rem;
+    left: 7rem;
+    top: 4.5rem;
 
     .title-line {
       margin-bottom: 0.75rem;
@@ -117,8 +117,8 @@ const VerticalTitle = styled.div`
 
   @media (max-width: 768px) {
     font-size: var(--font-size-2xl);
-    left: 2rem;
-    top: 3rem;
+    left: 3.5rem;
+    top: 2.8rem;
 
     .title-line {
       margin-bottom: 0.5rem;
@@ -131,8 +131,8 @@ const VerticalTitle = styled.div`
 
   @media (max-width: 480px) {
     font-size: var(--font-size-xl);
-    left: 1rem;
-    top: 2rem;
+    left: 1.2rem;
+    top: 1.8rem;
 
     .title-line {
       margin-bottom: 0.25rem;
@@ -159,13 +159,13 @@ const FormContainer = styled.div`
   }
 
   @media (max-width: 768px) {
-    padding: 2rem 1rem;
+    padding: 2rem 1.5rem;
     margin: 6rem 1rem;
     border-radius: 8px;
   }
 
   @media (max-width: 480px) {
-    padding: 1.5rem 0.75rem;
+    padding: 1.5rem 1rem;
     margin: 4rem 0.5rem;
     border-radius: 6px;
   }
