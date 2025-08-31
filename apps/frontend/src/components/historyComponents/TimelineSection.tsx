@@ -15,22 +15,22 @@ const timelineData = [
   {
     year: '1870年',
     title: '大火による社殿焼失',
-    description: '明治3年9月の大火により、\n御神輿とともに社殿が焼失しました',
+    description: '明治3年9月の大火により\n御神輿とともに社殿が焼失しました',
   },
   {
     year: '1873年',
     title: '郷社に指定',
-    description: '再建されないまま明治6年、\n郷社に指定されました。',
+    description: '再建されないまま明治6年\n郷社に指定されました。',
   },
   {
     year: '1874年',
     title: '御神輿建造',
-    description: '明治5年から3年間、全氏子が毎月5厘ずつ奉納して\n新しい御神輿が建造されました。',
+    description: '明治5年から3年間、全氏子が毎月5厘ずつ奉納して新しい御神輿が建造されました。',
   },
   {
     year: '1876年',
     title: '社殿再建',
-    description: '全郷から四千円余の献納金を得て工事が始まり\n明治9年秋に現在の社殿が完成しました。',
+    description: '全郷から四千円余の献納金を得て工事が始まり明治9年秋に現在の社殿が完成しました。',
   },
   {
     year: '1910年',
@@ -42,12 +42,12 @@ const timelineData = [
     year: '1975年',
     title: '現代の山車形態の確立',
     description:
-      '大豊講が建造した唐破風を\n四面に持つ神楽殿を模した曳き山車が登場し、\nこれ以降同じような形態の山車が\n次々と建造されました。',
+      '大豊講が建造した唐破風を四面に持つ神楽殿を模した曳き山車が登場し、これ以降同じような形態の山車が次々と建造されました。',
   },
   {
     year: '1980年',
     title: '御神輿巡行区域の拡大',
-    description: '住宅地の拡大とともに氏子区域も広がり、\n新たな町内も御神輿巡行区域に加わりました。',
+    description: '住宅地の拡大とともに氏子区域も広がり、新たな町内も御神輿巡行区域に加わりました。',
   },
 ]
 
@@ -57,9 +57,28 @@ const TimelineWrapper = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
+  background: url('/top-motion/haikei.png') center center / cover no-repeat;
+  /* 高解像度ディスプレイ対応 */
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+  /* 背景画像の品質向上 */
+  background-attachment: fixed;
+  /* スムーズなスケーリング */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 
   @media (max-width: 768px) {
     padding: 48px 0;
+    /* モバイルでは固定背景を無効化（パフォーマンス向上） */
+    background-attachment: scroll;
+    /* モバイルでの画像品質最適化 */
+    image-rendering: auto;
+  }
+
+  /* 高解像度ディスプレイ（Retina等）対応 */
+  @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    background-image: url('/top-motion/haikei.png');
   }
 `
 
@@ -145,6 +164,10 @@ const TimelineTitle = styled.div`
   line-height: 1.1;
   margin-bottom: 0.5rem;
 
+  @media (max-width: 1024px) {
+    font-size: 1.8rem;
+    margin-bottom: 0.25rem;
+  }
   @media (max-width: 768px) {
     font-size: 1.25rem;
     margin-bottom: 0.25rem;
@@ -171,10 +194,17 @@ const TimelineDesc = styled.div`
   font-weight: 400;
   white-space: pre-line;
   line-height: 1.7;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+  max-width: 85%;
 
   @media (max-width: 768px) {
     font-size: 0.875rem;
     line-height: 1.6;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
   }
 `
 

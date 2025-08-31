@@ -76,6 +76,7 @@ const HamburgerButton = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-right: 2rem;
 
   &:hover {
     opacity: 0.7;
@@ -199,8 +200,8 @@ const MenuBar: React.FC = () => {
           <Image
             src='/top-motion/montuki-rogo.png'
             alt='montuki rogo'
-            width={isMobile ? 40 : 130}
-            height={isMobile ? 40 : 130}
+            width={isMobile ? 50 : 130}
+            height={isMobile ? 50 : 130}
             style={{ filter: 'brightness(0) invert(1)' }}
           />
         </LogoLink>

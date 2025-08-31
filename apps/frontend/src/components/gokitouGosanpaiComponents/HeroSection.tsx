@@ -11,6 +11,34 @@ const HeroSectionWrapper = styled.section`
   align-items: center;
   justify-content: center;
   background: url(/gokitou/gokitou-01.png) center center / cover no-repeat;
+
+  /* モバイル対応 */
+  @media (max-width: 768px) {
+    height: 50vh;
+    min-height: 300px;
+    max-height: 450px;
+  }
+
+  /* 小画面モバイル対応 */
+  @media (max-width: 480px) {
+    height: 45vh;
+    min-height: 250px;
+    max-height: 400px;
+  }
+
+  /* タブレット対応 */
+  @media (min-width: 769px) and (max-width: 1024px) {
+    height: 55vh;
+    min-height: 350px;
+    max-height: 550px;
+  }
+
+  /* 大画面対応 */
+  @media (min-width: 1025px) {
+    height: 60vh;
+    min-height: 400px;
+    max-height: 600px;
+  }
 `
 
 const Overlay = styled.div`
@@ -38,6 +66,32 @@ const HeroTitle = styled.h1`
   font-family: serif;
   line-height: 1.2;
   margin: 0 auto;
+
+  /* モバイル対応 */
+  @media (max-width: 768px) {
+    font-size: var(--font-size-lg);
+    letter-spacing: 0.08em;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+  }
+
+  /* 小画面モバイル対応 */
+  @media (max-width: 480px) {
+    font-size: var(--font-size-base);
+    letter-spacing: 0.06em;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.35);
+  }
+
+  /* タブレット対応 */
+  @media (min-width: 769px) and (max-width: 1024px) {
+    font-size: var(--font-size-xl);
+    letter-spacing: 0.09em;
+  }
+
+  /* 大画面対応 */
+  @media (min-width: 1025px) {
+    font-size: var(--font-size-2xl);
+    letter-spacing: 0.1em;
+  }
 `
 
 const HeroSection = () => (

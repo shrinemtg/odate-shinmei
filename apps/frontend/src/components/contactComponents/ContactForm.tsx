@@ -50,7 +50,7 @@ const ContactFormWrapper = styled.div`
   align-items: flex-start;
   gap: 3rem;
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 3rem auto;
   padding: 4rem 2rem 4rem 8rem;
   min-height: 100vh;
   box-sizing: border-box;

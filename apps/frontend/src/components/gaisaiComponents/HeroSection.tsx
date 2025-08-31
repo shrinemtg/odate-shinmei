@@ -11,18 +11,28 @@ const HeroSectionWrapper = styled.section`
   align-items: center;
   justify-content: center;
 
-  @media (min-width: 481px) {
+  /* 小画面モバイル対応 */
+  @media (max-width: 480px) {
+    height: 35vh;
+    min-height: 250px;
+    max-height: 350px;
+  }
+
+  /* モバイル対応 */
+  @media (min-width: 481px) and (max-width: 768px) {
     height: 40vh;
     min-height: 300px;
     max-height: 400px;
   }
 
-  @media (min-width: 769px) {
+  /* タブレット対応 */
+  @media (min-width: 769px) and (max-width: 1024px) {
     height: 50vh;
     min-height: 350px;
     max-height: 500px;
   }
 
+  /* 大画面対応 */
   @media (min-width: 1025px) {
     height: 60vh;
     min-height: 400px;
@@ -39,20 +49,25 @@ const BackgroundImage = styled.img`
   object-fit: cover;
   z-index: 0;
 
-  @media (min-width: 355px) {
-    top: 20%;
-    height: 100%;
+  /* 小画面モバイル対応 */
+  @media (max-width: 480px) {
+    top: 0%;
+    height: 130%;
   }
-  @media (min-width: 481px) {
+
+  /* モバイル対応 */
+  @media (min-width: 481px) and (max-width: 768px) {
     top: 20%;
     height: 100%;
   }
 
-  @media (min-width: 769px) {
+  /* タブレット対応 */
+  @media (min-width: 769px) and (max-width: 1024px) {
     top: 0%;
     height: 120%;
   }
 
+  /* 大画面対応 */
   @media (min-width: 1025px) {
     top: 0%;
     height: 125%;
@@ -78,7 +93,8 @@ const HeroTitle = styled.h1`
   color: var(--color-white);
   font-size: var(--font-size-base);
   font-weight: 600;
-  writing-mode: horizontal-tb;
+  writing-mode: vertical-rl;
+  text-orientation: upright;
   letter-spacing: 0.1em;
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
   font-family: serif;
@@ -86,20 +102,37 @@ const HeroTitle = styled.h1`
   text-align: center;
   margin: 0;
 
-  @media (min-width: 481px) {
-    font-size: var(--font-size-lg);
+  /* 小画面モバイル対応 */
+  @media (max-width: 480px) {
+    writing-mode: vertical-rl !important;
+    text-orientation: upright;
+    font-size: var(--font-size-base);
+    letter-spacing: 0.12em;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+  }
+
+  /* モバイル対応 */
+  @media (min-width: 481px) and (max-width: 768px) {
+    writing-mode: vertical-rl !important;
+    text-orientation: upright;
+    font-size: var(--font-size-base);
     letter-spacing: 0.1em;
   }
 
-  @media (min-width: 769px) {
-    writing-mode: vertical-rl;
-    font-size: var(--font-size-xl);
-    letter-spacing: 0.15em;
+  /* タブレット対応 */
+  @media (min-width: 769px) and (max-width: 1024px) {
+    writing-mode: vertical-rl !important;
+    text-orientation: upright;
+    font-size: var(--font-size-lg);
+    letter-spacing: 0.12em;
   }
 
+  /* 大画面対応 */
   @media (min-width: 1025px) {
-    font-size: var(--font-size-2xl);
-    letter-spacing: 0.2em;
+    writing-mode: vertical-rl !important;
+    text-orientation: upright;
+    font-size: var(--font-size-xl);
+    letter-spacing: 0.15em;
   }
 `
 

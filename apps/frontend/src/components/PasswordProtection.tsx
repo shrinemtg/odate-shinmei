@@ -183,7 +183,7 @@ export default function PasswordProtection({ children }: PasswordProtectionProps
 const LogoutButton = styled.button`
   position: fixed;
   top: 20px;
-  right: 20px;
+  right: 60px;
   padding: 0.5rem 1rem;
   background: rgba(102, 126, 234, 0.9);
   color: white;

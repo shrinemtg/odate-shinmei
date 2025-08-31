@@ -56,25 +56,32 @@ const SectionContainer = styled.div`
 
   @media (max-width: 1023px) {
     width: 100%;
-    gap: 2rem;
+    margin: 0 0 0 4em;
   }
 
   @media (max-width: 767px) {
     flex-direction: column;
     gap: 1.5rem;
     width: 100%;
+    margin: 0;
   }
 
   @media (max-width: 374px) {
     gap: 1rem;
+    margin: 0;
   }
 `
 
 const RightSectionContainer = styled(SectionContainer)`
   flex-direction: row-reverse;
 
+  @media (max-width: 1023px) {
+    width: 100%;
+    margin: 0 0 0 3rem;
+  }
   @media (max-width: 767px) {
     flex-direction: column;
+    margin: 0;
   }
 `
 
@@ -352,12 +359,10 @@ const SectionImage = styled.img`
   width: 320px;
   height: 240px;
   object-fit: cover;
-  margin: 0 0 0 2rem;
 
   @media (max-width: 1023px) {
     width: 280px;
     height: 210px;
-    margin: 0 0 0 1.5rem;
   }
 
   @media (max-width: 767px) {

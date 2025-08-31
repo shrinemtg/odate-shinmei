@@ -11,6 +11,27 @@ const HeroSectionWrapper = styled.section`
   align-items: center;
   justify-content: center;
   background: url(/omamoriPhoto/omamori-01.png) center center / cover no-repeat;
+
+  /* モバイル対応 */
+  @media (max-width: 768px) {
+    height: 50vh;
+    min-height: 300px;
+    max-height: 450px;
+  }
+
+  /* タブレット対応 */
+  @media (min-width: 769px) and (max-width: 1024px) {
+    height: 55vh;
+    min-height: 350px;
+    max-height: 550px;
+  }
+
+  /* 大画面対応 */
+  @media (min-width: 1025px) {
+    height: 60vh;
+    min-height: 400px;
+    max-height: 600px;
+  }
 `
 
 const Overlay = styled.div`
@@ -38,6 +59,25 @@ const HeroTitle = styled.h1`
   font-family: serif;
   line-height: 1.2;
   margin: 0;
+
+  /* モバイル対応 */
+  @media (max-width: 768px) {
+    font-size: var(--font-size-lg);
+    letter-spacing: 0.08em;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+  }
+
+  /* タブレット対応 */
+  @media (min-width: 769px) and (max-width: 1024px) {
+    font-size: var(--font-size-xl);
+    letter-spacing: 0.09em;
+  }
+
+  /* 大画面対応 */
+  @media (min-width: 1025px) {
+    font-size: var(--font-size-2xl);
+    letter-spacing: 0.1em;
+  }
 `
 
 const HeroSection = () => (
