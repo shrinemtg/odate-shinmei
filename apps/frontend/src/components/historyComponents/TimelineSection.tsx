@@ -199,6 +199,14 @@ const TimelineDesc = styled.div`
   hyphens: auto;
   max-width: 85%;
 
+  @media (max-width: 1024px) {
+    max-width: 75%;
+    font-size: 0.875rem;
+    line-height: 1.6;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+  }
   @media (max-width: 768px) {
     font-size: 0.875rem;
     line-height: 1.6;

@@ -189,21 +189,21 @@ const ParkingImageBox = styled.div`
 
 const ParkingText = styled.div`
   color: var(--color-brown);
-  font-size: var(--font-size-lg);
+  font-size: var(--font-size-sm);
   font-family: serif;
   line-height: 2;
   margin-left: 8px;
   margin-top: 8px;
 
   @media (max-width: 1024px) {
-    font-size: var(--font-size-base);
+    font-size: var(--font-size-sm);
     line-height: 1.9;
     margin-left: 6px;
     margin-top: 6px;
   }
 
   @media (max-width: 768px) {
-    font-size: var(--font-size-base);
+    font-size: var(--font-size-sm);
     line-height: 1.8;
     margin-left: 0;
     margin-top: 0;
@@ -217,7 +217,7 @@ const ParkingText = styled.div`
 
 const ParkingTitle = styled.div`
   font-weight: 600;
-  font-size: var(--font-size-lg);
+  font-size: var(--font-size-base);
   margin-bottom: 4px;
 
   @media (max-width: 1024px) {
@@ -226,7 +226,7 @@ const ParkingTitle = styled.div`
   }
 
   @media (max-width: 768px) {
-    font-size: var(--font-size-base);
+    font-size: var(--font-size-sm);
   }
 
   @media (max-width: 480px) {

@@ -18,13 +18,11 @@ const Wrapper = styled.div`
 
   @media (max-width: 768px) {
     margin: 48px auto 100px auto;
-    padding: 0 16px;
     max-width: 100%;
   }
 
   @media (max-width: 480px) {
     margin: 40px auto 100px auto;
-    padding: 0 12px;
   }
 `
 
@@ -81,7 +79,7 @@ const ContactButton = styled.a`
   font-family: var(--font-family-serif);
   cursor: pointer;
   transition: all 0.3s ease;
-  margin: 2rem auto 3rem;
+  margin: 3rem auto;
   text-decoration: none;
   display: block;
   width: fit-content;

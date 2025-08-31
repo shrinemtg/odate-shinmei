@@ -45,39 +45,48 @@ const Section = styled.section`
 `
 
 const Container = styled.div`
-  max-width: 56.25rem;
+  max-width: 52rem;
   width: 100%;
   margin: 0 auto;
   display: flex;
   flex-direction: row;
   align-items: flex-start;
   justify-content: center;
-  gap: 3rem;
+  gap: 1.5rem;
 
   @media (max-width: 1024px) {
-    gap: 2.5rem;
-    padding: 0 1.5rem;
+    gap: 1rem;
+    padding: 0 2rem;
+    margin: 0 0 0 7rem;
+    max-width: 80%;
   }
 
   @media (max-width: 768px) {
     flex-direction: column;
-    gap: 2rem;
+    gap: 1rem;
     padding: 0 1.25rem;
+    margin: 0 0 0 2.5rem;
+    max-width: 80%;
   }
 
   @media (max-width: 640px) {
-    gap: 1.75rem;
+    gap: 1rem;
     padding: 0 1rem;
+    margin: 0 0 0 2rem;
+    max-width: 80%;
   }
 
   @media (max-width: 480px) {
-    gap: 1.5rem;
+    gap: 1rem;
     padding: 0 0.75rem;
+    margin: 0 0 0 1.5rem;
+    max-width: 80%;
   }
 
   @media (max-width: 375px) {
-    gap: 1.25rem;
+    gap: 1rem;
     padding: 0 0.5rem;
+    margin: 0 0 0 1.8rem;
   }
 `
 
@@ -92,7 +101,7 @@ const LeftCol = styled.div`
 
   @media (max-width: 1024px) {
     height: 18.75rem;
-    min-width: 6.25rem;
+    min-width: 4.25rem;
   }
 
   @media (max-width: 768px) {
@@ -171,14 +180,14 @@ const CatImageBox = styled.div`
   @media (max-width: 1024px) {
     width: 3.75rem;
     height: 6.4375rem;
-    left: 28%;
-    top: 76%;
+    left: 20%;
+    top: 65%;
   }
 
   @media (max-width: 768px) {
     position: relative;
-    left: auto;
-    top: auto;
+    left: 12%;
+    top: -10%;
     transform: none;
     width: 3.125rem;
     height: 5.375rem;
@@ -209,9 +218,26 @@ const RightCol = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  width: 100%;
+  max-width: 100%;
 
   @media (max-width: 768px) {
     width: 100%;
+    max-width: 100%;
+  }
+  @media (max-width: 640px) {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  @media (max-width: 480px) {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  @media (max-width: 375px) {
+    width: 100%;
+    max-width: 100%;
   }
 `
 
@@ -509,7 +535,7 @@ const NoticeMore = styled(Link)`
 
   @media (max-width: 1024px) {
     font-size: var(--font-size-sm);
-    margin: 1rem auto;
+    margin: 1rem 0 1rem auto;
     padding: 0.375rem 0.75rem;
   }
 
@@ -521,6 +547,7 @@ const NoticeMore = styled(Link)`
     border-radius: 0.5rem;
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid #bba77b;
+    margin: 1rem 0 1rem auto;
   }
 
   @media (max-width: 640px) {

@@ -62,21 +62,26 @@ const GridArea = styled.div`
   gap: 24px;
   width: 90%;
   max-width: 800px;
-  margin: 1rem auto;
+  margin: 1rem auto 3rem;
   position: relative;
   z-index: 2;
   justify-content: flex-end;
   box-sizing: border-box;
 
+  @media (max-width: 1024px) {
+    width: 70%;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
   @media (max-width: 900px) {
-    width: 90%;
+    width: 80%;
     flex-wrap: wrap;
     justify-content: center;
   }
 
   @media (max-width: 768px) {
     gap: 16px;
-    width: 95%;
+    width: 80%;
   }
 `
 
@@ -93,8 +98,16 @@ const ImageBox = styled.div`
   z-index: 2;
   max-width: 240px;
 
+  @media (max-width: 1024px) {
+    max-width: 240px;
+    border-radius: 12px;
+  }
   @media (max-width: 768px) {
-    max-width: 160px;
+    max-width: 190px;
+    border-radius: 12px;
+  }
+  @media (max-width: 480px) {
+    max-width: 120px;
     border-radius: 12px;
   }
 
@@ -111,25 +124,35 @@ const DescriptionArea = styled.div`
   flex-direction: row;
   align-items: flex-start;
   justify-content: center;
-  margin: -60px 0 0 0;
+  margin: -90px 0 0 0;
   background: var(--color-oud);
-  padding: 160px 32px 80px 32px;
+  padding: 9rem 2rem 4rem 2rem;
   gap: 32px;
   position: relative;
   z-index: 1;
   width: 100%;
   box-sizing: border-box;
 
-  @media (max-width: 900px) {
+  @media (max-width: 1024px) {
     flex-direction: column;
-    padding: 24px 8px 32px 8px;
+    padding: 6rem 2rem 6rem 2rem;
     gap: 16px;
     margin-top: 0;
   }
-
+  @media (max-width: 900px) {
+    flex-direction: column;
+    padding: 2rem 0.5rem 2rem 0.5rem;
+    gap: 16px;
+    margin-top: 0;
+  }
   @media (max-width: 768px) {
-    padding: 24px 16px 32px 16px;
+    padding: 2rem 1rem 2rem 1rem;
     gap: 12px;
+  }
+  @media (max-width: 480px) {
+    padding: 2rem 1rem 2rem 1rem;
+    gap: 16px;
+    margin-top: 0;
   }
 `
 
@@ -142,8 +165,26 @@ const DescriptionColumn = styled.div`
   max-width: 450px;
   margin: 0 auto;
 
+  @media (max-width: 1024px) {
+    flex-direction: column;
+    padding: 0 2rem 0 2rem;
+    gap: 16px;
+    margin-top: 0;
+  }
+  @media (max-width: 900px) {
+    flex-direction: column;
+    padding: 0 0.5rem 0 0.5rem;
+    gap: 16px;
+    margin-top: 0;
+  }
   @media (max-width: 768px) {
-    max-width: 100%;
+    max-width: 80%;
+  }
+  @media (max-width: 480px) {
+    max-width: 80%;
+    padding: 0 1rem 0 1rem;
+    gap: 16px;
+    margin-top: 0;
   }
 `
 

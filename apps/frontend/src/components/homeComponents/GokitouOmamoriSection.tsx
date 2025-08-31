@@ -76,7 +76,7 @@ const Wrapper = styled.div`
 `
 
 const Section = styled.section`
-  width: 100vw;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -100,7 +100,7 @@ const Card = styled.div`
   display: flex;
   flex-direction: row;
   align-items: stretch;
-  max-width: 900px;
+  max-width: 70%;
   width: 100%;
   border-radius: 32px;
   overflow: hidden;
@@ -109,19 +109,21 @@ const Card = styled.div`
   min-height: 320px;
 
   @media (max-width: 1024px) {
-    max-width: 90%;
+    max-width: 75%;
     border-radius: 28px;
+    margin: 0 0 0 4rem;
   }
 
   @media (max-width: 768px) {
     flex-direction: column;
-    max-width: 90%;
+    max-width: 80%;
     border-radius: 24px;
     min-height: auto;
+    margin: 0;
   }
 
   @media (max-width: 480px) {
-    max-width: 95%;
+    max-width: 80%;
     border-radius: 20px;
   }
 `
@@ -133,19 +135,19 @@ const LeftCol = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 450px;
+  height: 400px;
 
   @media (max-width: 1024px) {
-    height: 350px;
+    height: 450px;
   }
 
   @media (max-width: 768px) {
     flex: none;
-    height: 200px;
+    height: 300px;
   }
 
   @media (max-width: 480px) {
-    height: 160px;
+    height: 280px;
   }
 `
 
@@ -212,28 +214,46 @@ const VerticalTitle = styled.div`
   line-height: 1.1;
   margin: 1rem 0 8rem 0;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
+    font-size: var(--font-size-5xl);
+  }
+  @media (max-width: 940px) {
     writing-mode: horizontal-tb;
-    font-size: var(--font-size-2xl);
+    font-size: var(--font-size-5xl);
     margin-right: 0;
-    margin-bottom: 8px;
+    margin: 1rem 0 8rem 0;
+  }
+  @media (max-width: 768px) {
+    font-size: var(--font-size-4xl);
+    margin-bottom: 1rem;
+  }
+  @media (max-width: 480px) {
+    font-size: var(--font-size-3xl);
+    margin-bottom: 1rem;
   }
 `
 
 const Description = styled.div`
-  font-size: var(--font-size-lg);
+  font-size: var(--font-size-base);
   font-family: serif;
   color: var(--color-white);
   line-height: 2;
-  max-width: 260px;
-  margin-top: 8px;
+  max-width: 200px;
+  margin-top: 2rem;
 
-  @media (max-width: 768px) {
-    font-size: var(--font-size-sm);
-    line-height: 1.8;
+  @media (max-width: 1024px) {
+    font-size: var(--font-size-base);
+    line-height: 1.5;
     max-width: 100%;
     text-align: center;
-    margin-top: 0;
+    margin-top: 1rem;
+  }
+  @media (max-width: 768px) {
+    font-size: var(--font-size-sm);
+    line-height: 1.5;
+    max-width: 100%;
+    text-align: center;
+    margin: 0;
   }
 `
 

@@ -14,7 +14,7 @@ const catWalk = keyframes`
 
 const Section = styled.section`
   width: 100vw;
-  min-height: 480px;
+  min-height: 560px;
   background: url(/top-motion/haikei.png) center center / cover no-repeat;
   display: flex;
   justify-content: center;
@@ -25,8 +25,7 @@ const Section = styled.section`
   overflow: hidden;
 
   @media (max-width: 768px) {
-    min-height: 320px;
-    margin: 48px 0;
+    min-height: 460px;
   }
 `
 
@@ -44,28 +43,35 @@ const FrontIllustration = styled.div`
   left: 55%;
   bottom: 0;
   transform: translateX(-50%);
-  width: 800px;
-  height: 340px;
+  width: 750px;
+  height: 320px;
   z-index: 10;
   pointer-events: none;
   display: flex;
   justify-content: center;
   align-items: flex-end;
 
-  @media (max-width: 768px) {
-    width: 600px;
+  @media (max-width: 1024px) {
+    width: 650px;
     height: 255px;
   }
 
+  @media (max-width: 768px) {
+    width: 480px;
+    height: 200px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
   @media (max-width: 480px) {
-    width: 400px;
-    height: 170px;
+    width: 380px;
+    height: 150px;
   }
 `
 
 const TextArea = styled.div`
   position: absolute;
-  top: 0;
+  top: 0.8%;
   left: 0;
   z-index: 20;
   display: flex;
@@ -85,7 +91,7 @@ const TextArea = styled.div`
 
   @media (max-width: 768px) {
     left: 50%;
-    top: 0;
+    top: 10%;
     transform: translateX(-50%);
     border-radius: 0 0 16px 16px;
     padding: 1rem;
@@ -110,24 +116,24 @@ const VerticalTitle = styled.div`
   letter-spacing: 0.2em;
   font-family: serif;
   line-height: 1.1;
-  margin-right: 32px;
+  margin: 0 2rem 0 0;
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
 
   @media (max-width: 1024px) {
     font-size: var(--font-size-4xl);
-    margin-right: 28px;
+    margin: 0 2rem 0 0;
   }
 
   @media (max-width: 768px) {
     writing-mode: horizontal-tb;
     font-size: var(--font-size-3xl);
     margin-right: 0;
-    margin-bottom: 12px;
+    margin-bottom: 1.5rem;
   }
 
   @media (max-width: 480px) {
     font-size: var(--font-size-2xl);
-    margin-bottom: 10px;
+    margin-bottom: 1.5rem;
   }
 `
 
@@ -136,6 +142,7 @@ const ContentContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   min-width: 220px;
+  margin: 2rem 0 0 0;
 
   @media (max-width: 1024px) {
     min-width: 300px;
@@ -145,6 +152,7 @@ const ContentContainer = styled.div`
     min-width: 0;
     width: 100%;
     text-align: center;
+    margin: 0.5rem;
   }
 
   @media (max-width: 480px) {
@@ -159,7 +167,7 @@ const Description = styled.div`
   font-size: var(--font-size-base);
   font-family: serif;
   line-height: 2;
-  margin-bottom: 24px;
+  margin-bottom: 2rem;
   white-space: pre-line;
   max-width: 400px;
   width: 100%;
@@ -167,21 +175,21 @@ const Description = styled.div`
   @media (max-width: 1024px) {
     font-size: var(--font-size-base);
     line-height: 1.9;
-    margin-bottom: 20px;
+    margin-bottom: 2rem;
     max-width: 480px;
   }
 
   @media (max-width: 768px) {
     font-size: var(--font-size-sm);
     line-height: 1.8;
-    margin-bottom: 14px;
+    margin-bottom: 1.5rem;
     max-width: 660px;
   }
 
   @media (max-width: 480px) {
     font-size: var(--font-size-sm);
     line-height: 1.7;
-    margin-bottom: 14px;
+    margin-bottom: 1.5rem;
     max-width: 620px;
   }
 `
@@ -191,7 +199,7 @@ const DetailButton = styled.button`
   color: var(--color-white);
   border: 1.5px solid #fff;
   border-radius: 0;
-  padding: 9px 18px;
+  padding: 0.5rem 1rem;
   font-size: var(--font-size-lg);
   font-weight: 400;
   letter-spacing: 0.1em;
@@ -200,7 +208,7 @@ const DetailButton = styled.button`
   box-shadow: none;
   transition: background 0.2s;
   align-self: flex-start;
-  margin-left: 0;
+  margin: 0 0 0 0;
   border-radius: 8px;
 
   &:hover {
@@ -208,25 +216,25 @@ const DetailButton = styled.button`
   }
 
   @media (max-width: 1024px) {
-    padding: 8px 16px;
+    padding: 0.5rem 1rem;
     font-size: var(--font-size-base);
   }
 
   @media (max-width: 768px) {
     align-self: center;
-    padding: 7px 14px;
+    padding: 0.5rem 1rem;
     font-size: var(--font-size-sm);
   }
 
   @media (max-width: 480px) {
-    padding: 6px 14px;
+    padding: 0.5rem 1rem;
     font-size: var(--font-size-xs);
   }
 `
 
 const WalkingCat = styled.div`
   position: absolute;
-  top: 80%;
+  top: 84%;
   left: 0;
   width: 140px;
   height: 140px;
@@ -236,19 +244,19 @@ const WalkingCat = styled.div`
   @media (max-width: 1024px) {
     width: 100px;
     height: 100px;
-    top: 85%;
+    top: 88%;
   }
 
   @media (max-width: 768px) {
     width: 80px;
     height: 80px;
-    top: 82%;
+    top: 88%;
   }
 
   @media (max-width: 480px) {
     width: 60px;
     height: 60px;
-    top: 87%;
+    top: 91%;
   }
 `
 
