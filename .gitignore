@@ -22,3 +22,8 @@ dist/
 
 .next/
 out/
+# Turbo cache
+.turbo/
+
+# TypeScript build info
+tsconfig.tsbuildinfo
