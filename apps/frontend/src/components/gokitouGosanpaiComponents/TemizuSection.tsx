@@ -6,10 +6,6 @@ const TemizuSectionWrapper = styled.section`
   position: relative;
   overflow: hidden;
 
-  @media (max-width: 1024px) {
-    height: 400px;
-  }
-
   @media (max-width: 768px) {
     height: 350px;
   }
@@ -49,19 +45,26 @@ const Overlay = styled.div`
 const TextArea = styled.div`
   display: flex;
   align-items: center;
-  width: 90%;
-  max-width: 1200px;
+  width: 100%;
+  max-width: 90%;
   margin: 0 auto;
 
+  @media (max-width: 1024px) {
+    width: 100%;
+    max-width: 100%;
+    gap: 1.5rem;
+    margin: 0 0 0 6rem;
+  }
   @media (max-width: 768px) {
     flex-direction: column;
     align-items: flex-start;
+    margin: 0 auto;
     gap: 1.5rem;
   }
 
   @media (max-width: 480px) {
     width: 95%;
-    gap: 1rem;
+    margin: 0 auto;
   }
 `
 
@@ -77,8 +80,8 @@ const VerticalTitle = styled.h2`
   margin: 0 3rem;
 
   @media (max-width: 1024px) {
-    font-size: var(--font-size-4xl);
-    margin: 0 2rem;
+    font-size: var(--font-size-5xl);
+    margin: 0 1rem;
   }
 
   @media (max-width: 768px) {
@@ -90,7 +93,7 @@ const VerticalTitle = styled.h2`
   }
 
   @media (max-width: 480px) {
-    font-size: var(--font-size-2xl);
+    font-size: var(--font-size-3xl);
   }
 `
 
@@ -98,13 +101,14 @@ const ContentArea = styled.div`
   flex: 1;
   color: var(--color-white);
   font-family: var(--font-family-serif);
-  max-width: 50%;
-
-  @media (max-width: 1024px) {
-    max-width: 60%;
-  }
+  max-width: 60%;
 
   @media (max-width: 768px) {
+    max-width: 90%;
+    margin: 0 auto;
+  }
+
+  @media (max-width: 480px) {
     max-width: 100%;
   }
 `
@@ -114,10 +118,6 @@ const ContentTitle = styled.h3`
   font-weight: 600;
   margin: 0 0 1rem 0;
   line-height: 1.4;
-
-  @media (max-width: 1024px) {
-    font-size: var(--font-size-lg);
-  }
 
   @media (max-width: 768px) {
     font-size: var(--font-size-base);
@@ -137,14 +137,10 @@ const ContentText = styled.p`
   text-align: justify;
   max-width: 400px;
 
-  @media (max-width: 1024px) {
-    font-size: var(--font-size-sm);
-    max-width: 100%;
-  }
-
   @media (max-width: 768px) {
     font-size: var(--font-size-xs);
     line-height: 1.6;
+    max-width: 100%;
   }
 
   @media (max-width: 480px) {

@@ -11,7 +11,9 @@ const GokitouSectionWrapper = styled.section`
   align-items: center;
   gap: 3rem;
 
-  @media (max-width: 1023px) {
+  @media (max-width: 1024px) {
+    width: 100%;
+    max-width: 75%;
     padding: 3rem 1.5rem;
     gap: 2.5rem;
   }
@@ -19,14 +21,14 @@ const GokitouSectionWrapper = styled.section`
   @media (max-width: 767px) {
     width: 100%;
     max-width: 100%;
-    padding: 2rem 1rem;
+    padding: 3rem 0;
     gap: 2rem;
   }
 
   @media (max-width: 374px) {
     width: 100%;
     max-width: 100%;
-    padding: 1.5rem 0.5rem;
+    padding: 3rem 0;
     gap: 1.5rem;
   }
 `
@@ -75,9 +77,9 @@ const ContentBox = styled.div`
 
   @media (max-width: 767px) {
     width: calc(80% - 2rem);
-    max-width: calc(350px - 2rem);
+    max-width: calc(80% - 2rem);
     padding: 1.5rem 0.75rem;
-    border-radius: 6px;
+    border-radius: 8px;
     margin: 0 1rem;
   }
 
@@ -113,13 +115,13 @@ const Section = styled.div`
   align-items: flex-start;
   gap: 1.5rem;
 
-  @media (max-width: 1023px) {
-    gap: 1.25rem;
+  @media (max-width: 1024px) {
+    flex-direction: column;
+    gap: 1rem;
   }
 
   @media (max-width: 767px) {
-    flex-direction: column;
-    gap: 1rem;
+    gap: 0.875rem;
   }
 
   @media (max-width: 374px) {
@@ -131,7 +133,7 @@ const SectionLabel = styled.div`
   background: var(--color-shuiro);
   color: var(--color-white);
   margin-top: 0.5rem;
-  padding: 0.5rem 0.8rem;
+  padding: 0.5rem 0.1rem;
   border-radius: 8px;
   font-weight: 600;
   font-size: var(--font-size-base);
@@ -140,7 +142,7 @@ const SectionLabel = styled.div`
   text-align: center;
   flex-shrink: 0;
 
-  @media (max-width: 1023px) {
+  @media (max-width: 1024px) {
     font-size: var(--font-size-base);
     padding: 0.5rem 0.7rem;
     min-width: 110px;
@@ -151,14 +153,14 @@ const SectionLabel = styled.div`
     width: fit-content;
     font-size: var(--font-size-sm);
     padding: 0.4rem 0.6rem;
-    border-radius: 6px;
+    border-radius: 8px;
     margin-top: 0;
   }
 
   @media (max-width: 374px) {
     font-size: var(--font-size-xs);
     padding: 0.3rem 0.5rem;
-    border-radius: 4px;
+    border-radius: 8px;
   }
 `
 
@@ -277,24 +279,26 @@ const ContactButton = styled.button`
 
 const ImageGridSection = styled.section`
   width: 100%;
-  max-width: 1200px;
+  max-width: 95%;
   margin: 0 auto;
   padding: 4rem 2rem;
 
-  @media (max-width: 1023px) {
-    padding: 3rem 1.5rem;
+  @media (max-width: 1024px) {
+    width: 100%;
+    max-width: 100%;
+    padding: 3rem 3rem;
   }
 
   @media (max-width: 767px) {
-    width: 100vw;
-    max-width: 100vw;
-    padding: 2rem 0.5rem;
+    width: 100%;
+    max-width: 100%;
+    padding: 2rem 0;
   }
 
   @media (max-width: 374px) {
-    width: 100vw;
-    max-width: 100vw;
-    padding: 1.5rem 0.25rem;
+    width: 100%;
+    max-width: 100%;
+    padding: 1.5rem 0;
   }
 `
 
@@ -304,19 +308,17 @@ const ImageGrid = styled.div`
   gap: 2rem;
   margin: 8rem;
 
-  @media (max-width: 1023px) {
-    gap: 1.5rem;
-    margin: 6rem;
+  @media (max-width: 1024px) {
+    gap: 1rem;
+    margin: 5rem;
   }
 
   @media (max-width: 767px) {
     grid-template-columns: 1fr;
-    gap: 1.5rem;
-    margin: 2rem;
+    gap: 1rem;
+    margin: 2rem auto 3rem auto;
     justify-items: center;
     max-width: 400px;
-    margin-left: auto;
-    margin-right: auto;
   }
 
   @media (max-width: 374px) {

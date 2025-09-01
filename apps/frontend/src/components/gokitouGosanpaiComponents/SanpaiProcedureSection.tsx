@@ -2,7 +2,7 @@ import styled from '@emotion/styled'
 
 const ProcedureSectionWrapper = styled.section`
   width: 100%;
-  max-width: 1200px;
+  max-width: 100%;
   margin: 4rem auto;
   padding: 0 2rem;
   display: flex;
@@ -11,15 +11,17 @@ const ProcedureSectionWrapper = styled.section`
   gap: 2rem;
 
   @media (max-width: 1024px) {
+    width: 100%;
+    max-width: 100%;
     margin: 3rem auto;
     padding: 0 1.5rem;
-    gap: 1.5rem;
+    gap: 2rem;
   }
 
   @media (max-width: 768px) {
-    margin: 2rem auto;
-    padding: 0 1rem;
-    gap: 1rem;
+    margin: 3rem auto;
+    padding: 0;
+    gap: 2rem;
   }
 `
 
@@ -33,20 +35,20 @@ const SectionTitle = styled.h2`
   align-self: flex-start;
 
   @media (max-width: 1024px) {
-    font-size: var(--font-size-3xl);
-    margin: 0 0 0 6rem;
+    font-size: var(--font-size-4xl);
+    margin: 0 0 0 9rem;
   }
 
   @media (max-width: 768px) {
+    font-size: var(--font-size-3xl);
     writing-mode: horizontal-tb;
     margin-left: 0;
     text-align: center;
     align-self: center;
-    font-size: var(--font-size-2xl);
   }
 
   @media (max-width: 480px) {
-    font-size: var(--font-size-xl);
+    font-size: var(--font-size-3xl);
   }
 `
 
@@ -55,37 +57,33 @@ const ProcedureBox = styled.div`
   border: 2px solid var(--color-shuiro);
   border-radius: 8px;
   padding: 2rem;
+  margin: 0 auto 8rem;
   display: flex;
   justify-content: space-around;
   align-items: flex-start;
   gap: 1.5rem;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
   box-sizing: border-box;
-  margin: 0 auto 8rem;
 
   @media (max-width: 1024px) {
-    width: calc(85% - 3rem);
-    flex-wrap: wrap;
     justify-content: center;
+    flex-wrap: wrap;
+    width: 70%;
+    margin: 0 auto 8rem;
     padding: 1.5rem;
     gap: 1rem;
-    margin: 0 auto 8rem;
   }
 
   @media (max-width: 768px) {
-    width: calc(95% - 3rem);
-    flex-direction: column;
-    align-items: center;
-    padding: 1.5rem;
-    gap: 1.5rem;
     margin: 0 auto 8rem;
+    width: 90%;
+    padding: 2rem;
+    gap: 2rem;
   }
 
   @media (max-width: 480px) {
-    width: calc(100% - 3rem);
-    padding: 1rem;
-    gap: 1rem;
-    margin: 0 auto 8rem;
+    width: 95%;
+    gap: 2rem;
   }
 `
 
@@ -98,7 +96,7 @@ const ProcedureStep = styled.div`
   width: 100%;
 
   @media (max-width: 1024px) {
-    width: 45%;
+    width: 100%;
   }
 
   @media (max-width: 768px) {
@@ -112,17 +110,21 @@ const StepNumber = styled.span`
   color: var(--color-gray);
   font-family: var(--font-family-serif);
   align-self: flex-start;
+  margin-bottom: 0.5rem;
 
   @media (max-width: 1024px) {
     font-size: var(--font-size-4xl);
+    margin-bottom: 0.5rem;
   }
 
   @media (max-width: 768px) {
     font-size: var(--font-size-3xl);
+    margin-bottom: 0.5rem;
   }
 
   @media (max-width: 480px) {
-    font-size: var(--font-size-2xl);
+    font-size: var(--font-size-3xl);
+    margin-bottom: 0.5rem;
   }
 `
 
@@ -142,7 +144,7 @@ const StepImageWrapper = styled.div`
   }
 
   @media (max-width: 480px) {
-    height: 140px;
+    height: 160px;
   }
 
   img {
@@ -162,42 +164,18 @@ const StepDescription = styled.p`
   white-space: pre-line;
 
   @media (max-width: 1024px) {
-    font-size: var(--font-size-xs);
+    font-size: var(--font-size-sm);
     line-height: 1.5;
   }
 
   @media (max-width: 768px) {
-    font-size: var(--font-size-xs);
+    font-size: var(--font-size-sm);
     line-height: 1.4;
   }
 
   @media (max-width: 480px) {
-    font-size: var(--font-size-xs);
+    font-size: var(--font-size-sm);
     line-height: 1.3;
-  }
-`
-
-const Arrow = styled.div`
-  font-size: var(--font-size-3xl);
-  color: var(--color-shuiro);
-  margin: 0 0.2rem;
-  align-self: center;
-
-  @media (max-width: 1024px) {
-    font-size: var(--font-size-2xl);
-    display: none;
-  }
-
-  @media (max-width: 768px) {
-    display: block;
-    transform: rotate(90deg);
-    margin: 1rem 0;
-    font-size: var(--font-size-xl);
-  }
-
-  @media (max-width: 480px) {
-    font-size: var(--font-size-lg);
-    margin: 0.5rem 0;
   }
 `
 
@@ -219,13 +197,13 @@ const SanpaiProcedureSection = () => {
       number: '三',
       image: '/gokitou/sanpaisahou-03.png',
       alt: '深く二回拝をする',
-      description: '深く二回拝をします。',
+      description: '深く二回拝礼をします。',
     },
     {
       number: '四',
       image: '/gokitou/sanpaisahou-04.png',
       alt: '二拍手して手を合わせ祈りを込める',
-      description: '二拍手し、手を合わせ\n祈りを込めます。',
+      description: '二回拍手した後\n両手を合わせ\n祈りを込めます。',
     },
     {
       number: '五',
@@ -248,13 +226,6 @@ const SanpaiProcedureSection = () => {
               </StepImageWrapper>
               <StepDescription>{step.description}</StepDescription>
             </ProcedureStep>
-            {index < steps.length - 1 && (
-              <Arrow>
-                <span role='img' aria-label='arrow right'>
-                  →
-                </span>
-              </Arrow>
-            )}
           </div>
         ))}
       </ProcedureBox>

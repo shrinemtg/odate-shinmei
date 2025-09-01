@@ -62,7 +62,6 @@ const TextArea = styled.div`
 
   @media (max-width: 480px) {
     width: 95%;
-    gap: 1rem;
   }
 `
 
@@ -74,11 +73,11 @@ const VerticalTitle = styled.h2`
   writing-mode: vertical-rl;
   letter-spacing: 0.2em;
   line-height: 1.2;
-  margin: 0 3rem 0 0;
+  margin: 0 2rem 0 0;
 
   @media (max-width: 1024px) {
     font-size: var(--font-size-4xl);
-    margin: 0 2rem 0 0;
+    margin: 0 1rem 0 0;
   }
 
   @media (max-width: 768px) {
@@ -91,7 +90,7 @@ const VerticalTitle = styled.h2`
   }
 
   @media (max-width: 480px) {
-    font-size: var(--font-size-2xl);
+    font-size: var(--font-size-3xl);
   }
 `
 
@@ -99,11 +98,11 @@ const ContentArea = styled.div`
   flex: 1;
   color: var(--color-white);
   font-family: var(--font-family-serif);
-  max-width: 50%;
+  max-width: 55%;
   text-align: left;
 
   @media (max-width: 1024px) {
-    max-width: 60%;
+    max-width: 55%;
   }
 
   @media (max-width: 768px) {
@@ -117,10 +116,12 @@ const ContentTitle = styled.h3`
   font-weight: 600;
   margin: 0 1rem 1rem 5rem;
   line-height: 1.4;
+  max-width: 400px;
 
   @media (max-width: 1024px) {
     font-size: var(--font-size-lg);
     margin: 0 1rem 1rem 3rem;
+    max-width: 400px;
   }
 
   @media (max-width: 768px) {
@@ -144,7 +145,7 @@ const ContentText = styled.p`
   @media (max-width: 1024px) {
     font-size: var(--font-size-sm);
     margin: 0 1rem 1rem 3rem;
-    max-width: 100%;
+    max-width: 400px;
   }
 
   @media (max-width: 768px) {
