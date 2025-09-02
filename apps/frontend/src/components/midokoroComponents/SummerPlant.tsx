@@ -11,32 +11,57 @@ interface PlantData {
   japaneseName: string
 }
 
-const autumnPlants: PlantData[] = [
+const summerPlants: PlantData[] = [
   {
     id: 1,
-    name: 'Momizi',
-    imagePath: '/Plant-aki/aki-momizi.png',
-    japaneseName: 'モミジ',
+    name: 'Taisanboku',
+    imagePath: '/Plant-natu/natu-taisanboku.png',
+    japaneseName: 'タイサンボク',
   },
   {
     id: 2,
-    name: 'Himehukurou',
-    imagePath: '/Plant-aki/aki-himehukurou.png',
-    japaneseName: 'ヒメフクロウ',
+    name: 'Maizurusou',
+    imagePath: '/Plant-natu/natu-maizurusou.png',
+    japaneseName: 'マイズルソウ',
   },
   {
     id: 3,
-    name: 'Ityou',
-    imagePath: '/Plant-aki/aki-ityou.png',
-    japaneseName: 'イチョウ',
+    name: 'Kemansou',
+    imagePath: '/Plant-natu/natu-kemansou.png',
+    japaneseName: 'ケマンソウ',
+  },
+  {
+    id: 4,
+    name: 'Sugi',
+    imagePath: '/Plant-natu/natu-sugi.png',
+    japaneseName: 'スギ',
+  },
+  {
+    id: 5,
+    name: 'Sidareyanagi',
+    imagePath: '/Plant-natu/natu-sidareyanagi.png',
+    japaneseName: 'シダレヤナギ',
+  },
+  {
+    id: 6,
+    name: 'Oobananoenreisou',
+    imagePath: '/Plant-natu/natu-oobananoenreisou.png',
+    japaneseName: 'オオバナノエンレイソウ',
+  },
+  {
+    id: 7,
+    name: 'Kumagaisou',
+    imagePath: '/Plant-natu/natu-kumagaisou.png',
+    japaneseName: 'クマガイソウ',
   },
 ]
 
-const AutumnPlantContainer = styled.div`
+const SummerPlantContainer = styled.div`
   width: 100%;
   position: relative;
   overflow: visible;
   margin-top: 80px;
+  margin-bottom: 80px;
 
   @media (max-width: 768px) {
     margin-bottom: 60px;
@@ -52,9 +77,10 @@ const ContentWrapper = styled.div`
   align-items: flex-start;
   gap: 24px;
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 32px 0 0 0;
   position: relative;
   overflow: visible;
+  flex-direction: row-reverse;
 
   @media (max-width: 768px) {
     gap: 16px;
@@ -69,14 +95,14 @@ const ContentWrapper = styled.div`
 
 const TitleSection = styled.div`
   flex-shrink: 0;
-  margin: 0 20px 0 120px;
+  margin: 0 120px 0 20px;
 
   @media (max-width: 768px) {
-    margin: 0 12px 0 60px;
+    margin: 0 60px 0 12px;
   }
 
   @media (max-width: 480px) {
-    margin: 0 8px 0 40px;
+    margin: 0 40px 0 8px;
   }
 `
 
@@ -90,7 +116,7 @@ const VerticalTitle = styled.div`
   letter-spacing: 0.3em;
   font-family: 'Noto Serif JP', serif;
   span {
-    font-size: 48px;
+    font-size: var(--font-size-5xl);
     font-weight: 700;
     color: var(--color-brown);
   }
@@ -99,7 +125,7 @@ const VerticalTitle = styled.div`
     font-size: var(--font-size-xl);
 
     span {
-      font-size: 36px;
+      font-size: var(--font-size-4xl);
     }
   }
 
@@ -107,7 +133,7 @@ const VerticalTitle = styled.div`
     font-size: var(--font-size-lg);
 
     span {
-      font-size: 28px;
+      font-size: var(--font-size-3xl);
     }
   }
 `
@@ -171,7 +197,7 @@ const NameBarBackground = styled.div`
   position: absolute;
   top: 200px;
   bottom: 0;
-  right: -160px;
+  left: -160px;
   width: 1100px;
   height: 100px;
   border-radius: 8px;
@@ -181,19 +207,19 @@ const NameBarBackground = styled.div`
   transform: translateY(50px);
 
   @media (max-width: 1200px) {
-    right: -13.33%;
+    left: -13.33%;
     width: 91.67%;
   }
 
   @media (max-width: 768px) {
-    right: -10%;
+    left: -10%;
     width: 85%;
     height: 80px;
     top: 150px;
   }
 
   @media (max-width: 480px) {
-    right: -5%;
+    left: -5%;
     width: 80%;
     height: 60px;
     top: 120px;
@@ -256,18 +282,18 @@ const PlantName = styled.span`
   }
 `
 
-const AutumnPlantSlide: React.FC = () => {
+const SummerPlantSlide: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0)
   const galleryRef = useRef<HTMLDivElement>(null)
   const [touchStart, setTouchStart] = useState<number | null>(null)
   const [touchEnd, setTouchEnd] = useState<number | null>(null)
 
   const nextSlide = () => {
-    setCurrentIndex((prevIndex) => (prevIndex === autumnPlants.length - 1 ? 0 : prevIndex + 1))
+    setCurrentIndex((prevIndex) => (prevIndex === summerPlants.length - 1 ? 0 : prevIndex + 1))
   }
 
   const prevSlide = () => {
-    setCurrentIndex((prevIndex) => (prevIndex === 0 ? autumnPlants.length - 1 : prevIndex - 1))
+    setCurrentIndex((prevIndex) => (prevIndex === 0 ? summerPlants.length - 1 : prevIndex - 1))
   }
 
   // タッチスワイプ機能
@@ -295,24 +321,24 @@ const AutumnPlantSlide: React.FC = () => {
     }
   }
 
-  // 3つ全ての植物を表示
+  // 7つ全ての植物を表示
   const getVisiblePlants = () => {
-    return autumnPlants
+    return summerPlants
   }
 
   const visiblePlants = getVisiblePlants()
 
   return (
-    <AutumnPlantContainer>
+    <SummerPlantContainer>
       <ContentWrapper>
-        {/* 左側の縦書きタイトル */}
+        {/* 右側の縦書きタイトル */}
         <TitleSection>
           <VerticalTitle>
-            <span>秋</span>ノ草花
+            <span>夏</span>ノ草花
           </VerticalTitle>
         </TitleSection>
 
-        {/* 右側の植物画像ギャラリー */}
+        {/* 左側の植物画像ギャラリー */}
         <PlantGallery ref={galleryRef} onTouchStart={onTouchStart} onTouchMove={onTouchMove} onTouchEnd={onTouchEnd}>
           {visiblePlants.map((plant, index) => (
             <PlantItem key={`${plant.id}-${currentIndex}-${index}`}>
@@ -334,8 +360,8 @@ const AutumnPlantSlide: React.FC = () => {
         {/* 名前部分の背景バー（長方形） */}
         <NameBarBackground />
       </ContentWrapper>
-    </AutumnPlantContainer>
+    </SummerPlantContainer>
   )
 }
 
-export default AutumnPlantSlide
+export default SummerPlantSlide

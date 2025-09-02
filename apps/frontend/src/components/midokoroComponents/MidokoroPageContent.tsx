@@ -1,9 +1,9 @@
 import HeroSection from './HeroSection'
 import EmaSection from './EmaSection'
 import PlantSection from './PlantSection'
-import SpringPlant from './splingPlant'
-import SummerPlant from './summerPlant'
-import AutumnPlant from './autumnPlant'
+import SpringPlant from './SplingPlant'
+import SummerPlant from './SummerPlant'
+import AutumnPlant from './AutumnPlant'
 import CTASection from './CTASection'
 
 const MidokoroPageContent = () => (

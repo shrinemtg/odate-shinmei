@@ -32,18 +32,31 @@ const Container = styled.div`
 const ContentGrid = styled.div`
   display: grid;
   grid-template-columns: 1fr 2fr 1fr;
-  gap: 40px;
+  gap: 3rem;
   align-items: start;
   min-height: 600px;
 
+  @media (max-width: 1024px) {
+    grid-template-columns: 1.1fr 2fr 1fr;
+    gap: 0.8rem;
+    align-items: start;
+    min-height: 200px;
+  }
+
+  @media (max-width: 900px) {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    min-height: auto;
+  }
+
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
-    gap: 32px;
+    gap: 2rem;
     min-height: auto;
   }
 
   @media (max-width: 480px) {
-    gap: 24px;
+    gap: 1rem;
   }
 `
 
@@ -54,6 +67,15 @@ const TitleArea = styled.div`
   display: flex;
   align-items: flex-start;
   justify-content: center;
+
+  @media (max-width: 900px) {
+    writing-mode: horizontal-tb;
+    text-orientation: initial;
+    height: auto;
+    justify-content: center;
+    margin-bottom: 16px;
+    order: 1; /* モバイルで最初に表示 */
+  }
 
   @media (max-width: 768px) {
     writing-mode: horizontal-tb;
@@ -74,6 +96,20 @@ const MainTitle = styled.h2`
   line-height: 1.8;
   margin: 0;
 
+  @media (max-width: 1024px) {
+    font-size: var(--font-size-4xl);
+    letter-spacing: 0.3em;
+    text-align: center;
+    margin: 0 0 0 5rem;
+  }
+
+  @media (max-width: 900px) {
+    font-size: var(--font-size-4xl);
+    letter-spacing: 0.3em;
+    text-align: center;
+    margin: 4rem auto 0 auto;
+  }
+
   @media (max-width: 768px) {
     font-size: var(--font-size-4xl);
     letter-spacing: 0.3em;
@@ -92,6 +128,11 @@ const CenterArea = styled.div`
   flex-direction: column;
   align-items: center;
   gap: 32px;
+
+  @media (max-width: 900px) {
+    gap: 24px;
+    order: 2; /* モバイルで2番目に表示 */
+  }
 
   @media (max-width: 768px) {
     gap: 24px;
@@ -120,6 +161,12 @@ const MainImage = styled.div`
     object-fit: cover;
   }
 
+  @media (max-width: 900px) {
+    width: 100%;
+    max-width: 400px;
+    height: 320px;
+  }
+
   @media (max-width: 768px) {
     width: 100%;
     max-width: 400px;
@@ -135,7 +182,15 @@ const TextContent = styled.div`
   text-align: center;
   max-width: 600px;
 
+  @media (max-width: 900px) {
+    max-width: 75%;
+  }
+
   @media (max-width: 768px) {
+    max-width: 80%;
+  }
+
+  @media (max-width: 480px) {
     max-width: 100%;
   }
 `
@@ -143,18 +198,23 @@ const TextContent = styled.div`
 const ContentTitle = styled.h3`
   color: var(--color-gray);
   font-family: 'Noto Serif JP', serif;
-  font-size: 28px;
+  font-size: var(--font-size-2xl)
   font-weight: 600;
   margin-bottom: 24px;
   letter-spacing: 0.05em;
 
+  @media (max-width: 900px) {
+    font-size: var(--font-size-xl);
+    margin-bottom: 16px;
+  }
+
   @media (max-width: 768px) {
-    font-size: 24px;
+    font-size: var(--font-size-xl);
     margin-bottom: 16px;
   }
 
   @media (max-width: 480px) {
-    font-size: 20px;
+    font-size: var(--font-size-lg);
     margin-bottom: 12px;
   }
 `
@@ -162,19 +222,25 @@ const ContentTitle = styled.h3`
 const DescriptionText = styled.p`
   color: var(--color-gray);
   font-family: 'Noto Serif JP', serif;
-  font-size: 16px;
+  font-size: var(--font-size-base);
   line-height: 2;
-  margin: 0 24px;
+  margin: 0 0 5rem 0;
   white-space: pre-line;
 
+  @media (max-width: 900px) {
+    font-size: var(--font-size-sm);
+    line-height: 1.8;
+    margin: 0 16px;
+  }
+
   @media (max-width: 768px) {
-    font-size: 15px;
+    font-size: var(--font-size-sm);
     line-height: 1.8;
     margin: 0 16px;
   }
 
   @media (max-width: 480px) {
-    font-size: 14px;
+    font-size: var(--font-size-sm);
     line-height: 1.7;
     margin: 0 8px;
   }
@@ -188,10 +254,17 @@ const RightArea = styled.div`
   height: 100%;
   position: relative;
 
+  @media (max-width: 900px) {
+    align-items: center;
+    justify-content: flex-end;
+
+    order: 3; /* モバイルで3番目に表示 */
+  }
+
   @media (max-width: 768px) {
     align-items: center;
     justify-content: center;
-    height: auto;
+
     order: 3; /* モバイルで3番目に表示 */
   }
 `
@@ -203,25 +276,38 @@ const CatSilhouette = styled.div`
   align-items: center;
   justify-content: center;
   color: var(--color-brown);
-  position: absolute;
-  bottom: -82px;
-  right: 1000px;
+  position: relative;
+  top: 12%;
+  right: 280%;
 
   img {
     width: 100%;
     height: 100%;
     object-fit: contain;
   }
+  @media (max-width: 1024px) {
+    position: relative;
+    top: 12%;
+    right: 280%;
+  }
+
+  @media (max-width: 900px) {
+    position: relative;
+    top: 140%;
+    right: 25%;
+  }
 
   @media (max-width: 768px) {
-    position: static;
-    margin-top: 16px;
+    position: relative;
+    top: 108%;
+    right: 20%;
   }
 
   @media (max-width: 480px) {
     width: 60px;
-    height: 45px;
-    margin-top: 12px;
+    position: relative;
+    top: 82%;
+    right: 20%;
   }
 `
 

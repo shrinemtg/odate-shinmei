@@ -21,7 +21,7 @@ const HeroSectionWrapper = styled.section`
 
   /* 小画面モバイル対応 */
   @media (max-width: 480px) {
-    height: 60vh;
+    height: 65vh;
     min-height: 250px;
     max-height: 400px;
   }

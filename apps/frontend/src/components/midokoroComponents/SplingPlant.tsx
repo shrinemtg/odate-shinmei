@@ -138,7 +138,7 @@ const VerticalTitle = styled.div`
   letter-spacing: 0.3em;
   font-family: 'Noto Serif JP', serif;
   span {
-    font-size: 48px;
+    font-size: var(--font-size-5xl);
     font-weight: 700;
     color: var(--color-brown);
   }
@@ -147,7 +147,7 @@ const VerticalTitle = styled.div`
     font-size: var(--font-size-xl);
 
     span {
-      font-size: 36px;
+      font-size: var(--font-size-4xl);
     }
   }
 
@@ -155,7 +155,7 @@ const VerticalTitle = styled.div`
     font-size: var(--font-size-lg);
 
     span {
-      font-size: 28px;
+      font-size: var(--font-size-3xl);
     }
   }
 `
