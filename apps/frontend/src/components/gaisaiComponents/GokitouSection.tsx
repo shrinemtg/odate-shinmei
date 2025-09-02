@@ -1,119 +1,117 @@
 import styled from '@emotion/styled'
 
 const GokitouSectionWrapper = styled.section`
-  width: 100vw;
-  min-height: 100vh;
+  width: 100%;
   position: relative;
-  padding: 2rem 0;
 
-  @media (min-width: 481px) {
-    padding: 2.5rem 0;
+  @media (max-width: 1024px) {
+    margin: 5rem 0 8rem 0;
   }
 
-  @media (min-width: 769px) {
-    padding: 3rem 0;
+  @media (max-width: 768px) {
+    margin: 5rem 0 8rem 0;
   }
 
-  @media (min-width: 1025px) {
-    padding: 4rem 0;
+  @media (max-width: 480px) {
+    margin: 5rem 0 8rem 0;
   }
 `
 
 const ContentContainer = styled.div`
   width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 1rem;
+  max-width: 90%;
+  margin: 0 0 0 5rem;
   display: flex;
   flex-direction: column;
-  gap: 6rem;
+  gap: 8rem;
 
-  @media (min-width: 481px) {
-    padding: 0 1.5rem;
-    gap: 6rem;
+  @media (max-width: 1024px) {
+    margin: 0 0 0 5rem;
+    gap: 8rem;
   }
 
-  @media (min-width: 769px) {
-    padding: 0 2rem;
-    gap: 6rem;
+  @media (max-width: 768px) {
+    margin: 0 auto;
+    gap: 8rem;
   }
 
-  @media (min-width: 1025px) {
-    padding: 0 3rem;
-    gap: 6rem;
-  }
-
-  @media (min-width: 1201px) {
-    gap: 6rem;
+  @media (max-width: 480px) {
+    margin: 0 auto;
+    gap: 8rem;
   }
 `
 
 const SectionContainer = styled.div`
   width: 100%;
+  max-width: 90%;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1.5rem;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 1rem;
   position: relative;
   margin: 0 auto;
 
-  @media (min-width: 769px) {
-    flex-direction: row;
-    align-items: flex-start;
-    gap: 2rem;
-    max-width: 900px;
+  @media (max-width: 1024px) {
+    width: 100%;
+    max-width: 90%;
   }
 
-  @media (min-width: 1025px) {
-    gap: 3rem;
-    width: 900px;
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    max-width: 900px;
   }
 `
 
 const RightSectionContainer = styled(SectionContainer)`
-  @media (min-width: 769px) {
-    flex-direction: row-reverse;
+  flex-direction: row-reverse;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
   }
 `
 
 const VerticalTitle = styled.h2`
   color: var(--color-brown);
-  font-size: var(--font-size-xl);
+  font-size: var(--font-size-5xl);
   font-weight: 600;
-  writing-mode: horizontal-tb;
-  letter-spacing: 0.2em;
+  writing-mode: vertical-rl;
+  letter-spacing: 0.3em;
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   font-family: var(--font-family-serif);
   line-height: 1.2;
   text-align: center;
-  margin: 0;
+  margin: 0 2rem 0 2rem;
   flex-shrink: 0;
   order: 0;
 
-  @media (min-width: 481px) {
-    font-size: var(--font-size-2xl);
-  }
-
-  @media (min-width: 769px) {
-    writing-mode: vertical-rl;
-    font-size: var(--font-size-3xl);
-    letter-spacing: 0.3em;
+  @media (max-width: 1024px) {
+    font-size: var(--font-size-4xl);
     margin: 0 1.5rem 0 1.5rem;
   }
 
-  @media (min-width: 1025px) {
-    font-size: var(--font-size-4xl);
-    margin: 0 2rem 0 2rem;
+  @media (max-width: 768px) {
+    writing-mode: horizontal-tb;
+    font-size: var(--font-size-3xl);
+    letter-spacing: 0.2em;
+    margin: 0;
+  }
+
+  @media (max-width: 480px) {
+    font-size: var(--font-size-2xl);
   }
 `
 
 const RightVerticalTitle = styled(VerticalTitle)`
-  @media (min-width: 769px) {
+  margin: 0 2rem 0 0;
+
+  @media (max-width: 1024px) {
     margin: 0 1.5rem 0 0;
   }
 
-  @media (min-width: 1025px) {
-    margin: 0 2rem 0 0;
+  @media (max-width: 768px) {
+    margin: 0;
   }
 `
 
@@ -121,79 +119,81 @@ const TextSection = styled.div`
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 1rem;
-  margin: 0;
-  width: 90%;
-  order: 1;
+  gap: 1.5rem;
+  margin: 2rem 0 0 0;
+  width: 100%;
+  order: 0;
 
-  @media (min-width: 481px) {
+  @media (max-width: 1024px) {
+    gap: 1.5rem;
+  }
+
+  @media (max-width: 768px) {
+    gap: 1rem;
+    margin: 0;
+    width: 90%;
+    order: 1;
+  }
+
+  @media (max-width: 480px) {
     gap: 1.25rem;
-  }
-
-  @media (min-width: 769px) {
-    gap: 1.5rem;
-    margin: 2rem 0 0 0;
-    width: 100%;
-    order: 0;
-  }
-
-  @media (min-width: 1025px) {
-    gap: 1.5rem;
   }
 `
 
 const RightTextSection = styled(TextSection)`
-  @media (min-width: 769px) {
+  margin: 2rem 2rem 0 2rem;
+
+  @media (max-width: 1024px) {
     margin: 1.5rem 1.5rem 0 1.5rem;
   }
 
-  @media (min-width: 1025px) {
-    margin: 2rem 2rem 0 2rem;
+  @media (max-width: 768px) {
+    margin: 0;
   }
 `
 
 const Description = styled.div`
   color: var(--color-gray);
-  font-size: var(--font-size-sm);
-  line-height: 1.5;
+  font-size: var(--font-size-base);
+  line-height: 1.6;
   font-family: var(--font-family-sans);
 
-  @media (min-width: 481px) {
+  @media (max-width: 1024px) {
     font-size: var(--font-size-base);
     line-height: 1.6;
   }
 
-  @media (min-width: 769px) {
+  @media (max-width: 768px) {
     font-size: var(--font-size-base);
     line-height: 1.6;
   }
 
-  @media (min-width: 1025px) {
-    font-size: var(--font-size-base);
-    line-height: 1.6;
+  @media (max-width: 480px) {
+    font-size: var(--font-size-sm);
+    line-height: 1.5;
   }
 `
 
 const Paragraph = styled.p`
-  margin-bottom: 0.75rem;
-  font-size: var(--font-size-sm);
+  margin-bottom: 1rem;
+  font-size: var(--font-size-base);
 
   &:last-child {
     margin-bottom: 0;
   }
 
-  @media (min-width: 481px) {
+  @media (max-width: 1024px) {
+    margin-bottom: 1rem;
+    font-size: var(--font-size-base);
+  }
+
+  @media (max-width: 768px) {
+    margin-bottom: 1rem;
+    font-size: var(--font-size-base);
+  }
+
+  @media (max-width: 480px) {
     margin-bottom: 0.875rem;
-    font-size: var(--font-size-base);
-  }
-
-  @media (min-width: 769px) {
-    margin-bottom: 1rem;
-    font-size: var(--font-size-base);
-  }
-
-  @media (min-width: 1025px) {
-    margin-bottom: 1rem;
     font-size: var(--font-size-base);
   }
 `
@@ -202,31 +202,31 @@ const ImageSection = styled.div`
   flex: 1;
   display: flex;
   justify-content: center;
-  align-items: center;
-  width: 90%;
-  order: 2;
+  align-items: flex-end;
+  width: 100%;
+  order: 0;
 
-  @media (min-width: 769px) {
-    order: 0;
-    align-items: flex-end;
-    width: 100%;
+  @media (max-width: 768px) {
+    order: 2;
+    align-items: center;
+    width: 90%;
   }
 `
 
 const SectionImage = styled.img`
-  max-width: 80%;
+  max-width: 100%;
   height: auto;
 
-  @media (min-width: 481px) {
-    max-width: 85%;
-  }
-
-  @media (min-width: 769px) {
+  @media (max-width: 1024px) {
     max-width: 90%;
   }
 
-  @media (min-width: 1025px) {
-    max-width: 100%;
+  @media (max-width: 768px) {
+    max-width: 90%;
+  }
+
+  @media (max-width: 480px) {
+    max-width: 85%;
   }
 `
 

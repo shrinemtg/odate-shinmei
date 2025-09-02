@@ -1,148 +1,128 @@
 import styled from '@emotion/styled'
 
 const GaisaiTopSectionWrapper = styled.section`
-  width: 80%;
-  min-height: 60vh;
+  width: 100%;
   position: relative;
-  padding: 0.5rem;
+  padding: 4rem 0;
   display: flex;
   align-items: center;
   justify-content: center;
 
-  @media (min-width: 355px) {
-    padding: 1rem;
-  }
-  @media (min-width: 481px) {
-    padding: 1.5rem;
-  }
-
-  @media (min-width: 769px) {
+  @media (max-width: 1024px) {
     width: 100%;
     padding: 3rem 0;
   }
 
-  @media (min-width: 1025px) {
+  @media (max-width: 768px) {
     width: 100%;
-    padding: 4rem 0;
+    padding: 1.5rem 0;
+  }
+
+  @media (max-width: 480px) {
+    width: 100%;
+    padding: 0.5rem;
   }
 `
 
 const ContentContainer = styled.div`
   width: 100%;
-  max-width: 800px;
+  max-width: 90%;
   margin: 0 auto;
-  padding: 0 0.5rem;
+  padding: 0 2.5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 1.5rem;
+  gap: 3rem;
 
-  @media (min-width: 355px) {
-    padding: 0 1rem;
-    gap: 2rem;
-  }
-
-  @media (min-width: 481px) {
-    padding: 0 1.5rem;
-    gap: 2.5rem;
-  }
-
-  @media (min-width: 769px) {
+  @media (max-width: 1024px) {
     padding: 0 2rem;
     gap: 3rem;
   }
 
-  @media (min-width: 1025px) {
-    padding: 0 2.5rem;
-    gap: 3rem;
+  @media (max-width: 768px) {
+    padding: 0 1.5rem;
+    gap: 2.5rem;
+  }
+
+  @media (max-width: 480px) {
+    padding: 0 1rem;
+    gap: 2rem;
   }
 `
 
 const Title = styled.h1`
   color: var(--color-brown);
-  font-size: var(--font-size-lg);
+  font-size: var(--font-size-3xl);
   font-weight: 600;
   text-align: center;
-  margin: 0 auto 1rem auto;
+  margin: 2rem auto;
   font-family: var(--font-family-serif);
   width: 100%;
   max-width: 100%;
-  padding: 0 0.5rem;
 
-  @media (min-width: 355px) {
-    font-size: var(--font-size-xl);
-    margin-bottom: 1rem;
-    padding: 0 1rem;
-  }
-
-  @media (min-width: 481px) {
-    font-size: var(--font-size-2xl);
-    margin-bottom: 1.5rem;
-    padding: 0 1rem;
-  }
-
-  @media (min-width: 769px) {
-    font-size: var(--font-size-3xl);
-    margin-bottom: 2rem;
-    padding: 0;
-  }
-
-  @media (min-width: 1025px) {
+  @media (max-width: 1024px) {
     font-size: var(--font-size-4xl);
     margin-bottom: 2rem;
-    padding: 0;
+  }
+
+  @media (max-width: 768px) {
+    font-size: var(--font-size-3xl);
+    margin-bottom: 1.5rem;
+  }
+
+  @media (max-width: 480px) {
+    font-size: var(--font-size-x2l);
+    margin-bottom: 1rem;
   }
 `
 
 const DescriptionContainer = styled.div`
   width: 100%;
-  max-width: 600px;
-  padding: 1rem;
+  max-width: 70%;
+  padding: 2rem 1rem;
   border: 2px solid var(--color-gray);
   border-radius: 8px;
-  margin: 0 auto;
 
-  @media (min-width: 355px) {
-    padding: 1.5rem;
+  @media (max-width: 1024px) {
+    width: 100%;
+    max-width: 68%;
+    padding: 2rem 1rem;
   }
 
-  @media (min-width: 481px) {
-    padding: 2rem;
+  @media (max-width: 768px) {
+    max-width: 80%;
+    padding: 2rem 1rem;
   }
 
-  @media (min-width: 769px) {
-    padding: 2.5rem;
-  }
-
-  @media (min-width: 1025px) {
-    padding: 3rem;
+  @media (max-width: 480px) {
+    padding: 1rem;
   }
 `
 
 const Description = styled.div`
   color: var(--color-gray);
-  font-size: var(--font-size-sm);
-  line-height: 1.6;
+  font-size: var(--font-size-base);
+  line-height: 1.8;
   font-family: var(--font-family-sans);
   text-align: center;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
 
-  @media (min-width: 481px) {
+  @media (max-width: 1024px) {
+    font-size: var(--font-size-base);
+    line-height: 1.8;
+  }
+
+  @media (max-width: 768px) {
     font-size: var(--font-size-base);
     line-height: 1.7;
   }
 
-  @media (min-width: 769px) {
-    font-size: var(--font-size-base);
-    line-height: 1.8;
-  }
-
-  @media (min-width: 1025px) {
-    font-size: var(--font-size-base);
-    line-height: 1.8;
+  @media (max-width: 480px) {
+    font-size: var(--font-size-sm);
+    line-height: 1.6;
   }
 `
 

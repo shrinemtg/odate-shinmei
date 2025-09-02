@@ -39,7 +39,7 @@ const ContentContainer = styled.div`
 `
 
 const MainTitle = styled.h2`
-  font-size: var(--font-size-4xl);
+  font-size: var(--font-size-5xl);
   font-weight: 600;
   color: var(--color-shuiro);
   font-family: var(--font-family-serif);
@@ -47,40 +47,41 @@ const MainTitle = styled.h2`
   text-align: center;
 
   @media (max-width: 1024px) {
-    font-size: var(--font-size-3xl);
+    font-size: var(--font-size-4xl);
   }
 
   @media (max-width: 768px) {
-    font-size: var(--font-size-2xl);
+    font-size: var(--font-size-3xl);
   }
 
   @media (max-width: 480px) {
-    font-size: var(--font-size-xl);
+    font-size: var(--font-size-2xl);
   }
 `
 
 const ImageContainer = styled.div`
   width: 100%;
-  max-width: 800px;
+  max-width: 100%;
   overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 2rem 8rem;
+  padding: 2rem 4rem;
   border: 1px solid var(--color-gray);
   border-radius: 8px;
 
   @media (max-width: 1024px) {
-    max-width: 700px;
+    max-width: 80%;
     padding: 1.5rem 4rem;
   }
 
   @media (max-width: 768px) {
-    max-width: calc(100% - 2rem);
-    padding: 1rem 2rem;
+    max-width: 100%;
+    padding: 1rem 1.5rem;
   }
 
   @media (max-width: 480px) {
+    max-width: 90%;
     padding: 0.75rem 1rem;
   }
 `

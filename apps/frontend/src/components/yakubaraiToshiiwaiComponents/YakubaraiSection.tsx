@@ -3,27 +3,27 @@ import styled from '@emotion/styled'
 const YakubaraiSectionWrapper = styled.section`
   width: 100%;
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 3rem auto;
   padding: 4rem 2rem;
   display: flex;
   align-items: flex-start;
-  gap: 2rem;
 
   @media (max-width: 1024px) {
     padding: 3rem 1.5rem;
-    gap: 1rem;
   }
 
   @media (max-width: 768px) {
+    width: 100%;
+    max-width: 500px;
     flex-direction: column;
     gap: 2rem;
-    padding: 2rem 1rem;
+    padding: 0;
     align-items: center;
   }
 
   @media (max-width: 480px) {
-    padding: 1.5rem 0.5rem;
-    gap: 1.5rem;
+    max-width: 90%;
+    gap: 2rem;
   }
 `
 

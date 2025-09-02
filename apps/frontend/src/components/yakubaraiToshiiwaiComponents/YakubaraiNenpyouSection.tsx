@@ -2,32 +2,31 @@ import styled from '@emotion/styled'
 import { useState, useEffect } from 'react'
 
 const YakubaraiNenpyouSectionWrapper = styled.section`
-  width: 100vw;
-  min-height: 100vh;
+  width: 100%;
+  max-height: 90%;
   position: relative;
   display: flex;
   align-items: center;
 
   @media (max-width: 1024px) {
-    min-height: 90vh;
-    margin: 0 0 0 6rem;
+    max-height: 90%;
   }
 
   @media (max-width: 768px) {
-    min-height: 80vh;
-    margin: 0;
+    max-height: 80%;
+    margin: 0 auto;
   }
 
   @media (max-width: 480px) {
-    min-height: 70vh;
+    max-height: 70%;
     margin: 0;
   }
 `
 
 const ContentContainer = styled.div`
   width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
+  max-width: 80%;
+  margin: 0 0 0 7rem;
   padding: 4rem 2rem;
   display: flex;
   flex-direction: column;
@@ -35,24 +34,31 @@ const ContentContainer = styled.div`
   gap: 3rem;
 
   @media (max-width: 1024px) {
+    width: 100%;
+    max-width: 80%;
+    margin: 0 0 0 7rem;
     padding: 3rem 1.5rem;
     gap: 2rem;
   }
 
   @media (max-width: 768px) {
+    max-width: 90%;
+    margin: 3rem auto 4rem;
     padding: 2rem 1rem;
     gap: 1.5rem;
     align-items: center;
   }
 
   @media (max-width: 480px) {
+    max-width: 100%;
     padding: 1.5rem 0.5rem;
     gap: 1rem;
+    margin: 3rem auto 4rem;
   }
 `
 
 const MainTitle = styled.h2`
-  font-size: var(--font-size-4xl);
+  font-size: var(--font-size-5xl);
   font-weight: 600;
   color: var(--color-shuiro);
   font-family: var(--font-family-serif);
@@ -60,15 +66,15 @@ const MainTitle = styled.h2`
   text-align: center;
 
   @media (max-width: 1024px) {
-    font-size: var(--font-size-3xl);
+    font-size: var(--font-size-4xl);
   }
 
   @media (max-width: 768px) {
-    font-size: var(--font-size-2xl);
+    font-size: var(--font-size-3xl);
   }
 
   @media (max-width: 480px) {
-    font-size: var(--font-size-xl);
+    font-size: var(--font-size-2xl);
   }
 `
 
@@ -106,7 +112,7 @@ const NenpyouImage = styled.img`
 
 const ExplanationText = styled.div`
   width: 100%;
-  max-width: 900px;
+  max-width: 90%;
   color: var(--color-gray);
   font-size: var(--font-size-base);
   line-height: 1.8;
@@ -119,6 +125,8 @@ const ExplanationText = styled.div`
   }
 
   @media (max-width: 1024px) {
+    width: 100%;
+    max-width: 90%;
     font-size: var(--font-size-base);
     line-height: 1.7;
     margin-top: 1.5rem;
@@ -126,9 +134,10 @@ const ExplanationText = styled.div`
 
   @media (max-width: 768px) {
     font-size: var(--font-size-sm);
+    width: 100%;
+    max-width: 90%;
     line-height: 1.6;
     margin-top: 1rem;
-    max-width: 600px;
   }
 
   @media (max-width: 480px) {

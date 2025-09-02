@@ -2,73 +2,73 @@ import styled from '@emotion/styled'
 import { useRouter } from 'next/navigation'
 
 const NengaPackSectionWrapper = styled.section`
-  width: 100vw;
-  min-height: 100vh;
+  width: 100%;
+  max-width: 100%;
   margin: 0 auto 6rem;
   position: relative;
   display: flex;
   align-items: center;
 
   @media (max-width: 1024px) {
-    min-height: 90vh;
+    max-width: 90%;
   }
 
   @media (max-width: 768px) {
-    min-height: 80vh;
+    max-width: 90%;
   }
 
   @media (max-width: 480px) {
-    min-height: 70vh;
+    max-width: 95%;
   }
 `
 
 const ContentContainer = styled.div`
   width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 4rem 2rem;
+  max-width: 100%;
+  margin: 4rem 0 0 8rem;
   display: flex;
   flex-direction: column;
   align-items: center;
 
   @media (max-width: 1024px) {
-    padding: 3rem 1.5rem;
+    margin: 3rem 0 0 6rem;
   }
 
   @media (max-width: 768px) {
-    padding: 2rem 1rem;
+    margin: 2rem 0 0 0;
     align-items: center;
   }
 
   @media (max-width: 480px) {
-    padding: 1.5rem 0.5rem;
+    margin: 2rem 0 0 0;
+    align-items: center;
   }
 `
 
 const MainTitle = styled.h1`
   color: var(--color-gray);
-  font-size: var(--font-size-3xl);
+  font-size: var(--font-size-5xl);
   font-weight: 600;
   text-align: center;
   margin-bottom: 1rem;
   font-family: var(--font-family-serif);
 
   @media (max-width: 1024px) {
-    font-size: var(--font-size-2xl);
+    font-size: var(--font-size-4xl);
   }
 
   @media (max-width: 768px) {
-    font-size: var(--font-size-xl);
+    font-size: var(--font-size-3l);
   }
 
   @media (max-width: 480px) {
-    font-size: var(--font-size-lg);
+    font-size: var(--font-size-2xl);
   }
 `
 
 const PriceTableContainer = styled.div`
   width: 100%;
-  max-width: 900px;
+  max-width: 80%;
   position: relative;
   margin-bottom: 0.5rem;
   display: flex;
@@ -76,26 +76,27 @@ const PriceTableContainer = styled.div`
   justify-content: center;
   align-items: center;
   background: var(--color-oud);
-  padding: 2rem;
+  padding: 2rem 0.5rem;
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   gap: 2rem;
 
   @media (max-width: 1024px) {
-    max-width: 550px;
+    width: 100%;
+    max-width: 80%;
     padding: 1.5rem;
     gap: 1.5rem;
   }
 
   @media (max-width: 768px) {
-    max-width: calc(100% - 2rem);
+    max-width: 100%;
     padding: 1rem;
     gap: 1rem;
   }
 
   @media (max-width: 480px) {
-    max-width: calc(100% - 2rem);
-    padding: 0.75rem;
+    max-width: 100%;
+    padding: 1rem;
     gap: 0.75rem;
   }
 `
@@ -254,7 +255,7 @@ const NengaPackSection = () => {
           </Notes>
         </PriceTableContainer>
         <ExplanationText>
-          <p>大館神明社では1年を通して厄払いや歳祝いの御祈祷を受け付けております</p>
+          <p>厄払いや歳祝いの御祈祷は一年を通して受け付けております。</p>
           <p>ご家族のご都合に合わせお越しください。</p>
         </ExplanationText>
 

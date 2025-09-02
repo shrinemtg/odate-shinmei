@@ -13,14 +13,14 @@ const HeroSectionWrapper = styled.section`
 
   /* 小画面モバイル対応 */
   @media (max-width: 480px) {
-    height: 35vh;
+    height: 45vh;
     min-height: 250px;
-    max-height: 350px;
+    max-height: 400px;
   }
 
   /* モバイル対応 */
   @media (min-width: 481px) and (max-width: 768px) {
-    height: 40vh;
+    height: 45vh;
     min-height: 300px;
     max-height: 400px;
   }
@@ -51,8 +51,8 @@ const BackgroundImage = styled.img`
 
   /* 小画面モバイル対応 */
   @media (max-width: 480px) {
-    top: 0%;
-    height: 130%;
+    top: 20%;
+    height: 100%;
   }
 
   /* モバイル対応 */
@@ -91,7 +91,7 @@ const HeroTitle = styled.h1`
   transform: translate(-50%, -50%);
   z-index: 2;
   color: var(--color-white);
-  font-size: var(--font-size-base);
+  font-size: var(--font-size-xl);
   font-weight: 600;
   writing-mode: vertical-rl;
   text-orientation: upright;

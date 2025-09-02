@@ -15,30 +15,31 @@ const ToshiiwaiSectionWrapper = styled.section`
   @media (max-width: 768px) {
     flex-direction: column;
     gap: 2rem;
-    padding: 2rem 1rem;
+    margin: 0 auto;
+    padding: 0;
     align-items: center;
   }
 
   @media (max-width: 480px) {
-    padding: 1.5rem 0.5rem;
+    padding: 0;
     gap: 1.5rem;
   }
 `
 
 const PhotoSection = styled.div`
   flex: 1;
-  margin: 0 0 0 2rem;
+  margin: 4rem 0 0 3rem;
   display: flex;
   justify-content: center;
   align-items: center;
 
   @media (max-width: 1024px) {
-    margin: 0 0 0 6rem;
+    margin: 3rem 0 0 5rem;
   }
 
   @media (max-width: 768px) {
-    margin: 0;
     order: 3;
+    margin: 0;
     width: 100%;
     justify-content: center;
   }
@@ -47,25 +48,25 @@ const PhotoSection = styled.div`
 const PhotoWrapper = styled.div`
   position: relative;
   width: 100%;
-  max-width: 400px;
+  max-width: 70%;
   height: 300px;
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 
   @media (max-width: 1024px) {
-    max-width: 350px;
+    max-width: 80%;
     height: 250px;
   }
 
   @media (max-width: 768px) {
-    max-width: 300px;
-    height: 200px;
+    max-width: 80%;
+    height: 250px;
   }
 
   @media (max-width: 480px) {
-    max-width: 250px;
-    height: 180px;
+    max-width: 80%;
+    height: 200px;
   }
 
   img {
@@ -79,7 +80,7 @@ const PhotoWrapper = styled.div`
 const ContentSection = styled.div`
   flex: 1;
   display: flex;
-  gap: 1rem;
+  // gap: 1rem;
 
   @media (max-width: 1024px) {
     gap: 0.75rem;
@@ -135,8 +136,9 @@ const TextContent = styled.div`
   font-size: var(--font-size-base);
   line-height: 1.8;
   font-family: var(--font-family-serif);
-  margin: 3rem 0 0 0;
-  padding: 0 1rem;
+  margin: 3rem 1rem 0 0;
+  width: 100%;
+  max-width: 90%;
 
   p {
     margin: 0 0 1.5rem 0;
@@ -149,8 +151,7 @@ const TextContent = styled.div`
   @media (max-width: 1024px) {
     font-size: var(--font-size-base);
     line-height: 1.7;
-    margin: 2rem 0 0 0;
-    padding: 0 0.75rem;
+    margin: 2rem 1rem 0 0;
   }
 
   @media (max-width: 768px) {
@@ -159,15 +160,13 @@ const TextContent = styled.div`
     margin: 0;
     text-align: center;
     order: 2;
-    width: 90%;
-    max-width: 600px;
-    padding: 0 1rem;
+    width: 100%;
+    max-width: 80%;
   }
 
   @media (max-width: 480px) {
     font-size: var(--font-size-xs);
     line-height: 1.5;
-    padding: 0 0.5rem;
   }
 `
 
