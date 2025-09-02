@@ -24,7 +24,8 @@ const TopSection = styled.div`
 
   @media (max-width: 768px) {
     flex-direction: column;
-    padding: 2rem 1rem;
+    padding: 2rem 0;
+    margin: 0;
     gap: 2rem;
     align-items: center;
   }

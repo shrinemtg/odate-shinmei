@@ -123,18 +123,18 @@ const VerticalTitle = styled.h1`
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   font-family: var(--font-family-serif);
   line-height: 1.2;
-  margin: 0 5rem 0 0;
+  margin: 0 4rem 0 0;
   white-space: nowrap;
 
   @media (max-width: 1024px) {
     font-size: var(--font-size-4xl);
-    margin: 0 5rem 0 0;
+    margin: 0 4.5rem 0 0;
   }
 
   @media (max-width: 768px) {
     position: static;
     writing-mode: horizontal-tb;
-    font-size: var(--font-size-2xl);
+    font-size: var(--font-size-3xl);
     text-align: center;
     margin: 0 0 1rem 0;
     letter-spacing: 0.2em;
@@ -142,7 +142,7 @@ const VerticalTitle = styled.h1`
   }
 
   @media (max-width: 480px) {
-    font-size: var(--font-size-xl);
+    font-size: var(--font-size-2xl);
   }
 `
 
@@ -270,7 +270,7 @@ const HatumiyaSection = () => {
   return (
     <HatumiyaSectionWrapper>
       <ContentContainer>
-        <VerticalTitle>初宮参り</VerticalTitle>
+        <VerticalTitle>初宮詣</VerticalTitle>
         <ImageSection>
           <HatumiyaImage src='/life/life-04.png' alt='初宮詣の写真' />
         </ImageSection>

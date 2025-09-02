@@ -190,11 +190,13 @@ const Notice = styled.div`
   flex-direction: column;
   gap: 1rem;
   align-items: center;
+  max-width: 100%;
 
   @media (max-width: 1024px) {
     font-size: var(--font-size-base);
     line-height: 1.5;
     margin: 0 0 0 6rem;
+    max-width: 75%;
   }
 
   @media (max-width: 768px) {
@@ -202,6 +204,7 @@ const Notice = styled.div`
     line-height: 1.4;
     margin-bottom: 1rem;
     margin: 0 auto;
+    max-width: 100%;
   }
 
   @media (max-width: 480px) {
@@ -323,7 +326,7 @@ const TitoseameSection = () => {
           </ImageSection>
         </MainContent>
         <Notice>
-          <Paragraph>大館神明社では 11月だけでなく1年を通して七五三の御祈祷を受け付けております。</Paragraph>
+          <Paragraph>七五三の御祈祷は一年を通して受け付けております。</Paragraph>
           <Paragraph>ご家族のご都合に合わせお越しください。</Paragraph>
         </Notice>
         <ReservationButton onClick={handleReservationClick}>ご予約はコチラ</ReservationButton>

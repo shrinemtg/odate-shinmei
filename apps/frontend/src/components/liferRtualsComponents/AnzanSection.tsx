@@ -1,7 +1,7 @@
 import styled from '@emotion/styled'
 
 const AnzanSectionWrapper = styled.section`
-  width: 100vw;
+  width: 100%;
   min-height: 80vh;
   position: relative;
   overflow: hidden;
@@ -24,31 +24,28 @@ const AnzanSectionWrapper = styled.section`
 `
 
 const VerticalTitle = styled.section`
-  width: 100vw;
-  height: 40vh;
+  width: 100%;
   min-height: 300px;
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 12rem auto 4rem;
+  margin: 1rem auto 1.5rem;
+  font-size: var(--font-size-5xl);
 
   @media (max-width: 1024px) {
-    height: 35vh;
     min-height: 250px;
-    margin: 10rem auto 3rem;
+    margin: 1rem auto 1rem;
   }
 
   @media (max-width: 768px) {
-    height: 30vh;
     min-height: 200px;
-    margin: 6rem auto 2rem;
+    margin: 1rem auto 1rem;
   }
 
   @media (max-width: 480px) {
-    height: 25vh;
     min-height: 150px;
-    margin: 4rem auto 1.5rem;
+    margin: 1rem auto 1rem;
   }
 `
 

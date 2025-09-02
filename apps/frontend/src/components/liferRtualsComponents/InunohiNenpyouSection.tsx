@@ -3,34 +3,31 @@ import { useRouter } from 'next/router'
 import { useState, useEffect } from 'react'
 
 const InunohiNenpyouSectionWrapper = styled.section`
-  width: 68%;
-  max-width: 1200px;
-  margin: 2rem 12rem;
-  padding: 2rem 3rem;
+  width: 80%;
+  max-width: 70%;
+  margin: 5rem 14rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 3rem;
 
   @media (max-width: 1024px) {
-    width: 80%;
-    margin: 1.5rem 6rem;
-    padding: 1.5rem 2rem;
+    width: 90%;
+    margin: 5rem 10rem;
     gap: 2rem;
   }
 
   @media (max-width: 768px) {
-    width: 90%;
-    margin: 1rem 2rem;
-    padding: 1rem 1.5rem;
+    width: 100%;
+    max-width: 90%;
+    margin: 5rem auto;
     gap: 1.5rem;
   }
 
   @media (max-width: 480px) {
-    width: 85%;
-    margin: 0.75rem 1rem;
-    padding: 0.75rem 1rem;
-    gap: 1rem;
+    width: 100%;
+    margin: 5rem auto;
+    gap: 1.5rem;
   }
 `
 
@@ -62,12 +59,12 @@ const ImageContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 2rem 6rem;
+  padding: 2rem 4rem;
   border: 1px solid var(--color-gray);
   border-radius: 8px;
 
   @media (max-width: 1024px) {
-    padding: 1.5rem 4rem;
+    padding: 2rem 4rem;
     width: 80%;
   }
 

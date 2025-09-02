@@ -99,7 +99,6 @@ const ContentContainer = styled.div`
   z-index: 2;
   max-width: 400px;
   width: 100%;
-  padding: 3rem 2rem;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -111,23 +110,18 @@ const ContentContainer = styled.div`
 
   @media (max-width: 1024px) {
     max-width: 350px;
-    padding: 2.5rem 1.5rem;
     right: 3%;
   }
 
   @media (max-width: 768px) {
+    background: rgba(94, 91, 91, 0.51);
     position: relative;
     right: auto;
     top: auto;
     transform: none;
     max-width: 100%;
-    padding: 2rem 1rem;
     align-items: center;
     text-align: center;
-  }
-
-  @media (max-width: 480px) {
-    padding: 1.5rem 0.5rem;
   }
 `
 
@@ -174,7 +168,6 @@ const Description = styled.div`
     line-height: 1.4;
     text-align: center;
     text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
-    background: rgba(128, 128, 128, 0.1);
     padding: 1rem;
     border-radius: 8px;
   }
@@ -298,6 +291,8 @@ const SubContainer = styled.div`
   gap: 1rem;
 
   @media (max-width: 1024px) {
+    width: 90%;
+    max-width: 100%;
     padding: 1.5rem 1.5rem;
   }
 
@@ -339,8 +334,8 @@ const SeizinsikiSection = () => {
       </SeizinsikiSectionWrapper>
       <SubContainer>
         <Notice>
-          <Paragraph>18歳、人生に一度、社会人として大人になる大切な節目をぜひ</Paragraph>
-          <Paragraph>ご友人やご家族とともにお越しください。</Paragraph>
+          <Paragraph>18歳、人生における大切な節目である社会人としての門出を</Paragraph>
+          <Paragraph>ぜひご友人やご家族とともにお迎えください。</Paragraph>
         </Notice>
         <ReservationButton onClick={handleReservationClick}>ご予約はコチラ</ReservationButton>
       </SubContainer>

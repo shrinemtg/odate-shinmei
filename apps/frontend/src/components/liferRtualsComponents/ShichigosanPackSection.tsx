@@ -3,25 +3,25 @@ import { useState, useEffect } from 'react'
 // import { useRouter } from 'next/router'
 
 const ShichigosanPackSectionWrapper = styled.section`
-  width: 100vw;
-  min-height: 100vh;
+  width: 100%;
+  min-height: 100%;
   position: relative;
   display: flex;
   align-items: center;
 
   @media (max-width: 1024px) {
-    min-height: 90vh;
-    margin: 0 0 0 5rem;
+    min-height: 90%;
+    margin: 0;
   }
 
   @media (max-width: 768px) {
-    min-height: auto;
+    min-height: 80%;
     padding: 2rem 0;
     margin: 0;
   }
 
   @media (max-width: 480px) {
-    min-height: auto;
+    min-height: 70%;
     padding: 1rem 0;
     margin: 0;
   }
@@ -29,18 +29,24 @@ const ShichigosanPackSectionWrapper = styled.section`
 
 const ContentContainer = styled.div`
   width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
+  max-width: 80%;
+  margin: 0 0 0 8.5rem;
   padding: 4rem 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
 
   @media (max-width: 1024px) {
+    width: 100%;
+    max-width: 75%;
+    margin: 0 0 0 8.5rem;
     padding: 3rem 1.5rem;
   }
 
   @media (max-width: 768px) {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
     padding: 1rem 1rem;
   }
 
@@ -97,14 +103,14 @@ const PriceTableContainer = styled.div`
     max-width: 80%;
     padding: 0.75rem;
     margin: 0;
-    gap: 0.75rem;
+    gap: 1rem;
   }
 
   @media (max-width: 480px) {
     max-width: 80%;
     padding: 0.5rem;
     margin: 0;
-    gap: 0.5rem;
+    gap: 1rem;
   }
 `
 
@@ -118,11 +124,11 @@ const PriceTableImage = styled.img`
   }
 
   @media (max-width: 768px) {
-    max-width: 90%;
+    max-width: 70%;
   }
 
   @media (max-width: 480px) {
-    max-width: 100%;
+    max-width: 90%;
   }
 `
 
@@ -146,7 +152,7 @@ const Notes = styled.div`
 
   @media (max-width: 768px) {
     text-align: center;
-    font-size: var(--font-size-xs);
+    font-size: var(--font-size-sm);
     line-height: 1.5;
   }
 
