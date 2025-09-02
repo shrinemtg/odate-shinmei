@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import styled from '@emotion/styled'
 import { keyframes } from '@emotion/react'
+import { useRouter } from 'next/router'
 
 // 猫のアニメーション用のkeyframes
 const catWalk = keyframes`
@@ -260,54 +261,62 @@ const WalkingCat = styled.div`
   }
 `
 
-const NenchuSection = () => (
-  <Section>
-    {/* 背景画像 */}
-    <BackgroundImage>
-      <Image
-        src='/backsozai/maturi01.png'
-        alt='祭り背景'
-        layout='fill'
-        objectFit='cover'
-        priority
-        style={{ filter: 'brightness(0.7)' }}
-      />
-    </BackgroundImage>
-    {/* 前面イラスト（大きく中央下） */}
-    <FrontIllustration>
-      <Image
-        src='/backsozai/irasut.png'
-        alt='イラスト'
-        width={800}
-        height={340}
-        style={{ width: '100%', height: 'auto', display: 'block' }}
-        priority
-      />
-    </FrontIllustration>
-    {/* テキストエリア */}
-    <TextArea>
-      {/* 縦書きタイトル */}
-      <VerticalTitle>年中行事</VerticalTitle>
-      {/* 横テキスト＋ボタン */}
-      <ContentContainer>
-        <Description>
-          大館神明社では古くから伝わる伝統行事を通じて、地域の皆様の安寧を祈り、感謝の心を捧げています。
-        </Description>
-        <DetailButton>詳しく見る</DetailButton>
-      </ContentContainer>
-    </TextArea>
-    {/* 歩いている猫 */}
-    <WalkingCat>
-      <Image
-        src='/neko/neko07.gif'
-        alt='歩いている猫'
-        width={120}
-        height={120}
-        style={{ width: '100%', height: 'auto', display: 'block' }}
-        priority
-      />
-    </WalkingCat>
-  </Section>
-)
+const NenchuSection = () => {
+  const router = useRouter()
+
+  const handleDetailClick = () => {
+    router.push('/event')
+  }
+
+  return (
+    <Section>
+      {/* 背景画像 */}
+      <BackgroundImage>
+        <Image
+          src='/backsozai/maturi01.png'
+          alt='祭り背景'
+          layout='fill'
+          objectFit='cover'
+          priority
+          style={{ filter: 'brightness(0.7)' }}
+        />
+      </BackgroundImage>
+      {/* 前面イラスト（大きく中央下） */}
+      <FrontIllustration>
+        <Image
+          src='/backsozai/irasut.png'
+          alt='イラスト'
+          width={800}
+          height={340}
+          style={{ width: '100%', height: 'auto', display: 'block' }}
+          priority
+        />
+      </FrontIllustration>
+      {/* テキストエリア */}
+      <TextArea>
+        {/* 縦書きタイトル */}
+        <VerticalTitle>年中行事</VerticalTitle>
+        {/* 横テキスト＋ボタン */}
+        <ContentContainer>
+          <Description>
+            大館神明社では古くから伝わる伝統行事を通じて、地域の皆様の安寧を祈り、感謝の心を捧げています。
+          </Description>
+          <DetailButton onClick={handleDetailClick}>詳しく見る</DetailButton>
+        </ContentContainer>
+      </TextArea>
+      {/* 歩いている猫 */}
+      <WalkingCat>
+        <Image
+          src='/neko/neko07.gif'
+          alt='歩いている猫'
+          width={120}
+          height={120}
+          style={{ width: '100%', height: 'auto', display: 'block' }}
+          priority
+        />
+      </WalkingCat>
+    </Section>
+  )
+}
 
 export default NenchuSection

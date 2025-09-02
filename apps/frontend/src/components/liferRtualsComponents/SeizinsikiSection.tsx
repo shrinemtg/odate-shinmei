@@ -1,5 +1,4 @@
 import styled from '@emotion/styled'
-import { useRouter } from 'next/navigation'
 
 const SeizinsikiSectionWrapper = styled.section`
   width: 100vw;
@@ -238,7 +237,7 @@ const Notice = styled.div`
   }
 `
 
-const ReservationButton = styled.button`
+const ReservationButton = styled.a`
   background: var(--color-shuiro);
   color: var(--color-white);
   border: none;
@@ -251,6 +250,9 @@ const ReservationButton = styled.button`
   transition: all 0.3s ease;
   align-self: flex-end;
   margin: 2rem auto 3rem;
+  text-decoration: none;
+  display: block;
+  width: fit-content;
 
   &:hover {
     background: #7a2e2b;
@@ -306,12 +308,6 @@ const SubContainer = styled.div`
 `
 
 const SeizinsikiSection = () => {
-  const router = useRouter()
-
-  const handleReservationClick = () => {
-    router.push('/contact/seizinsiki') // 成人式の予約ページにリダイレクト
-  }
-
   return (
     <>
       <VerticalTitle>
@@ -337,7 +333,7 @@ const SeizinsikiSection = () => {
           <Paragraph>18歳、人生における大切な節目である社会人としての門出を</Paragraph>
           <Paragraph>ぜひご友人やご家族とともにお迎えください。</Paragraph>
         </Notice>
-        <ReservationButton onClick={handleReservationClick}>ご予約はコチラ</ReservationButton>
+        <ReservationButton href='/contact'>ご予約はコチラ</ReservationButton>
       </SubContainer>
     </>
   )

@@ -1,5 +1,4 @@
 import styled from '@emotion/styled'
-import { useRouter } from 'next/router'
 
 const TitoseameSectionWrapper = styled.section`
   width: 100vw;
@@ -252,7 +251,7 @@ const TitoseameImage = styled.img`
   }
 `
 
-const ReservationButton = styled.button`
+const ReservationButton = styled.a`
   background: var(--color-shuiro);
   color: var(--color-white);
   border: none;
@@ -265,6 +264,9 @@ const ReservationButton = styled.button`
   transition: all 0.3s ease;
   align-self: flex-end;
   margin: 2rem auto 3rem;
+  text-decoration: none;
+  display: block;
+  width: fit-content;
 
   &:hover {
     background: #7a2e2b;
@@ -295,12 +297,6 @@ const ReservationButton = styled.button`
 `
 
 const TitoseameSection = () => {
-  const router = useRouter()
-
-  const handleReservationClick = () => {
-    router.push('/contact')
-  }
-
   return (
     <TitoseameSectionWrapper>
       <ContentContainer>
@@ -329,7 +325,7 @@ const TitoseameSection = () => {
           <Paragraph>七五三の御祈祷は一年を通して受け付けております。</Paragraph>
           <Paragraph>ご家族のご都合に合わせお越しください。</Paragraph>
         </Notice>
-        <ReservationButton onClick={handleReservationClick}>ご予約はコチラ</ReservationButton>
+        <ReservationButton href='/contact'>ご予約はコチラ</ReservationButton>
       </ContentContainer>
     </TitoseameSectionWrapper>
   )

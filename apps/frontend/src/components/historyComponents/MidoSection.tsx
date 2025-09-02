@@ -1,5 +1,4 @@
 import styled from '@emotion/styled'
-import { useRouter } from 'next/router'
 
 const images = [
   { src: '/his/his-02.png', alt: '花1' },
@@ -215,7 +214,7 @@ const ButtonArea = styled.div`
   }
 `
 
-const MidoButton = styled.button`
+const MidoButton = styled.a`
   background: var(--color-shuiro);
   color: var(--color-white);
   border: none;
@@ -227,6 +226,8 @@ const MidoButton = styled.button`
   letter-spacing: 0.08em;
   cursor: pointer;
   transition: background 0.2s;
+  text-decoration: none;
+  display: inline-block;
 
   &:hover {
     background: #7a2d28;
@@ -240,12 +241,6 @@ const MidoButton = styled.button`
 `
 
 const MidokoroSection = () => {
-  const router = useRouter()
-
-  const handleMidoButtonClick = () => {
-    router.push('/midokoro')
-  }
-
   return (
     <SectionWrapper>
       <TitleArea>
@@ -275,7 +270,7 @@ const MidokoroSection = () => {
             大館神明社を訪れた際には、ぜひこれらの見どころをお楽しみください。
           </DescriptionText>
           <ButtonArea>
-            <MidoButton onClick={handleMidoButtonClick}>大館神明社の見どころを見る</MidoButton>
+            <MidoButton href='/midokoro'>大館神明社の見どころを見る</MidoButton>
           </ButtonArea>
         </DescriptionColumn>
       </DescriptionArea>

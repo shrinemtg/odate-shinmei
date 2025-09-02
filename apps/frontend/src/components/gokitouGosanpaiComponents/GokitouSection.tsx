@@ -1,5 +1,4 @@
 import styled from '@emotion/styled'
-import { useRouter } from 'next/router'
 
 const GokitouSectionWrapper = styled.section`
   width: 100%;
@@ -234,7 +233,7 @@ const SectionContent = styled.div`
   }
 `
 
-const ContactButton = styled.button`
+const ContactButton = styled.a`
   background: var(--color-shuiro);
   color: var(--color-white);
   border: none;
@@ -248,6 +247,7 @@ const ContactButton = styled.button`
   margin: 2rem auto 1rem;
   display: block;
   width: fit-content;
+  text-decoration: none;
 
   &:hover {
     background: #7a2e2b;
@@ -329,7 +329,7 @@ const ImageGrid = styled.div`
   }
 `
 
-const ImageCard = styled.div`
+const ImageCard = styled.a`
   background: var(--color-white);
   border: 1px solid var(--color-oud);
   border-radius: 8px;
@@ -339,6 +339,8 @@ const ImageCard = styled.div`
     transform 0.3s ease,
     box-shadow 0.3s ease;
   cursor: pointer;
+  text-decoration: none;
+  display: block;
 
   &:hover {
     transform: translateY(-4px);
@@ -405,45 +407,26 @@ const ImageWrapper = styled.div`
 `
 
 const GokitouSection = () => {
-  const router = useRouter()
-
-  const handleContactClick = () => {
-    // お問い合わせフォームへの遷移処理
-    router.push('/contact')
-  }
-
-  const handleLifeRtualsClick = () => {
-    router.push('/lifeRtuals')
-  }
-
-  const handleKakusyuGokitouClick = () => {
-    router.push('/kakusyuGokitou')
-  }
-
-  const handleYakubaraiToshiiwaiClick = () => {
-    router.push('/yakubaraiToshiiwai')
-  }
-
-  const handleGaisaiClick = () => {
-    router.push('/gaisai')
-  }
-
   const imageData = [
     {
       id: 1,
       image: '/gokitou/gokitou-02.png',
+      href: '/kakusyuGokitou',
     },
     {
       id: 2,
       image: '/gokitou/gokitou-03.png',
+      href: '/lifeRtuals',
     },
     {
       id: 3,
       image: '/gokitou/gokitou-04.png',
+      href: '/yakubaraiToshiiwai',
     },
     {
       id: 4,
       image: '/gokitou/gokitou-05.png',
+      href: '/gaisai',
     },
   ]
 
@@ -480,33 +463,19 @@ const GokitouSection = () => {
             </Section>
           </SectionContainer>
 
-          <ContactButton onClick={handleContactClick}>お問い合わせフォーム</ContactButton>
+          <ContactButton href='/contact'>お問い合わせフォーム</ContactButton>
         </ContentBox>
       </GokitouSectionWrapper>
 
       <ImageGridSection>
         <ImageGrid>
-          {imageData.map((item) => {
-            let onClickHandler = undefined
-
-            if (item.image === '/gokitou/gokitou-02.png') {
-              onClickHandler = handleKakusyuGokitouClick
-            } else if (item.image === '/gokitou/gokitou-03.png') {
-              onClickHandler = handleLifeRtualsClick
-            } else if (item.image === '/gokitou/gokitou-04.png') {
-              onClickHandler = handleYakubaraiToshiiwaiClick
-            } else if (item.image === '/gokitou/gokitou-05.png') {
-              onClickHandler = handleGaisaiClick
-            }
-
-            return (
-              <ImageCard key={item.id} onClick={onClickHandler}>
-                <ImageWrapper>
-                  <img src={item.image} alt={`祈祷画像${item.id}`} />
-                </ImageWrapper>
-              </ImageCard>
-            )
-          })}
+          {imageData.map((item) => (
+            <ImageCard key={item.id} href={item.href}>
+              <ImageWrapper>
+                <img src={item.image} alt={`祈祷画像${item.id}`} />
+              </ImageWrapper>
+            </ImageCard>
+          ))}
         </ImageGrid>
       </ImageGridSection>
     </>

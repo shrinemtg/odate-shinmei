@@ -108,7 +108,7 @@ const ContactButton = styled.a`
 
   @media (max-width: 480px) {
     padding: 0.625rem 1.25rem;
-    font-size: var(--font-size-xs);
+    font-size: var(--font-size-sm);
   }
 `
 
@@ -130,7 +130,7 @@ const Info = styled.div`
   }
 
   @media (max-width: 480px) {
-    font-size: var(--font-size-xs);
+    font-size: var(--font-size-sm);
     line-height: 1.7;
     margin-top: 9px;
   }
@@ -164,7 +164,7 @@ const ContactSection = () => (
       <br />
       営業時間 午前8時30分～午後17時
     </SubText>
-    <ContactButton href='#contact'>お問い合わせフォーム</ContactButton>
+    <ContactButton href='/contact'>お問い合わせフォーム</ContactButton>
     <Info>
       <PhoneIcon>☎</PhoneIcon> 0816-42-0846
       <br />

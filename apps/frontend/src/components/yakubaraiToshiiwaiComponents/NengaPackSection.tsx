@@ -1,5 +1,4 @@
 import styled from '@emotion/styled'
-import { useRouter } from 'next/navigation'
 
 const NengaPackSectionWrapper = styled.section`
   width: 100%;
@@ -25,13 +24,13 @@ const NengaPackSectionWrapper = styled.section`
 const ContentContainer = styled.div`
   width: 100%;
   max-width: 100%;
-  margin: 4rem 0 0 8rem;
+  margin: 4rem 0 0 4rem;
   display: flex;
   flex-direction: column;
   align-items: center;
 
   @media (max-width: 1024px) {
-    margin: 3rem 0 0 6rem;
+    margin: 3rem 0 0 4rem;
   }
 
   @media (max-width: 768px) {
@@ -194,7 +193,7 @@ const ExplanationText = styled.div`
   }
 `
 
-const ReservationButton = styled.button`
+const ReservationButton = styled.a`
   background: var(--color-shuiro);
   color: var(--color-white);
   border: none;
@@ -208,6 +207,7 @@ const ReservationButton = styled.button`
   margin: 2rem auto 3rem;
   display: block;
   width: fit-content;
+  text-decoration: none;
 
   &:hover {
     background: #7a2e2b;
@@ -236,12 +236,6 @@ const ReservationButton = styled.button`
 `
 
 const NengaPackSection = () => {
-  const router = useRouter()
-
-  const handleReservationClick = () => {
-    router.push('/contact')
-  }
-
   return (
     <NengaPackSectionWrapper>
       <ContentContainer>
@@ -259,7 +253,7 @@ const NengaPackSection = () => {
           <p>ご家族のご都合に合わせお越しください。</p>
         </ExplanationText>
 
-        <ReservationButton onClick={handleReservationClick}>ご予約はコチラ</ReservationButton>
+        <ReservationButton href='/contact'>ご予約はコチラ</ReservationButton>
       </ContentContainer>
     </NengaPackSectionWrapper>
   )

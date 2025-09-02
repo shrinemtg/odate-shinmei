@@ -1,5 +1,4 @@
 import styled from '@emotion/styled'
-import { useRouter } from 'next/router'
 import { useState, useEffect } from 'react'
 
 const InunohiNenpyouSectionWrapper = styled.section`
@@ -84,7 +83,7 @@ const NenpyouImage = styled.img`
   display: block;
 `
 
-const ReservationButton = styled.button`
+const ReservationButton = styled.a`
   background: var(--color-shuiro);
   color: var(--color-white);
   border: none;
@@ -97,6 +96,9 @@ const ReservationButton = styled.button`
   transition: all 0.3s ease;
   align-self: flex-end;
   margin: 2rem auto 3rem;
+  text-decoration: none;
+  display: block;
+  width: fit-content;
 
   &:hover {
     background: #7a2e2b;
@@ -127,7 +129,6 @@ const ReservationButton = styled.button`
 `
 
 const InunohiNenpyouSection = () => {
-  const router = useRouter()
   const [imageSrc, setImageSrc] = useState('/life/life-03.png')
 
   useEffect(() => {
@@ -151,10 +152,6 @@ const InunohiNenpyouSection = () => {
     }
   }, [])
 
-  const handleReservationClick = () => {
-    router.push('/contact')
-  }
-
   return (
     <InunohiNenpyouSectionWrapper>
       <MainTitle>令和7年 戌の日</MainTitle>
@@ -163,7 +160,7 @@ const InunohiNenpyouSection = () => {
         <NenpyouImage src={imageSrc} alt='戌の日早見表' />
       </ImageContainer>
 
-      <ReservationButton onClick={handleReservationClick}>ご予約はコチラ</ReservationButton>
+      <ReservationButton href='/contact'>ご予約はコチラ</ReservationButton>
     </InunohiNenpyouSectionWrapper>
   )
 }

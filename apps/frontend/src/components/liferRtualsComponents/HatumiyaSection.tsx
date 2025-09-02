@@ -1,5 +1,4 @@
 import styled from '@emotion/styled'
-import { useRouter } from 'next/router'
 
 const HatumiyaSectionWrapper = styled.section`
   width: 100vw;
@@ -218,7 +217,7 @@ const Paragraph = styled.p`
   }
 `
 
-const ReservationButton = styled.button`
+const ReservationButton = styled.a`
   background: var(--color-shuiro);
   color: var(--color-white);
   border: none;
@@ -231,6 +230,9 @@ const ReservationButton = styled.button`
   transition: all 0.3s ease;
   align-self: flex-end;
   margin: 2rem auto 3rem;
+  text-decoration: none;
+  display: block;
+  width: fit-content;
 
   &:hover {
     background: #7a2e2b;
@@ -261,12 +263,6 @@ const ReservationButton = styled.button`
 `
 
 const HatumiyaSection = () => {
-  const router = useRouter()
-
-  const handleReservationClick = () => {
-    router.push('/contact')
-  }
-
   return (
     <HatumiyaSectionWrapper>
       <ContentContainer>
@@ -287,7 +283,7 @@ const HatumiyaSection = () => {
               赤ちゃんにとって初めての儀式となりますので、お母さんと赤ちゃんの体調の良い日にお参りすることをお勧めします。
             </Paragraph>
           </Description>
-          <ReservationButton onClick={handleReservationClick}>ご予約はコチラ</ReservationButton>
+          <ReservationButton href='/contact'>ご予約はコチラ</ReservationButton>
         </TextSection>
       </ContentContainer>
     </HatumiyaSectionWrapper>

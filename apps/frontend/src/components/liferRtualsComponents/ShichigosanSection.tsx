@@ -31,8 +31,10 @@ const TopSection = styled.div`
   }
 
   @media (max-width: 480px) {
-    padding: 1.5rem 0.5rem;
-    gap: 1.5rem;
+    padding: 2rem 0;
+    margin: 0;
+    gap: 2rem;
+    align-items: center;
   }
 `
 
