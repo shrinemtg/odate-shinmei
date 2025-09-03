@@ -35,12 +35,13 @@ const ContentContainer = styled.div`
   }
 
   @media (max-width: 768px) {
-    padding: 0 1.5rem;
+    padding: 0;
     gap: 6rem;
+    align-items: center;
   }
 
   @media (max-width: 480px) {
-    padding: 0 1rem;
+    padding: 0;
     gap: 6rem;
   }
 `
@@ -63,8 +64,9 @@ const SectionContainer = styled.div`
     flex-direction: column;
     align-items: center;
     gap: 1.5rem;
-    max-width: 90%;
-    margin: 0;
+    max-width: 100%;
+    margin: 0 auto;
+    text-align: center;
   }
 `
 
@@ -125,14 +127,17 @@ const TextSection = styled.div`
 
   @media (max-width: 768px) {
     gap: 1rem;
-    margin: 0;
-    width: 90%;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 80%;
     order: 1;
+    text-align: center;
   }
 
   @media (max-width: 480px) {
     gap: 1.25rem;
-    width: 90%;
+    width: 100%;
+    max-width: 80%;
     order: 1;
   }
 `
@@ -196,7 +201,8 @@ const ImageSection = styled.div`
   @media (max-width: 768px) {
     order: 2;
     align-items: center;
-    width: 90%;
+    width: 100%;
+    max-width: 80%;
   }
 
   @media (max-width: 480px) {

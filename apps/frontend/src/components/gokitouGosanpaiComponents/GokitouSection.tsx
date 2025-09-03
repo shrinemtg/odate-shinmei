@@ -17,14 +17,14 @@ const GokitouSectionWrapper = styled.section`
     gap: 2.5rem;
   }
 
-  @media (max-width: 767px) {
+  @media (max-width: 768px) {
     width: 100%;
     max-width: 100%;
     padding: 3rem 0;
     gap: 2rem;
   }
 
-  @media (max-width: 374px) {
+  @media (max-width: 480px) {
     width: 100%;
     max-width: 100%;
     padding: 3rem 0;
@@ -42,18 +42,18 @@ const MainTitle = styled.h2`
   margin: 0;
   line-height: 1.2;
 
-  @media (max-width: 1023px) {
+  @media (max-width: 1024px) {
     font-size: var(--font-size-4xl);
   }
 
-  @media (max-width: 767px) {
+  @media (max-width: 768px) {
     writing-mode: horizontal-tb;
     font-size: var(--font-size-3xl);
     text-align: center;
     letter-spacing: 0.1em;
   }
 
-  @media (max-width: 374px) {
+  @media (max-width: 480px) {
     font-size: var(--font-size-2xl);
   }
 `
@@ -67,14 +67,14 @@ const ContentBox = styled.div`
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   box-sizing: border-box;
 
-  @media (max-width: 1023px) {
+  @media (max-width: 1024px) {
     width: calc(90% - 2rem);
     max-width: calc(90% - 2rem);
     padding: 2.5rem 1.5rem;
     margin: 0 1rem;
   }
 
-  @media (max-width: 767px) {
+  @media (max-width: 768px) {
     width: calc(80% - 2rem);
     max-width: calc(80% - 2rem);
     padding: 1.5rem 0.75rem;
@@ -82,7 +82,7 @@ const ContentBox = styled.div`
     margin: 0 1rem;
   }
 
-  @media (max-width: 374px) {
+  @media (max-width: 480px) {
     width: calc(95% - 2rem);
     max-width: calc(320px - 2rem);
     padding: 1rem 0.5rem;
@@ -96,15 +96,15 @@ const SectionContainer = styled.div`
   flex-direction: column;
   gap: 2rem;
 
-  @media (max-width: 1023px) {
+  @media (max-width: 1024px) {
     gap: 1.75rem;
   }
 
-  @media (max-width: 767px) {
+  @media (max-width: 768px) {
     gap: 1.5rem;
   }
 
-  @media (max-width: 374px) {
+  @media (max-width: 480px) {
     gap: 1.25rem;
   }
 `
@@ -119,11 +119,11 @@ const Section = styled.div`
     gap: 1rem;
   }
 
-  @media (max-width: 767px) {
+  @media (max-width: 768px) {
     gap: 0.875rem;
   }
 
-  @media (max-width: 374px) {
+  @media (max-width: 480px) {
     gap: 0.75rem;
   }
 `
@@ -182,7 +182,7 @@ const SectionContent = styled.div`
     margin-bottom: 0.25rem;
   }
 
-  @media (max-width: 1023px) {
+  @media (max-width: 1024px) {
     font-size: var(--font-size-base);
     line-height: 1.7;
 
@@ -196,7 +196,7 @@ const SectionContent = styled.div`
     }
   }
 
-  @media (max-width: 767px) {
+  @media (max-width: 768px) {
     font-size: var(--font-size-sm);
     line-height: 1.6;
 
@@ -214,7 +214,7 @@ const SectionContent = styled.div`
     }
   }
 
-  @media (max-width: 374px) {
+  @media (max-width: 480px) {
     font-size: var(--font-size-xs);
     line-height: 1.5;
 
@@ -289,13 +289,13 @@ const ImageGridSection = styled.section`
     padding: 3rem 3rem;
   }
 
-  @media (max-width: 767px) {
+  @media (max-width: 768px) {
     width: 100%;
     max-width: 100%;
     padding: 2rem 0;
   }
 
-  @media (max-width: 374px) {
+  @media (max-width: 480px) {
     width: 100%;
     max-width: 100%;
     padding: 1.5rem 0;
@@ -313,7 +313,7 @@ const ImageGrid = styled.div`
     margin: 5rem;
   }
 
-  @media (max-width: 767px) {
+  @media (max-width: 768px) {
     grid-template-columns: 1fr;
     gap: 1rem;
     margin: 2rem auto 3rem auto;
@@ -321,7 +321,7 @@ const ImageGrid = styled.div`
     max-width: 400px;
   }
 
-  @media (max-width: 374px) {
+  @media (max-width: 480px) {
     gap: 1rem;
     margin: 1.5rem auto;
     justify-items: center;
@@ -347,7 +347,7 @@ const ImageCard = styled.a`
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
   }
 
-  @media (max-width: 1023px) {
+  @media (max-width: 1024px) {
     border-radius: 6px;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 
@@ -357,7 +357,7 @@ const ImageCard = styled.a`
     }
   }
 
-  @media (max-width: 767px) {
+  @media (max-width: 768px) {
     border-radius: 4px;
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
 
@@ -367,7 +367,7 @@ const ImageCard = styled.a`
     }
   }
 
-  @media (max-width: 374px) {
+  @media (max-width: 480px) {
     border-radius: 3px;
 
     &:hover {
@@ -393,15 +393,15 @@ const ImageWrapper = styled.div`
     object-position: center;
   }
 
-  @media (max-width: 1023px) {
+  @media (max-width: 1024px) {
     height: 250px;
   }
 
-  @media (max-width: 767px) {
+  @media (max-width: 768px) {
     height: 200px;
   }
 
-  @media (max-width: 374px) {
+  @media (max-width: 480px) {
     height: 180px;
   }
 `

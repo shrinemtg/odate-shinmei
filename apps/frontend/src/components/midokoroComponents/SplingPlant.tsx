@@ -118,6 +118,8 @@ const ContentWrapper = styled.div`
 const TitleSection = styled.div`
   flex-shrink: 0;
   margin: 0 20px 0 120px;
+  position: relative;
+  z-index: 10;
 
   @media (max-width: 768px) {
     margin: 0 12px 0 60px;
@@ -137,6 +139,8 @@ const VerticalTitle = styled.div`
   line-height: 1.6;
   letter-spacing: 0.3em;
   font-family: 'Noto Serif JP', serif;
+  position: relative;
+  z-index: 10;
   span {
     font-size: var(--font-size-5xl);
     font-weight: 700;
@@ -225,7 +229,7 @@ const NameBarBackground = styled.div`
   border-radius: 8px;
   background-color: var(--color-shuiro);
   opacity: 1;
-  z-index: 1;
+  z-index: 0;
   transform: translateY(50px);
 
   @media (max-width: 1200px) {

@@ -108,14 +108,13 @@ const List = styled.ul<{ $isMobile: boolean; $isOpen: boolean }>`
     background: var(--color-shuiro);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-top: 1px solid rgba(255, 255, 255, 0.1);
-    display: ${(props) => (props.$isOpen ? 'block' : 'none')};
+    display: ${(props) => (props.$isOpen ? 'flex' : 'none')};
+    flex-direction: column;
+    align-items: center;
     max-height: calc(100vh - 60px);
     overflow-y: auto;
     z-index: 1001;
     text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
   }
 `
 
