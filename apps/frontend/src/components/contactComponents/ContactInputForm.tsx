@@ -273,7 +273,7 @@ const ContactInputForm: React.FC<ContactInputFormProps> = ({ formData, onInputCh
           </Label>
           <Input
             type='text'
-            placeholder='お問い合せ'
+            placeholder='ご予約・お問い合わせ'
             value={formData.subject}
             onChange={(e) => onInputChange('subject', e.target.value)}
             required

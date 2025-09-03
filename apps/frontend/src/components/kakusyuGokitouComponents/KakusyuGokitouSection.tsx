@@ -309,6 +309,51 @@ const SectionImage = styled.img`
   }
 `
 
+const ContactButton = styled.a`
+  background: var(--color-shuiro);
+  color: var(--color-white);
+  border: none;
+  border-radius: 8px;
+  padding: 1rem 2rem;
+  font-size: var(--font-size-base);
+  font-weight: 600;
+  font-family: var(--font-family-serif);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin: 0 auto 1rem;
+  display: block;
+  width: fit-content;
+  text-decoration: none;
+  text-align: center;
+
+  &:hover {
+    background: #7a2e2b;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(153, 58, 55, 0.3);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+
+  @media (max-width: 1024px) {
+    padding: 0.875rem 1.75rem;
+    font-size: var(--font-size-base);
+  }
+
+  @media (max-width: 768px) {
+    align-self: center;
+    padding: 0.75rem 1.5rem;
+    font-size: var(--font-size-sm);
+    margin: 3rem auto 1rem;
+  }
+
+  @media (max-width: 480px) {
+    padding: 0.625rem 1.25rem;
+    font-size: var(--font-size-xs);
+  }
+`
+
 const RightVerticalTitle = styled(VerticalTitle)`
   margin: 0 2rem 0 0;
 
@@ -431,6 +476,9 @@ const KakusyuGokitouSection = () => {
             <SectionImage src='/kakusyuGokitouPhoto/kakusyugokitou-08.png' alt='旅行祈願のイラスト' />
           </TravelImageSection>
         </SectionContainer>
+
+        {/* コンタクトボタン */}
+        <ContactButton href='/contact'>お問い合わせ・ご予約</ContactButton>
       </ContentContainer>
     </KakusyuGokitouSectionWrapper>
   )

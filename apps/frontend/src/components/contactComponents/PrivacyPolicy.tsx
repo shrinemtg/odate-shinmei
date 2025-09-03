@@ -71,6 +71,9 @@ const ContentWrapper = styled.div`
 const PolicyContent = styled.div`
   border-radius: 8px;
   padding: 3rem;
+  border: 3px solid var(--color-shuiro);
+  background-color: var(--color-white);
+  box-shadow: 0 4px 12px rgba(153, 58, 55, 0.1);
 
   font-family: var(--font-family-sans);
   line-height: 1.7;
@@ -78,10 +81,12 @@ const PolicyContent = styled.div`
 
   @media (max-width: 768px) {
     padding: 2rem;
+    border-width: 2px;
   }
 
   @media (max-width: 480px) {
     padding: 1.5rem;
+    border-width: 2px;
   }
 `
 
@@ -150,7 +155,7 @@ const ListItem = styled.li`
 `
 
 const ContactInfo = styled.div`
-  border: 1px solid rgba(187, 167, 123, 0.2);
+  border: 1px solid rgb(187, 167, 123);
   border-radius: 6px;
   padding: 1.5rem;
   margin-top: 1rem;

@@ -406,12 +406,12 @@ const SectionImage = styled.img`
   }
 
   @media (max-width: 768px) {
-    max-width: 240px;
+    max-width: 280px;
     margin: 0 auto;
   }
 
   @media (max-width: 480px) {
-    max-width: 200px;
+    max-width: 250px;
     margin: 0 auto;
   }
 `
