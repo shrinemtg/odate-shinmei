@@ -14,12 +14,12 @@ const IntroSectionWrapper = styled.section`
     padding: 2.5rem 0 2.5rem 0;
   }
 
-  @media (max-width: 767px) {
+  @media (max-width: 768px) {
     min-height: 240px;
     padding: 2rem 0 2.5rem 0;
   }
 
-  @media (max-width: 374px) {
+  @media (max-width: 480px) {
     min-height: 200px;
     padding: 1.5rem 0 2rem 0;
   }
@@ -34,17 +34,17 @@ const IntroTitle = styled.h2`
   margin-bottom: 24px;
   text-align: center;
 
-  @media (max-width: 1023px) {
+  @media (max-width: 1024px) {
     font-size: var(--font-size-3xl);
     margin-bottom: 20px;
   }
 
-  @media (max-width: 767px) {
+  @media (max-width: 768px) {
     font-size: var(--font-size-2xl);
     margin-bottom: 16px;
   }
 
-  @media (max-width: 374px) {
+  @media (max-width: 480px) {
     font-size: var(--font-size-xl);
     margin-bottom: 12px;
   }
@@ -59,24 +59,24 @@ const IntroTextContainer = styled.div`
   max-width: 520px;
   margin: 0 auto 48px auto;
 
-  @media (max-width: 1023px) {
+  @media (max-width: 1024px) {
     font-size: var(--font-size-base);
     line-height: 1.8;
     max-width: 480px;
     margin: 0 auto 40px auto;
   }
 
-  @media (max-width: 767px) {
+  @media (max-width: 768px) {
     font-size: var(--font-size-sm);
     line-height: 1.6;
-    max-width: 90%;
+    max-width: 80%;
     margin: 0 auto 32px auto;
   }
 
-  @media (max-width: 374px) {
-    font-size: var(--font-size-xs);
+  @media (max-width: 480px) {
+    font-size: var(--font-size-sm);
     line-height: 1.5;
-    max-width: 95%;
+    max-width: 80%;
     margin: 0 auto 24px auto;
   }
 `

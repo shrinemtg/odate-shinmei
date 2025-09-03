@@ -6,7 +6,7 @@ const EventSectionWrapper = styled.section`
   position: relative;
   padding: 4rem 0;
 
-  @media (max-width: 1023px) {
+  @media (max-width: 1024px) {
     padding: 3rem 0;
   }
 
@@ -14,62 +14,66 @@ const EventSectionWrapper = styled.section`
     padding: 2rem 0;
   }
 
-  @media (max-width: 374px) {
+  @media (max-width: 480px) {
     padding: 1.5rem 0;
   }
 `
 
 const ContentContainer = styled.div`
   width: 100%;
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 0 3rem;
+  max-width: 100%;
+  margin: 0;
+  padding: 0 0 0 6rem;
   display: flex;
   flex-direction: column;
   gap: 4rem;
 
-  @media (max-width: 1023px) {
+  @media (max-width: 1024px) {
     max-width: 90%;
-    padding: 0 2rem;
+    padding: 0 0 0 6rem;
     gap: 3rem;
   }
 
   @media (max-width: 768px) {
-    max-width: 95%;
-    padding: 0 1rem;
+    max-width: 100%;
+    padding: 0;
     gap: 2.5rem;
   }
 
-  @media (max-width: 374px) {
+  @media (max-width: 480px) {
     max-width: 100%;
-    padding: 0 0.75rem;
+    padding: 0;
     gap: 2rem;
   }
 `
 
 const SectionContainer = styled.div`
-  width: 800px;
+  width: 100%;
+  max-width: 80%;
   display: flex;
   align-items: flex-start;
   position: relative;
-  margin: 0 auto;
+  margin: 0 0 0 3em;
 
-  @media (max-width: 1023px) {
+  @media (max-width: 1024px) {
     width: 100%;
-    margin: 0 0 0 4em;
+    max-width: 90%;
+    margin: 0 0 0 3em;
   }
 
   @media (max-width: 768px) {
     flex-direction: column;
-    gap: 1.5rem;
-    width: 100%;
-    margin: 0 auto;
     align-items: center;
-    text-align: center;
+    gap: 1rem;
+    max-width: 100%;
+    margin: 0 auto;
   }
 
-  @media (max-width: 374px) {
+  @media (max-width: 480px) {
+    flex-direction: column;
+    align-items: center;
     gap: 1rem;
+    max-width: 100%;
     margin: 0 auto;
   }
 `
@@ -77,15 +81,25 @@ const SectionContainer = styled.div`
 const RightSectionContainer = styled(SectionContainer)`
   flex-direction: row-reverse;
 
-  @media (max-width: 1023px) {
+  @media (max-width: 1024px) {
     width: 100%;
+    max-width: 90%;
     margin: 0 0 0 3rem;
   }
   @media (max-width: 768px) {
     flex-direction: column;
-    margin: 0 auto;
     align-items: center;
-    text-align: center;
+    gap: 1.5rem;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  @media (max-width: 480px) {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    max-width: 100%;
+    margin: 0 auto;
   }
 `
 
@@ -102,7 +116,7 @@ const VerticalTitle = styled.h2`
   margin: 0 2rem 0;
   flex-shrink: 0;
 
-  @media (max-width: 1023px) {
+  @media (max-width: 1024px) {
     font-size: var(--font-size-3xl);
     margin: 0 1.5rem 0;
   }
@@ -116,7 +130,7 @@ const VerticalTitle = styled.h2`
     order: 1;
   }
 
-  @media (max-width: 374px) {
+  @media (max-width: 480px) {
     font-size: var(--font-size-xl);
     margin: 0 0 0.75rem 0;
   }
@@ -133,7 +147,7 @@ const MonthText = styled.span`
   white-space: nowrap;
   margin-bottom: 0.5rem;
 
-  @media (max-width: 1023px) {
+  @media (max-width: 1024px) {
     font-size: var(--font-size-xl);
   }
 
@@ -143,7 +157,7 @@ const MonthText = styled.span`
     margin-bottom: 0.25rem;
   }
 
-  @media (max-width: 374px) {
+  @media (max-width: 480px) {
     font-size: var(--font-size-base);
   }
 `
@@ -159,7 +173,7 @@ const EventTitle = styled.span`
   line-height: 1.2;
   white-space: nowrap;
 
-  @media (max-width: 1023px) {
+  @media (max-width: 1024px) {
     font-size: var(--font-size-4xl);
   }
 
@@ -169,7 +183,7 @@ const EventTitle = styled.span`
     letter-spacing: 0.2em;
   }
 
-  @media (max-width: 374px) {
+  @media (max-width: 480px) {
     font-size: var(--font-size-2xl);
   }
 `
@@ -177,7 +191,7 @@ const EventTitle = styled.span`
 const RightVerticalTitle = styled(VerticalTitle)`
   margin: 0 2rem 0 0;
 
-  @media (max-width: 1023px) {
+  @media (max-width: 1024px) {
     margin: 0 1.5rem 0 0;
   }
 
@@ -186,7 +200,7 @@ const RightVerticalTitle = styled(VerticalTitle)`
     order: 1;
   }
 
-  @media (max-width: 374px) {
+  @media (max-width: 480px) {
     margin: 0 0 0.75rem 0;
   }
 `
@@ -198,21 +212,21 @@ const TextSection = styled.div`
   gap: 1.5rem;
   margin: 2rem 0 0 0;
 
-  @media (max-width: 1023px) {
+  @media (max-width: 1024px) {
     gap: 1.25rem;
     margin: 1.5rem 0 0 0;
   }
 
   @media (max-width: 768px) {
     gap: 1rem;
-    margin: 0 auto;
+    margin: 0;
     order: 2;
-    width: 100%;
-    max-width: 80%;
+    width: 90%;
+    max-width: 90%;
     text-align: center;
   }
 
-  @media (max-width: 374px) {
+  @media (max-width: 480px) {
     gap: 0.75rem;
     max-width: 80%;
   }
@@ -221,19 +235,19 @@ const TextSection = styled.div`
 const RightTextSection = styled(TextSection)`
   margin: 2rem 2rem 0 2rem;
 
-  @media (max-width: 1023px) {
+  @media (max-width: 1024px) {
     margin: 1.5rem 1.5rem 0 1.5rem;
   }
 
   @media (max-width: 768px) {
-    margin: 0 auto;
+    margin: 0;
     order: 2;
-    width: 100%;
-    max-width: 80%;
+    width: 90%;
+    max-width: 90%;
     text-align: center;
   }
 
-  @media (max-width: 374px) {
+  @media (max-width: 480px) {
     max-width: 80%;
   }
 `
@@ -245,7 +259,7 @@ const Description = styled.div`
   font-family: var(--font-family-sans);
   margin: 0.5rem 0 0;
 
-  @media (max-width: 1023px) {
+  @media (max-width: 1024px) {
     font-size: var(--font-size-base);
     line-height: 1.5;
     margin: 0.375rem 0 0 0;
@@ -278,7 +292,7 @@ const Paragraph = styled.p`
     margin-bottom: 0;
   }
 
-  @media (max-width: 1023px) {
+  @media (max-width: 1024px) {
     font-size: var(--font-size-base);
     margin-bottom: 0.875rem;
   }
@@ -289,8 +303,8 @@ const Paragraph = styled.p`
     text-align: center;
   }
 
-  @media (max-width: 374px) {
-    font-size: var(--font-size-xs);
+  @media (max-width: 480px) {
+    font-size: var(--font-size-sm);
     margin-bottom: 0.625rem;
   }
 `
@@ -302,7 +316,7 @@ const DateInfo = styled.div`
   margin-top: 1rem;
   font-family: var(--font-family-serif);
 
-  @media (max-width: 1023px) {
+  @media (max-width: 1024px) {
     font-size: var(--font-size-base);
     margin-top: 0.875rem;
   }
@@ -313,7 +327,7 @@ const DateInfo = styled.div`
     text-align: center;
   }
 
-  @media (max-width: 374px) {
+  @media (max-width: 480px) {
     font-size: var(--font-size-xs);
     margin-top: 0.625rem;
   }
@@ -343,7 +357,7 @@ const DetailButton = styled.a`
     outline-offset: 2px;
   }
 
-  @media (max-width: 1023px) {
+  @media (max-width: 1024px) {
     padding: 0.625rem 1.25rem;
     font-size: var(--font-size-sm);
     margin-top: 1.25rem;
@@ -360,7 +374,7 @@ const DetailButton = styled.a`
     margin-right: auto;
   }
 
-  @media (max-width: 374px) {
+  @media (max-width: 480px) {
     padding: 0.5rem 0.875rem;
     font-size: var(--font-size-xs);
     margin-top: 0.875rem;
@@ -382,24 +396,22 @@ const ImageSection = styled.div`
 `
 
 const SectionImage = styled.img`
-  width: 320px;
-  height: 240px;
+  width: 100%;
+  max-width: 320px;
+  height: auto;
   object-fit: cover;
 
-  @media (max-width: 1023px) {
-    width: 280px;
-    height: 210px;
+  @media (max-width: 1024px) {
+    max-width: 280px;
   }
 
   @media (max-width: 768px) {
-    width: 240px;
-    height: 180px;
+    max-width: 240px;
     margin: 0 auto;
   }
 
-  @media (max-width: 374px) {
-    width: 200px;
-    height: 150px;
+  @media (max-width: 480px) {
+    max-width: 200px;
     margin: 0 auto;
   }
 `
@@ -408,7 +420,7 @@ const SectionImage = styled.img`
 const GantanImageSection = styled(ImageSection)`
   margin: 4rem 0 0 0;
 
-  @media (max-width: 1023px) {
+  @media (max-width: 1024px) {
     margin: 3rem 0 0 0;
   }
 
@@ -416,7 +428,7 @@ const GantanImageSection = styled(ImageSection)`
     margin: 1rem 0 2rem 0;
   }
 
-  @media (max-width: 374px) {
+  @media (max-width: 480px) {
     margin: 0.75rem 0 1.5rem 0;
   }
 `
@@ -424,7 +436,7 @@ const GantanImageSection = styled(ImageSection)`
 const ShinnenImageSection = styled(ImageSection)`
   margin: 4.5rem 0 2rem 0;
 
-  @media (max-width: 1023px) {
+  @media (max-width: 1024px) {
     margin: 3.5rem 0 1.5rem 0;
   }
 
@@ -432,7 +444,7 @@ const ShinnenImageSection = styled(ImageSection)`
     margin: 1rem 0 2rem 0;
   }
 
-  @media (max-width: 374px) {
+  @media (max-width: 480px) {
     margin: 0.75rem 0 1.5rem 0;
   }
 `
@@ -440,7 +452,7 @@ const ShinnenImageSection = styled(ImageSection)`
 const YaharaiImageSection = styled(ImageSection)`
   margin: 4rem 0 3rem 0;
 
-  @media (max-width: 1023px) {
+  @media (max-width: 1024px) {
     margin: 3rem 0 2rem 0;
   }
 
@@ -448,7 +460,7 @@ const YaharaiImageSection = styled(ImageSection)`
     margin: 1rem 0 2rem 0;
   }
 
-  @media (max-width: 374px) {
+  @media (max-width: 480px) {
     margin: 0.75rem 0 1.5rem 0;
   }
 `
@@ -456,7 +468,7 @@ const YaharaiImageSection = styled(ImageSection)`
 const NyugakuImageSection = styled(ImageSection)`
   margin: 4.5rem 0 3rem 0;
 
-  @media (max-width: 1023px) {
+  @media (max-width: 1024px) {
     margin: 3.5rem 0 2rem 0;
   }
 
@@ -464,7 +476,7 @@ const NyugakuImageSection = styled(ImageSection)`
     margin: 1rem 0 2rem 0;
   }
 
-  @media (max-width: 374px) {
+  @media (max-width: 480px) {
     margin: 0.75rem 0 1.5rem 0;
   }
 `
@@ -472,7 +484,7 @@ const NyugakuImageSection = styled(ImageSection)`
 const NagoshiImageSection = styled(ImageSection)`
   margin: 4.5rem 0 2rem 0;
 
-  @media (max-width: 1023px) {
+  @media (max-width: 1024px) {
     margin: 3.5rem 0 1.5rem 0;
   }
 
@@ -480,7 +492,7 @@ const NagoshiImageSection = styled(ImageSection)`
     margin: 1rem 0 2rem 0;
   }
 
-  @media (max-width: 374px) {
+  @media (max-width: 480px) {
     margin: 0.75rem 0 1.5rem 0;
   }
 `
@@ -488,7 +500,7 @@ const NagoshiImageSection = styled(ImageSection)`
 const KoreisaiImageSection = styled(ImageSection)`
   margin: 4.5rem 0 2rem 0;
 
-  @media (max-width: 1023px) {
+  @media (max-width: 1024px) {
     margin: 3.5rem 0 1.5rem 0;
   }
 
@@ -496,7 +508,7 @@ const KoreisaiImageSection = styled(ImageSection)`
     margin: 1rem 0 2rem 0;
   }
 
-  @media (max-width: 374px) {
+  @media (max-width: 480px) {
     margin: 0.75rem 0 1.5rem 0;
   }
 `
@@ -504,7 +516,7 @@ const KoreisaiImageSection = styled(ImageSection)`
 const YomiyasaiImageSection = styled(ImageSection)`
   margin: 4.5rem 0 3rem 0;
 
-  @media (max-width: 1023px) {
+  @media (max-width: 1024px) {
     margin: 3.5rem 0 2rem 0;
   }
 
@@ -512,7 +524,7 @@ const YomiyasaiImageSection = styled(ImageSection)`
     margin: 1rem 0 2rem 0;
   }
 
-  @media (max-width: 374px) {
+  @media (max-width: 480px) {
     margin: 0.75rem 0 1.5rem 0;
   }
 `
@@ -520,7 +532,7 @@ const YomiyasaiImageSection = styled(ImageSection)`
 const NichireisaiImageSection = styled(ImageSection)`
   margin: 4.5rem 0 2rem 0;
 
-  @media (max-width: 1023px) {
+  @media (max-width: 1024px) {
     margin: 3.5rem 0 1.5rem 0;
   }
 
@@ -528,7 +540,7 @@ const NichireisaiImageSection = styled(ImageSection)`
     margin: 1rem 0 2rem 0;
   }
 
-  @media (max-width: 374px) {
+  @media (max-width: 480px) {
     margin: 0.75rem 0 1.5rem 0;
   }
 `
@@ -536,7 +548,7 @@ const NichireisaiImageSection = styled(ImageSection)`
 const GoshinkoImageSection = styled(ImageSection)`
   margin: 4.5rem 0 2rem 0;
 
-  @media (max-width: 1023px) {
+  @media (max-width: 1024px) {
     margin: 3.5rem 0 1.5rem 0;
   }
 
@@ -544,7 +556,7 @@ const GoshinkoImageSection = styled(ImageSection)`
     margin: 1rem 0 2rem 0;
   }
 
-  @media (max-width: 374px) {
+  @media (max-width: 480px) {
     margin: 0.75rem 0 1.5rem 0;
   }
 `
@@ -552,7 +564,7 @@ const GoshinkoImageSection = styled(ImageSection)`
 const ShichigosanImageSection = styled(ImageSection)`
   margin: 4.5rem 0 2rem 0;
 
-  @media (max-width: 1023px) {
+  @media (max-width: 1024px) {
     margin: 3.5rem 0 1.5rem 0;
   }
 
@@ -560,7 +572,7 @@ const ShichigosanImageSection = styled(ImageSection)`
     margin: 1rem 0 2rem 0;
   }
 
-  @media (max-width: 374px) {
+  @media (max-width: 480px) {
     margin: 0.75rem 0 1.5rem 0;
   }
 `
@@ -568,7 +580,7 @@ const ShichigosanImageSection = styled(ImageSection)`
 const ToshikoshiImageSection = styled(ImageSection)`
   margin: 6.5rem 0 2rem 0;
 
-  @media (max-width: 1023px) {
+  @media (max-width: 1024px) {
     margin: 5rem 0 1.5rem 0;
   }
 
@@ -576,7 +588,7 @@ const ToshikoshiImageSection = styled(ImageSection)`
     margin: 1rem 0 2rem 0;
   }
 
-  @media (max-width: 374px) {
+  @media (max-width: 480px) {
     margin: 0.75rem 0 1.5rem 0;
   }
 `
@@ -584,7 +596,7 @@ const ToshikoshiImageSection = styled(ImageSection)`
 const ToshikoshiDescription = styled(Description)`
   margin: 1.5rem 0 0 0;
 
-  @media (max-width: 1023px) {
+  @media (max-width: 1024px) {
     margin: 1rem 0 0 0;
   }
 
@@ -595,7 +607,7 @@ const ToshikoshiDescription = styled(Description)`
     max-width: 80%;
   }
 
-  @media (max-width: 374px) {
+  @media (max-width: 480px) {
     margin: 0.125rem auto 0 auto;
   }
 `

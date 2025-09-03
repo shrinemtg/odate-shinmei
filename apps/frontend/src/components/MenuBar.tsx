@@ -24,7 +24,8 @@ const Root = styled.nav<{ $isMobile: boolean; $isScrolled: boolean }>`
   display: flex;
   flex-direction: ${(props) => (props.$isMobile ? 'row' : 'column')};
   align-items: center;
-  justify-content: ${(props) => (props.$isMobile ? 'space-between' : 'flex-start')};
+  justify-content: ${(props) => (props.$isMobile ? 'space-between' : 'center')};
+  text-align: center;
   z-index: 1000;
   box-shadow: 2px 0 8px rgba(0, 0, 0, 0.08);
   margin: ${(props) => (props.$isMobile ? '0' : '8px')};
@@ -36,10 +37,11 @@ const Root = styled.nav<{ $isMobile: boolean; $isScrolled: boolean }>`
     height: 60px;
     border-radius: 0;
     margin: 0;
-    padding: 0 16px;
+    padding: 0;
     position: fixed;
     top: ${(props) => (props.$isScrolled ? '0' : '0')};
     transform: ${(props) => (props.$isScrolled ? 'translateY(0)' : 'translateY(0)')};
+    text-align: center;
   }
 `
 
@@ -48,11 +50,13 @@ const Header = styled.div<{ $isMobile: boolean }>`
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   margin-bottom: ${(props) => (props.$isMobile ? '0' : '60px')};
   cursor: pointer;
 
   @media (max-width: 768px) {
     margin-bottom: 0;
+    margin-left: 1rem;
   }
 `
 
@@ -76,7 +80,7 @@ const HamburgerButton = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-right: 2rem;
+  margin-right: 1rem;
 
   &:hover {
     opacity: 0.7;
@@ -94,6 +98,7 @@ const List = styled.ul<{ $isMobile: boolean; $isOpen: boolean }>`
   margin: 0;
   width: 100%;
   display: ${(props) => (props.$isMobile && !props.$isOpen ? 'none' : 'block')};
+  text-align: center;
 
   @media (max-width: 768px) {
     position: absolute;
@@ -107,6 +112,10 @@ const List = styled.ul<{ $isMobile: boolean; $isOpen: boolean }>`
     max-height: calc(100vh - 60px);
     overflow-y: auto;
     z-index: 1001;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 `
 
@@ -114,10 +123,17 @@ const Item = styled.li<{ $isMobile: boolean }>`
   width: 100%;
   text-align: center;
   margin: ${(props) => (props.$isMobile ? '0' : '12px 0')};
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   @media (max-width: 768px) {
     margin: 0;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
   }
 `
 
@@ -126,9 +142,19 @@ const StyledLink = styled.a<{ $isMobile: boolean }>`
   text-decoration: none;
   font-size: var(--font-size-sm);
   transition: all 0.3s ease;
-  display: inline-block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: ${(props) => (props.$isMobile ? '16px' : '8px')};
   position: relative;
+  width: 100%;
+  text-align: center;
+
+  @media (max-width: 768px) {
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+  }
 
   &::after {
     content: '';
