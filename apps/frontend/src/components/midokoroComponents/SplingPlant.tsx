@@ -123,11 +123,11 @@ const TitleSection = styled.div`
   z-index: 10;
 
   @media (max-width: 768px) {
-    margin: 0 16px 0 60px;
+    margin: 0 32px 0 48px;
   }
 
   @media (max-width: 480px) {
-    margin: 0 16px 0 40px;
+    margin: 0 32px 0 32px;
   }
 `
 

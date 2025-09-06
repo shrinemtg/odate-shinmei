@@ -32,7 +32,7 @@ const GokitouOmamoriSection = () => (
       </Card>
     </Section>
     {/* --- お守りセクション --- */}
-    <Section>
+    <OmamoriSection>
       <Card>
         <LeftCol>
           <LeftImage src='/backsozai/omamori01.png' alt='お守りイメージ' />
@@ -57,7 +57,7 @@ const GokitouOmamoriSection = () => (
           <DetailButton href='/omamori'>詳しく見る</DetailButton>
         </RightCol>
       </Card>
-    </Section>
+    </OmamoriSection>
   </Wrapper>
 )
 
@@ -66,7 +66,6 @@ export default GokitouOmamoriSection
 // ================= styled-components =================
 const Wrapper = styled.div`
   margin: 0;
-  padding: 4rem 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -81,22 +80,42 @@ const Section = styled.section`
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 5rem 0;
+  padding: 9rem 0 0;
   background: url(/top-motion/haikei.png) center center / cover no-repeat;
 
   @media (max-width: 1024px) {
-    padding: 4rem 0;
+    padding: 8rem 0 0;
   }
 
   @media (max-width: 768px) {
-    padding: 3rem 0;
+    padding: 6rem 0 0;
   }
 
   @media (max-width: 480px) {
-    padding: 3rem 0;
+    padding: 4rem 0 0;
   }
 `
 
+const OmamoriSection = styled.section`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 9rem 0;
+  background: url(/top-motion/haikei.png) center center / cover no-repeat;
+
+  @media (max-width: 1024px) {
+    padding: 8rem 0;
+  }
+
+  @media (max-width: 768px) {
+    padding: 6rem 0;
+  }
+
+  @media (max-width: 480px) {
+    padding: 4rem 0;
+  }
+`
 const Card = styled.div`
   display: flex;
   flex-direction: row;

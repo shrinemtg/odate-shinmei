@@ -9,7 +9,6 @@ const Section = styled.section`
   justify-content: center;
   align-items: center;
   position: relative;
-  padding: 4rem 0 0;
   margin: 0;
   overflow: hidden;
 
@@ -35,26 +34,26 @@ const Container = styled.div`
   width: 100%;
   max-width: 900px;
   margin: 0 auto;
-  padding: 32px 0;
+  padding: 6rem 0 0;
   align-items: flex-start;
   background: none;
 
   @media (max-width: 1024px) {
     max-width: 800px;
-    padding: 32px 24px;
+    padding: 5rem 2rem 0;
     justify-content: center;
   }
 
   @media (max-width: 768px) {
     flex-direction: column;
-    padding: 32px 16px;
+    padding: 5rem 1rem 0;
     max-width: 100%;
     align-items: center;
     justify-content: center;
   }
 
   @media (max-width: 480px) {
-    padding: 32px 12px;
+    padding: 5rem 1rem 0;
   }
 `
 
