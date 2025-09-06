@@ -9,17 +9,6 @@ const IntroSectionWrapper = styled.section`
   justify-content: center;
   padding: 48px 0 56px 0;
   background: var(--color-oud) url('/top-motion/haikei.png') center center / cover no-repeat;
-  /* 高解像度ディスプレイ対応 */
-  image-rendering: -webkit-optimize-contrast;
-  image-rendering: crisp-edges;
-  background-attachment: fixed;
-  /* 画像品質の最適化 */
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  -webkit-transform: translateZ(0);
-  transform: translateZ(0);
-  /* スムーズなスケーリング */
-  will-change: transform;
 
   /* 大画面デスクトップ */
   @media (min-width: 1440px) {
@@ -43,15 +32,12 @@ const IntroSectionWrapper = styled.section`
   @media (min-width: 481px) and (max-width: 767px) {
     min-height: 300px;
     padding: 40px 0 48px 0;
-    background-attachment: scroll;
   }
 
   /* モバイル */
   @media (max-width: 480px) {
     min-height: 280px;
     padding: 32px 0 40px 0;
-    background-attachment: scroll;
-    image-rendering: auto;
   }
 `
 

@@ -27,15 +27,6 @@ const IntroContainer = styled(motion.div)`
   z-index: 9999;
   background: url(${haikeiImage}) center center / cover no-repeat;
   overflow: hidden;
-  /* 画像品質の最適化 */
-  image-rendering: -webkit-optimize-contrast;
-  image-rendering: crisp-edges;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  -webkit-transform: translateZ(0);
-  transform: translateZ(0);
-  /* スムーズなスケーリング */
-  will-change: transform;
 `
 
 const CloudElement = styled(motion.div)<{

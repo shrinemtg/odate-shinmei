@@ -58,34 +58,9 @@ const TimelineWrapper = styled.section`
   flex-direction: column;
   align-items: center;
   background: url('/top-motion/haikei.png') center center / cover no-repeat;
-  /* 高解像度ディスプレイ対応 */
-  image-rendering: -webkit-optimize-contrast;
-  image-rendering: crisp-edges;
-  /* 背景画像の品質向上 */
-  background-attachment: fixed;
-  /* スムーズなスケーリング */
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  /* 画像品質の最適化 */
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  -webkit-transform: translateZ(0);
-  transform: translateZ(0);
-  /* スムーズなスケーリング */
-  will-change: transform;
 
   @media (max-width: 768px) {
     padding: 48px 0;
-    /* モバイルでは固定背景を無効化（パフォーマンス向上） */
-    background-attachment: scroll;
-    /* モバイルでの画像品質最適化 */
-    image-rendering: auto;
-  }
-
-  /* 高解像度ディスプレイ（Retina等）対応 */
-  @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-    background-image: url('/top-motion/haikei.png');
   }
 `
 
