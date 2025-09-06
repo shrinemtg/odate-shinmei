@@ -9,23 +9,23 @@ const Section = styled.section`
   justify-content: center;
   align-items: center;
   position: relative;
-  padding: 0;
-  margin: 120px 0;
+  padding: 4rem 0 0;
+  margin: 0;
   overflow: hidden;
 
   @media (max-width: 1024px) {
     min-height: 550px;
-    margin: 80px 0;
+    margin: 0;
   }
 
   @media (max-width: 768px) {
     min-height: 500px;
-    margin: 64px 0;
+    margin: 0;
   }
 
   @media (max-width: 480px) {
     min-height: 450px;
-    margin: 56px 0;
+    margin: 0;
   }
 `
 
@@ -34,26 +34,27 @@ const Container = styled.div`
   flex-direction: row;
   width: 100%;
   max-width: 900px;
-  margin: 32px auto 0 auto;
+  margin: 0 auto;
+  padding: 32px 0;
   align-items: flex-start;
   background: none;
 
   @media (max-width: 1024px) {
     max-width: 800px;
-    padding: 32px 24px 0 24px;
+    padding: 32px 24px;
     justify-content: center;
   }
 
   @media (max-width: 768px) {
     flex-direction: column;
-    padding: 32px 16px 0 16px;
+    padding: 32px 16px;
     max-width: 100%;
     align-items: center;
     justify-content: center;
   }
 
   @media (max-width: 480px) {
-    padding: 32px 12px 0 12px;
+    padding: 32px 12px;
   }
 `
 

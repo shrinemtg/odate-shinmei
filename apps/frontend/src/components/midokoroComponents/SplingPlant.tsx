@@ -98,19 +98,20 @@ const SpringPlantContainer = styled.div`
 const ContentWrapper = styled.div`
   display: flex;
   align-items: flex-start;
-  gap: 24px;
+  gap: 2rem;
   max-width: 1200px;
   margin: 0 auto;
   position: relative;
   overflow: visible;
 
   @media (max-width: 768px) {
-    gap: 16px;
+    align-items: flex-start;
+    gap: 1.5rem;
     padding: 0 16px;
   }
 
   @media (max-width: 480px) {
-    gap: 12px;
+    gap: 1.5rem;
     padding: 0 12px;
   }
 `
@@ -122,11 +123,11 @@ const TitleSection = styled.div`
   z-index: 10;
 
   @media (max-width: 768px) {
-    margin: 0 12px 0 60px;
+    margin: 0 16px 0 60px;
   }
 
   @media (max-width: 480px) {
-    margin: 0 8px 0 40px;
+    margin: 0 16px 0 40px;
   }
 `
 
@@ -166,7 +167,7 @@ const VerticalTitle = styled.div`
 
 const PlantGallery = styled.div`
   display: flex;
-  gap: 16px;
+  gap: 1rem;
   overflow-x: auto;
   flex: 1;
   scroll-behavior: smooth;
@@ -183,11 +184,11 @@ const PlantGallery = styled.div`
   scrollbar-width: none;
 
   @media (max-width: 768px) {
-    gap: 12px;
+    gap: 1rem;
   }
 
   @media (max-width: 480px) {
-    gap: 8px;
+    gap: 0.8rem;
   }
 `
 

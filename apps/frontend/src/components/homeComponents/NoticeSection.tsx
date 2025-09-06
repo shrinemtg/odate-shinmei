@@ -7,37 +7,37 @@ import Link from 'next/link'
 const Section = styled.section`
   width: 100vw;
   background: var(--color-oud);
-  padding: 4rem 0 0 0;
-  margin: 4rem 0;
+  padding: 4rem 0;
+  margin: 0;
   min-height: 20rem;
 
   @media (max-width: 1024px) {
-    padding: 3.5rem 0 0 0;
-    margin: 3.5rem 0;
+    padding: 3.5rem 0;
+    margin: 0;
     min-height: 18.75rem;
   }
 
   @media (max-width: 768px) {
-    padding: 3rem 0 0 0;
-    margin: 3rem 0;
+    padding: 2rem 0;
+    margin: 0;
     min-height: 17.5rem;
   }
 
   @media (max-width: 640px) {
-    padding: 2.5rem 0 0 0;
-    margin: 2.5rem 0;
+    padding: 2rem 0;
+    margin: 0;
     min-height: 16.25rem;
   }
 
   @media (max-width: 480px) {
-    padding: 2rem 0 0 0;
-    margin: 2rem 0;
+    padding: 2rem 0;
+    margin: 0;
     min-height: 15rem;
   }
 
   @media (max-width: 375px) {
-    padding: 2rem 0 0 0;
-    margin: 2rem 0;
+    padding: 2rem 0;
+    margin: 0;
     min-height: 13.75rem;
   }
 `

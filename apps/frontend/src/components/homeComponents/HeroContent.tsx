@@ -91,19 +91,19 @@ const PaperSection = styled.section`
 const DecorativeCloud = styled.div`
   position: absolute;
   right: 0;
-  bottom: 0;
-  width: 220px;
-  height: 120px;
+  bottom: 2rem;
+  width: 300px;
+  height: 220px;
   z-index: 1;
   opacity: 0.8;
 
   @media (max-width: 768px) {
-    width: 147px;
-    height: 80px;
+    width: 180px;
+    height: 120px;
   }
 
   @media (max-width: 480px) {
-    width: 110px;
+    width: 140px;
     height: 60px;
   }
 `
@@ -116,12 +116,12 @@ const ContentContainer = styled.div`
   align-items: center;
   justify-content: center;
   width: 100%;
-  padding: 32px 0;
-  margin-top: 64px;
+  padding: 4rem 0;
+  margin-top: 4rem;
 
   @media (max-width: 768px) {
-    padding: 24px 0;
-    margin-top: 32px;
+    padding: 4rem 0;
+    margin-top: 2rem;
   }
 `
 
@@ -131,10 +131,10 @@ const TextContainer = styled.div`
   align-items: flex-start;
   justify-content: center;
   gap: 0.5rem;
-  margin-bottom: 56px;
+  margin-bottom: 3rem;
 
   @media (max-width: 768px) {
-    margin-bottom: 40px;
+    margin-bottom: 2rem;
     gap: 0.3rem;
   }
 `
@@ -164,13 +164,13 @@ const VerticalText = styled.div<{ isLeft?: boolean }>`
 `
 
 const ImageContainer = styled.div`
-  margin: 0 0 56px 0;
+  margin: 0 0 3rem 0;
   width: min(90vw, 520px);
   max-width: 520px;
   text-align: center;
 
   @media (max-width: 768px) {
-    margin: 0 0 40px 0;
+    margin: 0 0 2rem 0;
     width: min(95vw, 400px);
     max-width: 400px;
   }
@@ -188,20 +188,20 @@ const DescriptionContainer = styled.div`
   text-align: center;
   line-height: 2;
   margin: 0 auto;
-  padding-bottom: 48px;
+  padding-bottom: 3rem;
 
   @media (max-width: 768px) {
     max-width: 90%;
     font-size: 0.9rem;
     line-height: 1.8;
-    padding-bottom: 32px;
+    padding-bottom: 2rem;
   }
 
   @media (max-width: 480px) {
     max-width: 95%;
     font-size: 0.8rem;
     line-height: 1.7;
-    padding-bottom: 24px;
+    padding-bottom: 1.5rem;
   }
 `
 

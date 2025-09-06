@@ -65,13 +65,14 @@ export default GokitouOmamoriSection
 
 // ================= styled-components =================
 const Wrapper = styled.div`
-  margin: 64px 0;
+  margin: 0;
+  padding: 4rem 0;
   display: flex;
   flex-direction: column;
   align-items: center;
 
   @media (max-width: 768px) {
-    margin: 48px 0;
+    margin: 0;
   }
 `
 
@@ -80,19 +81,19 @@ const Section = styled.section`
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 56px 0;
+  padding: 5rem 0;
   background: url(/top-motion/haikei.png) center center / cover no-repeat;
 
   @media (max-width: 1024px) {
-    padding: 40px 0;
+    padding: 4rem 0;
   }
 
   @media (max-width: 768px) {
-    padding: 32px 0;
+    padding: 3rem 0;
   }
 
   @media (max-width: 480px) {
-    padding: 24px 0;
+    padding: 3rem 0;
   }
 `
 

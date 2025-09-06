@@ -140,7 +140,7 @@ const VerticalTitle = styled.div`
 
 const PlantGallery = styled.div`
   display: flex;
-  gap: 16px;
+  gap: 1rem;
   overflow-x: auto;
   flex: 1;
   scroll-behavior: smooth;
@@ -157,11 +157,11 @@ const PlantGallery = styled.div`
   scrollbar-width: none;
 
   @media (max-width: 768px) {
-    gap: 12px;
+    gap: 1rem;
   }
 
   @media (max-width: 480px) {
-    gap: 8px;
+    gap: 0.8rem;
   }
 `
 

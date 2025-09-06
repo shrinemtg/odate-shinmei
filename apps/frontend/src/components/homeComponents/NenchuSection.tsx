@@ -22,7 +22,7 @@ const Section = styled.section`
   align-items: center;
   position: relative;
   padding: 0;
-  margin: 64px 0;
+  margin: 0;
   overflow: hidden;
 
   @media (max-width: 768px) {

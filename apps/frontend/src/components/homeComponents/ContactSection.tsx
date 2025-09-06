@@ -1,28 +1,45 @@
 import styled from '@emotion/styled'
 
 const Wrapper = styled.div`
-  width: 100%;
-  max-width: 520px;
-  margin: 64px auto 120px auto;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: 0;
+  margin-top: 0;
+  margin-bottom: 0;
   border-radius: 0;
   box-shadow: none;
-  padding: 0;
+  padding: 64px 0 120px 0;
   text-align: center;
   font-family: serif;
   color: var(--color-brown);
+  background: url('/top-motion/haikei.png') center center / cover no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 
   @media (max-width: 1024px) {
-    max-width: 480px;
-    margin: 56px auto 100px auto;
+    margin-left: calc(50% - 50vw);
+    margin-right: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 56px 0 100px 0;
   }
 
   @media (max-width: 768px) {
-    margin: 48px auto 100px auto;
-    max-width: 100%;
+    margin-left: calc(50% - 50vw);
+    margin-right: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 48px 0 100px 0;
   }
 
   @media (max-width: 480px) {
-    margin: 40px auto 100px auto;
+    margin-left: calc(50% - 50vw);
+    margin-right: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 40px 0 100px 0;
   }
 `
 
@@ -156,24 +173,49 @@ const PhoneIcon = styled.span`
   }
 `
 
+const ContentContainer = styled.div`
+  max-width: 520px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  @media (max-width: 1024px) {
+    max-width: 480px;
+  }
+
+  @media (max-width: 768px) {
+    max-width: 100%;
+    padding: 0 20px;
+  }
+
+  @media (max-width: 480px) {
+    padding: 0 16px;
+  }
+`
+
 const ContactSection = () => (
   <Wrapper>
-    <Title>大館神明社</Title>
-    <SubText>
-      御用の際は、お気軽にご連絡ください。
-      <br />
-      営業時間 午前8時30分～午後17時
-    </SubText>
-    <ContactButton href='/contact'>お問い合わせフォーム</ContactButton>
-    <Info>
-      <PhoneIcon>☎</PhoneIcon> 0816-42-0846
-      <br />
-      FAX 0816-49-0410
-      <br />
-      〒 017-0867
-      <br />
-      秋田県大館市中神明町1-5
-    </Info>
+    <ContentContainer>
+      <Title>大館神明社</Title>
+      <SubText>
+        御用の際は、お気軽にご連絡ください。
+        <br />
+        営業時間 午前8時30分～午後17時
+      </SubText>
+      <ContactButton href='/contact'>お問い合わせフォーム</ContactButton>
+      <Info>
+        <PhoneIcon>☎</PhoneIcon> 0816-42-0846
+        <br />
+        FAX 0816-49-0410
+        <br />
+        〒 017-0867
+        <br />
+        秋田県大館市中神明町1-5
+      </Info>
+    </ContentContainer>
   </Wrapper>
 )
 
