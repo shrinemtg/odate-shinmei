@@ -13,4 +13,13 @@ body {
   margin: 0;
   padding: 0;
   font-family: var(--font-family-base);
+  /* 画像品質の最適化 */
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+  /* 高解像度ディスプレイ対応 */
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  /* スムーズなスケーリング */
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
 }

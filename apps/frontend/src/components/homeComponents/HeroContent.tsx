@@ -77,6 +77,15 @@ const PaperSection = styled.section`
   justify-content: center;
   overflow: hidden;
   z-index: 5;
+  /* 画像品質の最適化 */
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  /* スムーズなスケーリング */
+  will-change: transform;
 
   @media (max-width: 768px) {
     min-height: 50vh;

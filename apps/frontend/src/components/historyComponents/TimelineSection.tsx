@@ -67,6 +67,13 @@ const TimelineWrapper = styled.section`
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  /* 画像品質の最適化 */
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  /* スムーズなスケーリング */
+  will-change: transform;
 
   @media (max-width: 768px) {
     padding: 48px 0;

@@ -13,6 +13,13 @@ const IntroSectionWrapper = styled.section`
   image-rendering: -webkit-optimize-contrast;
   image-rendering: crisp-edges;
   background-attachment: fixed;
+  /* 画像品質の最適化 */
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  /* スムーズなスケーリング */
+  will-change: transform;
 
   /* 大画面デスクトップ */
   @media (min-width: 1440px) {
