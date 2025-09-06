@@ -6,82 +6,39 @@ import Link from 'next/link'
 
 const Section = styled.section`
   width: 100vw;
-  background: var(--color-oud);
-  // background-image: url('/top-motion/haikei.png');
-  background-position: left center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: scroll;
+  background: url(/top-motion/haikei.png) center center / cover no-repeat;
   padding: 4rem 0 0 0;
   margin: 4rem 0;
   min-height: 20rem;
-  /* 画像品質の最適化 */
-  image-rendering: -webkit-optimize-contrast;
-  image-rendering: crisp-edges;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  -webkit-transform: translateZ(0);
-  transform: translateZ(0);
-  will-change: transform;
 
   @media (max-width: 1024px) {
     padding: 3.5rem 0 0 0;
     margin: 3.5rem 0;
     min-height: 18.75rem;
-    background: var(--color-oud);
-    // background-image: url('/top-motion/haikei.png');
-    background-position: left center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: scroll;
   }
 
   @media (max-width: 768px) {
     padding: 3rem 0 0 0;
     margin: 3rem 0;
     min-height: 17.5rem;
-    background: var(--color-oud);
-    // background-image: url('/top-motion/haikei.png');
-    background-position: left center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: scroll;
   }
 
   @media (max-width: 640px) {
     padding: 2.5rem 0 0 0;
     margin: 2.5rem 0;
     min-height: 16.25rem;
-    background: var(--color-oud);
-    // background-image: url('/top-motion/haikei.png');
-    background-position: left center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: scroll;
   }
 
   @media (max-width: 480px) {
     padding: 2rem 0 0 0;
     margin: 2rem 0;
     min-height: 15rem;
-    background: var(--color-oud);
-    // background-image: url('/top-motion/haikei.png');
-    background-position: left center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: scroll;
   }
 
   @media (max-width: 375px) {
     padding: 1.5rem 0 0 0;
     margin: 1.5rem 0;
     min-height: 13.75rem;
-    background: var(--color-oud);
-    // background-image: url('/top-motion/haikei.png');
-    background-position: left center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: scroll;
   }
 `
 
