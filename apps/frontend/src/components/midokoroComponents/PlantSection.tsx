@@ -4,17 +4,19 @@ const PlantSectionWrapper = styled.section`
   width: 100%;
   padding: 80px 0;
   position: relative;
+  background: var(--color-oud) url('/top-motion/haikei.png') center top / 100% auto repeat-y;
+  background-attachment: fixed;
 
   @media (max-width: 1024px) {
-    padding: 70px 0;
+    padding: 80px 0;
   }
 
   @media (max-width: 768px) {
-    padding: 60px 0;
+    padding: 80px 0;
   }
 
   @media (max-width: 480px) {
-    padding: 40px 0;
+    padding: 80px 0;
   }
 `
 

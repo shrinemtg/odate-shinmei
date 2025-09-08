@@ -2,8 +2,10 @@ import styled from '@emotion/styled'
 
 const EmaSectionWrapper = styled.section`
   /* レイアウト関連 */
-  margin: 4rem auto;
+  padding: 5rem 0 0;
   width: 100%;
+  background: var(--color-oud) url('/top-motion/haikei.png') center top / 100% auto repeat-y;
+  background-attachment: fixed;
 `
 
 const Container = styled.div`
@@ -15,9 +17,6 @@ const Container = styled.div`
   }
 
   @media (max-width: 768px) {
-    // display: flex;
-    // justify-content: center;
-    // align-items: center;
   }
 
   @media (max-width: 480px) {

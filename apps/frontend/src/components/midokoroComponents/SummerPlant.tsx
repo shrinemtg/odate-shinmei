@@ -60,15 +60,16 @@ const SummerPlantContainer = styled.div`
   width: 100%;
   position: relative;
   overflow: visible;
-  margin-top: 80px;
-  margin-bottom: 80px;
+  padding: 80px 0;
+  background: var(--color-oud) url('/top-motion/haikei.png') center top / 100% auto repeat-y;
+  background-attachment: fixed;
 
   @media (max-width: 768px) {
-    margin-bottom: 60px;
+    padding: 60px 0;
   }
 
   @media (max-width: 480px) {
-    margin-bottom: 40px;
+    padding: 40px 0;
   }
 `
 
@@ -77,7 +78,6 @@ const ContentWrapper = styled.div`
   align-items: flex-start;
   gap: 24px;
   max-width: 1200px;
-  margin: 32px 0 0 0;
   position: relative;
   overflow: visible;
   flex-direction: row-reverse;

@@ -34,26 +34,26 @@ const Container = styled.div`
   width: 100%;
   max-width: 900px;
   margin: 0 auto;
-  padding: 6rem 0 0;
+  padding: 0;
   align-items: flex-start;
   background: none;
 
   @media (max-width: 1024px) {
     max-width: 800px;
-    padding: 5rem 2rem 0;
+    padding: 0 2rem;
     justify-content: center;
   }
 
   @media (max-width: 768px) {
     flex-direction: column;
-    padding: 5rem 1rem 0;
+    padding: 0 1rem;
     max-width: 100%;
     align-items: center;
     justify-content: center;
   }
 
   @media (max-width: 480px) {
-    padding: 5rem 1rem 0;
+    padding: 0 1rem;
   }
 `
 

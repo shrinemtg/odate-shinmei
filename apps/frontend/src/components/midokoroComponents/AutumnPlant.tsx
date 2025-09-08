@@ -42,15 +42,8 @@ const AutumnPlantContainer = styled.div`
   width: 100%;
   position: relative;
   overflow: visible;
-  margin-top: 80px;
-
-  @media (max-width: 768px) {
-    margin-bottom: 60px;
-  }
-
-  @media (max-width: 480px) {
-    margin-bottom: 40px;
-  }
+  background: var(--color-oud) url('/top-motion/haikei.png') center top / 100% auto repeat-y;
+  background-attachment: fixed;
 `
 
 const ContentWrapper = styled.div`
