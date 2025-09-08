@@ -8,7 +8,8 @@ const IntroSectionWrapper = styled.section`
   align-items: center;
   justify-content: center;
   padding: 48px 0 56px 0;
-  background: var(--color-oud) url('/top-motion/haikei.png') center center / cover no-repeat;
+  background: var(--color-oud) url('/top-motion/haikei.png') center top / 100% auto repeat-y;
+  background-attachment: fixed;
 
   /* 大画面デスクトップ */
   @media (min-width: 1440px) {

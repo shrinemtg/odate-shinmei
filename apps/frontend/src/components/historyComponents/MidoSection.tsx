@@ -9,7 +9,8 @@ const images = [
 
 const SectionWrapper = styled.section`
   width: 100%;
-  background: var(--color-oud) url('/top-motion/haikei.png') center center / cover no-repeat;
+  background: var(--color-oud) url('/top-motion/haikei.png') center top / 100% auto repeat-y;
+  background-attachment: fixed;
   padding: 64px 0 0 0;
   display: flex;
   flex-direction: column;
