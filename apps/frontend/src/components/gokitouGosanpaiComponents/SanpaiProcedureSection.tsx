@@ -3,24 +3,23 @@ import styled from '@emotion/styled'
 const ProcedureSectionWrapper = styled.section`
   width: 100%;
   max-width: 100%;
-  margin: 4rem auto;
-  padding: 0 2rem;
+  padding: 4rem 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 2rem;
+  background: var(--color-oud) url('/top-motion/haikei.png') center top / 100% auto repeat-y;
+  background-attachment: fixed;
 
   @media (max-width: 1024px) {
     width: 100%;
     max-width: 100%;
-    margin: 3rem auto;
-    padding: 0 1.5rem;
+    padding: 3rem 1.5rem;
     gap: 2rem;
   }
 
   @media (max-width: 768px) {
-    margin: 3rem auto;
-    padding: 0;
+    padding: 3rem 0;
     gap: 2rem;
   }
 `

@@ -2,31 +2,29 @@ import styled from '@emotion/styled'
 
 const GokitouSectionWrapper = styled.section`
   width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
   padding: 4rem 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 3rem;
 
+  background: var(--color-oud) url('/top-motion/haikei.png') center top / 100% auto repeat-y;
+  background-attachment: fixed;
+
   @media (max-width: 1024px) {
     width: 100%;
-    max-width: 75%;
     padding: 3rem 1.5rem;
     gap: 2.5rem;
   }
 
   @media (max-width: 768px) {
     width: 100%;
-    max-width: 100%;
     padding: 3rem 0;
     gap: 2rem;
   }
 
   @media (max-width: 480px) {
     width: 100%;
-    max-width: 100%;
     padding: 3rem 0;
     gap: 1.5rem;
   }
@@ -282,6 +280,8 @@ const ImageGridSection = styled.section`
   max-width: 95%;
   margin: 0 auto;
   padding: 4rem 2rem;
+  background: var(--color-oud) url('/top-motion/haikei.png') center top / 100% auto repeat-y;
+  background-attachment: fixed;
 
   @media (max-width: 1024px) {
     width: 100%;

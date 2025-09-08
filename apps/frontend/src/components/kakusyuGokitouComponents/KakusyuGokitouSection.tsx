@@ -4,9 +4,9 @@ const KakusyuGokitouSectionWrapper = styled.section`
   width: 100%;
   min-height: 100%;
   position: relative;
-  padding: 4rem 0;
-  margin: 4rem 0 3rem;
-
+  padding: 8rem 0;
+  background: var(--color-oud) url('/top-motion/haikei.png') center top / 100% auto repeat-y;
+  background-attachment: fixed;
   @media (max-width: 1024px) {
     padding: 3rem 0;
   }

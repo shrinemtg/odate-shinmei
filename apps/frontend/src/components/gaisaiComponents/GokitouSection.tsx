@@ -3,17 +3,20 @@ import styled from '@emotion/styled'
 const GokitouSectionWrapper = styled.section`
   width: 100%;
   position: relative;
+  background: var(--color-oud) url('/top-motion/haikei.png') center top / 100% auto repeat-y;
+  background-attachment: fixed;
+  padding: 4rem 0;
 
   @media (max-width: 1024px) {
-    margin: 5rem 0 8rem 0;
+    padding: 3rem 0;
   }
 
   @media (max-width: 768px) {
-    margin: 5rem 0 8rem 0;
+    padding: 5rem 0 8rem 0;
   }
 
   @media (max-width: 480px) {
-    margin: 5rem 0 8rem 0;
+    padding: 5rem 0 8rem 0;
   }
 `
 

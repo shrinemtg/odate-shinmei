@@ -7,6 +7,8 @@ const GaisaiTopSectionWrapper = styled.section`
   display: flex;
   align-items: center;
   justify-content: center;
+  background: var(--color-oud) url('/top-motion/haikei.png') center top / 100% auto repeat-y;
+  background-attachment: fixed;
 
   @media (max-width: 1024px) {
     width: 100%;
@@ -53,7 +55,7 @@ const ContentContainer = styled.div`
 
 const Title = styled.h1`
   color: var(--color-brown);
-  font-size: var(--font-size-3xl);
+  font-size: var(--font-size-5xl);
   font-weight: 600;
   text-align: center;
   margin: 2rem auto;
