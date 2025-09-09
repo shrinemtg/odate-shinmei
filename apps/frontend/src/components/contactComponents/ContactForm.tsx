@@ -8,7 +8,8 @@ import ContactErrorPopup from './ContactErrorPopup'
 
 const PageWrapper = styled.div`
   min-height: 100vh;
-  background: var(--color-oud) url('/top-motion/haikei.png') center center / cover no-repeat;
+  background: var(--color-oud) url('/top-motion/haikei.png') center top / 100% auto repeat-y;
+  background-attachment: fixed;
   position: relative;
   overflow: hidden;
 `

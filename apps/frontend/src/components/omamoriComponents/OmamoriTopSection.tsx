@@ -8,6 +8,8 @@ const OmamoriTopSectionWrapper = styled.section`
   display: flex;
   align-items: center;
   justify-content: center;
+  background: var(--color-oud) url('/top-motion/haikei.png') center top / 100% auto repeat-y;
+  background-attachment: fixed;
 
   @media (max-width: 1023px) {
     min-height: 50vh;
