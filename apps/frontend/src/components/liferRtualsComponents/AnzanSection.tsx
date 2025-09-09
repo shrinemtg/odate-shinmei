@@ -30,22 +30,24 @@ const VerticalTitle = styled.section`
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 1rem auto 1.5rem;
   font-size: var(--font-size-5xl);
+  background: var(--color-oud) url('/top-motion/haikei.png') center top / 100% auto repeat-y;
+  background-attachment: fixed;
+  padding: 8rem auto 5rem;
 
   @media (max-width: 1024px) {
     min-height: 250px;
-    margin: 1rem auto 1rem;
+    padding: 6rem auto 1rem;
   }
 
   @media (max-width: 768px) {
     min-height: 200px;
-    margin: 1rem auto 1rem;
+    padding: 4rem auto 1rem;
   }
 
   @media (max-width: 480px) {
     min-height: 150px;
-    margin: 1rem auto 1rem;
+    padding: 3rem auto 1rem;
   }
 `
 
@@ -58,25 +60,27 @@ const VerticalTitleText = styled.h1`
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   font-family: var(--font-family-serif);
   line-height: 1.2;
-  margin: 12rem auto 4rem;
+  padding: 12rem auto 4rem;
+  margin: 6rem 0 2rem;
   white-space: nowrap;
   overflow: hidden;
 
   @media (max-width: 1024px) {
     font-size: var(--font-size-4xl);
-    margin: 10rem auto 3rem;
+    padding: 10rem auto 3rem;
   }
 
   @media (max-width: 768px) {
     writing-mode: horizontal-tb;
     font-size: var(--font-size-3xl);
     text-align: center;
-    margin: 8rem auto 3rem;
+    padding: 8rem auto 3rem;
     letter-spacing: 0.2em;
   }
 
   @media (max-width: 480px) {
     font-size: var(--font-size-2xl);
+    padding: 1rem auto 1rem;
   }
 `
 

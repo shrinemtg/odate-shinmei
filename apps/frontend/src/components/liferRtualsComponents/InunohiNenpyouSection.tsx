@@ -2,30 +2,30 @@ import styled from '@emotion/styled'
 import { useState, useEffect } from 'react'
 
 const InunohiNenpyouSectionWrapper = styled.section`
-  width: 80%;
-  max-width: 70%;
-  margin: 5rem 14rem;
+  width: 100%;
+  padding: 5rem auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 3rem;
+  background: var(--color-oud) url('/top-motion/haikei.png') center top / 100% auto repeat-y;
+  background-attachment: fixed;
 
   @media (max-width: 1024px) {
-    width: 90%;
-    margin: 5rem 10rem;
+    width: 100%;
+    padding: 5rem auto;
     gap: 2rem;
   }
 
   @media (max-width: 768px) {
     width: 100%;
-    max-width: 90%;
-    margin: 5rem auto;
+    padding: 5rem auto;
     gap: 1.5rem;
   }
 
   @media (max-width: 480px) {
     width: 100%;
-    margin: 5rem auto;
+    padding: 5rem auto;
     gap: 1.5rem;
   }
 `
@@ -35,11 +35,12 @@ const MainTitle = styled.h2`
   font-weight: 600;
   color: var(--color-shuiro);
   font-family: var(--font-family-serif);
-  margin: 0;
+  padding: 3rem 0 0;
   text-align: center;
 
   @media (max-width: 1024px) {
     font-size: var(--font-size-3xl);
+    padding: 3rem 0 1rem;
   }
 
   @media (max-width: 768px) {
@@ -52,19 +53,19 @@ const MainTitle = styled.h2`
 `
 
 const ImageContainer = styled.div`
-  width: 100%;
+  width: 60%;
   max-width: 800px;
   overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 2rem 4rem;
+  padding: 2rem 3rem;
   border: 1px solid var(--color-gray);
   border-radius: 8px;
 
   @media (max-width: 1024px) {
-    padding: 2rem 4rem;
-    width: 80%;
+    padding: 2rem 2rem;
+    width: 58%;
   }
 
   @media (max-width: 768px) {

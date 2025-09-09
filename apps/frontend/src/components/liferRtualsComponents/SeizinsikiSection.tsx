@@ -31,24 +31,25 @@ const VerticalTitle = styled.section`
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 4rem auto 4rem;
+  background: var(--color-oud) url('/top-motion/haikei.png') center top / 100% auto repeat-y;
+  background-attachment: fixed;
 
   @media (max-width: 1024px) {
     height: 35vh;
     min-height: 250px;
-    margin: 3rem auto 3rem;
+    padding: 3rem auto 3rem;
   }
 
   @media (max-width: 768px) {
     height: 20vh;
     min-height: 150px;
-    margin: 1rem auto 1rem;
+    padding: 1rem auto 1rem;
   }
 
   @media (max-width: 480px) {
     height: 15vh;
     min-height: 100px;
-    margin: 0.5rem auto 0.5rem;
+    padding: 0.5rem auto 0.5rem;
   }
 `
 
@@ -61,20 +62,20 @@ const VerticalTitleText = styled.h1`
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   font-family: var(--font-family-serif);
   line-height: 1.2;
-  margin: 12rem auto 4rem;
+  padding: 8rem auto 4rem;
   white-space: nowrap;
   overflow: hidden;
 
   @media (max-width: 1024px) {
     font-size: var(--font-size-4xl);
-    margin: 10rem auto 3rem;
+    padding: 10rem auto 3rem;
   }
 
   @media (max-width: 768px) {
     writing-mode: horizontal-tb;
     font-size: var(--font-size-3xl);
     text-align: center;
-    margin: 0;
+    padding: 0;
     letter-spacing: 0.2em;
   }
 
@@ -284,16 +285,17 @@ const ReservationButton = styled.a`
 
 const SubContainer = styled.div`
   width: 100%;
-  max-width: 1000px;
-  margin: 0 auto;
+  // max-width: 1000px;
   padding: 2rem 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 1rem;
+  background: var(--color-oud) url('/top-motion/haikei.png') center top / 100% auto repeat-y;
+  background-attachment: fixed;
 
   @media (max-width: 1024px) {
-    width: 90%;
+    width: 100%;
     max-width: 100%;
     padding: 1.5rem 1.5rem;
   }

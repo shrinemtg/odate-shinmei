@@ -6,6 +6,8 @@ const ShichigosanSectionWrapper = styled.section`
   position: relative;
   display: flex;
   flex-direction: column;
+  background: var(--color-oud) url('/top-motion/haikei.png') center top / 100% auto repeat-y;
+  background-attachment: fixed;
 `
 
 const TopSection = styled.div`
