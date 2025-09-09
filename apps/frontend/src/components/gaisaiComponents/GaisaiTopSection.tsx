@@ -22,7 +22,7 @@ const GaisaiTopSectionWrapper = styled.section`
 
   @media (max-width: 480px) {
     width: 100%;
-    padding: 0.5rem;
+    padding: 0.5rem 0;
   }
 `
 
@@ -74,7 +74,7 @@ const Title = styled.h1`
   }
 
   @media (max-width: 480px) {
-    font-size: var(--font-size-x2l);
+    font-size: var(--font-size-2xl);
     margin-bottom: 1rem;
   }
 `
