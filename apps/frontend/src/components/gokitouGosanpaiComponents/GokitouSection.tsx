@@ -1,8 +1,8 @@
 import styled from '@emotion/styled'
 
 const GokitouSectionWrapper = styled.section`
-  width: 100%;
-  padding: 4rem 2rem;
+  width: 100vw;
+  padding: 4rem 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -12,19 +12,19 @@ const GokitouSectionWrapper = styled.section`
   background-attachment: fixed;
 
   @media (max-width: 1024px) {
-    width: 100%;
-    padding: 3rem 1.5rem;
+    width: 100vw;
+    padding: 3rem 0;
     gap: 2.5rem;
   }
 
   @media (max-width: 768px) {
-    width: 100%;
+    width: 100vw;
     padding: 3rem 0;
     gap: 2rem;
   }
 
   @media (max-width: 480px) {
-    width: 100%;
+    width: 100vw;
     padding: 3rem 0;
     gap: 1.5rem;
   }
@@ -58,26 +58,25 @@ const MainTitle = styled.h2`
 
 const ContentBox = styled.div`
   width: 100%;
-  max-width: 800px;
+  max-width: 750px;
   border: 2px solid var(--color-gray);
   border-radius: 8px;
   padding: 3rem 2rem;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   box-sizing: border-box;
+  margin: 0 auto;
 
   @media (max-width: 1024px) {
-    width: calc(90% - 2rem);
-    max-width: calc(90% - 2rem);
+    width: calc(72% - 3rem);
     padding: 2.5rem 1.5rem;
-    margin: 0 1rem;
+    margin: 0 auto;
   }
 
   @media (max-width: 768px) {
-    width: calc(80% - 2rem);
-    max-width: calc(80% - 2rem);
+    width: calc(90% - 2rem);
     padding: 1.5rem 0.75rem;
     border-radius: 8px;
-    margin: 0 1rem;
+    margin: 0 auto;
   }
 
   @media (max-width: 480px) {
@@ -85,7 +84,7 @@ const ContentBox = styled.div`
     max-width: calc(320px - 2rem);
     padding: 1rem 0.5rem;
     border-radius: 4px;
-    margin: 0 1rem;
+    margin: 0 auto;
   }
 `
 

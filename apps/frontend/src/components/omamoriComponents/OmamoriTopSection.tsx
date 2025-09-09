@@ -86,7 +86,6 @@ const DescriptionContainer = styled.div`
   width: 100%;
   max-width: 600px;
   padding: 2rem;
-  border: 1px solid var(--color-gray);
   border-radius: 8px;
 
   @media (max-width: 1024px) {
