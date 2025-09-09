@@ -209,7 +209,7 @@ const Notice = styled.div`
   color: var(--color-gray);
   font-size: var(--font-size-base);
   line-height: 1.6;
-  margin-bottom: 2rem;
+  margin: 2rem;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -250,7 +250,7 @@ const ReservationButton = styled.a`
   cursor: pointer;
   transition: all 0.3s ease;
   align-self: flex-end;
-  margin: 2rem auto 3rem;
+  margin: 2rem auto 10rem;
   text-decoration: none;
   display: block;
   width: fit-content;
@@ -285,8 +285,7 @@ const ReservationButton = styled.a`
 
 const SubContainer = styled.div`
   width: 100%;
-  // max-width: 1000px;
-  padding: 2rem 2rem;
+  padding: 4rem auto;
   display: flex;
   flex-direction: column;
   align-items: center;
