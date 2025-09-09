@@ -7,6 +7,8 @@ const ToshiiwaiSectionWrapper = styled.section`
   padding: 4rem 2rem;
   display: flex;
   align-items: flex-start;
+  background: var(--color-oud) url('/top-motion/haikei.png') center top / 100% auto repeat-y;
+  background-attachment: fixed;
 
   @media (max-width: 1024px) {
     padding: 3rem 1.5rem;

@@ -1,23 +1,27 @@
 import styled from '@emotion/styled'
 
 const NengaPackSectionWrapper = styled.section`
-  width: 100%;
-  max-width: 100%;
-  margin: 0 auto 6rem;
+  width: 100vw;
+  padding: 6rem 0;
   position: relative;
   display: flex;
   align-items: center;
+  background: var(--color-oud) url('/top-motion/haikei.png') center top / 100% auto repeat-y;
+  background-attachment: fixed;
 
   @media (max-width: 1024px) {
-    max-width: 90%;
+    width: 100vw;
+    padding: 5rem 0;
   }
 
   @media (max-width: 768px) {
-    max-width: 90%;
+    width: 100vw;
+    padding: 4rem 0;
   }
 
   @media (max-width: 480px) {
-    max-width: 95%;
+    width: 100vw;
+    padding: 3rem 0;
   }
 `
 
@@ -57,7 +61,7 @@ const MainTitle = styled.h1`
   }
 
   @media (max-width: 768px) {
-    font-size: var(--font-size-3l);
+    font-size: var(--font-size-3xl);
   }
 
   @media (max-width: 480px) {
@@ -82,19 +86,19 @@ const PriceTableContainer = styled.div`
 
   @media (max-width: 1024px) {
     width: 100%;
-    max-width: 80%;
+    max-width: 70%;
     padding: 1.5rem;
     gap: 1.5rem;
   }
 
   @media (max-width: 768px) {
-    max-width: 100%;
+    max-width: 90%;
     padding: 1rem;
     gap: 1rem;
   }
 
   @media (max-width: 480px) {
-    max-width: 100%;
+    max-width: 90%;
     padding: 1rem;
     gap: 0.75rem;
   }

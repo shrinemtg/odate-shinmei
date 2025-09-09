@@ -1,29 +1,30 @@
 import styled from '@emotion/styled'
 
 const YakubaraiSectionWrapper = styled.section`
-  width: 100%;
-  max-width: 1200px;
-  margin: 3rem auto;
+  width: 100vw;
   padding: 4rem 2rem;
   display: flex;
   align-items: flex-start;
+  background: var(--color-oud) url('/top-motion/haikei.png') center top / 100% auto repeat-y;
+  background-attachment: fixed;
 
   @media (max-width: 1024px) {
     padding: 3rem 1.5rem;
   }
 
   @media (max-width: 768px) {
-    width: 100%;
-    max-width: 500px;
+    width: 100vw;
     flex-direction: column;
     gap: 2rem;
-    padding: 0;
+    padding: 3rem 1rem;
     align-items: center;
   }
 
   @media (max-width: 480px) {
-    max-width: 90%;
+    width: 100vw;
+    padding: 2rem 0.5rem;
     gap: 2rem;
+    align-items: center;
   }
 `
 
@@ -46,6 +47,7 @@ const ContentSection = styled.div`
 
   @media (max-width: 480px) {
     gap: 1rem;
+    align-items: center;
   }
 `
 

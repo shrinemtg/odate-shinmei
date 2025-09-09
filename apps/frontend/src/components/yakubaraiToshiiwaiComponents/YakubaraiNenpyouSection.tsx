@@ -7,6 +7,8 @@ const YakubaraiNenpyouSectionWrapper = styled.section`
   position: relative;
   display: flex;
   align-items: center;
+  background: var(--color-oud) url('/top-motion/haikei.png') center top / 100% auto repeat-y;
+  background-attachment: fixed;
 
   @media (max-width: 1024px) {
     max-height: 90%;

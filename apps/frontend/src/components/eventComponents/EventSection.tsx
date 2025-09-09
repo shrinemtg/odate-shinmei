@@ -5,6 +5,8 @@ const EventSectionWrapper = styled.section`
   min-height: 100vh;
   position: relative;
   padding: 4rem 0;
+  background: var(--color-oud) url('/top-motion/haikei.png') center top / 100% auto repeat-y;
+  background-attachment: fixed;
 
   @media (max-width: 1024px) {
     padding: 3rem 0;
