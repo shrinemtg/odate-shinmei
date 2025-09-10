@@ -1,7 +1,7 @@
 import styled from '@emotion/styled'
 
 const EventHeroSectionWrapper = styled.section`
-  width: 100vw;
+  width: 100%;
   height: 60vh;
   min-height: 400px;
   max-height: 600px;
@@ -10,19 +10,26 @@ const EventHeroSectionWrapper = styled.section`
   display: flex;
   align-items: center;
   justify-content: center;
-  background: url(/eventPhoto/event-00.png) center center / cover no-repeat;
+  background: var(--color-oud) url(/eventPhoto/event-00.png) center center / 100% auto no-repeat;
 
   /* モバイル対応 */
-  @media (max-width: 768px) {
+  @media (max-width: 480px) {
     height: 50vh;
     min-height: 300px;
     max-height: 450px;
   }
 
   /* タブレット対応 */
-  @media (min-width: 769px) and (max-width: 1024px) {
+  @media (min-width: 481px) and (max-width: 768px) {
     height: 55vh;
     min-height: 350px;
+    max-height: 500px;
+  }
+
+  /* 中画面対応 */
+  @media (min-width: 769px) and (max-width: 1024px) {
+    height: 60vh;
+    min-height: 400px;
     max-height: 550px;
   }
 

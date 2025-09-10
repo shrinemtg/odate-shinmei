@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import styled from '@emotion/styled'
 
 const MainContainer = styled.div`
@@ -288,7 +289,9 @@ const HeroContent = () => {
               地域の文化と交流の中心として親しまれてきました。
             </DescriptionText>
             {/* 詳しく見るボタン */}
-            <ActionButton>詳しく見る</ActionButton>
+            <Link href='/history'>
+              <ActionButton>詳しく見る</ActionButton>
+            </Link>
           </DescriptionContainer>
         </ContentContainer>
       </PaperSection>
