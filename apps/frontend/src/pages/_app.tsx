@@ -14,6 +14,16 @@ export default function App({ Component, pageProps }: AppProps) {
         <meta name='viewport' content='width=device-width, initial-scale=1' />
         <meta name='description' content='大舘神明社の公式サイト' />
         <title>大舘神明社</title>
+
+        {/* ファビコン設定 */}
+        <link rel='icon' type='image/x-icon' href='/fabikon/favicon-16.ico' />
+        <link rel='icon' type='image/x-icon' sizes='16x16' href='/fabikon/favicon-16.ico' />
+        <link rel='icon' type='image/x-icon' sizes='32x32' href='/fabikon/favicon-32.ico' />
+        <link rel='icon' type='image/x-icon' sizes='48x48' href='/fabikon/favicon-48.ico' />
+        <link rel='apple-touch-icon' sizes='180x180' href='/fabikon/rogo-180.png' />
+        <link rel='icon' type='image/png' sizes='192x192' href='/fabikon/rogo-192.png' />
+        <link rel='icon' type='image/png' sizes='512x512' href='/fabikon/rogo-512.png' />
+        <link rel='manifest' href='/fabikon/manifest.json' />
       </Head>
       <PasswordProtection>
         <MenuBar />

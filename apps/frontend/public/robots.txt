@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://odate-shinmei.jp/api/sitemap.xml
+
+# 検索エンジン向けの設定
+Crawl-delay: 1
