@@ -249,7 +249,7 @@ const OmamoriOhudaSection = () => {
               <OmamoriOhudaImage>
                 <Image
                   src={omamoriOhuda.image}
-                  alt={omamoriOhuda.title}
+                  alt={`${omamoriOhuda.title} - 大館神明社の神礼・礼儀札`}
                   fill
                   style={{ objectFit: 'contain' }}
                   sizes='400px'

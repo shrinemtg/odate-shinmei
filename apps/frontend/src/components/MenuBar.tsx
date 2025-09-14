@@ -224,7 +224,7 @@ const MenuBar: React.FC = () => {
         <LogoLink href='/'>
           <Image
             src='/top-motion/montuki-rogo.png'
-            alt='montuki rogo'
+            alt='大館神明社のロゴマーク - 神社の紋章'
             width={isMobile ? 50 : 130}
             height={isMobile ? 50 : 130}
             style={{ filter: 'brightness(0) invert(1)' }}
@@ -241,9 +241,11 @@ const MenuBar: React.FC = () => {
       <List $isMobile={isMobile} $isOpen={isMenuOpen}>
         {menuItems.map((item) => (
           <Item key={item.label} $isMobile={isMobile}>
-            <StyledLink href={item.href} $isMobile={isMobile} onClick={handleMenuClick}>
-              {item.label}
-            </StyledLink>
+            <NextLink href={item.href} passHref legacyBehavior>
+              <StyledLink $isMobile={isMobile} onClick={handleMenuClick}>
+                {item.label}
+              </StyledLink>
+            </NextLink>
           </Item>
         ))}
       </List>

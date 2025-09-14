@@ -241,7 +241,7 @@ const OmamoriEmaSection = () => {
               <OmamoriEmaImage>
                 <Image
                   src={omamoriEma.image}
-                  alt={omamoriEma.title}
+                  alt={`${omamoriEma.title} - 大館神明社の絵馬`}
                   fill
                   style={{ objectFit: 'contain' }}
                   sizes='400px'

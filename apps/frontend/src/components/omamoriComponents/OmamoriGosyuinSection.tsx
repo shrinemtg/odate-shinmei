@@ -251,7 +251,7 @@ const OmamoriGosyuinSection = () => {
               <OmamoriGosyuinImage>
                 <Image
                   src={omamoriGosyuin.image}
-                  alt={omamoriGosyuin.title}
+                  alt={`${omamoriGosyuin.title} - 大館神明社の御朱印`}
                   fill
                   style={{ objectFit: 'contain' }}
                   sizes='400px'

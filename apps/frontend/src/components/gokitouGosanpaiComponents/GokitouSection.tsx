@@ -429,6 +429,27 @@ const GokitouSection = () => {
     },
   ]
 
+  // SEO用のヘルパー関数
+  const getLinkTitle = (href: string) => {
+    const titles: { [key: string]: string } = {
+      '/kakusyuGokitou': '各種御祈祷 | 大館神明社',
+      '/lifeRtuals': '人生儀礼 | 大館神明社',
+      '/yakubaraiToshiiwai': '厄払い・年祝い | 大館神明社',
+      '/gaisai': '出張祭事 | 大館神明社',
+    }
+    return titles[href] || '大館神明社'
+  }
+
+  const getImageAlt = (href: string) => {
+    const alts: { [key: string]: string } = {
+      '/kakusyuGokitou': '各種御祈祷のご案内',
+      '/lifeRtuals': '人生儀礼のご案内',
+      '/yakubaraiToshiiwai': '厄払い・年祝いのご案内',
+      '/gaisai': '出張祭事のご案内',
+    }
+    return alts[href] || '大館神明社のご案内'
+  }
+
   return (
     <>
       <GokitouSectionWrapper>
@@ -462,16 +483,18 @@ const GokitouSection = () => {
             </Section>
           </SectionContainer>
 
-          <ContactButton href='/contact'>お問い合わせフォーム</ContactButton>
+          <ContactButton href='/contact' title='御祈祷のお問い合わせ・ご予約'>
+            お問い合わせフォーム
+          </ContactButton>
         </ContentBox>
       </GokitouSectionWrapper>
 
       <ImageGridSection>
         <ImageGrid>
           {imageData.map((item) => (
-            <ImageCard key={item.id} href={item.href}>
+            <ImageCard key={item.id} href={item.href} title={getLinkTitle(item.href)}>
               <ImageWrapper>
-                <img src={item.image} alt={`祈祷画像${item.id}`} />
+                <img src={item.image} alt={getImageAlt(item.href)} />
               </ImageWrapper>
             </ImageCard>
           ))}

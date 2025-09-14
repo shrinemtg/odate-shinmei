@@ -266,11 +266,26 @@ const HeroContent = () => {
             {/* ようこそ（右カラム） */}
             <VerticalText>ようこそ</VerticalText>
           </TextContainer>
+          {/* SEO用のH1タグ（非表示） */}
+          <h1 style={{ position: 'absolute', left: '-9999px', opacity: 0 }}>
+            大館神明社 | 秋田県大館市の神社 御祈祷・お守り・年中行事
+          </h1>
+          {/* SEO用の内部リンク（非表示） */}
+          <div style={{ position: 'absolute', left: '-9999px', opacity: 0 }}>
+            <Link href='/gokitouGosanpai'>御祈祷・御参拝</Link>
+            <Link href='/omamori'>お守り・授与品</Link>
+            <Link href='/event'>年中行事</Link>
+            <Link href='/kakusyuGokitou'>各種御祈祷</Link>
+            <Link href='/yakubaraiToshiiwai'>厄払い・年祝い</Link>
+            <Link href='/lifeRtuals'>人生儀礼</Link>
+            <Link href='/gaisai'>出張祭事</Link>
+            <Link href='/contact'>お問い合わせ</Link>
+          </div>
           {/* oyashiro.png画像 */}
           <ImageContainer>
             <Image
               src='/senga/oyashiro.png'
-              alt='大館神明社イラスト'
+              alt='大館神明社の社殿と境内のイラスト - 秋田県大館市の神社'
               width={520}
               height={260}
               style={{ width: '100%', height: 'auto', display: 'block', margin: '0 auto' }}
@@ -280,7 +295,7 @@ const HeroContent = () => {
           {/* 説明テキスト＋ボタン */}
           <DescriptionContainer>
             <DescriptionText>
-              大館神明社は、秋田県大館市に鎮座する神社です。
+              大館神明社は、秋田県大館市に鎮座する由緒ある神社です。
               <br />
               初詣や七五三、厄除祈願、合格祈願など、人生の節目ごとに皆様の願いに寄り添い、
               <br />
@@ -289,7 +304,7 @@ const HeroContent = () => {
               地域の文化と交流の中心として親しまれてきました。
             </DescriptionText>
             {/* 詳しく見るボタン */}
-            <Link href='/history'>
+            <Link href='/history' title='大館神明社の歴史とご紹介'>
               <ActionButton>詳しく見る</ActionButton>
             </Link>
           </DescriptionContainer>

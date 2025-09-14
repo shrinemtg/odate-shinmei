@@ -286,7 +286,13 @@ const OmamoriSection = () => {
           {omamoriData.map((omamori) => (
             <OmamoriCard key={omamori.id}>
               <OmamoriImage>
-                <Image src={omamori.image} alt={omamori.title} fill style={{ objectFit: 'contain' }} sizes='400px' />
+                <Image
+                  src={omamori.image}
+                  alt={`${omamori.title} - 大館神明社のお守り`}
+                  fill
+                  style={{ objectFit: 'contain' }}
+                  sizes='400px'
+                />
               </OmamoriImage>
               <OmamoriTitle>{omamori.title}</OmamoriTitle>
               <OmamoriDescription>{omamori.description}</OmamoriDescription>
