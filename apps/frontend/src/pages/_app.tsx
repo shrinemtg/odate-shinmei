@@ -16,7 +16,6 @@ export default function App({ Component, pageProps }: AppProps) {
         <title>大舘神明社</title>
 
         {/* ファビコン設定 */}
-        <link rel='icon' href='/favicon.ico' sizes='any' />
         <link rel='icon' type='image/svg+xml' href='/fabikon/rogo.svg' />
         <link rel='icon' type='image/x-icon' href='/fabikon/favicon-16.ico' />
         <link rel='icon' type='image/x-icon' sizes='16x16' href='/fabikon/favicon-16.ico' />
