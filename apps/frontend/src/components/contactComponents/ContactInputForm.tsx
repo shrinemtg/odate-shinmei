@@ -203,8 +203,8 @@ interface FormData {
 
 interface ContactInputFormProps {
   formData: FormData
-  onInputChange: (_field: keyof FormData, _value: string | boolean) => void
-  onSubmit: (_event: React.FormEvent) => void
+  onInputChange: (field: keyof FormData, value: string | boolean) => void
+  onSubmit: (e: React.FormEvent) => void
 }
 
 const ContactInputForm: React.FC<ContactInputFormProps> = ({ formData, onInputChange, onSubmit }) => {
