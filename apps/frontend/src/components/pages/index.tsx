@@ -25,7 +25,7 @@ export const Home = () => {
       if (typeof window === 'undefined') return false
       try {
         return localStorage.getItem('hasVisitedBefore') === 'true'
-      } catch (error) {
+      } catch {
         // localStorageが利用できない場合（プライベートモード等）は初回として扱う
         return false
       }
@@ -35,7 +35,7 @@ export const Home = () => {
       if (typeof window === 'undefined') return
       try {
         localStorage.setItem('hasVisitedBefore', 'true')
-      } catch (error) {
+      } catch {
         // localStorageが利用できない場合は無視
       }
     }

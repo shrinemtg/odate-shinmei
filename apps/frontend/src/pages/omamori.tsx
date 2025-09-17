@@ -72,7 +72,7 @@ const OmamoriPage = () => {
         <title>お守り・授与品 | 大館神明社</title>
         <meta
           name='description'
-          content='大館神明社のお守りと授与品のご案内。合格守り、交通安全守り、厄除開運守り、御朱印、絵馬など。心を込めてお授けいたします。'
+          content='大館神明社のお守りと授与品のご案内。合格守り、交通安全守り、厄除開運守り、御朱印、絵馬など。様々な授与品をご用意しております。'
         />
         <meta name='keywords' content='お守り,授与品,大館神明社,合格守り,交通安全守り,厄除開運守り,御朱印,絵馬,神礼' />
         <script type='application/ld+json' dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
