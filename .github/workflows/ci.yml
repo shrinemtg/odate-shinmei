@@ -9,6 +9,13 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 20
+          cache: yarn
+          cache-dependency-path: yarn.lock
+      - name: Enable Corepack and set Yarn version
+        run: |
+          corepack enable
+          corepack prepare yarn@4.2.2 --activate
+          yarn -v
       - name: Install dependencies
         run: yarn install --frozen-lockfile
       - name: Lint
