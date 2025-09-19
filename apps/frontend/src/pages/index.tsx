@@ -122,7 +122,7 @@ const HomePage = () => {
           name='description'
           content='秋田県大館市にある大館神明社の公式サイト。御祈祷、お守り、年中行事のご案内。厄払い、年祝い、各種御祈祷を承っております。'
         />
-        <meta name='keywords' content='大館神明社,大舘神明社,秋田県,大館市,神社,御祈祷,お守り,年中行事,厄払い,年祝い' />
+        <meta name='keywords' content='大館神明社,秋田県,大館市,神社,御祈祷,お守り,年中行事,厄払い,年祝い' />
         <script type='application/ld+json' dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
       </Head>
       <Home />
