@@ -9,7 +9,7 @@ const HomePage = () => {
         '@type': 'Organization',
         '@id': 'https://odate-shinmei.jp/#organization',
         name: '大館神明社',
-        alternateName: '大舘神明社',
+        alternateName: '大館神明社',
         url: 'https://odate-shinmei.jp',
         logo: {
           '@type': 'ImageObject',
