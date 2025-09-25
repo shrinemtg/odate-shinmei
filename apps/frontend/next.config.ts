@@ -13,7 +13,7 @@ const nextConfig: NextConfig = {
     return [
       {
         source: '/favicon.ico',
-        destination: '/fabikon/favicon-32.ico',
+        destination: '/fabikon/favicon-32.v2.ico',
         permanent: false,
       },
     ]
