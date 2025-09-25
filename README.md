@@ -150,3 +150,5 @@ lint:
 - Nodeバージョンが合わない場合: `nvm use` でバージョンを合わせてください
 - 依存パッケージの不整合: `yarn install --force` で再インストール
 - .envがない: `.env.example`をコピーして作成
+
+## faviconのパスを追加
