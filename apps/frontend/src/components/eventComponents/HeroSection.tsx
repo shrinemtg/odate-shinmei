@@ -1,7 +1,7 @@
 import styled from '@emotion/styled'
 
 const EventHeroSectionWrapper = styled.section`
-  width: 100%;
+  width: 100vw;
   height: 60vh;
   min-height: 400px;
   max-height: 600px;
@@ -10,7 +10,7 @@ const EventHeroSectionWrapper = styled.section`
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--color-oud) url(/eventPhoto/event-00.png) center center / 100% auto no-repeat;
+  background: url(/eventPhoto/event-00.png) center center / cover no-repeat;
 
   /* モバイル対応 */
   @media (max-width: 480px) {
