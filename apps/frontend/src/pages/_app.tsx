@@ -15,17 +15,10 @@ export default function App({ Component, pageProps }: AppProps) {
         <meta name='description' content='大舘神明社の公式サイト' />
         <title>大舘神明社</title>
 
-        {/* ファビコン設定 */}
-        <link rel='icon' href='/favicon.ico' />
-        <link rel='icon' type='image/svg+xml' href='/fabikon/rogo.svg' />
-        <link rel='icon' type='image/x-icon' href='/fabikon/favicon-16.v2.ico' />
-        <link rel='icon' type='image/x-icon' sizes='16x16' href='/fabikon/favicon-16.v2.ico' />
-        <link rel='icon' type='image/x-icon' sizes='32x32' href='/fabikon/favicon-32.v2.ico' />
-        <link rel='icon' type='image/x-icon' sizes='48x48' href='/fabikon/favicon-48.v2.ico' />
-        <link rel='apple-touch-icon' sizes='180x180' href='/fabikon/rogo-180.v2.png' />
-        <link rel='icon' type='image/png' sizes='192x192' href='/fabikon/rogo-192.v2.png' />
-        <link rel='icon' type='image/png' sizes='512x512' href='/fabikon/rogo-512.v2.png' />
-        <link rel='manifest' href='/fabikon/manifest.json' />
+        {/* ファビコン設定 - Next.js 15の自動認識機能を使用 */}
+        <link rel='icon' href='/favicon.ico' sizes='any' />
+        <link rel='icon' href='/icon.svg' type='image/svg+xml' />
+        <link rel='apple-touch-icon' href='/apple-touch-icon.png' />
       </Head>
       <PasswordProtection>
         <MenuBar />
