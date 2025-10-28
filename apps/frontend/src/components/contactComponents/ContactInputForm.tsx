@@ -336,7 +336,8 @@ const ContactInputForm: React.FC<ContactInputFormProps> = ({ formData, onInputCh
           <TextArea
             placeholder={`ご予約の際は
 ・御祈祷内容
-・ご希望のお日にち(三候補日)をご記入ください
+・ご希望のお日にち(三候補日)
+・ご希望のお時間をご記入ください
 
 お問い合わせ内容の際は
 ・詳しい内容をご記入下さい`}
