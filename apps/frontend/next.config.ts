@@ -5,6 +5,7 @@ const nextConfig: NextConfig = {
   compiler: {
     emotion: true,
   },
+  swcMinify: true, // SWCによる最適化を明示的に有効化
   // Vercelデプロイのため、output: 'export'を削除
   images: {
     unoptimized: true,
