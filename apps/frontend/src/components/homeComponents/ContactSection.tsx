@@ -207,9 +207,9 @@ const ContactSection = () => (
       </SubText>
       <ContactButton href='/contact'>お問い合わせフォーム</ContactButton>
       <Info>
-        <PhoneIcon>☎</PhoneIcon> 0816-42-0846
+        <PhoneIcon>☎</PhoneIcon> 0186-42-0846
         <br />
-        FAX 0816-49-0410
+        FAX 0186-49-0410
         <br />
         〒 017-0867
         <br />
