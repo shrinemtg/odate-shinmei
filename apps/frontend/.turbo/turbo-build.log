@@ -9,7 +9,7 @@
       <Buffer 55 73 61 67 65 20 45 72 72 6f 72 3a 20 43 6f 75 6c 64 6e 27 74 20 66 69 6e 64 20 61 20 63 6f 6e 66 69 67 75 72 61 74 69 6f 6e 20 73 65 74 74 69 6e 67 ... 78 more bytes>,
       <Buffer >
     ],
-    pid: 61519,
+    pid: 36280,
     stdout: <Buffer 55 73 61 67 65 20 45 72 72 6f 72 3a 20 43 6f 75 6c 64 6e 27 74 20 66 69 6e 64 20 61 20 63 6f 6e 66 69 67 75 72 61 74 69 6f 6e 20 73 65 74 74 69 6e 67 ... 78 more bytes>,
     stderr: <Buffer >
   }
@@ -46,7 +46,7 @@ info  - Need to disable some ESLint rules? Learn more here: https://nextjs.org/d
       <Buffer 55 73 61 67 65 20 45 72 72 6f 72 3a 20 43 6f 75 6c 64 6e 27 74 20 66 69 6e 64 20 61 20 63 6f 6e 66 69 67 75 72 61 74 69 6f 6e 20 73 65 74 74 69 6e 67 ... 78 more bytes>,
       <Buffer >
     ],
-    pid: 61722,
+    pid: 36465,
     stdout: <Buffer 55 73 61 67 65 20 45 72 72 6f 72 3a 20 43 6f 75 6c 64 6e 27 74 20 66 69 6e 64 20 61 20 63 6f 6e 66 69 67 75 72 61 74 69 6f 6e 20 73 65 74 74 69 6e 67 ... 78 more bytes>,
     stderr: <Buffer >
   }
@@ -62,7 +62,7 @@ info  - Need to disable some ESLint rules? Learn more here: https://nextjs.org/d
       <Buffer 55 73 61 67 65 20 45 72 72 6f 72 3a 20 43 6f 75 6c 64 6e 27 74 20 66 69 6e 64 20 61 20 63 6f 6e 66 69 67 75 72 61 74 69 6f 6e 20 73 65 74 74 69 6e 67 ... 78 more bytes>,
       <Buffer >
     ],
-    pid: 61857,
+    pid: 36614,
     stdout: <Buffer 55 73 61 67 65 20 45 72 72 6f 72 3a 20 43 6f 75 6c 64 6e 27 74 20 66 69 6e 64 20 61 20 63 6f 6e 66 69 67 75 72 61 74 69 6f 6e 20 73 65 74 74 69 6e 67 ... 78 more bytes>,
     stderr: <Buffer >
   }
@@ -78,12 +78,12 @@ info  - Need to disable some ESLint rules? Learn more here: https://nextjs.org/d
       <Buffer 55 73 61 67 65 20 45 72 72 6f 72 3a 20 43 6f 75 6c 64 6e 27 74 20 66 69 6e 64 20 61 20 63 6f 6e 66 69 67 75 72 61 74 69 6f 6e 20 73 65 74 74 69 6e 67 ... 78 more bytes>,
       <Buffer >
     ],
-    pid: 61989,
+    pid: 36738,
     stdout: <Buffer 55 73 61 67 65 20 45 72 72 6f 72 3a 20 43 6f 75 6c 64 6e 27 74 20 66 69 6e 64 20 61 20 63 6f 6e 66 69 67 75 72 61 74 69 6f 6e 20 73 65 74 74 69 6e 67 ... 78 more bytes>,
     stderr: <Buffer >
   }
 }
- ✓ Compiled successfully in 3.3s
+ ✓ Compiled successfully in 9.1s
    Collecting page data ...
    Generating static pages (0/15) ...
    Generating static pages (3/15) 
@@ -94,22 +94,22 @@ info  - Need to disable some ESLint rules? Learn more here: https://nextjs.org/d
    Collecting build traces ...
 
 Route (pages)                                 Size  First Load JS
-┌ ○ / (569 ms)                             12.4 kB         151 kB
+┌ ○ / (541 ms)                             12.8 kB         152 kB
 ├   /_app                                      0 B         101 kB
 ├ ○ /404                                     180 B         101 kB
 ├ ƒ /api/sitemap.xml                           0 B         101 kB
-├ ○ /contact (565 ms)                      4.75 kB         106 kB
-├ ○ /event (565 ms)                        5.86 kB         107 kB
-├ ○ /gaisai (570 ms)                        5.4 kB         107 kB
-├ ○ /gokitouGosanpai                       5.64 kB         107 kB
-├ ○ /history (562 ms)                      4.78 kB         106 kB
-├ ○ /kakusyuGokitou (564 ms)               3.97 kB         105 kB
-├ ○ /lifeRtuals (563 ms)                   6.69 kB         108 kB
-├ ○ /midokoro                              6.21 kB         107 kB
-├ ○ /notices (570 ms)                      3.62 kB         143 kB
-├ ○ /omamori (563 ms)                      4.75 kB         106 kB
+├ ○ /contact                               4.75 kB         106 kB
+├ ○ /event (634 ms)                        5.86 kB         107 kB
+├ ○ /gaisai (633 ms)                        5.4 kB         107 kB
+├ ○ /gokitouGosanpai (632 ms)              5.64 kB         107 kB
+├ ○ /history (633 ms)                      4.78 kB         106 kB
+├ ○ /kakusyuGokitou (635 ms)               3.97 kB         105 kB
+├ ○ /lifeRtuals                            6.69 kB         108 kB
+├ ○ /midokoro (633 ms)                     6.21 kB         107 kB
+├ ○ /notices (543 ms)                         4 kB         143 kB
+├ ○ /omamori (639 ms)                      4.75 kB         106 kB
 ├ ○ /privacy-policy                        2.28 kB         103 kB
-└ ○ /yakubaraiToshiiwai (564 ms)           4.25 kB         105 kB
+└ ○ /yakubaraiToshiiwai (634 ms)           4.25 kB         105 kB
 + First Load JS shared by all               102 kB
   ├ chunks/framework-d8f01f7e25201916.js   44.8 kB
   ├ chunks/main-e3dc10e89d766246.js        36.2 kB
