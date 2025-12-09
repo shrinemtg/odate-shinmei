@@ -175,6 +175,7 @@ const NoticeDetail = styled(motion.div)`
   font-size: var(--font-size-base);
   line-height: 1.8;
   font-family: serif;
+  white-space: pre-line;
   margin-top: 16px;
   padding-top: 16px;
   border-top: 1px solid rgba(187, 167, 123, 0.3);
@@ -218,6 +219,22 @@ const PageButton = styled.button<{ active?: boolean }>`
 
 // 過去のお知らせデータ
 const pastNoticeData = [
+  {
+    id: 9,
+    title: '令和8年 お正月 巫女（助勤）募集のお知らせ',
+    date: '令和7年12月1日',
+    detail: `年末年始に社頭奉仕をしていただく巫女（助勤）を募集しております。
+
+新しい年を皆様が清々しく迎えられるよう、お手伝いをしてくださる方をお待ちしております。
+
+【募集要項】
+期間：12月31日（大晦日）～1月4日までの間
+内容：お守り・御札の授与、参拝者の対応など
+※勤務時間について 時間帯や詳細は、応募人数等により変更があるため、お問い合わせの際にご案内いたします。
+
+応募・お問い合わせはコンタクトフォームまたはお電話でお願いいたします。
+大館神明社 社務所 電話：0186-42-0846`,
+  },
   {
     id: 1,
     title: '鎮座350年記念大祭を斎行',
