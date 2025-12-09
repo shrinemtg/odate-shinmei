@@ -36,7 +36,7 @@
     "packages/*"
   ],
   "private": true,
-  "packageManager": "yarn@4.2.2",
+  "packageManager": "npm@10.9.2",
   "dependencies": {
     "commander": "^13.1.0"
   }

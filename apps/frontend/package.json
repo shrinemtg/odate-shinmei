@@ -17,7 +17,7 @@
     "@emotion/styled": "^11.14.0",
     "critters": "^0.0.23",
     "framer-motion": "^12.23.0",
-    "next": "^15.3.5",
+    "next": "15.5.7",
     "normalize.css": "^8.0.1",
     "react": "18.3.1",
     "react-dom": "18.3.1",
