@@ -82,7 +82,7 @@ const FooterSection = () => (
   <Footer>
     <Cloud>
       <Image
-        src='/top-motion/footer-kumo.png'
+        src='/top-motion/footer-kumo.webp'
         alt='雲'
         width={420}
         height={240}
@@ -93,7 +93,7 @@ const FooterSection = () => (
     <LogoArea>
       <Link href='/' style={{ textDecoration: 'none' }}>
         <Image
-          src='/top-motion/montuki-rogo.png'
+          src='/top-motion/montuki-rogo.webp'
           alt='神社ロゴ'
           width={150}
           height={150}

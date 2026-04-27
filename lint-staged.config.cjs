@@ -23,9 +23,9 @@ module.exports = {
     })
 
     return [
-      `yarn fix:format ${filteredFiles.join(' ')}`,
-      `yarn fix:lint ${filteredFiles.join(' ')}`,
-      ...tscCheckDirs.map((d) => `yarn tsc -p ${d} --noEmit`),
+      `npm run fix:format -- ${filteredFiles.join(' ')}`,
+      `npm run fix:lint -- ${filteredFiles.join(' ')}`,
+      ...tscCheckDirs.map((d) => `npx --no-install tsc -p ${d} --noEmit`),
     ]
   },
 }

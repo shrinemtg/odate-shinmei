@@ -15,25 +15,25 @@ const autumnPlants: PlantData[] = [
   {
     id: 1,
     name: 'Momizi',
-    imagePath: '/Plant-aki/aki-momizi.png',
+    imagePath: '/Plant-aki/aki-momizi.webp',
     japaneseName: 'モミジ',
   },
   {
     id: 2,
     name: 'Himehukurou',
-    imagePath: '/Plant-aki/aki-himehukurou.png',
+    imagePath: '/Plant-aki/aki-himehukurou.webp',
     japaneseName: 'ヒメフクロウ',
   },
   {
     id: 3,
     name: 'Ityou',
-    imagePath: '/Plant-aki/aki-ityou.png',
+    imagePath: '/Plant-aki/aki-ityou.webp',
     japaneseName: 'イチョウ',
   },
   {
     id: 4,
     name: 'Momizi',
-    imagePath: '/Plant-aki/aki-momizi-2.png',
+    imagePath: '/Plant-aki/aki-momizi-2.webp',
     japaneseName: 'モミジ',
   },
 ]
@@ -42,7 +42,7 @@ const AutumnPlantContainer = styled.div`
   width: 100%;
   position: relative;
   overflow: visible;
-  background: var(--color-oud) url('/top-motion/haikei.png') center top / 100% auto repeat-y;
+  background: var(--color-oud) url('/top-motion/haikei.webp') center top / 100% auto repeat-y;
   background-attachment: fixed;
 `
 

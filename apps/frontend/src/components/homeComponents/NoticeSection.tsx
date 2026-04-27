@@ -623,7 +623,7 @@ const NoticeSection = () => {
           <NoticeTitle>お知らせ</NoticeTitle>
           <CatImageBox>
             <Image
-              src='/neko/neko01.png'
+              src='/neko/neko01.webp'
               alt='猫'
               width={70}
               height={120}

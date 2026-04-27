@@ -4,7 +4,7 @@ const EmaSectionWrapper = styled.section`
   /* レイアウト関連 */
   padding: 5rem 0 0;
   width: 100%;
-  background: var(--color-oud) url('/top-motion/haikei.png') center top / 100% auto repeat-y;
+  background: var(--color-oud) url('/top-motion/haikei.webp') center top / 100% auto repeat-y;
   background-attachment: fixed;
 `
 
@@ -366,11 +366,11 @@ const EmaSection = () => (
         </DescriptionText>
         <ImageArea>
           <MainImage>
-            <img src='/ema/ema-01.png' alt='大絵馬の詳細' />
+            <img src='/ema/ema-01.webp' alt='大絵馬の詳細' />
           </MainImage>
           <BottomRow>
             <SubImage>
-              <img src='/ema/ema-03.png' alt='大絵馬の様子' />
+              <img src='/ema/ema-03.webp' alt='大絵馬の様子' />
             </SubImage>
             <BottomDescription>
               大館神明社の境内では、 過去12年間の大絵馬をご覧いただけます。

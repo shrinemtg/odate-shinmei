@@ -72,7 +72,7 @@ const PaperSection = styled.section`
   position: relative;
   width: 100vw;
   min-height: 60vh;
-  background: url(/top-motion/haikei.png) left center / cover no-repeat;
+  background: url(/top-motion/haikei.webp) left center / cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -81,11 +81,11 @@ const PaperSection = styled.section`
 
   @media (max-width: 768px) {
     min-height: 50vh;
-    background: url(/top-motion/haikei.png) left center / cover no-repeat;
+    background: url(/top-motion/haikei.webp) left center / cover no-repeat;
   }
 
   @media (max-width: 480px) {
-    background: url(/top-motion/haikei.png) left center / cover no-repeat;
+    background: url(/top-motion/haikei.webp) left center / cover no-repeat;
   }
 `
 
@@ -249,13 +249,13 @@ const HeroContent = () => {
       </VideoSection>
       {/* 雲（hidari-4-kumo）を動画と和紙セクションの境界にまたがるように絶対配置 */}
       <BorderCloudContainer>
-        <Image src='/top-motion/hidari-4-kumo.png' alt='cloud border' layout='fill' objectFit='contain' priority />
+        <Image src='/top-motion/hidari-4-kumo.webp' alt='cloud border' layout='fill' objectFit='contain' priority />
       </BorderCloudContainer>
-      {/* 縦書きテキスト＋oyashiro.png画像＋説明文 */}
+      {/* 縦書きテキスト＋oyashiro.webp画像＋説明文 */}
       <PaperSection>
         {/* 雲装飾（右下） */}
         <DecorativeCloud>
-          <Image src='/top-motion/migi-1-kumo.png' alt='cloud right' layout='fill' objectFit='contain' priority />
+          <Image src='/top-motion/migi-1-kumo.webp' alt='cloud right' layout='fill' objectFit='contain' priority />
         </DecorativeCloud>
         {/* 2カラム縦書きテキスト＋画像＋説明文 */}
         <ContentContainer>
@@ -281,10 +281,10 @@ const HeroContent = () => {
             <Link href='/gaisai'>出張祭事</Link>
             <Link href='/contact'>お問い合わせ</Link>
           </div>
-          {/* oyashiro.png画像 */}
+          {/* oyashiro.webp画像 */}
           <ImageContainer>
             <Image
-              src='/senga/oyashiro.png'
+              src='/senga/oyashiro.webp'
               alt='大館神明社の社殿と境内のイラスト - 秋田県大館市の神社'
               width={520}
               height={260}

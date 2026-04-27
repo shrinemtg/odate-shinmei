@@ -15,67 +15,67 @@ const springPlants: PlantData[] = [
   {
     id: 1,
     name: 'Eomekon',
-    imagePath: '/Plant-haru/haru-eomekon.png',
+    imagePath: '/Plant-haru/haru-eomekon.webp',
     japaneseName: 'エオメコン',
   },
   {
     id: 2,
     name: 'Ikarisou',
-    imagePath: '/Plant-haru/haru-ikarisou.png',
+    imagePath: '/Plant-haru/haru-ikarisou.webp',
     japaneseName: 'イカリソウ',
   },
   {
     id: 3,
     name: 'Ooamana',
-    imagePath: '/Plant-haru/haru-ooamana.png',
+    imagePath: '/Plant-haru/haru-ooamana.webp',
     japaneseName: 'オオアマナ',
   },
   {
     id: 4,
     name: 'Yamaengosaku',
-    imagePath: '/Plant-haru/haru-yamaengosaku.png',
+    imagePath: '/Plant-haru/haru-yamaengosaku.webp',
     japaneseName: 'ヤマエンゴサク',
   },
   {
     id: 5,
     name: 'Nioisumire',
-    imagePath: '/Plant-haru/haru-nioisumire.png',
+    imagePath: '/Plant-haru/haru-nioisumire.webp',
     japaneseName: 'ニオイスミレ',
   },
   {
     id: 6,
     name: 'Mamusigusa',
-    imagePath: '/Plant-haru/haru-mamusigusa.png',
+    imagePath: '/Plant-haru/haru-mamusigusa.webp',
     japaneseName: 'マムシグサ',
   },
   {
     id: 7,
     name: 'Ranankyurasu',
-    imagePath: '/Plant-haru/haru-ranankyurasu.png',
+    imagePath: '/Plant-haru/haru-ranankyurasu.webp',
     japaneseName: 'ラナンキュラス',
   },
   {
     id: 8,
     name: 'Hakobe',
-    imagePath: '/Plant-haru/haru-hakobe.png',
+    imagePath: '/Plant-haru/haru-hakobe.webp',
     japaneseName: 'ハコベ',
   },
   {
     id: 9,
     name: 'Ume',
-    imagePath: '/Plant-haru/haru-ume.png',
+    imagePath: '/Plant-haru/haru-ume.webp',
     japaneseName: 'ウメ',
   },
   {
     id: 10,
     name: 'Ooaraseitou',
-    imagePath: '/Plant-haru/haru-ooaraseitou.png',
+    imagePath: '/Plant-haru/haru-ooaraseitou.webp',
     japaneseName: 'オオアラセイトウ',
   },
   {
     id: 11,
     name: 'Kurofunetutuzi',
-    imagePath: '/Plant-haru/haru-kurofunetutuzi.png',
+    imagePath: '/Plant-haru/haru-kurofunetutuzi.webp',
     japaneseName: 'クロフネツツジ',
   },
 ]
@@ -84,7 +84,7 @@ const SpringPlantContainer = styled.div`
   width: 100%;
   position: relative;
   overflow: visible;
-  background: var(--color-oud) url('/top-motion/haikei.png') center top / 100% auto repeat-y;
+  background: var(--color-oud) url('/top-motion/haikei.webp') center top / 100% auto repeat-y;
   background-attachment: fixed;
 `
 

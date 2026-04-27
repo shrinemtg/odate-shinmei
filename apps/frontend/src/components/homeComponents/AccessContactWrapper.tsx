@@ -75,7 +75,7 @@ const AccessContactWrapper = () => {
       <ContactSection />
       <CatAnimation scrollProgress={scrollProgress}>
         <Image
-          src='/neko/neko04.png'
+          src='/neko/neko04.webp'
           alt='猫のイラスト'
           width={220}
           height={140}

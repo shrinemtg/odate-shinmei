@@ -8,7 +8,7 @@ const ShichigosanPackSectionWrapper = styled.section`
   position: relative;
   display: flex;
   align-items: center;
-  background: var(--color-oud) url('/top-motion/haikei.png') center top / 100% auto repeat-y;
+  background: var(--color-oud) url('/top-motion/haikei.webp') center top / 100% auto repeat-y;
   background-attachment: fixed;
 
   @media (max-width: 1024px) {
@@ -165,14 +165,14 @@ const Notes = styled.div`
 `
 
 const ShichigosanPackSection = () => {
-  const [imageSrc, setImageSrc] = useState('/life/life-08.png')
+  const [imageSrc, setImageSrc] = useState('/life/life-08.webp')
 
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth <= 768) {
-        setImageSrc('/life/s-life-08.png')
+        setImageSrc('/life/s-life-08.webp')
       } else {
-        setImageSrc('/life/life-08.png')
+        setImageSrc('/life/life-08.webp')
       }
     }
 

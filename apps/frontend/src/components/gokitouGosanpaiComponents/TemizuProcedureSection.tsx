@@ -8,7 +8,7 @@ const ProcedureSectionWrapper = styled.section`
   flex-direction: column;
   align-items: center;
   gap: 2rem;
-  background: var(--color-oud) url('/top-motion/haikei.png') center top / 100% auto repeat-y;
+  background: var(--color-oud) url('/top-motion/haikei.webp') center top / 100% auto repeat-y;
   background-attachment: fixed;
 
   @media (max-width: 1024px) {
@@ -182,31 +182,31 @@ const TemizuProcedureSection = () => {
   const steps = [
     {
       number: '一',
-      image: '/gokitou/temizu-01.png',
+      image: '/gokitou/temizu-01.webp',
       alt: '右手で柄杓を持ち左手を洗う',
       description: '右手で柄杓を持ち\n左手を洗い\n清めます。',
     },
     {
       number: '二',
-      image: '/gokitou/temizu-02.png',
+      image: '/gokitou/temizu-02.webp',
       alt: '左手に持ち替え右手を洗う',
       description: '左手に持ち替え\n右手を洗い\n清めます',
     },
     {
       number: '三',
-      image: '/gokitou/temizu-03.png',
+      image: '/gokitou/temizu-03.webp',
       alt: '左手で水を受け口をすすぐ',
       description: '右手に持ち替え\n左手で水を受け\n口を漱ぎます。',
     },
     {
       number: '四',
-      image: '/gokitou/temizu-04.png',
+      image: '/gokitou/temizu-04.webp',
       alt: 'もう一度左手を洗う',
       description: 'もう一度\n左手を洗います。',
     },
     {
       number: '五',
-      image: '/gokitou/temizu-05.png',
+      image: '/gokitou/temizu-05.webp',
       alt: '柄杓の柄の部分を洗う',
       description: '最後に\n柄杓の柄の部分を洗います。',
     },

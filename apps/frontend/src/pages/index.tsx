@@ -13,7 +13,7 @@ const HomePage = () => {
         url: 'https://odate-shinmei.jp',
         logo: {
           '@type': 'ImageObject',
-          url: 'https://odate-shinmei.jp/top-motion/montuki-rogo.png',
+          url: 'https://odate-shinmei.jp/top-motion/montuki-rogo.webp',
         },
         description:
           '秋田県大館市に鎮座する由緒ある神社。御祈祷、お守り、年中行事を通じて地域の文化と交流の中心として親しまれています。',

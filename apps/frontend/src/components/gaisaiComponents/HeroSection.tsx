@@ -138,7 +138,7 @@ const HeroTitle = styled.h1`
 
 const HeroSection = () => (
   <HeroSectionWrapper>
-    <BackgroundImage src='/gaisai/gaisai-00.png' alt='' />
+    <BackgroundImage src='/gaisai/gaisai-00.webp' alt='' />
     <Overlay />
     <HeroTitle>出張祭事</HeroTitle>
   </HeroSectionWrapper>

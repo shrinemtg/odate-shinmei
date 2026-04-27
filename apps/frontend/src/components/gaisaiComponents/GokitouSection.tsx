@@ -3,7 +3,7 @@ import styled from '@emotion/styled'
 const GokitouSectionWrapper = styled.section`
   width: 100%;
   position: relative;
-  background: var(--color-oud) url('/top-motion/haikei.png') center top / 100% auto repeat-y;
+  background: var(--color-oud) url('/top-motion/haikei.webp') center top / 100% auto repeat-y;
   background-attachment: fixed;
   padding: 4rem 0;
 
@@ -405,7 +405,7 @@ const GokitouSection = () => {
             </Description>
           </TextSection>
           <JichinsaiImageSection>
-            <SectionImage src='/gaisai/gaisai-01.png' alt='地鎮祭のイラスト' />
+            <SectionImage src='/gaisai/gaisai-01.webp' alt='地鎮祭のイラスト' />
           </JichinsaiImageSection>
         </SectionContainer>
 
@@ -423,7 +423,7 @@ const GokitouSection = () => {
             </Description>
           </RightTextSection>
           <SekouImageSection>
-            <SectionImage src='/gaisai/gaisai-02.png' alt='施工祭のイラスト' />
+            <SectionImage src='/gaisai/gaisai-02.webp' alt='施工祭のイラスト' />
           </SekouImageSection>
         </RightSectionContainer>
 
@@ -441,7 +441,7 @@ const GokitouSection = () => {
             </Description>
           </TextSection>
           <JoutouImageSection>
-            <SectionImage src='/gaisai/gaisai-03.png' alt='上棟祭のイラスト' />
+            <SectionImage src='/gaisai/gaisai-03.webp' alt='上棟祭のイラスト' />
           </JoutouImageSection>
         </SectionContainer>
 
@@ -461,7 +461,7 @@ const GokitouSection = () => {
             </Description>
           </RightTextSection>
           <JoutouImageSection>
-            <SectionImage src='/gaisai/gaisai-04.png' alt='竣工祭のイラスト' />
+            <SectionImage src='/gaisai/gaisai-04.webp' alt='竣工祭のイラスト' />
           </JoutouImageSection>
         </RightSectionContainer>
 
@@ -479,7 +479,7 @@ const GokitouSection = () => {
             </Description>
           </TextSection>
           <YaharaiImageSection>
-            <SectionImage src='/gaisai/gaisai-05.png' alt='家祓のイラスト' />
+            <SectionImage src='/gaisai/gaisai-05.webp' alt='家祓のイラスト' />
           </YaharaiImageSection>
         </SectionContainer>
 
@@ -497,7 +497,7 @@ const GokitouSection = () => {
             </Description>
           </RightTextSection>
           <KamidanaImageSection>
-            <SectionImage src='/gaisai/gaisai-06.png' alt='神棚祭のイラスト' />
+            <SectionImage src='/gaisai/gaisai-06.webp' alt='神棚祭のイラスト' />
           </KamidanaImageSection>
         </RightSectionContainer>
 
@@ -517,7 +517,7 @@ const GokitouSection = () => {
             </Description>
           </TextSection>
           <IdoImageSection>
-            <SectionImage src='/gaisai/gaisai-07.png' alt='井戸埋立清祓のイラスト' />
+            <SectionImage src='/gaisai/gaisai-07.webp' alt='井戸埋立清祓のイラスト' />
           </IdoImageSection>
         </SectionContainer>
 
@@ -535,7 +535,7 @@ const GokitouSection = () => {
             </Description>
           </RightTextSection>
           <KaitaiImageSection>
-            <SectionImage src='/gaisai/gaisai-08.png' alt='解体清祭のイラスト' />
+            <SectionImage src='/gaisai/gaisai-08.webp' alt='解体清祭のイラスト' />
           </KaitaiImageSection>
         </RightSectionContainer>
 
@@ -553,7 +553,7 @@ const GokitouSection = () => {
             </Description>
           </TextSection>
           <AnzenImageSection>
-            <SectionImage src='/gaisai/gaisai-09.png' alt='安全祈願祭のイラスト' />
+            <SectionImage src='/gaisai/gaisai-09.webp' alt='安全祈願祭のイラスト' />
           </AnzenImageSection>
         </SectionContainer>
 
@@ -571,7 +571,7 @@ const GokitouSection = () => {
             </Description>
           </RightTextSection>
           <ShoubaiImageSection>
-            <SectionImage src='/gaisai/gaisai-10.png' alt='商売繁盛祈願祭のイラスト' />
+            <SectionImage src='/gaisai/gaisai-10.webp' alt='商売繁盛祈願祭のイラスト' />
           </ShoubaiImageSection>
         </RightSectionContainer>
 

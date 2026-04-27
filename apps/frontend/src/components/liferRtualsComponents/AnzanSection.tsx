@@ -8,7 +8,7 @@ const AnzanSectionWrapper = styled.section`
   display: flex;
   align-items: center;
   justify-content: center;
-  background: url(/life/life-02.png) center center / cover no-repeat;
+  background: url(/life/life-02.webp) center center / cover no-repeat;
 
   @media (max-width: 1024px) {
     min-height: 70vh;
@@ -31,7 +31,7 @@ const VerticalTitle = styled.section`
   align-items: center;
   justify-content: center;
   font-size: var(--font-size-5xl);
-  background: var(--color-oud) url('/top-motion/haikei.png') center top / 100% auto repeat-y;
+  background: var(--color-oud) url('/top-motion/haikei.webp') center top / 100% auto repeat-y;
   background-attachment: fixed;
   padding: 8rem auto 5rem;
 

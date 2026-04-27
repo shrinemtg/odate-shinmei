@@ -10,7 +10,7 @@ const EventHeroSectionWrapper = styled.section`
   display: flex;
   align-items: center;
   justify-content: center;
-  background: url(/eventPhoto/event-00.png) center center / cover no-repeat;
+  background: url(/eventPhoto/event-00.webp) center center / cover no-repeat;
 
   /* モバイル対応 */
   @media (max-width: 480px) {

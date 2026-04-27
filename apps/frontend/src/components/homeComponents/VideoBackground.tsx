@@ -3,7 +3,7 @@ import Image from 'next/image'
 import styled from '@emotion/styled'
 
 const leftCloud = {
-  src: '/top-motion/hidari-4-kumo.png',
+  src: '/top-motion/hidari-4-kumo.webp',
   width: 900,
   height: 350,
   zIndex: 12,
@@ -12,7 +12,7 @@ const leftCloud = {
   x: -80,
 }
 const rightCloud = {
-  src: '/top-motion/migi-1-kumo.png',
+  src: '/top-motion/migi-1-kumo.webp',
   width: 1100,
   height: 500,
   zIndex: 12,
@@ -186,7 +186,7 @@ const VideoBackground = ({ muted, onToggleMute }: VideoBackgroundProps) => {
       {/* 動画 */}
       <VideoElement
         ref={videoRef}
-        src='/videos/shinmei-mv.mp4'
+        src='/videos/shinmei-mv.webm'
         autoPlay
         controls={false}
         loop={true}

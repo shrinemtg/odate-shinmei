@@ -8,7 +8,7 @@ const SeizinsikiSectionWrapper = styled.section`
   display: flex;
   align-items: center;
   justify-content: center;
-  background: url(/life/life-07.png) 20% center / cover no-repeat;
+  background: url(/life/life-07.webp) 20% center / cover no-repeat;
 
   @media (max-width: 1024px) {
     min-height: 70vh;
@@ -31,7 +31,7 @@ const VerticalTitle = styled.section`
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--color-oud) url('/top-motion/haikei.png') center top / 100% auto repeat-y;
+  background: var(--color-oud) url('/top-motion/haikei.webp') center top / 100% auto repeat-y;
   background-attachment: fixed;
 
   @media (max-width: 1024px) {
@@ -290,7 +290,7 @@ const SubContainer = styled.div`
   flex-direction: column;
   align-items: center;
   gap: 1rem;
-  background: var(--color-oud) url('/top-motion/haikei.png') center top / 100% auto repeat-y;
+  background: var(--color-oud) url('/top-motion/haikei.webp') center top / 100% auto repeat-y;
   background-attachment: fixed;
 
   @media (max-width: 1024px) {

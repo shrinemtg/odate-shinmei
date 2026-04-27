@@ -8,7 +8,7 @@ const ProcedureSectionWrapper = styled.section`
   flex-direction: column;
   align-items: center;
   gap: 2rem;
-  background: var(--color-oud) url('/top-motion/haikei.png') center top / 100% auto repeat-y;
+  background: var(--color-oud) url('/top-motion/haikei.webp') center top / 100% auto repeat-y;
   background-attachment: fixed;
 
   @media (max-width: 1024px) {
@@ -182,31 +182,31 @@ const SanpaiProcedureSection = () => {
   const steps = [
     {
       number: '一',
-      image: '/gokitou/sanpaisahou-01.png',
+      image: '/gokitou/sanpaisahou-01.webp',
       alt: '鈴を鳴らす。',
       description: '鈴を鳴らします。',
     },
     {
       number: '二',
-      image: '/gokitou/sanpaisahou-02.png',
+      image: '/gokitou/sanpaisahou-02.webp',
       alt: 'お賽銭を入れる。',
       description: 'そっとお賽銭を入れます。',
     },
     {
       number: '三',
-      image: '/gokitou/sanpaisahou-03.png',
+      image: '/gokitou/sanpaisahou-03.webp',
       alt: '深く二回拝をする',
       description: '深く二回拝礼をします。',
     },
     {
       number: '四',
-      image: '/gokitou/sanpaisahou-04.png',
+      image: '/gokitou/sanpaisahou-04.webp',
       alt: '二拍手して手を合わせ祈りを込める',
       description: '二回拍手した後\n両手を合わせ\n祈りを込めます。',
     },
     {
       number: '五',
-      image: '/gokitou/sanpaisahou-05.png',
+      image: '/gokitou/sanpaisahou-05.webp',
       alt: '最後に深く一拝します',
       description: '最後にもう一度、\n深く一拝します。',
     },

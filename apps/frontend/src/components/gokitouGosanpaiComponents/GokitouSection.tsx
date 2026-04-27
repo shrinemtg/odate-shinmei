@@ -8,7 +8,7 @@ const GokitouSectionWrapper = styled.section`
   align-items: center;
   gap: 3rem;
 
-  background: var(--color-oud) url('/top-motion/haikei.png') center top / 100% auto repeat-y;
+  background: var(--color-oud) url('/top-motion/haikei.webp') center top / 100% auto repeat-y;
   background-attachment: fixed;
 
   @media (max-width: 1024px) {
@@ -279,7 +279,7 @@ const ImageGridSection = styled.section`
   max-width: 95%;
   margin: 0 auto;
   padding: 4rem 2rem;
-  background: var(--color-oud) url('/top-motion/haikei.png') center top / 100% auto repeat-y;
+  background: var(--color-oud) url('/top-motion/haikei.webp') center top / 100% auto repeat-y;
   background-attachment: fixed;
 
   @media (max-width: 1024px) {
@@ -409,22 +409,22 @@ const GokitouSection = () => {
   const imageData = [
     {
       id: 1,
-      image: '/gokitou/gokitou-02.png',
+      image: '/gokitou/gokitou-02.webp',
       href: '/kakusyuGokitou',
     },
     {
       id: 2,
-      image: '/gokitou/gokitou-03.png',
+      image: '/gokitou/gokitou-03.webp',
       href: '/lifeRtuals',
     },
     {
       id: 3,
-      image: '/gokitou/gokitou-04.png',
+      image: '/gokitou/gokitou-04.webp',
       href: '/yakubaraiToshiiwai',
     },
     {
       id: 4,
-      image: '/gokitou/gokitou-05.png',
+      image: '/gokitou/gokitou-05.webp',
       href: '/gaisai',
     },
   ]

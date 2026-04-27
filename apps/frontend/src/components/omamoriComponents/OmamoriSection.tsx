@@ -6,7 +6,7 @@ const OmamoriSectionWrapper = styled.section`
   min-height: 100vh;
   position: relative;
   padding: 4rem 0;
-  background: var(--color-oud) url('/top-motion/haikei.png') center top / 100% auto repeat-y;
+  background: var(--color-oud) url('/top-motion/haikei.webp') center top / 100% auto repeat-y;
   background-attachment: fixed;
 
   @media (max-width: 1023px) {
@@ -211,39 +211,39 @@ const omamoriData = [
     id: 1,
     title: '合格守り',
     description: '学業成就と受験合格を祈願した御守です。努力が実を結びますよう、神さまのご加護をお授けいたします。',
-    image: '/omamoriPhoto/omamori-02.png',
+    image: '/omamoriPhoto/omamori-02.webp',
   },
   {
     id: 2,
     title: '交通安全守り',
     description: '道中の無事と安全を祈願した御守です。事故なく過ごせますよう、神さまのご加護をお授けいたします。',
-    image: '/omamoriPhoto/omamori-03.png',
+    image: '/omamoriPhoto/omamori-03.webp',
   },
   {
     id: 3,
     title: '厄除・開運守り',
     description:
       '災いを祓い、運がひらけるよう祈願した御守です。心穏やかに日々をお過ごしいただけますようご加護をお授けいたします。',
-    image: '/omamoriPhoto/omamori-04.png',
+    image: '/omamoriPhoto/omamori-04.webp',
   },
   {
     id: 4,
     title: '錦守り',
     description: '美しい錦織の御守に、あらゆるご加護を込めてお授けいたします。日々の平穏と幸福をお守りします。',
-    image: '/omamoriPhoto/omamori-05.png',
+    image: '/omamoriPhoto/omamori-05.webp',
   },
   {
     id: 5,
     title: 'ハチ公守り',
     description:
       '健康を祈願した、忠犬ハチ公の御守です。ご自身や大切な人が、健やかにお過ごしいただけますようお守りいたします。',
-    image: '/omamoriPhoto/omamori-06.png',
+    image: '/omamoriPhoto/omamori-06.webp',
   },
   {
     id: 6,
     title: '子授け守り',
     description: '健やかな命を授かりますよう祈願した御守です。神さまのご加護のもと、安らかな日々をお過ごしください。',
-    image: '/omamoriPhoto/omamori-07.png',
+    image: '/omamoriPhoto/omamori-07.webp',
   },
 ]
 const Description = styled.div`

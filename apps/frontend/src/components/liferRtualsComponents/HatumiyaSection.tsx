@@ -6,7 +6,7 @@ const HatumiyaSectionWrapper = styled.section`
   position: relative;
   display: flex;
   align-items: center;
-  background: var(--color-oud) url('/top-motion/haikei.png') center top / 100% auto repeat-y;
+  background: var(--color-oud) url('/top-motion/haikei.webp') center top / 100% auto repeat-y;
   background-attachment: fixed;
 
   @media (max-width: 1024px) {
@@ -270,7 +270,7 @@ const HatumiyaSection = () => {
       <ContentContainer>
         <VerticalTitle>初宮詣</VerticalTitle>
         <ImageSection>
-          <HatumiyaImage src='/life/life-04.png' alt='初宮詣の写真' />
+          <HatumiyaImage src='/life/life-04.webp' alt='初宮詣の写真' />
         </ImageSection>
 
         <TextSection>

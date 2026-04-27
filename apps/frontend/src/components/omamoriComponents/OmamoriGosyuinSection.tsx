@@ -6,7 +6,7 @@ const OmamoriGosyuinSectionWrapper = styled.section`
   min-height: 100vh;
   position: relative;
   padding: 4rem 0;
-  background: var(--color-oud) url('/top-motion/haikei.png') center top / 100% auto repeat-y;
+  background: var(--color-oud) url('/top-motion/haikei.webp') center top / 100% auto repeat-y;
   background-attachment: fixed;
 
   @media (max-width: 1023px) {
@@ -212,28 +212,28 @@ const omamoriGosyuinData = [
     title: '神明社御朱印',
     description:
       '神前にて参拝された証としてお授けする、墨書と朱印のみの御朱印です。心を込めたご参拝の記録として、御神縁をお受けください。',
-    image: '/omamoriPhoto/gosyuin-01.png',
+    image: '/omamoriPhoto/gosyuin-01.webp',
   },
   {
     id: 2,
     title: '切り絵御朱印',
     description:
       '忠犬ハチ公ゆかりの地大館ならではの限定御朱印です。切り絵で表現されたハチ公の姿に、忠義と絆への想いを込めました。',
-    image: '/omamoriPhoto/gosyuin-02.png',
+    image: '/omamoriPhoto/gosyuin-02.webp',
   },
   {
     id: 3,
     title: '干支御朱印',
     description:
       'その年の大絵馬の干支をあしらった御朱印です。新たな年のご加護と幸運を願い、感謝を込めてお受けください。',
-    image: '/omamoriPhoto/gosyuin-03.png',
+    image: '/omamoriPhoto/gosyuin-03.webp',
   },
   {
     id: 4,
     title: '四神御朱印',
     description:
       '東西南北を護る霊獣「四神（青龍・白虎・朱雀・玄武）」を描いた御朱印です。四神全てを授与いただいた方に麒麟の御朱印を無料授与させていただいております。',
-    image: '/omamoriPhoto/gosyuin-04.png',
+    image: '/omamoriPhoto/gosyuin-04.webp',
   },
 ]
 

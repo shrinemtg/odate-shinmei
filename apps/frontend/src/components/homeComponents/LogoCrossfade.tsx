@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import styled from '@emotion/styled'
 
-const logoImage = { src: '/top-motion/montuki-rogo.png', width: 200, height: 300 }
+const logoImage = { src: '/top-motion/montuki-rogo.webp', width: 200, height: 300 }
 
 interface LogoCrossfadeProps {
   visible: boolean

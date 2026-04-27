@@ -6,7 +6,7 @@ const OmamoriEmaSectionWrapper = styled.section`
   min-height: 100vh;
   position: relative;
   padding: 4rem 0;
-  background: var(--color-oud) url('/top-motion/haikei.png') center top / 100% auto repeat-y;
+  background: var(--color-oud) url('/top-motion/haikei.webp') center top / 100% auto repeat-y;
   background-attachment: fixed;
 
   @media (max-width: 1023px) {
@@ -211,19 +211,19 @@ const omamoriEmaData = [
     id: 1,
     title: '干支絵馬',
     description: '新年の干支を描いた絵馬です。その年の幸運と無事を祈り、感謝と願いを奉納します。',
-    image: '/omamoriPhoto/omamori-ema-01.png',
+    image: '/omamoriPhoto/omamori-ema-01.webp',
   },
   {
     id: 2,
     title: '祈願絵馬',
     description: 'さまざまな願い事を神さまに託して奉納する絵馬です。真心をこめてお書きください。',
-    image: '/omamoriPhoto/omamori-ema-02.png',
+    image: '/omamoriPhoto/omamori-ema-02.webp',
   },
   {
     id: 3,
     title: '合格絵馬',
     description: '学業成就・受験合格の願いを込めて奉納する絵馬です。努力の成果が実を結びますように。',
-    image: '/omamoriPhoto/omamori-ema-03.png',
+    image: '/omamoriPhoto/omamori-ema-03.webp',
   },
 ]
 

@@ -57,7 +57,7 @@ const TimelineWrapper = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: var(--color-oud) url('/top-motion/haikei.png') center top / 100% auto repeat-y;
+  background: var(--color-oud) url('/top-motion/haikei.webp') center top / 100% auto repeat-y;
   background-attachment: fixed;
   @media (max-width: 768px) {
     padding: 48px 0;

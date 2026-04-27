@@ -10,7 +10,7 @@ const HeroSectionWrapper = styled.section`
   display: flex;
   align-items: center;
   justify-content: center;
-  background: url(/omamoriPhoto/omamori-01.png) center center / cover no-repeat;
+  background: url(/omamoriPhoto/omamori-01.webp) center center / cover no-repeat;
 
   /* モバイル対応 */
   @media (max-width: 768px) {

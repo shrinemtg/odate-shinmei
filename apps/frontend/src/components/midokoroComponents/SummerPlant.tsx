@@ -15,43 +15,43 @@ const summerPlants: PlantData[] = [
   {
     id: 1,
     name: 'Taisanboku',
-    imagePath: '/Plant-natu/natu-taisanboku.png',
+    imagePath: '/Plant-natu/natu-taisanboku.webp',
     japaneseName: 'タイサンボク',
   },
   {
     id: 2,
     name: 'Maizurusou',
-    imagePath: '/Plant-natu/natu-maizurusou.png',
+    imagePath: '/Plant-natu/natu-maizurusou.webp',
     japaneseName: 'マイズルソウ',
   },
   {
     id: 3,
     name: 'Kemansou',
-    imagePath: '/Plant-natu/natu-kemansou.png',
+    imagePath: '/Plant-natu/natu-kemansou.webp',
     japaneseName: 'ケマンソウ',
   },
   {
     id: 4,
     name: 'Sugi',
-    imagePath: '/Plant-natu/natu-sugi.png',
+    imagePath: '/Plant-natu/natu-sugi.webp',
     japaneseName: 'スギ',
   },
   {
     id: 5,
     name: 'Sidareyanagi',
-    imagePath: '/Plant-natu/natu-sidareyanagi.png',
+    imagePath: '/Plant-natu/natu-sidareyanagi.webp',
     japaneseName: 'シダレヤナギ',
   },
   {
     id: 6,
     name: 'Oobananoenreisou',
-    imagePath: '/Plant-natu/natu-oobananoenreisou.png',
+    imagePath: '/Plant-natu/natu-oobananoenreisou.webp',
     japaneseName: 'オオバナノエンレイソウ',
   },
   {
     id: 7,
     name: 'Kumagaisou',
-    imagePath: '/Plant-natu/natu-kumagaisou.png',
+    imagePath: '/Plant-natu/natu-kumagaisou.webp',
     japaneseName: 'クマガイソウ',
   },
 ]
@@ -61,7 +61,7 @@ const SummerPlantContainer = styled.div`
   position: relative;
   overflow: visible;
   padding: 80px 0;
-  background: var(--color-oud) url('/top-motion/haikei.png') center top / 100% auto repeat-y;
+  background: var(--color-oud) url('/top-motion/haikei.webp') center top / 100% auto repeat-y;
   background-attachment: fixed;
 
   @media (max-width: 768px) {

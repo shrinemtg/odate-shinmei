@@ -4,7 +4,7 @@ const PlantSectionWrapper = styled.section`
   width: 100%;
   padding: 80px 0;
   position: relative;
-  background: var(--color-oud) url('/top-motion/haikei.png') center top / 100% auto repeat-y;
+  background: var(--color-oud) url('/top-motion/haikei.webp') center top / 100% auto repeat-y;
   background-attachment: fixed;
 
   @media (max-width: 768px) {
@@ -323,7 +323,7 @@ const PlantSection = () => (
 
         <CenterArea>
           <MainImage>
-            <img src='/neko/zizi.png' alt='黒猫のジジ' />
+            <img src='/neko/zizi.webp' alt='黒猫のジジ' />
           </MainImage>
           <TextContent>
             <ContentTitle>境内に現れる黒猫のジジ</ContentTitle>
@@ -337,7 +337,7 @@ const PlantSection = () => (
 
         <RightArea>
           <CatSilhouette>
-            <img src='/neko/neko05.png' alt='猫のシルエット' />
+            <img src='/neko/neko05.webp' alt='猫のシルエット' />
           </CatSilhouette>
         </RightArea>
       </ContentGrid>

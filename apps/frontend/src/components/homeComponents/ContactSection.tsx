@@ -12,7 +12,7 @@ const Wrapper = styled.div`
   text-align: center;
   font-family: serif;
   color: var(--color-brown);
-  background: url('/top-motion/haikei.png') center center / cover no-repeat;
+  background: url('/top-motion/haikei.webp') center center / cover no-repeat;
   display: flex;
   flex-direction: column;
   align-items: center;

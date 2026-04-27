@@ -4,7 +4,7 @@ import styled from '@emotion/styled'
 const Section = styled.section`
   width: 100%;
   min-height: 600px;
-  background: url(/top-motion/haikei.png) center center / cover no-repeat;
+  background: url(/top-motion/haikei.webp) center center / cover no-repeat;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -259,7 +259,7 @@ const AccessSection = () => (
         <ParkingRow>
           <ParkingImageBox>
             <Image
-              src='/backsozai/p.png'
+              src='/backsozai/p.webp'
               alt='駐車場'
               width={200}
               height={120}

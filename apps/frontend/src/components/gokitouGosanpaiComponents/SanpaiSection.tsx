@@ -22,7 +22,7 @@ const SanpaiSectionWrapper = styled.section`
 const BackgroundImage = styled.div`
   width: 100%;
   height: 100%;
-  background: url('/gokitou/sanpaisahou-06.png') center center / cover no-repeat;
+  background: url('/gokitou/sanpaisahou-06.webp') center center / cover no-repeat;
   position: relative;
 `
 

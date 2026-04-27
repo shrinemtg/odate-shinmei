@@ -5,21 +5,21 @@ import styled from '@emotion/styled'
 
 // 雲や画像のデータ
 const leftClouds = [
-  { src: '/top-motion/hidari-1-kumo.png', width: 900, height: 400, zIndex: 10, top: -100, left: -150 },
-  { src: '/top-motion/hidari-2-kumo.png', width: 500, height: 350, zIndex: 11, top: 150, left: -150 },
-  { src: '/top-motion/hidari-3-kumo.png', width: 850, height: 350, zIndex: 7, top: 300, left: -150 },
-  { src: '/top-motion/hidari-4-kumo.png', width: 900, height: 350, zIndex: 6, top: 480, left: -250 },
+  { src: '/top-motion/hidari-1-kumo.webp', width: 900, height: 400, zIndex: 10, top: -100, left: -150 },
+  { src: '/top-motion/hidari-2-kumo.webp', width: 500, height: 350, zIndex: 11, top: 150, left: -150 },
+  { src: '/top-motion/hidari-3-kumo.webp', width: 850, height: 350, zIndex: 7, top: 300, left: -150 },
+  { src: '/top-motion/hidari-4-kumo.webp', width: 900, height: 350, zIndex: 6, top: 480, left: -250 },
 ]
-const centerCloud = { src: '/top-motion/tyuuou-2-kumo.png', width: 800, height: 350, zIndex: 9, top: 100, left: 200 }
+const centerCloud = { src: '/top-motion/tyuuou-2-kumo.webp', width: 800, height: 350, zIndex: 9, top: 100, left: 200 }
 const rightClouds = [
-  { src: '/top-motion/migi-1-kumo.png', width: 1100, height: 500, zIndex: 8, top: -180, right: -150 },
-  { src: '/top-motion/migi-2-kumo.png', width: 800, height: 500, zIndex: 5, top: 100, right: -200 },
-  { src: '/top-motion/migi-3-kumo.png', width: 1300, height: 500, zIndex: 4, top: 300, right: -300 },
-  { src: '/top-motion/migi-4-kumo.png', width: 1300, height: 600, zIndex: 3, top: 500, right: -350 },
+  { src: '/top-motion/migi-1-kumo.webp', width: 1100, height: 500, zIndex: 8, top: -180, right: -150 },
+  { src: '/top-motion/migi-2-kumo.webp', width: 800, height: 500, zIndex: 5, top: 100, right: -200 },
+  { src: '/top-motion/migi-3-kumo.webp', width: 1300, height: 500, zIndex: 4, top: 300, right: -300 },
+  { src: '/top-motion/migi-4-kumo.webp', width: 1300, height: 600, zIndex: 3, top: 500, right: -350 },
 ]
-const haikeiImage = '/top-motion/haikei.png'
-const logoImage = { src: '/top-motion/montuki-rogo.png', width: 200, height: 300 }
-const textImage = { src: '/top-motion/midasimoji.png', width: 80, height: 400 }
+const haikeiImage = '/top-motion/haikei.webp'
+const logoImage = { src: '/top-motion/montuki-rogo.webp', width: 200, height: 300 }
+const textImage = { src: '/top-motion/midasimoji.webp', width: 80, height: 400 }
 
 const IntroContainer = styled(motion.div)`
   inset: 0;
@@ -146,7 +146,7 @@ const IntroAnimation: React.FC<IntroAnimationProps> = ({ onIntroEnd }) => {
         <IntroContainer key='intro-container' exit={{ opacity: 0, transition: { duration: 1.5 } }}>
           {/* --- 左側の雲 --- */}
           {leftClouds.map((cloud, idx) => {
-            const isPersistentCloud = cloud.src === '/top-motion/hidari-4-kumo.png'
+            const isPersistentCloud = cloud.src === '/top-motion/hidari-4-kumo.webp'
             if (!isPersistentCloud && (phase === 'logo' || phase === 'end')) return null
             // persistentな雲もinitial/animateで動きをつける
             let animateProps
@@ -176,7 +176,7 @@ const IntroAnimation: React.FC<IntroAnimationProps> = ({ onIntroEnd }) => {
 
           {/* --- 右側の雲 --- */}
           {rightClouds.map((cloud, idx) => {
-            const isPersistentCloud = cloud.src === '/top-motion/migi-1-kumo.png'
+            const isPersistentCloud = cloud.src === '/top-motion/migi-1-kumo.webp'
             if (!isPersistentCloud && (phase === 'logo' || phase === 'end')) return null
             let animateProps
             if (isPersistentCloud) {

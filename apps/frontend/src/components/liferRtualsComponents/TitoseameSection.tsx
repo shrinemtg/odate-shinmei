@@ -6,7 +6,7 @@ const TitoseameSectionWrapper = styled.section`
   position: relative;
   display: flex;
   align-items: center;
-  background: var(--color-oud) url('/top-motion/haikei.png') center top / 100% auto repeat-y;
+  background: var(--color-oud) url('/top-motion/haikei.webp') center top / 100% auto repeat-y;
   background-attachment: fixed;
 
   @media (max-width: 1024px) {
@@ -305,7 +305,7 @@ const TitoseameSection = () => {
         <MainContent>
           <TextSection>
             <Title>千歳飴</Title>
-            <TitleImage src='/life/life-09.png' alt='千歳飴の写真' />
+            <TitleImage src='/life/life-09.webp' alt='千歳飴の写真' />
             <Description>
               <Paragraph>
                 大館神明社では 七五三のご祈祷を受けられたお子さまに、千歳飴をお配りしております。
@@ -320,7 +320,7 @@ const TitoseameSection = () => {
             </Description>
           </TextSection>
           <ImageSection>
-            <TitoseameImage src='/life/life-06.png' alt='千歳飴の写真' />
+            <TitoseameImage src='/life/life-06.webp' alt='千歳飴の写真' />
           </ImageSection>
         </MainContent>
         <Notice>

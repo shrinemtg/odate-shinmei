@@ -16,7 +16,7 @@ const catWalk = keyframes`
 const Section = styled.section`
   width: 100vw;
   min-height: 560px;
-  background: url(/top-motion/haikei.png) center center / cover no-repeat;
+  background: url(/top-motion/haikei.webp) center center / cover no-repeat;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -273,7 +273,7 @@ const NenchuSection = () => {
       {/* 背景画像 */}
       <BackgroundImage>
         <Image
-          src='/backsozai/maturi01.png'
+          src='/backsozai/maturi01.webp'
           alt='祭り背景'
           layout='fill'
           objectFit='cover'
@@ -284,7 +284,7 @@ const NenchuSection = () => {
       {/* 前面イラスト（大きく中央下） */}
       <FrontIllustration>
         <Image
-          src='/backsozai/irasut.png'
+          src='/backsozai/irasut.webp'
           alt='イラスト'
           width={800}
           height={340}

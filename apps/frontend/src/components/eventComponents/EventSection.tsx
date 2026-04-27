@@ -5,7 +5,7 @@ const EventSectionWrapper = styled.section`
   min-height: 100vh;
   position: relative;
   padding: 4rem 0;
-  background: var(--color-oud) url('/top-motion/haikei.png') center top / 100% auto repeat-y;
+  background: var(--color-oud) url('/top-motion/haikei.webp') center top / 100% auto repeat-y;
   background-attachment: fixed;
 
   @media (max-width: 1024px) {
@@ -637,7 +637,7 @@ const EventSection = () => {
             </Description>
           </TextSection>
           <GantanImageSection>
-            <SectionImage src='/eventPhoto/event-01.png' alt='元旦祭の様子' />
+            <SectionImage src='/eventPhoto/event-01.webp' alt='元旦祭の様子' />
           </GantanImageSection>
         </SectionContainer>
 
@@ -663,7 +663,7 @@ const EventSection = () => {
             </Description>
           </RightTextSection>
           <ShinnenImageSection>
-            <SectionImage src='/eventPhoto/event-02.png' alt='新年祈祷の様子' />
+            <SectionImage src='/eventPhoto/event-02.webp' alt='新年祈祷の様子' />
           </ShinnenImageSection>
         </RightSectionContainer>
 
@@ -689,7 +689,7 @@ const EventSection = () => {
             </Description>
           </TextSection>
           <YaharaiImageSection>
-            <SectionImage src='/eventPhoto/event-03.png' alt='厄払いの様子' />
+            <SectionImage src='/eventPhoto/event-03.webp' alt='厄払いの様子' />
           </YaharaiImageSection>
         </SectionContainer>
 
@@ -717,7 +717,7 @@ const EventSection = () => {
             </Description>
           </RightTextSection>
           <NyugakuImageSection>
-            <SectionImage src='/eventPhoto/event-04.png' alt='入学祈願の様子' />
+            <SectionImage src='/eventPhoto/event-04.webp' alt='入学祈願の様子' />
           </NyugakuImageSection>
         </RightSectionContainer>
 
@@ -743,7 +743,7 @@ const EventSection = () => {
             </Description>
           </TextSection>
           <NagoshiImageSection>
-            <SectionImage src='/eventPhoto/event-05.png' alt='夏越しの大祓いの様子' />
+            <SectionImage src='/eventPhoto/event-05.webp' alt='夏越しの大祓いの様子' />
           </NagoshiImageSection>
         </SectionContainer>
 
@@ -766,7 +766,7 @@ const EventSection = () => {
             </Description>
           </RightTextSection>
           <KoreisaiImageSection>
-            <SectionImage src='/eventPhoto/event-06.png' alt='古例祭の様子' />
+            <SectionImage src='/eventPhoto/event-06.webp' alt='古例祭の様子' />
           </KoreisaiImageSection>
         </RightSectionContainer>
 
@@ -788,7 +788,7 @@ const EventSection = () => {
             </Description>
           </TextSection>
           <YomiyasaiImageSection>
-            <SectionImage src='/eventPhoto/event-07.png' alt='宵宮祭の様子' />
+            <SectionImage src='/eventPhoto/event-07.webp' alt='宵宮祭の様子' />
           </YomiyasaiImageSection>
         </SectionContainer>
 
@@ -809,7 +809,7 @@ const EventSection = () => {
             </Description>
           </RightTextSection>
           <NichireisaiImageSection>
-            <SectionImage src='/eventPhoto/event-08.png' alt='日例祭の様子' />
+            <SectionImage src='/eventPhoto/event-08.webp' alt='日例祭の様子' />
           </NichireisaiImageSection>
         </RightSectionContainer>
 
@@ -835,7 +835,7 @@ const EventSection = () => {
             </Description>
           </TextSection>
           <GoshinkoImageSection>
-            <SectionImage src='/eventPhoto/event-09.png' alt='御神幸行事の様子' />
+            <SectionImage src='/eventPhoto/event-09.webp' alt='御神幸行事の様子' />
           </GoshinkoImageSection>
         </SectionContainer>
 
@@ -861,7 +861,7 @@ const EventSection = () => {
             </Description>
           </RightTextSection>
           <ShichigosanImageSection>
-            <SectionImage src='/eventPhoto/event-10.png' alt='七五三の様子' />
+            <SectionImage src='/eventPhoto/event-10.webp' alt='七五三の様子' />
           </ShichigosanImageSection>
         </RightSectionContainer>
 
@@ -885,7 +885,7 @@ const EventSection = () => {
             </ToshikoshiDescription>
           </TextSection>
           <ToshikoshiImageSection>
-            <SectionImage src='/eventPhoto/event-11.png' alt='年越しの大祓いの様子' />
+            <SectionImage src='/eventPhoto/event-11.webp' alt='年越しの大祓いの様子' />
           </ToshikoshiImageSection>
         </SectionContainer>
       </ContentContainer>

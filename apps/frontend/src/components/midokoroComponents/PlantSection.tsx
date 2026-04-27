@@ -4,7 +4,7 @@ const PlantSectionWrapper = styled.section`
   width: 100%;
   padding: 80px 0;
   position: relative;
-  background: var(--color-oud) url('/top-motion/haikei.png') center top / 100% auto repeat-y;
+  background: var(--color-oud) url('/top-motion/haikei.webp') center top / 100% auto repeat-y;
   background-attachment: fixed;
 
   @media (max-width: 1024px) {
@@ -196,7 +196,7 @@ const PlantSection = () => (
     <Container>
       <ContentGrid>
         <ImageArea>
-          <img src='/Plant-haru/plant-01.png' alt='境内の観葉植物' />
+          <img src='/Plant-haru/plant-01.webp' alt='境内の観葉植物' />
         </ImageArea>
         <DescriptionArea>
           <DescriptionText>

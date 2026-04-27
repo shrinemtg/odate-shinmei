@@ -1,15 +1,15 @@
 import styled from '@emotion/styled'
 
 const images = [
-  { src: '/his/his-02.png', alt: '花1' },
-  { src: '/his/his-03.png', alt: '花2' },
-  { src: '/his/his-04.png', alt: '花3' },
-  { src: '/his/his-05.png', alt: '大絵馬' },
+  { src: '/his/his-02.webp', alt: '花1' },
+  { src: '/his/his-03.webp', alt: '花2' },
+  { src: '/his/his-04.webp', alt: '花3' },
+  { src: '/his/his-05.webp', alt: '大絵馬' },
 ]
 
 const SectionWrapper = styled.section`
   width: 100%;
-  background: var(--color-oud) url('/top-motion/haikei.png') center top / 100% auto repeat-y;
+  background: var(--color-oud) url('/top-motion/haikei.webp') center top / 100% auto repeat-y;
   background-attachment: fixed;
   padding: 64px 0 0 0;
   display: flex;

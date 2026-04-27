@@ -10,7 +10,7 @@ const HeroSectionWrapper = styled.section`
   display: flex;
   align-items: center;
   justify-content: center;
-  background: url(/life/life-01.png) center center / cover no-repeat;
+  background: url(/life/life-01.webp) center center / cover no-repeat;
 
   /* 小画面モバイル対応 */
   @media (max-width: 480px) {

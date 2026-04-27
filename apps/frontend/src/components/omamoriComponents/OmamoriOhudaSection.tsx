@@ -6,7 +6,7 @@ const OmamoriOhudaSectionWrapper = styled.section`
   min-height: 100vh;
   position: relative;
   padding: 4rem 0;
-  background: var(--color-oud) url('/top-motion/haikei.png') center top / 100% auto repeat-y;
+  background: var(--color-oud) url('/top-motion/haikei.webp') center top / 100% auto repeat-y;
   background-attachment: fixed;
 
   @media (max-width: 1023px) {
@@ -212,26 +212,26 @@ const omamoriOhudaData = [
     title: '天照皇大神宮(紙札・大中小)',
     description:
       '天照皇大神宮の御神徳を宿した紙札です。大・中・小でご用意しております。清らかな光のご加護をもって、心身の平安をお授けいたします。',
-    image: '/omamoriPhoto/ohuda-01.png',
+    image: '/omamoriPhoto/ohuda-01.webp',
   },
   {
     id: 2,
     title: '大館神明社神符(木札・紙札)',
     description: '大館神明社の御神徳をいただく紙札です。日々の無事と平穏を神さまがお守りくださいます。',
-    image: '/omamoriPhoto/ohuda-02.png',
+    image: '/omamoriPhoto/ohuda-02.webp',
   },
   {
     id: 3,
     title: '家内安全(木札・紙札)',
     description: '家内安全を祈願した木札です。ご家族皆さまが健やかに暮らせますよう、お守りいたします。',
-    image: '/omamoriPhoto/ohuda-03.png',
+    image: '/omamoriPhoto/ohuda-03.webp',
   },
   {
     id: 4,
     title: '商売繁盛(木札)・厄除け(紙札)',
     description:
       '商売繁盛を祈願した木札、厄除けを祈願した紙札です。商運隆昌は千客万来、厄除けは災難を避けるご加護をお授けいたします。',
-    image: '/omamoriPhoto/ohuda-04.png',
+    image: '/omamoriPhoto/ohuda-04.webp',
   },
 ]
 

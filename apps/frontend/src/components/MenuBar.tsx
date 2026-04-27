@@ -223,7 +223,7 @@ const MenuBar: React.FC = () => {
       <Header $isMobile={isMobile}>
         <LogoLink href='/'>
           <Image
-            src='/top-motion/montuki-rogo.png'
+            src='/top-motion/montuki-rogo.webp'
             alt='大館神明社のロゴマーク - 神社の紋章'
             width={isMobile ? 50 : 130}
             height={isMobile ? 50 : 130}

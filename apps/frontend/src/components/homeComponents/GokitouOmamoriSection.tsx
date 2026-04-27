@@ -7,7 +7,7 @@ const GokitouOmamoriSection = () => (
     <Section>
       <Card>
         <LeftCol>
-          <LeftImage src='/backsozai/gokitou-01.png' alt='祈祷イメージ' />
+          <LeftImage src='/backsozai/gokitou-01.webp' alt='祈祷イメージ' />
         </LeftCol>
         <RightCol>
           <Row>
@@ -19,7 +19,7 @@ const GokitouOmamoriSection = () => (
           </Row>
           <CatImageBox>
             <Image
-              src='/neko/neko02.png'
+              src='/neko/neko02.webp'
               alt='祈祷猫'
               width={220}
               height={260}
@@ -35,7 +35,7 @@ const GokitouOmamoriSection = () => (
     <OmamoriSection>
       <Card>
         <LeftCol>
-          <LeftImage src='/backsozai/omamori01.png' alt='お守りイメージ' />
+          <LeftImage src='/backsozai/omamori01.webp' alt='お守りイメージ' />
         </LeftCol>
         <RightCol>
           <Row>
@@ -46,7 +46,7 @@ const GokitouOmamoriSection = () => (
           </Row>
           <OmamoriCatImageBox>
             <Image
-              src='/neko/neko06.png'
+              src='/neko/neko06.webp'
               alt='お守り猫'
               width={220}
               height={260}
@@ -81,7 +81,7 @@ const Section = styled.section`
   justify-content: center;
   align-items: center;
   padding: 9rem 0 0;
-  background: url(/top-motion/haikei.png) center center / cover no-repeat;
+  background: url(/top-motion/haikei.webp) center center / cover no-repeat;
 
   @media (max-width: 1024px) {
     padding: 8rem 0 0;
@@ -102,7 +102,7 @@ const OmamoriSection = styled.section`
   justify-content: center;
   align-items: center;
   padding: 9rem 0;
-  background: url(/top-motion/haikei.png) center center / cover no-repeat;
+  background: url(/top-motion/haikei.webp) center center / cover no-repeat;
 
   @media (max-width: 1024px) {
     padding: 8rem 0;

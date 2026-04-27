@@ -5,7 +5,7 @@ const KakusyuGokitouSectionWrapper = styled.section`
   min-height: 100%;
   position: relative;
   padding: 8rem 0;
-  background: var(--color-oud) url('/top-motion/haikei.png') center top / 100% auto repeat-y;
+  background: var(--color-oud) url('/top-motion/haikei.webp') center top / 100% auto repeat-y;
   background-attachment: fixed;
   @media (max-width: 1024px) {
     padding: 3rem 0;
@@ -397,7 +397,7 @@ const KakusyuGokitouSection = () => {
             </Description>
           </TextSection>
           <CarImageSection>
-            <SectionImage src='/kakusyuGokitouPhoto/kakusyugokitou-02.png' alt='車払いのイラスト' />
+            <SectionImage src='/kakusyuGokitouPhoto/kakusyugokitou-02.webp' alt='車払いのイラスト' />
           </CarImageSection>
         </SectionContainer>
 
@@ -416,7 +416,7 @@ const KakusyuGokitouSection = () => {
             </Description>
           </RightTextSection>
           <GoukakuImageSection>
-            <SectionImage src='/kakusyuGokitouPhoto/kakusyugokitou-03.png' alt='合格祈願のイラスト' />
+            <SectionImage src='/kakusyuGokitouPhoto/kakusyugokitou-03.webp' alt='合格祈願のイラスト' />
           </GoukakuImageSection>
         </RightSectionContainer>
 
@@ -435,7 +435,7 @@ const KakusyuGokitouSection = () => {
             </Description>
           </TextSection>
           <HisshouImageSection>
-            <SectionImage src='/kakusyuGokitouPhoto/kakusyugokitou-05.png' alt='必勝祈願のイラスト' />
+            <SectionImage src='/kakusyuGokitouPhoto/kakusyugokitou-04.webp' alt='必勝祈願のイラスト' />
           </HisshouImageSection>
         </SectionContainer>
 
@@ -454,7 +454,7 @@ const KakusyuGokitouSection = () => {
             </Description>
           </RightTextSection>
           <KenkouImageSection>
-            <SectionImage src='/kakusyuGokitouPhoto/kakusyugokitou-06.png' alt='病気平癒祈願のイラスト' />
+            <SectionImage src='/kakusyuGokitouPhoto/kakusyugokitou-05.webp' alt='病気平癒祈願のイラスト' />
           </KenkouImageSection>
         </RightSectionContainer>
 
@@ -473,7 +473,7 @@ const KakusyuGokitouSection = () => {
             </Description>
           </TextSection>
           <TravelImageSection>
-            <SectionImage src='/kakusyuGokitouPhoto/kakusyugokitou-08.png' alt='旅行祈願のイラスト' />
+            <SectionImage src='/kakusyuGokitouPhoto/kakusyugokitou-06.webp' alt='旅行祈願のイラスト' />
           </TravelImageSection>
         </SectionContainer>
 

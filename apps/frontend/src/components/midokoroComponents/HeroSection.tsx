@@ -10,7 +10,7 @@ const HeroSectionWrapper = styled.section`
   display: flex;
   align-items: center;
   justify-content: center;
-  background: url(/ema/ema-hero.png) center center / cover no-repeat;
+  background: url(/ema/ema-hero.webp) center center / cover no-repeat;
 
   /* モバイル対応 */
   @media (max-width: 768px) {

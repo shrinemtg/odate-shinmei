@@ -8,7 +8,7 @@ const IntroSectionWrapper = styled.section`
   align-items: center;
   justify-content: center;
   padding: 48px 0 56px 0;
-  background: var(--color-oud) url('/top-motion/haikei.png') center top / 100% auto repeat-y;
+  background: var(--color-oud) url('/top-motion/haikei.webp') center top / 100% auto repeat-y;
   background-attachment: fixed;
 
   /* 大画面デスクトップ */
@@ -244,9 +244,9 @@ const ImageWrapper = styled.div`
 
 const IntroSection = () => {
   const images = [
-    { src: '/his/his-06.png', alt: '神社の歴史写真1' },
-    { src: '/his/his-07.png', alt: '神社の歴史写真2' },
-    { src: '/his/his-08.png', alt: '神社の歴史写真3' },
+    { src: '/his/his-06.webp', alt: '神社の歴史写真1' },
+    { src: '/his/his-07.webp', alt: '神社の歴史写真2' },
+    { src: '/his/his-08.webp', alt: '神社の歴史写真3' },
   ]
 
   return (

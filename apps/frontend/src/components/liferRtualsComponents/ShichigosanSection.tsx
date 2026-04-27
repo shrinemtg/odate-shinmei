@@ -6,7 +6,7 @@ const ShichigosanSectionWrapper = styled.section`
   position: relative;
   display: flex;
   flex-direction: column;
-  background: var(--color-oud) url('/top-motion/haikei.png') center top / 100% auto repeat-y;
+  background: var(--color-oud) url('/top-motion/haikei.webp') center top / 100% auto repeat-y;
   background-attachment: fixed;
 `
 
@@ -327,7 +327,7 @@ const ShichigosanSection = () => {
           </Description>
         </TextContent>
         <ImageSection>
-          <ShichigosanImage src='/life/life-05.png' alt='七五三の写真' />
+          <ShichigosanImage src='/life/life-05.webp' alt='七五三の写真' />
         </ImageSection>
       </TopSection>
 
