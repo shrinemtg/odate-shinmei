@@ -1,4 +1,4 @@
-import { useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import Image from 'next/image'
 import styled from '@emotion/styled'
 
@@ -180,13 +180,40 @@ interface VideoBackgroundProps {
 
 const VideoBackground = ({ muted, onToggleMute }: VideoBackgroundProps) => {
   const videoRef = useRef<HTMLVideoElement>(null)
+  const [videoSrc, setVideoSrc] = useState<string>()
+
+  // 大容量の背景動画(約33MB)の取得を初回ペイント後まで遅延させ、初期表示(LCP)が
+  // 動画のダウンロードでブロックされないようにする。読み込み完了まではposter(先頭フレーム)
+  // が表示され、動画再生開始時にシームレスに切り替わる（見た目・再生内容は従来と同じ）。
+  useEffect(() => {
+    const start = () => setVideoSrc('/videos/shinmei-mv.webm')
+    const w = window as typeof window & {
+      requestIdleCallback?: (cb: () => void, opts?: { timeout: number }) => number
+      cancelIdleCallback?: (id: number) => void
+    }
+    if (typeof w.requestIdleCallback === 'function') {
+      const id = w.requestIdleCallback(start, { timeout: 2000 })
+      return () => w.cancelIdleCallback?.(id)
+    }
+    const t = setTimeout(start, 300)
+    return () => clearTimeout(t)
+  }, [])
+
+  // src を後から設定するため、ブラウザによっては autoPlay 属性だけでは再生が始まらない。
+  // src 設定後に明示的に play() を呼んで従来どおり自動再生させる（muted なのでブロックされない）。
+  useEffect(() => {
+    if (videoSrc && videoRef.current) {
+      videoRef.current.play().catch(() => {})
+    }
+  }, [videoSrc])
 
   return (
     <>
       {/* 動画 */}
       <VideoElement
         ref={videoRef}
-        src='/videos/shinmei-mv.webm'
+        src={videoSrc}
+        poster='/videos/shinmei-mv-poster.webp'
         autoPlay
         controls={false}
         loop={true}
