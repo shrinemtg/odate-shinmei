@@ -15,6 +15,19 @@ export default function App({ Component, pageProps }: AppProps) {
         <meta name='description' content='大舘神明社の公式サイト' />
         <title>大舘神明社</title>
 
+        {/*
+          フォント読み込み: global.css の @import から head の link へ移動。
+          @import はリクエストが直列化（HTML→CSS→フォントCSS→フォント）し描画をブロックするため、
+          preconnect で接続を先行確立し、stylesheet を並列取得する。
+          フォント・ウェイト・display=swap は従来と完全に同一（見た目は変わらない）。
+        */}
+        <link rel='preconnect' href='https://fonts.googleapis.com' />
+        <link rel='preconnect' href='https://fonts.gstatic.com' crossOrigin='anonymous' />
+        <link
+          rel='stylesheet'
+          href='https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;600;700&display=swap'
+        />
+
         {/* ファビコン設定 - Next.js 15の自動認識機能を使用 */}
         <link rel='icon' href='/favicon.ico' sizes='any' />
         <link rel='icon' href='/icon.svg' type='image/svg+xml' />
