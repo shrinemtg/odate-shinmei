@@ -34,10 +34,30 @@ export default function App({ Component, pageProps }: AppProps) {
         */}
         <link rel='preconnect' href='https://fonts.googleapis.com' />
         <link rel='preconnect' href='https://fonts.gstatic.com' crossOrigin='anonymous' />
+        {/*
+          フォントCSSは唯一の render-blocking リソースだった。preload で先行取得しつつ、
+          スクリプトで media='print'(=非ブロッキング)の stylesheet として差し込み、読み込み完了時に
+          media='all' へ切替えて適用する。これで初期描画をブロックしない。
+          ファーストビュー(イントロ)は画像文字でWebフォントを使わないため見た目は不変。
+          本文は display=swap のまま、preload により表示時には適用済みで FOUT は実質発生しない。
+        */}
         <link
-          rel='stylesheet'
+          rel='preload'
+          as='style'
           href='https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;600;700&display=swap'
         />
+        <script
+          dangerouslySetInnerHTML={{
+            __html:
+              "(function(){var l=document.createElement('link');l.rel='stylesheet';l.href='https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;600;700&display=swap';l.media='print';l.onload=function(){l.media='all'};document.head.appendChild(l)})()",
+          }}
+        />
+        <noscript>
+          <link
+            rel='stylesheet'
+            href='https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;600;700&display=swap'
+          />
+        </noscript>
 
         {/* ファビコン設定 - Next.js 15の自動認識機能を使用 */}
         <link rel='icon' href='/favicon.ico' sizes='any' />
