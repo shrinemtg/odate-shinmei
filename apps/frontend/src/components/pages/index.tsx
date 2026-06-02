@@ -10,14 +10,16 @@ import LogoCrossfade from '../homeComponents/LogoCrossfade'
 import HeroContent from '../homeComponents/HeroContent'
 
 export const Home = () => {
-  const [introVisible, setIntroVisible] = useState(false) // 初期値をfalseに変更
+  // SSR/初期描画では intro を表示しておき、初回訪問のファーストビュー(LCP)をハイドレーション
+  // 待ちにしない。再訪問者は _app head のスクリプトが描画前に html.skip-intro を付与して
+  // CSSで intro を隠し、下の useEffect が introVisible=false / mainVisible=true に揃える。
+  const [introVisible, setIntroVisible] = useState(true)
   const [crossFadeVisible, setCrossFadeVisible] = useState(false)
   const [mainVisible, setMainVisible] = useState(false)
   const [fade, setFade] = useState(0)
   const [muted, setMuted] = useState(true)
   const fadeDuration = 2000
   const [showMenuBar, setShowMenuBar] = useState(false)
-  const [isInitialized, setIsInitialized] = useState(false) // 初期化完了フラグ
 
   // 初回訪問判定とintroAnimationの制御
   useEffect(() => {
@@ -43,15 +45,13 @@ export const Home = () => {
     const visitedBefore = hasVisitedBefore()
 
     if (visitedBefore) {
-      // 初回以外の場合はintroAnimationをスキップ
+      // 初回以外の場合はintroAnimationをスキップ（CSSでは既に非表示。Reactの状態も揃える）
       setIntroVisible(false)
       setMainVisible(true)
-      setIsInitialized(true)
     } else {
-      // 初回の場合はintroAnimationを表示
+      // 初回の場合はintroAnimationを表示（SSR/初期状態のまま）
       setIntroVisible(true)
       markAsVisited()
-      setIsInitialized(true)
     }
   }, [])
 
@@ -123,11 +123,6 @@ export const Home = () => {
     window.addEventListener('keydown', handleKeyDown)
     return () => window.removeEventListener('keydown', handleKeyDown)
   }, [])
-
-  // 初期化が完了するまで何も表示しない
-  if (!isInitialized) {
-    return null
-  }
 
   return (
     <>

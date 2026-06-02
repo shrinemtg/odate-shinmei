@@ -143,7 +143,11 @@ const IntroAnimation: React.FC<IntroAnimationProps> = ({ onIntroEnd }) => {
   return (
     <AnimatePresence>
       {isIntroVisible && (
-        <IntroContainer key='intro-container' exit={{ opacity: 0, transition: { duration: 1.5 } }}>
+        <IntroContainer
+          key='intro-container'
+          className='home-intro-overlay'
+          exit={{ opacity: 0, transition: { duration: 1.5 } }}
+        >
           {/* --- 左側の雲 --- */}
           {leftClouds.map((cloud, idx) => {
             const isPersistentCloud = cloud.src === '/top-motion/hidari-4-kumo.webp'
