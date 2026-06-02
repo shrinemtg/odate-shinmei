@@ -123,6 +123,15 @@ const HomePage = () => {
           content='秋田県大館市にある大館神明社の公式サイト。御祈祷、お守り、年中行事のご案内。厄払い、年祝い、各種御祈祷を承っております。'
         />
         <meta name='keywords' content='大館神明社,秋田県,大館市,神社,御祈祷,お守り,年中行事,厄払い,年祝い' />
+        {/*
+          LCP最適化: トップのファーストビュー(イントロ/ヒーロー)で最大要素になる画像を先読みする。
+          これらはクライアント描画後(ハイドレーション後)にしか参照されないため既定では取得が遅延し、
+          LCPのLoad Delayの主因になっていた。preloadで取得をページ読み込み開始時へ前倒しする。
+          見た目・表示内容は変わらない（同じ画像を早く取得するだけ）。
+        */}
+        <link rel='preload' as='image' href='/top-motion/migi-1-kumo.webp' type='image/webp' />
+        <link rel='preload' as='image' href='/top-motion/haikei.webp' type='image/webp' />
+        <link rel='preload' as='image' href='/top-motion/hidari-4-kumo.webp' type='image/webp' />
         <script type='application/ld+json' dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
       </Head>
       <Home />
