@@ -8,13 +8,13 @@ const leftCloud = {
   height: 350,
   zIndex: 12,
   top: 480,
-  left: -250,
+  left: -330, // 少し左へ（-250 → -300 → -330）
   x: -80,
 }
 const rightCloud = {
   src: '/top-motion/migi-1-kumo.webp',
-  width: 1100,
-  height: 500,
+  width: 990, // ちょっとだけ小さく（1100 → 990, 約0.9倍）
+  height: 450, // 同上（500 → 450）
   zIndex: 12,
   top: -180,
   right: -150,
@@ -218,16 +218,40 @@ const VideoBackground = ({ muted, onToggleMute, started = true }: VideoBackgroun
     }
   }, [started, videoSrc])
 
+  // A. ミュート⇔アンミュートの制御。アンミュート時は音量を0→1で約1秒かけて上げ、鈴の音が
+  // 唐突でなく静かに立ち上るようにする。muted は React にバインドせずここで明示制御する
+  // （バインドすると音量フェード前に一瞬フル音量になり得るため）。
+  useEffect(() => {
+    const v = videoRef.current
+    if (!v) return undefined
+    if (muted) {
+      v.muted = true
+      return undefined
+    }
+    v.muted = false
+    v.volume = 0
+    let raf = 0
+    let startT: number | null = null
+    const fadeDuration = 1000
+    const step = (t: number) => {
+      if (startT === null) startT = t
+      const progress = Math.min((t - startT) / fadeDuration, 1)
+      v.volume = progress
+      if (progress < 1) raf = requestAnimationFrame(step)
+    }
+    raf = requestAnimationFrame(step)
+    return () => cancelAnimationFrame(raf)
+  }, [muted])
+
   return (
     <>
-      {/* 動画（再生開始は started 制御。autoPlay は使わない） */}
+      {/* 動画（再生開始は started 制御。autoPlay は使わない。muted は上の effect で明示制御） */}
       <VideoElement
         ref={videoRef}
         src={videoSrc}
         poster='/videos/shinmei-mv-poster.webp'
         controls={false}
         loop={true}
-        muted={muted}
         playsInline
       />
       {/* ミュート切り替えボタン（初回操作の自動アンミュートと二重処理しないよう目印を付与） */}
