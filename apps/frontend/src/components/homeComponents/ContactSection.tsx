@@ -203,7 +203,7 @@ const ContactSection = () => (
       <SubText>
         御用の際は、お気軽にご連絡ください。
         <br />
-        営業時間 午前8時30分～午後17時
+        営業時間 午前9時00分～午後17時
       </SubText>
       <ContactButton href='/contact'>お問い合わせフォーム</ContactButton>
       <Info>
