@@ -6,95 +6,59 @@ import NenchuSection from '../homeComponents/NenchuSection'
 import AccessContactWrapper from '../homeComponents/AccessContactWrapper'
 import MenuBar from '../MenuBar'
 import VideoBackground from '../homeComponents/VideoBackground'
-import LogoCrossfade from '../homeComponents/LogoCrossfade'
 import HeroContent from '../homeComponents/HeroContent'
+import { hasIntroPlayed, markIntroPlayed } from '../homeComponents/introRuntimeState'
 
 export const Home = () => {
-  // SSR/初期描画では intro を表示しておき、初回訪問のファーストビュー(LCP)をハイドレーション
-  // 待ちにしない。再訪問者は _app head のスクリプトが描画前に html.skip-intro を付与して
-  // CSSで intro を隠し、下の useEffect が introVisible=false / mainVisible=true に揃える。
-  const [introVisible, setIntroVisible] = useState(true)
-  const [crossFadeVisible, setCrossFadeVisible] = useState(false)
-  const [mainVisible, setMainVisible] = useState(false)
-  const [fade, setFade] = useState(0)
+  // アクセス（初回/再訪問/リロード問わず）＝フルロードでは必ずイントロをSSR描画して再生する。
+  // サイト内のクライアント遷移でホームに戻った時だけ、再生済みフラグ(メモリ)を見てスキップし、
+  // 最初の描画から mainVisible=true で出すため空白フレーム（白チラつき）が発生しない。
+  // SSR では hasIntroPlayed() が常に false のため、初回描画は必ずイントロを含みハイドレーション
+  // 不整合も起きない（introRuntimeState.ts 参照）。
+  const [introMounted, setIntroMounted] = useState(() => !hasIntroPlayed())
+  const [mainVisible, setMainVisible] = useState(() => hasIntroPlayed())
   const [muted, setMuted] = useState(true)
-  const fadeDuration = 2000
   const [showMenuBar, setShowMenuBar] = useState(false)
 
-  // 初回訪問判定とintroAnimationの制御
-  useEffect(() => {
-    const hasVisitedBefore = () => {
-      if (typeof window === 'undefined') return false
-      try {
-        return localStorage.getItem('hasVisitedBefore') === 'true'
-      } catch (_error) {
-        // localStorageが利用できない場合（プライベートモード等）は初回として扱う
-        return false
-      }
-    }
-
-    const markAsVisited = () => {
-      if (typeof window === 'undefined') return
-      try {
-        localStorage.setItem('hasVisitedBefore', 'true')
-      } catch (_error) {
-        // localStorageが利用できない場合は無視
-      }
-    }
-
-    const visitedBefore = hasVisitedBefore()
-
-    if (visitedBefore) {
-      // 初回以外の場合はintroAnimationをスキップ（CSSでは既に非表示。Reactの状態も揃える）
-      setIntroVisible(false)
-      setMainVisible(true)
-    } else {
-      // 初回の場合はintroAnimationを表示（SSR/初期状態のまま）
-      setIntroVisible(true)
-      markAsVisited()
-    }
-  }, [])
-
-  // IntroAnimation終了後にクロスフェード開始
+  // ロゴ保持が終わりイントロのフェードアウトが始まるタイミング。背後のホーム(動画は常時マウント
+  // 済み)を露出させるため main をマウントしておく。イントロ自体は IntroAnimation 内の
+  // AnimatePresence が和紙背景＋ロゴごと一体でふわっとフェードアウトする（背景だけ即消えて
+  // 動画が露出する「パッと切り替わり」を防ぐ）。
   const handleIntroEnd = () => {
-    setIntroVisible(false)
-    setCrossFadeVisible(true)
-    setFade(0)
-    // クロスフェードアニメーション
-    let start: number | null = null
-    const animate = (timestamp: number) => {
-      if (!start) start = timestamp
-      const progress = Math.min((timestamp - start) / fadeDuration, 1)
-      setFade(progress)
-      if (progress < 1) {
-        requestAnimationFrame(animate)
-      } else {
-        setFade(1)
-        setMainVisible(true)
-        // 1.2s（transition duration）+ 100msだけロゴのDOMをopacity:0のまま残す
-        setTimeout(() => {
-          setCrossFadeVisible(false)
-        }, 500)
-      }
-    }
-    requestAnimationFrame(animate)
+    // 再生完了をランタイムに記録 → 以降のサイト内遷移ではイントロをスキップする
+    markIntroPlayed()
+    setMainVisible(true)
   }
 
-  // スクロールでメイン内容を表示
-  useEffect(() => {
-    if (!crossFadeVisible && !mainVisible) return
-    const handleScroll = () => {
-      setCrossFadeVisible(false)
-      setMainVisible(true)
-    }
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [crossFadeVisible, mainVisible])
+  // フェードアウト完了後にイントロをDOMから取り除く（フェード中は外さない）。
+  const handleIntroExited = () => {
+    setIntroMounted(false)
+  }
 
   // ミュート切り替え
   const handleToggleMute = () => {
     setMuted((prev) => !prev)
   }
+
+  // 初回のユーザー操作（タップ/クリック/キー/スクロール）で一度だけ動画の音をONにする。
+  // ブラウザの自動再生ポリシー上、音アリ再生にはユーザー操作が必須なため。以降は右下の
+  // ボタンで自由にON/OFFできる（自動ONは初回の一度きり）。なお最初の操作がミュート
+  // ボタン自身だった場合は、ボタン側の toggle に任せて二重処理（再ミュート）を防ぐ。
+  useEffect(() => {
+    const events = ['pointerdown', 'keydown', 'touchstart', 'wheel'] as const
+    const cleanup = () => events.forEach((ev) => window.removeEventListener(ev, unmuteOnce))
+    const unmuteOnce = (e: Event) => {
+      const target = e.target as HTMLElement | null
+      if (target && target.closest('[data-mute-toggle]')) {
+        cleanup()
+        return
+      }
+      setMuted(false)
+      cleanup()
+    }
+    events.forEach((ev) => window.addEventListener(ev, unmuteOnce, { passive: true }))
+    return cleanup
+  }, [])
 
   useEffect(() => {
     const handleScroll = () => {
@@ -111,11 +75,10 @@ export const Home = () => {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  // 開発用：Ctrl+Shift+R でリセット
+  // 開発用：Ctrl+Shift+R でイントロを再生し直す（フルリロードでフラグがリセットされる）
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.ctrlKey && e.shiftKey && e.key === 'R') {
-        localStorage.removeItem('hasVisitedBefore')
         window.location.reload()
       }
     }
@@ -127,12 +90,10 @@ export const Home = () => {
   return (
     <>
       {showMenuBar && <MenuBar />}
-      {/* 動画・雲は常時マウント（opacityは常に1） */}
-      <VideoBackground muted={muted} onToggleMute={handleToggleMute} />
-      {/* イントロアニメーション */}
-      {introVisible && <IntroAnimation onIntroEnd={handleIntroEnd} />}
-      {/* ロゴのクロスフェード */}
-      <LogoCrossfade visible={crossFadeVisible} fade={fade} />
+      {/* 動画・雲は常時マウント。再生は mainVisible(=ホーム切替開始)で頭から始める */}
+      <VideoBackground muted={muted} onToggleMute={handleToggleMute} started={mainVisible} />
+      {/* イントロアニメーション（フェードアウト完了で自らアンマウントを通知） */}
+      {introMounted && <IntroAnimation onIntroEnd={handleIntroEnd} onIntroExited={handleIntroExited} />}
       {/* メイン内容＋動画＋雲 */}
       {mainVisible && (
         <>

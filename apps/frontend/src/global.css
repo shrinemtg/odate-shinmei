@@ -16,12 +16,3 @@ body {
   /* background: url('/top-motion/haikei.webp') center center / cover no-repeat;
   background-attachment: fixed; */
 }
-
-/*
-  再訪問者はイントロ演出をスキップする。トップは intro を既定で描画(SSR)して初回訪問の
-  LCPを早めるが、再訪問者には _app の head 内インラインスクリプトが描画前に html.skip-intro を
-  付与し、ここで intro オーバーレイを隠す（ちらつきなしでスキップ。初回訪問の見た目は不変）。
-*/
-html.skip-intro .home-intro-overlay {
-  display: none !important;
-}

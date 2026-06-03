@@ -176,15 +176,18 @@ const RightCloudContainer = styled.div`
 interface VideoBackgroundProps {
   muted: boolean
   onToggleMute: () => void
+  // 再生を開始してよいか。イントロ表示中は false にしておき、ホームへの切り替わり開始時に
+  // true にすることで、動画が「冒頭(0秒)のきれいな場面」から動き出すようにする。
+  started?: boolean
 }
 
-const VideoBackground = ({ muted, onToggleMute }: VideoBackgroundProps) => {
+const VideoBackground = ({ muted, onToggleMute, started = true }: VideoBackgroundProps) => {
   const videoRef = useRef<HTMLVideoElement>(null)
   const [videoSrc, setVideoSrc] = useState<string>()
 
   // 大容量の背景動画(約33MB)の取得を初回ペイント後まで遅延させ、初期表示(LCP)が
   // 動画のダウンロードでブロックされないようにする。読み込み完了まではposter(先頭フレーム)
-  // が表示され、動画再生開始時にシームレスに切り替わる（見た目・再生内容は従来と同じ）。
+  // が表示される。読み込みは先行して行うが、再生は started=true になるまで待つ。
   useEffect(() => {
     const start = () => setVideoSrc('/videos/shinmei-mv.webm')
     const w = window as typeof window & {
@@ -199,29 +202,36 @@ const VideoBackground = ({ muted, onToggleMute }: VideoBackgroundProps) => {
     return () => clearTimeout(t)
   }, [])
 
-  // src を後から設定するため、ブラウザによっては autoPlay 属性だけでは再生が始まらない。
-  // src 設定後に明示的に play() を呼んで従来どおり自動再生させる（muted なのでブロックされない）。
+  // イントロ再生中(started=false)は裏側で動画を進ませない。ホームへの切り替わり開始
+  // (started=true)のタイミングで、必ず冒頭(0秒)へ巻き戻してから再生する。これにより
+  // イントロが溶けると同時に動画が頭から動き出し、中途半端な場面が一瞬見える問題を防ぐ。
+  // muted なので自動再生はブロックされない。
   useEffect(() => {
-    if (videoSrc && videoRef.current) {
-      videoRef.current.play().catch(() => {})
+    if (started && videoSrc && videoRef.current) {
+      const v = videoRef.current
+      try {
+        v.currentTime = 0
+      } catch (_error) {
+        // currentTime をまだ設定できない場合は無視（再生時に先頭から始まる）
+      }
+      v.play().catch(() => {})
     }
-  }, [videoSrc])
+  }, [started, videoSrc])
 
   return (
     <>
-      {/* 動画 */}
+      {/* 動画（再生開始は started 制御。autoPlay は使わない） */}
       <VideoElement
         ref={videoRef}
         src={videoSrc}
         poster='/videos/shinmei-mv-poster.webp'
-        autoPlay
         controls={false}
         loop={true}
         muted={muted}
         playsInline
       />
-      {/* ミュート切り替えボタン */}
-      <MuteButton onClick={onToggleMute} aria-label={muted ? '音声オン' : '音声オフ'}>
+      {/* ミュート切り替えボタン（初回操作の自動アンミュートと二重処理しないよう目印を付与） */}
+      <MuteButton data-mute-toggle onClick={onToggleMute} aria-label={muted ? '音声オン' : '音声オフ'}>
         {muted ? '🔇 音声オン' : '🔊 音声オフ'}
       </MuteButton>
       {/* 雲（左下） */}

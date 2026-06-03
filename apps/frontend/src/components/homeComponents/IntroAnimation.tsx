@@ -72,23 +72,35 @@ const ContentCenter = styled.div`
   height: auto;
 `
 
-const ContentElement = styled(motion.div)`
+// 出現フェード（opacity + scale 0.8→1）は framer-motion が inline transform で制御するため、
+// CSS の transform はここでは指定しない（指定しても上書きされる）。サイズ調整は下の
+// 静的ラッパー ContentScale 側で行い、framer の transform と入れ子で掛け合わせる。
+const ContentElement = styled(motion.div)``
+
+// 見出し文字・紋付ロゴを少し小さく（各ブレークポイントの従来比 約0.9倍）。
+// 上品で見やすい余白を持たせる。motion 配下の静的 div なので transform が上書きされない。
+const ContentScale = styled.div`
+  transform: scale(0.9);
+
   @media (max-width: 768px) {
-    transform: scale(0.8);
+    transform: scale(0.72);
   }
 
   @media (max-width: 480px) {
-    transform: scale(0.6);
+    transform: scale(0.54);
   }
 `
 
 type AnimationPhase = 'clouds' | 'text' | 'logo' | 'end'
 
 interface IntroAnimationProps {
+  // ロゴ保持が終わりフェードアウトが始まるタイミング（背後のホームを露出させ始める）
   onIntroEnd?: () => void
+  // フェードアウトが完全に終わったタイミング（親はここで DOM から取り除く）
+  onIntroExited?: () => void
 }
 
-const IntroAnimation: React.FC<IntroAnimationProps> = ({ onIntroEnd }) => {
+const IntroAnimation: React.FC<IntroAnimationProps> = ({ onIntroEnd, onIntroExited }) => {
   const [phase, setPhase] = useState<AnimationPhase>('clouds')
   const [isIntroVisible, setIsIntroVisible] = useState(true)
   const cloudAnimationDuration = 8
@@ -107,23 +119,23 @@ const IntroAnimation: React.FC<IntroAnimationProps> = ({ onIntroEnd }) => {
     return undefined
   }, [phase])
 
-  // テキスト表示後にロゴへ遷移
+  // テキスト表示後にロゴへ遷移（厳かにゆっくり保持）
   useEffect(() => {
     if (phase === 'text') {
       const timer = setTimeout(() => {
         setPhase('logo')
-      }, 2500)
+      }, 3300)
       return () => clearTimeout(timer)
     }
     return undefined
   }, [phase])
 
-  // ロゴ表示後にendへ遷移
+  // ロゴ表示後にendへ遷移（保持はやや短めにして、フェードアウトで滑らかにホームへ繋ぐ）
   useEffect(() => {
     if (phase === 'logo') {
       const timer = setTimeout(() => {
         setPhase('end')
-      }, 2500)
+      }, 2200)
       return () => clearTimeout(timer)
     }
     return undefined
@@ -141,12 +153,12 @@ const IntroAnimation: React.FC<IntroAnimationProps> = ({ onIntroEnd }) => {
   }, [phase, onIntroEnd])
 
   return (
-    <AnimatePresence>
+    <AnimatePresence onExitComplete={onIntroExited}>
       {isIntroVisible && (
         <IntroContainer
           key='intro-container'
           className='home-intro-overlay'
-          exit={{ opacity: 0, transition: { duration: 1.5 } }}
+          exit={{ opacity: 0, transition: { duration: 1.8, ease: 'easeInOut' } }}
         >
           {/* --- 左側の雲 --- */}
           {leftClouds.map((cloud, idx) => {
@@ -225,20 +237,25 @@ const IntroAnimation: React.FC<IntroAnimationProps> = ({ onIntroEnd }) => {
           )}
 
           {/* --- テキストとロゴの表示制御 --- */}
+          {/* end でもロゴを描画し続け、IntroContainer の exit フェードで和紙背景と一体で
+              ふわっと消す。key は logo/end で同一('logo')にして、end への遷移で entrance
+              アニメーション（再フェードイン）が再発火しないようにする。 */}
           <ContentCenter>
             <ContentElement
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0 }}
-              transition={{ duration: 1.2, ease: 'easeInOut' }}
-              key={phase}
+              transition={{ duration: 2.0, ease: [0.22, 1, 0.36, 1] }}
+              key={phase === 'end' ? 'logo' : phase}
             >
-              {phase === 'text' && (
-                <Image src={textImage.src} width={textImage.width} height={textImage.height} alt='intro text' />
-              )}
-              {phase === 'logo' && (
-                <Image src={logoImage.src} width={logoImage.width} height={logoImage.height} alt='logo' />
-              )}
+              <ContentScale>
+                {phase === 'text' && (
+                  <Image src={textImage.src} width={textImage.width} height={textImage.height} alt='intro text' />
+                )}
+                {(phase === 'logo' || phase === 'end') && (
+                  <Image src={logoImage.src} width={logoImage.width} height={logoImage.height} alt='logo' />
+                )}
+              </ContentScale>
             </ContentElement>
           </ContentCenter>
         </IntroContainer>

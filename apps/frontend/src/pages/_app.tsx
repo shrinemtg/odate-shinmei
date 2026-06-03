@@ -12,17 +12,6 @@ export default function App({ Component, pageProps }: AppProps) {
       <Head>
         <meta charSet='utf-8' />
         <meta name='viewport' content='width=device-width, initial-scale=1' />
-        {/*
-          再訪問者のイントロ演出スキップを「描画前」に確定させるための同期スクリプト。
-          トップは初回訪問のLCPを早めるため intro を既定で描画(SSR)するが、再訪問者には
-          描画前に html.skip-intro を付与して global.css 側で intro を隠す（ちらつき防止）。
-        */}
-        <script
-          dangerouslySetInnerHTML={{
-            __html:
-              "try{if(localStorage.getItem('hasVisitedBefore')==='true'){document.documentElement.classList.add('skip-intro')}}catch(e){}",
-          }}
-        />
         <meta name='description' content='大舘神明社の公式サイト' />
         <title>大舘神明社</title>
 
