@@ -42,8 +42,6 @@ const CloudElement = styled(motion.div)<{
   right?: number
 }>`
   position: absolute;
-  /* 開始時のコマ落ち防止：最初の描画から合成レイヤー化しておく */
-  will-change: transform;
   width: ${(props) => props.width}px;
   height: ${(props) => props.height}px;
   z-index: ${(props) => props.zIndex};
@@ -166,8 +164,8 @@ const IntroAnimation: React.FC<IntroAnimationProps> = ({ onIntroEnd, onIntroExit
   const contentDuration = reduceMotion ? 0.5 : 2.0
   const exitDuration = reduceMotion ? 0.6 : 1.8
   const contentEase: number[] | string = reduceMotion ? 'easeOut' : [0.22, 1, 0.36, 1]
-  // 雲は元の自然な動き（easeInOut）を維持する。出だしの軽いカクつきはイージングではなく
-  // 描画負荷の問題なので、CloudElement の will-change（GPUレイヤー化）側で対処している。
+  // 雲は元の自然な動き（easeInOut）を維持する。framer-motion はアニメーション中に自動で
+  // will-change を付与するため、CSS 側での明示指定（多数の合成レイヤー乱立）は行わない。
   const cloudEase: number[] | string = reduceMotion ? 'easeOut' : 'easeInOut'
 
   // イントロ表示中は背後のホームをスクロールさせない（フェードアウト開始でロック解除）

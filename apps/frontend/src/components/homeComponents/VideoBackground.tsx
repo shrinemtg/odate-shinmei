@@ -260,11 +260,11 @@ const VideoBackground = ({ muted, onToggleMute, started = true }: VideoBackgroun
       </MuteButton>
       {/* 雲（左下） */}
       <LeftCloudContainer>
-        <Image src={leftCloud.src} alt='left cloud' layout='fill' objectFit='contain' priority />
+        <Image src={leftCloud.src} alt='left cloud' layout='fill' objectFit='contain' />
       </LeftCloudContainer>
       {/* 雲（右上） */}
       <RightCloudContainer>
-        <Image src={rightCloud.src} alt='right cloud' layout='fill' objectFit='contain' priority />
+        <Image src={rightCloud.src} alt='right cloud' layout='fill' objectFit='contain' />
       </RightCloudContainer>
     </>
   )
