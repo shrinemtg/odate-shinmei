@@ -32,6 +32,8 @@ const Root = styled.nav<{ $isMobile: boolean; $isScrolled: boolean }>`
   padding: ${(props) => (props.$isMobile ? '0 16px' : '0')};
   transition: all 0.3s ease;
 
+  transition: all 0.3s ease;
+
   @media (max-width: 768px) {
     width: 100%;
     height: 60px;
